@@ -162,6 +162,11 @@ input.login{
     
 }
 
+/*Formatação corpo*/
 section h1{
     font-family: Arial, sans-serif;
+}
+
+section p{
+   font-family: Arial, sans-serif; 
 }
