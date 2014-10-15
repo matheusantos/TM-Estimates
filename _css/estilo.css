@@ -170,3 +170,44 @@ section h1{
 section p{
    font-family: Arial, sans-serif; 
 }
+
+p#senha {
+
+}
+button#login{
+    display: inline-block;
+    background-color: #dddddd;
+    padding: 5px 35px 5px 35px;
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    -ms-transition: background-color 1s;
+    transition: background-color 1s;
+    margin-left: 50px;
+}
+
+button#login:hover{
+    color: #ffffff;
+    background-color: #606060;
+}
+
+button#cadastrar{
+    display: inline-block;
+    background-color: #dddddd;
+    padding: 5px 25px 5px 25px;
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    -ms-transition: background-color 1s;
+    transition: background-color 1s;
+}
+
+button#cadastrar:hover{
+    color: #ffffff;
+    background-color: #606060;
+}
+
+a#esqueciasenha{
+    margin-left: 50px;
+
+}
