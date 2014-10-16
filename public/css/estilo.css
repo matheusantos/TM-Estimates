@@ -131,7 +131,7 @@ header#cabecalho img#icone {
 header#cabecalho {
     border-bottom: 1px #606060 solid;
     height: 220px;
-    background: url("../_imagens/logo.png") no-repeat 100px 0px;
+    background: url("../img/logo.png") no-repeat 100px 0px;
 }
 
 header#cabecalho h1{
