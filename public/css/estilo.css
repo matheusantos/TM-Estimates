@@ -211,3 +211,62 @@ a#esqueciasenha{
     margin-left: 50px;
 
 }
+
+img#pacote {
+    margin-left: 30px;
+    margin-bottom: 0px;
+    //border: 8px solid white;
+    //box-shadow: 1px 1px 4px black;
+    
+}
+
+button#comprarBasico{
+    display: inline-block;
+    background-color: #dddddd;
+    padding: 5px 35px 5px 35px;
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    -ms-transition: background-color 1s;
+    transition: background-color 1s;
+    margin-left: 30px;
+}
+
+button#comprarBasico:hover{
+    color: #ffffff;
+    background-color: #606060;
+}
+
+button#comprarInter{
+    display: inline-block;
+    background-color: #dddddd;
+    padding: 5px 35px 5px 35px;
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    -ms-transition: background-color 1s;
+    transition: background-color 1s;
+    margin-left: 12px;
+}
+
+button#comprarInter:hover{
+    color: #ffffff;
+    background-color: #606060;
+}
+
+button#comprarPremium{
+    display: inline-block;
+    background-color: #dddddd;
+    padding: 5px 35px 5px 35px;
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    -ms-transition: background-color 1s;
+    transition: background-color 1s;
+    margin-left: 12px;
+    margin-bottom: 30px;
+}
+button#comprarPremium:hover{
+    color: #ffffff;
+    background-color: #606060;
+}
