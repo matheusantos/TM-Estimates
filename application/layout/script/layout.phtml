@@ -77,57 +77,19 @@
         </div>
 
         <div class="container">
-            <div class="row clearfix">
-                <div class="col-md-12 column">              
-                    <div id="myCarousel" class="carousel slide">
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="img/desen.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h4>O que é?</h4>
-                                    <p>O TM Estimates tem como objetivo auxiliar no desenvolvimento de softwares, estimando tempo, custo, recursos que serão necessários ao longo do projeto.</p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="img/Agi.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h4>Como funciona?</h4>
-                                    <p>A partir de dados oferecidos pelo cliente, o site irá gerar estimativas, da mesma forma poderão ser gerados gráficos a partir da segunda estimativa do projeto e notificações para os usuários cadastrados(não administradores) via email.</p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="img/pree.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h4>Porque usar?</h4>
-                                    <p>Uma das principais partes do projeto é saber quanto tempo ele irá demorar para ser desenvolvido, quanto custará e quanto de esforço deverá ser aplicado, para que tenha um equilíbrio entre os três fatores é preciso ou ser expert em estimativas ou trabalhar com softwares que façam isso para você, pensando nisso a empresa Estimatech desenvolverá um software capaz de estimar de uma forma que seja adequada para o problema do cliente.</p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="img/equi.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h4>Sobre a empresa</h4>
-                                    <p>A empresa conta com uma equipe jovem e muito bem formada, com experiência em diversas áreas, tais como: Conhecimento em bancos de dados SQL Server, MySQL, linguagens de programação Java, C, C#, PHP, Design usando CorelDRAW, experiência com computadores de alta performance e experiência na Unidade de Desenvolvimento Organizacional da UESC.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-                    </div>
-
+            
+            <div class="row clearfix top-buffer">
+                <div class="col-md-12 column">
+                    <?php echo $this->layout()->content; ?>
                 </div>
             </div>
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <p class="text-center"> Estimatch </p>
+                </div>
+            </div> 
         </div>
-        <!-- <div class="row clearfix top-buffer">
-            <div class="col-md-12 column">
-        <?php echo $this->layout()->content; ?>
-            </div>
-        </div>
-        <div class="row clearfix">
-            <div class="col-md-12 column">
-                <p class="text-center"> Estimatch </p>
-        
-            </div>
-        </div> -->
-        <!-- </div> -->
-    </body> 
+
+    </div> 
+</body> 
 </html>
