@@ -16,12 +16,12 @@ class LoginController extends Zend_Controller_Action {
         $authAdapter = new Zend_Auth_Adapter_DbTable($dbAdapter);
 
         //Seta qual tabela e colunas procurar o usuário
-        $authAdapter->setTableName('usuario')
-                ->setIdentityColumn('login')
+        $authAdapter->setTableName('cliente')
+                ->setIdentityColumn('email')
                 ->setCredentialColumn('senha');
 
         //Seta as credenciais com dados vindos do formulário de login
-        $authAdapter->setIdentity($this->_getParam('login'))
+        $authAdapter->setIdentity($this->_getParam('email'))
                 ->setCredential($this->_getParam('senha'))
                 ->setCredentialTreatment('MD5(?)');
 
@@ -43,8 +43,8 @@ class LoginController extends Zend_Controller_Action {
         } else {
             $this->_redirect('login/falha');
         }
-
-         */
+        */
+        
     }
 
     public function falhaAction() {
@@ -53,10 +53,7 @@ class LoginController extends Zend_Controller_Action {
 
     public function logoutAction() {
         
-        //Limpa dados da Sessão
-        Zend_Auth::getInstance()->clearIdentity();
-        //Redireciona a requisição para a tela de Autenticacao novamente
-        $this->_redirect('autenticacao');
+
     }
 
 }
