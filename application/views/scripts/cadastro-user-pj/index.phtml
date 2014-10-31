@@ -1,5 +1,7 @@
 <br /><br />
 <div id="view-content">
+	<br /><br />
+	<br /><br />
     <br /><br /><br /><br />
     <div id="view-content">
         <div class="row clearfix top-buffer">
@@ -13,12 +15,12 @@
                             <form role="form">
 
                                 <label class="checkbox-inline">
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked onclick="setPF()">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" onclick="setPF()">
                                     Pessoa Física
 
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" onclick="setPJ()">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked onclick="setPJ()">
                                     Pessoa Jurídica
                                 </label>
                                 
@@ -71,36 +73,27 @@
         <div class="col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Dados pessoais</strong></h3>
+                    <h3 class="panel-title"><strong>Dados Empresarial</strong></h3>
                 </div>
                 <div class="panel-body">
-                    <form role="form">
-                        <div class="col-md-12">
-                            <div class="col-md-offset-0">
-                                <label>Nome</label>
-                                <input type="text" class="form-control" id="exampleInputNome" placeholder="Nome Completo">
-                            </div>
-                        </div>
-                    </form>
                     <br/>
                     <form class="form-inline" role="form">
-
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
-                                <label>RG</label>
-                                <input type="rg" class="form-control" id="exampleInputRG" placeholder="1111111111">
+                                <label>CNPJ</label>
+                                <input type="number" class="form-control" id="exampleInputCNPJ" placeholder="CNPJ">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
-                                <label>CPF</label>
-                                <input type="cpf" class="form-control" id="exampleInputCPF" placeholder="111.111.111-11">
+                                <label>Razão Social</label>
+                                <input type="text" class="form-control" id="exampleInputRazSoc" placeholder="Razão Social">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
-                                <label>Data de nascimento</label>
-                                <input type="date" class="form-control" id="exampleInputDatNasc" placeholder="DD/MM/AAAA">
+                                <label>Nome Fantasia</label>
+                                <input type="text" class="form-control" id="exampleInputNomFan" placeholder="Nome Fantasia">
                             </div>
                         </div>
                     </form>
@@ -114,17 +107,8 @@
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
-                                <label>Celular</label>
+                                <label>FAX</label>
                                 <input type="tel" class="form-control" id="exampleInputCel" placeholder="(DDD) 1111-1111">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>Sexo</label>
-                                <select class="form-control">
-                                    <option value  = "M" class="form-control"> Masculino </option>
-                                    <option value = "F" class="form-control"> Femenino </option>
-                                </select>
                             </div>
                         </div>
                     </form>
@@ -199,6 +183,3 @@
     </div>
 </div>
 <br/><br/><br/>
-
-
-
