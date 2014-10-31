@@ -1,6 +1,6 @@
 <?php
 
-class IndentificaController extends Zend_Controller_Action
+class IdentificaController extends Zend_Controller_Action
 {
 
     public function init()
