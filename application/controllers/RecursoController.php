@@ -1,6 +1,6 @@
 <?php
 
-class CadastroUserPJController extends Zend_Controller_Action
+class RecursoController extends Zend_Controller_Action
 {
 
     public function init()
@@ -11,6 +11,7 @@ class CadastroUserPJController extends Zend_Controller_Action
     public function indexAction()
     {
         // action body
+        $this->_helper->layout->setlayout("userlayout");
     }
 
 

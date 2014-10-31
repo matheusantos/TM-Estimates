@@ -10,6 +10,18 @@
         <controllerFile controllerName="Index">
           <actionMethod actionName="index"/>
         </controllerFile>
+		<controllerFile controllerName="CadastroUser">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+		<controllerFile controllerName="Login">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+		<controllerFile controllerName="User">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+		<controllerFile controllerName="Projeto">
+          <actionMethod actionName="index"/>
+        </controllerFile>
         <controllerFile controllerName="Error"/>
       </controllersDirectory>
       <formsDirectory enabled="false"/>
@@ -24,15 +36,6 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Error">
             <viewScriptFile forActionName="error"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="CadastroUserController">
-            <viewScriptFile forActionName="pj"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="CadastroUser">
-            <viewScriptFile forActionName="pj"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="CadastroUser">
-            <viewScriptFile forActionName="pj"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

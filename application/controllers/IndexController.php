@@ -1,8 +1,10 @@
 <?php
 
-class IndexController extends Zend_Controller_Action {
+class IndexController extends Zend_Controller_Action
+{
 
-    public function init() {
+    public function init()
+    {
         /* Initialize action controller here */
 
         //if (!Zend_Auth::getInstance()->hasIdentity()) {
@@ -10,9 +12,18 @@ class IndexController extends Zend_Controller_Action {
         //}
     }
 
-    public function indexAction() {
+    public function indexAction()
+    {
         // action body
         //$this->_helper->layout->setlayout("userlayout");
     }
 
+    public function testeAction()
+    {
+        // action body
+    }
+
+
 }
+
+
