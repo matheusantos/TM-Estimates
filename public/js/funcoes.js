@@ -6,5 +6,9 @@
 
 
 function setPJ(){
-    Location.href="http://localhost/TM-Estimates/public/cadastro-user/pj";
+    location.href="http://localhost/TM-Estimates/public/cadastro-user/pj";
+}
+
+function setPF(){
+    location.href="http://localhost/TM-Estimates/public/cadastro-user/index";
 }
