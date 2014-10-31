@@ -11,13 +11,13 @@ class ProjetoController extends Zend_Controller_Action
     public function indexAction()
     {
         // action body
-         $this->_helper->layout->setlayout("userlayout");
+        $this->_helper->layout->setlayout("userlayout");
     }
 
     public function novoAction()
     {
         // action body
-        
+        $this->_helper->layout->setlayout("userlayout");
     }
 
 
