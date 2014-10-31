@@ -1,7 +1,7 @@
 .img-test img{
-width: 150px;    /* largura da imagem */
-height: 150px;   /*  altura da imagem  */
-margin-top: 10px; /* margem do topo */
+width: 120px;    /* largura da imagem */
+height: 140px;   /*  altura da imagem  */
+margin-top: 40px; /* margem do topo */
 }
 
 @media (min-width: 769px){
