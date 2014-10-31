@@ -1,12 +1,15 @@
 <?php
 
-class LoginController extends Zend_Controller_Action {
+class LoginController extends Zend_Controller_Action
+{
 
-    public function init() {
+    public function init()
+    {
         /* Initialize action controller here */
     }
 
-    public function indexAction() {
+    public function indexAction()
+    {
         /*
         //Desabilita renderização da view
         $this->_helper->viewRenderer->setNoRender();
@@ -47,13 +50,23 @@ class LoginController extends Zend_Controller_Action {
         
     }
 
-    public function falhaAction() {
+    public function falhaAction()
+    {
         
     }
 
-    public function logoutAction() {
+    public function logoutAction()
+    {
         
 
     }
+
+    public function autenticaAction()
+    {
+        // action body
+    }
+
 
 }
+
+
