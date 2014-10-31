@@ -3,7 +3,9 @@
 </div>    
 <div class="row">
     <div class="col-md-3">
-        <button type="button" class="btn btn-success">Novo</button>
+        <a href="<?= $this->url(array('controller' => 'ambiente', 'action' => 'novo'), null, true) ?>">
+            <button type="button" class="btn btn-success">Novo</button>
+        </a>
         <button type="button" class="btn btn-primary">Editar</button>
         <button type="button" class="btn btn-danger">Excluir</button>
     </div>

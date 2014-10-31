@@ -14,6 +14,14 @@ class RecursoController extends Zend_Controller_Action
         $this->_helper->layout->setlayout("userlayout");
     }
 
+    public function novoAction()
+    {
+        // action body
+        $this->_helper->layout->setlayout("userlayout");
+    }
+
 
 }
+
+
 

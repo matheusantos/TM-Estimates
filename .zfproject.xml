@@ -10,16 +10,34 @@
         <controllerFile controllerName="Index">
           <actionMethod actionName="index"/>
         </controllerFile>
-		<controllerFile controllerName="CadastroUser">
+        <controllerFile controllerName="Ambiente">
           <actionMethod actionName="index"/>
         </controllerFile>
-		<controllerFile controllerName="Login">
+        <controllerFile controllerName="CadastroUser">
           <actionMethod actionName="index"/>
         </controllerFile>
-		<controllerFile controllerName="User">
+        <controllerFile controllerName="Equipe">
           <actionMethod actionName="index"/>
         </controllerFile>
-		<controllerFile controllerName="Projeto">
+        <controllerFile controllerName="EsqueceuSenha">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Identifica">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Login">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="User">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Projeto">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Recurso">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Vendas">
           <actionMethod actionName="index"/>
         </controllerFile>
         <controllerFile controllerName="Error"/>
@@ -36,6 +54,18 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Error">
             <viewScriptFile forActionName="error"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Ambiente">
+            <viewScriptFile forActionName="novo"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Equipe">
+            <viewScriptFile forActionName="novo"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Recurso">
+            <viewScriptFile forActionName="novo"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Login">
+            <viewScriptFile forActionName="falha"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
