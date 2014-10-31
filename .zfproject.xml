@@ -10,7 +10,7 @@
         <controllerFile controllerName="Index">
           <actionMethod actionName="index"/>
         </controllerFile>
-		<controllerFile controllerName="CadastroUserController">
+		<controllerFile controllerName="CadastroUser">
           <actionMethod actionName="index"/>
         </controllerFile>
 		<controllerFile controllerName="Login">
@@ -36,15 +36,6 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Error">
             <viewScriptFile forActionName="error"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="CadastroUserController">
-            <viewScriptFile forActionName="pj"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="CadastroUser">
-            <viewScriptFile forActionName="pj"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="CadastroUser">
-            <viewScriptFile forActionName="pj"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

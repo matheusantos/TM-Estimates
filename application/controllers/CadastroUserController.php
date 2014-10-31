@@ -12,12 +12,10 @@ class CadastroUserController extends Zend_Controller_Action
     {
         // action body
     }
-    
-        public function pjAction()
+
+    public function pjAction()
     {
         // action body
     }
 
-
 }
-
