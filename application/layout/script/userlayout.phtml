@@ -24,6 +24,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="/TM-Estimates/public/js/bootstrap.min.js"></script>
+        <script src="/TM-Estimates/public/js/scripts.js"></script>
         
     </head>
     <body>
@@ -89,14 +90,14 @@
                                         <h4>
                                             Control Panel
                                             <br>
-                                            <small>IOSDSV <span class="caret"></span></small>
+                                            <small>Admins <span class="caret"></span></small>
                                         </h4>
                                     </a>
                                     <div class="collapse" id="toggleDemo0" style="height: 0px;">
                                         <ul class="nav nav-list">
-                                            <li><a href="#">ProfileSubMenu1</a></li>
-                                            <li><a href="#">ProfileSubMenu2</a></li>
-                                            <li><a href="#">ProfileSubMenu3</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'administradores', 'action' => 'index'), null, true) ?>">Listar</a></li>
+                                            <li><a href="#">Novo</a></li>
+                                            <li><a href="#">Gerenciar</a></li>
                                         </ul>
                                     </div>
                                 </li>
