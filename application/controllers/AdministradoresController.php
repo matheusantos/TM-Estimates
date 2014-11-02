@@ -13,6 +13,13 @@ class AdministradoresController extends Zend_Controller_Action
         $this->_helper->layout->setlayout("userlayout");
     }
 
+    public function gerenciarAction()
+    {
+        $this->_helper->layout->setlayout("userlayout");
+    }
+
 
 }
+
+
 
