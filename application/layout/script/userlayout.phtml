@@ -103,11 +103,12 @@
                                 </li>
                                 <li>
                                     <a href="#" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01" class="collapsed">
-                                        <span class="glyphicon glyphicon-cloud"></span> Arquivo <span class="caret pull-right"></span>
+                                        <span class="glyphicon glyphicon-inbox"></span> Arquivo <span class="caret pull-right"></span>
                                     </a>
                                     <div class="collapse" id="toggleDemo" style="height: 0px;">
                                         <ul class="nav nav-list">
                                             <li><a href="<?= $this->url(array('controller' => 'projeto', 'action' => 'index'), null, true) ?>">Projeto</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'fase', 'action' => 'index'), null, true) ?>">Fase</a></li>
                                             <li><a href="<?= $this->url(array('controller' => 'ambiente', 'action' => 'index'), null, true) ?>">Ambiente</a></li>
                                             <li><a href="<?= $this->url(array('controller' => 'recurso', 'action' => 'index'), null, true) ?>">Recurso</a></li>
                                             <li><a href="<?= $this->url(array('controller' => 'equipe', 'action' => 'index'), null, true) ?>">Equipe</a></li>
@@ -116,19 +117,34 @@
                                 </li>
                                 <li class="active">
                                     <a href="#" data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01" class="collapsed">
-                                        <span class="glyphicon glyphicon-inbox"></span> Análise <span class="caret pull-right"></span>
+                                        <span class="glyphicon glyphicon-file"></span> Análise <span class="caret pull-right"></span>
                                     </a>
                                     <div class="collapse" id="toggleDemo2" style="height: 0px;">
                                         <ul class="nav nav-list">
-                                            <li><a href="#">Funções de Dados</a></li>
-                                            <li><a href="#">Funções de Transação</a></li>
-                                            <li><a href="#">Itens de Influência</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'FuncaoDados', 'action' => 'index'), null, true) ?>">Funções de Dados</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'FuncaoTransacao', 'action' => 'index'), null, true) ?>">Funções de Transação</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'projeto', 'action' => 'index'), null, true) ?>">Itens de Influência</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'projeto', 'action' => 'index'), null, true) ?>">Itens não-mensuráveis</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'FuncaoProcessos', 'action' => 'index'), null, true) ?>">Estruturar Processos</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'Contagem', 'action' => 'index'), null, true) ?>">Contagem</a></li>
                                         </ul>
                                     </div>
                                 </li>
-                                <li><a href="#"><span class="glyphicon glyphicon-lock"></span> Normalmenu</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-calendar"></span> Calendário <span class="badge pull-right">42</span></a></li>
-                                <li><a href=""><span class="glyphicon glyphicon-cog"></span> Preferências</a></li>
+                                <li>
+                                    <a href="#" data-toggle="collapse" data-target="#toggleDemo3" data-parent="#sidenav01" class="collapsed">
+                                        <span class="glyphicon glyphicon-th"></span> Detalhar <span class="caret pull-right"></span>
+                                    </a>
+                                    <div class="collapse" id="toggleDemo3" style="height: 0px;">
+                                        <ul class="nav nav-list">
+                                            <li><a href="<?= $this->url(array('controller' => 'Detalhar', 'action' => 'fases'), null, true) ?>">Fases</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'Detalhar', 'action' => 'custos'), null, true) ?>">Custos</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="active"><a href="<?= $this->url(array('controller' => 'EstimarCusto', 'action' => 'index'), null, true) ?>"><span class="glyphicon glyphicon-usd"></span> Estimar Custos</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-book"></span> Relatório</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-calendar"></span> Calendário</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Preferências</a></li>
                             </ul>
                         </div><!--/.nav-collapse -->
                     </div>

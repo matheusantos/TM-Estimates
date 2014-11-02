@@ -43,6 +43,30 @@
         <controllerFile controllerName="Vendas">
           <actionMethod actionName="index"/>
         </controllerFile>
+        <controllerFile controllerName="Contagem">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Detalhar">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="EstimarCusto">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Fase">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="FuncaoDados">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="FuncaoProcessos">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="FuncaoTransacao">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Vendas">
+          <actionMethod actionName="index"/>
+        </controllerFile>
         <controllerFile controllerName="Error"/>
       </controllersDirectory>
       <formsDirectory enabled="false"/>
@@ -72,6 +96,12 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Administradores">
             <viewScriptFile forActionName="gerenciar"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Detalhar">
+            <viewScriptFile forActionName="custos"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Detalhar">
+            <viewScriptFile forActionName="fases"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
