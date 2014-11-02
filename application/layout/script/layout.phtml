@@ -68,9 +68,24 @@
                 <?php echo $this->layout()->content; ?>
 
             </div>
-            <div class="panel-footer text-center"><b>© Copyright 2014 - by Estimatech</b></div>
         </div>
-        
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <!--<div class="panel-footer text-center"><b>© Copyright 2014 - by Estimatech</b></div>-->
+        <div id="footer" class="container">
+            <nav class="navbar navbar-default navbar-fixed-bottom">
+                <div class="navbar-inner navbar-content-center col-md-offset-5">
+                    <p class="navbar-text">
+                        © Copyright 2014 - by <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index'), null, true) ?>">Estimatech</a>.
+                    </p>
+                </div>
+            </nav>
+        </div>
+
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="/TM-Estimates/public/js/bootstrap.min.js"></script>

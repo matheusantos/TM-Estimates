@@ -8,24 +8,24 @@
         <meta name="author" content="">
 
         <title>TM Estimatch</title>
-        
+
         <!-- Bootstrap -->
         <link rel="stylesheet" type="text/css" href="/TM-Estimates/public/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/TM-Estimates/public/css/bootextra.css">
-        
+
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        
+
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="/TM-Estimates/public/js/bootstrap.min.js"></script>
         <script src="/TM-Estimates/public/js/scripts.js"></script>
-        
+
     </head>
     <body>
         <div class="container">
@@ -142,6 +142,14 @@
             </div>
         </div>
 
-        
+        <div id="footer" class="container">
+            <nav class="navbar navbar-default navbar-fixed-bottom">
+                <div class="navbar-inner navbar-content-center col-md-offset-5">
+                    <p class="navbar-text">
+                        © Copyright 2014 - by <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index'), null, true) ?>">Estimatech</a>.
+                    </p>
+                </div>
+            </nav>
+        </div>
     </body>
 </html>
