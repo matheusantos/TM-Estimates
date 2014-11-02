@@ -1,125 +1,93 @@
-<br /><br />
-<div id="view-content">
-    <br /><br />
-        <div class="row clearfix top-buffer">
-            <div class="col-md-10">
-                <div class="col-md-offset-2">
-                    <label><h1>Cadastro de Pessoa Física</h1></label>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><strong>Tipo de pessoa</strong></h3>
+<br /><br /><br /><br />
+<form role="form">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <label><h1>Cadastro de Pessoa Física</h1></label>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Tipo de pessoa</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <label class="checkbox-inline">
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked onclick="setPF()">
+                            Pessoa Física
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="radio" name="optionsRadios" id="pj" value="option2" onclick="setPJ()">
+                            Pessoa Jurídica
+                        </label>
+                    </div>
+                </div> <!-- .panel -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row clearfix">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Identificação</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
                         </div>
-                        <div class="panel-body">
-                            <form role="form">
-
-                                <label class="checkbox-inline">
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked onclick="setPF()">
-                                    Pessoa Física
-
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="radio" name="optionsRadios" id="pj" value="option2" onclick="setPJ()">
-                                    Pessoa Jurídica
-                                </label>
-                                
-                            </form>
+                        <div class="col-md-4">
+                            <label for="exampleInputPassword1">Senha</label>
+                            <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="exampleInputPassword1">Confirme a senha</label>
+                            <input type="password" class="form-control" id="InputPassword2" placeholder="Confirme a senha">
                         </div>
                     </div>
-                </div>
+                </div> <!-- .panel -->
             </div>
         </div>
     </div>
-</div>
 
-<div class="row clearfix top-buffer">
-    <div class="col-md-10">
-        <div class="col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Identificação</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <form role="form">
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label for="exampleInputEmail1">Email</label>
-                                <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label for="exampleInputPassword1">Senha</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label for="exampleInputPassword1">Confirme a senha</label>
-                                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirme a senha">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row clearfix top-buffer">
-    <div class="col-md-10">
-        <div class="col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Dados pessoais</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <form role="form">
-                        <div class="col-md-12">
-                            <div class="col-md-offset-0">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Dados pessoais</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-row">
+                            <div class="col-md-12 form-group">
                                 <label>Nome</label>
-                                <input type="text" class="form-control" id="exampleInputNome" placeholder="Nome Completo">
+                                <input type="text" class="form-control" id="InputNome" placeholder="Nome Completo">
                             </div>
                         </div>
-                    </form>
-                    <br/>
-                    <form class="form-inline" role="form">
-
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
+                        <div class="form-row">
+                            <div class="col-md-4 form-groups">
                                 <label>RG</label>
-                                <input type="rg" class="form-control" id="exampleInputRG" placeholder="1111111111">
+                                <input type="rg" class="form-control" id="InputRG" placeholder="1111111111">
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
+                            <div class="col-md-4 form-groups">
                                 <label>CPF</label>
-                                <input type="cpf" class="form-control" id="exampleInputCPF" placeholder="111.111.111-11">
+                                <input type="cpf" class="form-control" id="InputCPF" placeholder="111.111.111-11">
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
+                            <div class="col-md-4 form-groups">
                                 <label>Data de nascimento</label>
-                                <input type="date" class="form-control" id="exampleInputDatNasc" placeholder="DD/MM/AAAA">
+                                <input type="date" class="form-control" id="InputDatNasc" placeholder="DD/MM/AAAA">
                             </div>
                         </div>
-                    </form>
-                    <br/><br/><br/><br/>
-                    <form class="form-inline" role="form">
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
+                        <br /><br /><br /><br /><br /><br /><br />
+                        <div class="form-row">
+                            <div class="col-md-4">
                                 <label>Telefone</label>
-                                <input type="tel" class="form-control" id="exampleInputTel" placeholder="(DDD) 1111-1111">
+                                <input type="tel" class="form-control" id="InputTel" placeholder="(DDD) 1111-1111">
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
+                            <div class="col-md-4 form-groups">
                                 <label>Celular</label>
-                                <input type="tel" class="form-control" id="exampleInputCel" placeholder="(DDD) 1111-1111">
+                                <input type="tel" class="form-control" id="InputCel" placeholder="(DDD) 1111-1111">
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
+                            <div class="col-md-4 form-groups">
                                 <label>Sexo</label>
                                 <select class="form-control">
                                     <option value  = "M" class="form-control"> Masculino </option>
@@ -127,47 +95,37 @@
                                 </select>
                             </div>
                         </div>
-                    </form>
-                </div>
+                    </div> <!-- .panel-body -->
+                </div> <!-- .panel -->
             </div>
         </div>
     </div>
-</div>
 
 
-<div class="row clearfix top-buffer">
-    <div class="col-md-10">
-        <div class="col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Endereço</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <form role="form">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Endereço</strong></h3>
+                    </div>
+                    <div class="panel-body">
                         <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>CEP</label>
-                                <input type="cep" class="form-control" id="exampleInputEnd" placeholder="11111-111">
-                            </div>
+                            <label>CEP</label>
+                            <input type="cep" class="form-control" id="exampleInputEnd" placeholder="11111-111">
                         </div>
                         <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>Cidade</label>
-                                <span class="form-control input-xlarge uneditable-input"></span>
-                            </div>
+                            <label>Cidade</label>
+                            <span class="form-control input-xlarge uneditable-input"></span>
                         </div>
                         <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>Estado</label>
-                                <span class="form-control input-xlarge uneditable-input"></span>
-                            </div>
+                            <label>Estado</label>
+                            <span class="form-control input-xlarge uneditable-input"></span>
                         </div>
                         <br/><br/><br/><br/>
                         <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>Rua</label>
-                                <input type="text" class="form-control" id="exampleInputRua" placeholder="Rua">
-                            </div>
+                            <label>Rua</label>
+                            <input type="text" class="form-control" id="exampleInputRua" placeholder="Rua">
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
@@ -181,14 +139,12 @@
                                 <input type="text" class="form-control" id="exampleInputBairro" placeholder="Bairro">
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div id="view-content">
     <div class="row clearfix top-buffer">
         <div class="col-md-10">
             <div class="col-md-offset-2">
@@ -197,7 +153,8 @@
             </div>
         </div>
     </div>
-</div>
+
+</form>
 <br/><br/><br/>
 
 

@@ -10,6 +10,9 @@
         <controllerFile controllerName="Index">
           <actionMethod actionName="index"/>
         </controllerFile>
+        <controllerFile controllerName="Administradores">
+          <actionMethod actionName="index"/>
+        </controllerFile>
         <controllerFile controllerName="Ambiente">
           <actionMethod actionName="index"/>
         </controllerFile>
@@ -66,6 +69,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Login">
             <viewScriptFile forActionName="falha"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administradores">
+            <viewScriptFile forActionName="gerenciar"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

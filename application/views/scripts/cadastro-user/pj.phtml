@@ -1,183 +1,170 @@
-<br /><br />
-<div id="view-content">
-	<br /><br />
-        <div class="row clearfix top-buffer">
-            <div class="col-md-10">
-                <div class="col-md-offset-2">
-                    <label><h1>Cadastro de Pessoa Jurídica</h1></label>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><strong>Tipo de pessoa</strong></h3>
+<br /><br /><br /><br />
+<form role="form">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <label><h1>Cadastro de Pessoa Jurídica</h1></label>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Tipo de pessoa</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <label class="checkbox-inline">
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" onclick="setPF()">
+                            Pessoa Física
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked onclick="setPJ()">
+                            Pessoa Jurídica
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Identificação</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label for="InputEmail1">Email</label>
+                                <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
+                            </div>
                         </div>
-                        <div class="panel-body">
-                            <form role="form">
-
-                                <label class="checkbox-inline">
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" onclick="setPF()">
-                                    Pessoa Física
-
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked onclick="setPJ()">
-                                    Pessoa Jurídica
-                                </label>
-                                
-                            </form>
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label for="InputPassword1">Senha</label>
+                                <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label for="sInputPassword1">Confirme a senha</label>
+                                <input type="password" class="form-control" id="InputPassword2" placeholder="Confirme a senha">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="row clearfix top-buffer">
-    <div class="col-md-10">
-        <div class="col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Identificação</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <form role="form">
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label for="exampleInputEmail1">Email</label>
-                                <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Dados Empresarial</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>CNPJ</label>
+                                    <input type="number" class="form-control" id="exampleInputCNPJ" placeholder="CNPJ">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Razão Social</label>
+                                    <input type="text" class="form-control" id="InputRazSoc" placeholder="Razão Social">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Nome Fantasia</label>
+                                    <input type="text" class="form-control" id="InputNomFan" placeholder="Nome Fantasia">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label for="exampleInputPassword1">Senha</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Telefone</label>
+                                    <input type="tel" class="form-control" id="InputTel" placeholder="(DDD) 1111-1111">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>FAX</label>
+                                    <input type="tel" class="form-control" id="InputCel" placeholder="(DDD) 1111-1111">
+                                </div>
                             </div>
                         </div>
-
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label for="exampleInputPassword1">Confirme a senha</label>
-                                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirme a senha">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row clearfix top-buffer">
-    <div class="col-md-10">
-        <div class="col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Dados Empresarial</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <br/>
-                    <form class="form-inline" role="form">
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>CNPJ</label>
-                                <input type="number" class="form-control" id="exampleInputCNPJ" placeholder="CNPJ">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>Razão Social</label>
-                                <input type="text" class="form-control" id="exampleInputRazSoc" placeholder="Razão Social">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>Nome Fantasia</label>
-                                <input type="text" class="form-control" id="exampleInputNomFan" placeholder="Nome Fantasia">
-                            </div>
-                        </div>
-                    </form>
-                    <br/><br/><br/><br/>
-                    <form class="form-inline" role="form">
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>Telefone</label>
-                                <input type="tel" class="form-control" id="exampleInputTel" placeholder="(DDD) 1111-1111">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>FAX</label>
-                                <input type="tel" class="form-control" id="exampleInputCel" placeholder="(DDD) 1111-1111">
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-
-<div class="row clearfix top-buffer">
-    <div class="col-md-10">
-        <div class="col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Endereço</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <form role="form">
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>CEP</label>
-                                <input type="cep" class="form-control" id="exampleInputEnd" placeholder="11111-111">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Endereço</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>CEP</label>
+                                    <input type="cep" class="form-control" id="InputEnd" placeholder="11111-111">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Cidade</label>
+                                    <span class="form-control input-xlarge uneditable-input"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Estado</label>
+                                    <span class="form-control input-xlarge uneditable-input"></span>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>Cidade</label>
-                                <span class="form-control input-xlarge uneditable-input"></span>
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Rua</label>
+                                    <input type="text" class="form-control" id="InputRua" placeholder="Rua">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Nº</label>
+                                    <input type="number" class="form-control" id="InputNum" placeholder="Nº">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Bairro</label>
+                                    <input type="text" class="form-control" id="InputBairro" placeholder="Bairro">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>Estado</label>
-                                <span class="form-control input-xlarge uneditable-input"></span>
-                            </div>
-                        </div>
-                        <br/><br/><br/><br/>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>Rua</label>
-                                <input type="text" class="form-control" id="exampleInputRua" placeholder="Rua">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>Nº</label>
-                                <input type="number" class="form-control" id="exampleInputNum" placeholder="Nº">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="col-md-offset-0">
-                                <label>Bairro</label>
-                                <input type="text" class="form-control" id="exampleInputBairro" placeholder="Bairro">
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div id="view-content">
     <div class="row clearfix top-buffer">
         <div class="col-md-10">
             <div class="col-md-offset-2">
                 <button type="submit" class="btn btn-primary btn-default">Cadastrar</button>
-                <button type="submit" class="btn btn-danger btn-default">Cancelar</button>
+                <button type="reset" class="btn btn-danger btn-default">Cancelar</button>
             </div>
         </div>
     </div>
-</div>
+</form>
+
 <br/><br/><br/>
