@@ -1,0 +1,63 @@
+<div class="page-header">
+    <h3><span class="glyphicon glyphicon-th-list"></span> Detalhar Custo</h3>
+</div>
+<div class="row">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Custo</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="form-row col-md-12"> 
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Fase</label>
+                                        <input type="number" class="form-control" id="InputFase" placeholder="Número">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Item</label>
+                                        <input type="number" class="form-control" id="InputItem">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Descrição do Custo</label>
+                                        <input type="date" class="form-control" id="InputDescCusto">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row col-md-12"> 
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Valor Previsto</label>
+                                        <input type="date" class="form-control" id="InputValorPrev" placeholder="0,00">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
+                                    <div class="form-group">
+                                        <label>Valor Efetivo</label>;
+                                        <input class="form-control" id="InputdtValorEf" placeholder="0,00">
+                                    </div>
+                                </div>
+                            </div>
+                            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                            <div class="form-row col-md-12"> 
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success btn-default">Cadastrar</button>
+                                        <a href="<?= $this->url(array('controller' => 'Detalhar', 'action' => 'custos'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

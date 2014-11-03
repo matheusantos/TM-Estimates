@@ -112,6 +112,9 @@
           <viewControllerScriptsDirectory forControllerName="Detalhar">
             <viewScriptFile forActionName="ndfase"/>
           </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Detalhar">
+            <viewScriptFile forActionName="ndcusto"/>
+          </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
         <viewFiltersDirectory enabled="false"/>
