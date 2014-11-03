@@ -106,6 +106,9 @@
           <viewControllerScriptsDirectory forControllerName="FuncaoTransacao">
             <viewScriptFile forActionName="novo"/>
           </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Fase">
+            <viewScriptFile forActionName="novo"/>
+          </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
         <viewFiltersDirectory enabled="false"/>
