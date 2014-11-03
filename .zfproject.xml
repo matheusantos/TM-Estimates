@@ -58,9 +58,6 @@
         <controllerFile controllerName="FuncaoDados">
           <actionMethod actionName="index"/>
         </controllerFile>
-        <controllerFile controllerName="FuncaoProcessos">
-          <actionMethod actionName="index"/>
-        </controllerFile>
         <controllerFile controllerName="FuncaoTransacao">
           <actionMethod actionName="index"/>
         </controllerFile>
@@ -102,9 +99,6 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Detalhar">
             <viewScriptFile forActionName="fases"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="FuncaoTransacao">
-            <viewScriptFile forActionName="novo"/>
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Fase">
             <viewScriptFile forActionName="novo"/>
