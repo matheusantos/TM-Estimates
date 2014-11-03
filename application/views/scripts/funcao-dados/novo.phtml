@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h3><span class="glyphicon glyphicon-th-list"></span> Novo Projeto</h3>
+    <h3><span class="glyphicon glyphicon-th-list"></span> Nova Função de dados</h3>
 </div>
 <div class="row">
     <div class="row clearfix top-buffer">
@@ -7,51 +7,57 @@
             <div class="col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><strong>Projeto</strong></h3>
+                        <h3 class="panel-title"><strong>Função de dados</strong></h3>
                     </div>
                     <div class="panel-body">
                         <form role="form">
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
-                                    <label for="NomeProjeto">Nome Projeto</label>
-                                    <input type="text" class="form-control" id="exampleInputNome" placeholder="Insira Nome Projeto">
+                                    <label>Cod. Projeto</label>
+                                    <input type="number" class="form-control" id="exampleInputCodProj" placeholder="Código do Projeto">
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="col-md-offset-0">
-                                    <label for="DataCricao">Data da Criação</label>
-                                    <input type="date" class="form-control" id="exampleInputCriacao" >
-                                </div>
+                            <div class="col-md-4 form-groups">
+                                <label>Função</label>
+                                <select class="form-control">
+                                    <option value  = "ALI" class="form-control"> ALI </option>
+                                    <option value = "F" class="form-control"> AIE </option>
+                                    <option value = "F" class="form-control"> AEC </option>
+                                </select>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
-                                    <label for="DataFim">Data da Finalização</label>
-                                    <input type="date" class="form-control" id="exampleInputFim" >
+                                    <label>Descrição</label>
+                                    <input type="text" class="form-control" id="exampleInputDesc" placeholder="Descrição">
                                 </div>
                             </div>
                             <br><br><br><br>
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
-                                    <label for="situacao">Situação</label>
-                                    <input type="text" class="form-control" id="exampleInputSituacao" placeholder="Insira a situação">
+                                    <label>Tipos de registro</label>
+                                    <input type="number" class="form-control" id="exampleInputTipReg" placeholder="Tipo de registro">
                                 </div>
                             </div>
-
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
-                                    <label for="cargahoraria">Carga Horaria</label>
-                                    <input type="time" class="form-control" id="exampleInputSituacao" placeholder="Insira a Carga Horaria">
+                                    <label>Tipos de dados</label>
+                                    <input type="number" class="form-control" id="exampleInputTipDad" placeholder="Tipos de dados">
                                 </div>
                             </div>
-
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
-                                    <label for="CustoHora">Custo Hora</label>;
-                                    <input type="text" class="form-control" id="exampleInputSituacao" placeholder="Insira o Custo Hora">
+                                    <label>Complexidade</label>
+                                    <input type="text" class="form-control" id="exampleInputComplex" placeholder="Complexidade">
                                 </div>
                             </div>
-
+                            <br><br><br><br>
+                            <div class="col-md-4">
+                                <div class="col-md-offset-0">
+                                    <label>Pontos de função</label>
+                                    <input type="text" class="form-control" id="exampleInputDesc" placeholder="Pontos de função">
+                                </div>
+                            </div>
                             <br><br><br><br>
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
