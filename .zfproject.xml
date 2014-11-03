@@ -109,6 +109,9 @@
           <viewControllerScriptsDirectory forControllerName="Detalhar">
             <viewScriptFile forActionName="ndcusto"/>
           </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Vendas">
+            <viewScriptFile forActionName="pagamento"/>
+          </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
         <viewFiltersDirectory enabled="false"/>
