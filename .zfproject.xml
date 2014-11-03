@@ -103,6 +103,9 @@
           <viewControllerScriptsDirectory forControllerName="Detalhar">
             <viewScriptFile forActionName="fases"/>
           </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="FuncaoTransacao">
+            <viewScriptFile forActionName="novo"/>
+          </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
         <viewFiltersDirectory enabled="false"/>
