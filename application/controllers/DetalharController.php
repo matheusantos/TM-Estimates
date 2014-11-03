@@ -23,8 +23,15 @@ class DetalharController extends Zend_Controller_Action
         $this->_helper->layout->setlayout("userlayout");
     }
 
+    public function ndfaseAction()
+    {
+        $this->_helper->layout->setlayout("userlayout");
+    }
+
 
 }
+
+
 
 
 
