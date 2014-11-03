@@ -19,14 +19,20 @@
 
   html,body{
     background-color: #f8f8f8;
-    height: auto;
+    /*
+    height: 100%;
+    overflow: hidden;
+    */
+    height:auto;
+    overflow:auto;
   }
     .affix-content .container .page-header{
     margin-top: 0;
   }
   .sidebar-nav{
         position:fixed; 
-        width:100%;
+        /*width:100%;*/
+        width:inherit;
   }
   .affix-sidebar{
     padding-right:0; 
@@ -39,7 +45,9 @@
     margin-right: 0;    
   } 
   .affix-content{
-    background-color:white; 
+    background-color:white;
+    margin-bottom: 50px; /* devido ao footer fixo */
+    /*min-height: 100%;*/
   } 
   .sidebar-nav .navbar .navbar-collapse {
     padding: 0;
