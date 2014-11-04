@@ -118,6 +118,12 @@
           <viewControllerScriptsDirectory forControllerName="index">
             <viewScriptFile forActionName="pacotes"/>
           </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="contagem">
+            <viewScriptFile forActionName="detalhada"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="contagem">
+            <viewScriptFile forActionName="estimada"/>
+          </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
         <viewFiltersDirectory enabled="false"/>

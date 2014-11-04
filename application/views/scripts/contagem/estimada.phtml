@@ -1,0 +1,10 @@
+<div class="page-header">
+    <h3><span class="glyphicon glyphicon-th-list"></span> Contagem estimada</h3>
+</div>
+<div id="view-content">
+    <ul class="nav nav-pills nav-divider" role="tablist">
+        <li role="presentation"><a href="<?= $this->url(array('controller' => 'contagem', 'index' => 'detalhada'), null, true) ?>">Indicativa</a></li>
+        <li role="presentation"><a href="<?= $this->url(array('controller' => 'contagem', 'action' => 'detalhada'), null, true) ?>">Detalhada</a></li>
+        <li role="presentation" class="active"><a href="<?= $this->url(array('controller' => 'contagem', 'action' => 'estimada'), null, true) ?>">Estimada</a></li>
+    </ul>
+</div>
