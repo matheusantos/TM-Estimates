@@ -20,3 +20,4 @@ function setVisaE(){
 function setVisa(){
     location.href="http://localhost/TM-Estimates/public/vendas/pagamento";
 }
+

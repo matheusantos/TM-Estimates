@@ -19,6 +19,7 @@
 
   html,body{
     background-color: #f8f8f8;
+   
     /*
     height: 100%;
     overflow: hidden;
@@ -69,4 +70,88 @@
     padding-top: 12px;
     padding-bottom: 12px;
   }  
+  
+  /* aqui é para o menu do calendario(feito por wadson)*/
+ *{ 
+padding: 0;
+margin: 0;
+
+}
+
+ul li{
+list-style:none;
+}
+
+a{
+text-decoration:none;
+color: #fff;
+}
+
+
+div.cAlign{
+margin:0 auto;
+display: block;
+width: 890px;
+
+}
+
+div#menu{
+
+width: 890px;
+height: 38px;
+background-color: #c3c3c3;
+}
+
+div#menu ul li{
+
+display:inline-block;
+position:relative;
+padding:0;
+margin:0;
+
+}
+
+div#menu ul li a{
+display:block;
+padding: 9px 10px;
+margin: 0;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+font-size: 14px;
+text-transform:capitalize;
+color: #fff;
+
+transition:200ms all linear;
+-webkit-transition:200ms all linear;
+-moz-transition:200ms all linear;
+-o-transition:200ms all linear;
+-ms-transition:200ms all linear;
+-khtml-transition:200ms all linear;
+
+}
+div#menu ul li a:hover{
+background-color: black;
+transition:200ms all linear;
+-webkit-transition:200ms all linear;
+-moz-transition:200ms all linear;
+-o-transition:200ms all linear;
+-ms-transition:200ms all linear;
+-khtml-transition:200ms all linear;
+}
+
+div#menu ul li ul{
+position:absolute;
+display:none;
+width:200px;
+background-color: #c3c3c3;
+}
+
+div#menu ul li ul li{
+float: left;
+width: 100%;
+
+}
+
+div#menu ul li:hover ul{
+display:block;
+}
 }
