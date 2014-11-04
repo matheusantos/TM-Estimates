@@ -17,12 +17,18 @@ class IndexController extends Zend_Controller_Action
         // action body
         //$this->_helper->layout->setlayout("userlayout");
     }
-
-    public function testeAction()
+    
+    public function sobreAction()
     {
         // action body
+        //$this->_helper->layout->setlayout("userlayout");
     }
-
+    
+        public function pacotesAction()
+    {
+        // action body
+        //$this->_helper->layout->setlayout("userlayout");
+    }
 }
 
 

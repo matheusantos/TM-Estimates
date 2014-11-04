@@ -112,6 +112,7 @@
           <viewControllerScriptsDirectory forControllerName="Vendas">
             <viewScriptFile forActionName="pagamento"/>
           </viewControllerScriptsDirectory>
+<<<<<<< HEAD
           <viewControllerScriptsDirectory forControllerName="calendario">
             <viewScriptFile forActionName="janeiro"/>
           </viewControllerScriptsDirectory>
@@ -120,6 +121,13 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="vendas">
             <viewScriptFile forActionName="pagamentoDebito"/>
+=======
+          <viewControllerScriptsDirectory forControllerName="index">
+            <viewScriptFile forActionName="sobre"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="index">
+            <viewScriptFile forActionName="pacotes"/>
+>>>>>>> origin/master
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

@@ -12,27 +12,33 @@
                     <div class="panel-body">
                         <form role="form">
                             <div class="col-md-4">
-                                <div class="col-md-offset-0">
+                                <div class="form-group">
                                     <label>Projeto</label>
-                                    <input type="text" class="form-control" id="exampleInputProj" placeholder="Projeto">
+                                    <select class="form-control">
+                                        <option value  = "" class="form-control"> </option>
+                                    </select>
+                                    <!--<input type="" class="form-control" id="exampleInputProj" placeholder="Projeto">-->
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="col-md-offset-0">
-                                    <label>Função</label>
-                                    <input type="text" class="form-control" id="exampleInputFunc" placeholder="Função">
+                                <div class="form-group">
+                                    <label>Recurso</label>
+                                    <select class="form-control">
+                                        <option value  = "" class="form-control"> </option>
+                                    </select>
+                                    <!--<input type="text" class="form-control" id="exampleInputFunc" placeholder="Função">-->
                                 </div>
                             </div>
 
                             <div class="col-md-4">
-                                <div class="col-md-offset-0">
-                                    <label>Quantidade</label>
+                                <div class="form-group">
+                                    <label>Quantidade de Recursos</label>
                                     <input type="number" class="form-control" id="exampleInputQuant" placeholder="Quantidade">
                                 </div>
                             </div>
                             <br><br><br><br>
                             <div class="col-md-4">
-                                <div class="col-md-offset-0">
+                                <div class="form-group">
                                     <button type="submit" class="btn btn-success btn-default">Cadastrar</button>
                                     <a href="<?= $this->url(array('controller' => 'equipe', 'action' => 'index'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
                                 </div>
