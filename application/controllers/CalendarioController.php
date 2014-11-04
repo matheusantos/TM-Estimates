@@ -11,6 +11,7 @@ class CalendarioController extends Zend_Controller_Action
     public function indexAction()
     {
         // action body
+        $this->_helper->layout->setlayout("userlayout");
     }
 
 
