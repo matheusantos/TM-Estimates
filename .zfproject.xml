@@ -112,6 +112,15 @@
           <viewControllerScriptsDirectory forControllerName="Vendas">
             <viewScriptFile forActionName="pagamento"/>
           </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="calendario">
+            <viewScriptFile forActionName="janeiro"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="calendario">
+            <viewScriptFile forActionName="fevereiro"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="vendas">
+            <viewScriptFile forActionName="pagamentoDebito"/>
+          </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
         <viewFiltersDirectory enabled="false"/>

@@ -12,3 +12,11 @@ function setPJ(){
 function setPF(){
     location.href="http://localhost/TM-Estimates/public/cadastro-user/index";
 }
+
+function setVisaE(){
+    location.href="http://localhost/TM-Estimates/public/vendas/pagamento-debito";
+}
+
+function setVisa(){
+    location.href="http://localhost/TM-Estimates/public/vendas/pagamento";
+}

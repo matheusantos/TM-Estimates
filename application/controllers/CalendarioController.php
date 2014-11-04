@@ -14,6 +14,16 @@ class CalendarioController extends Zend_Controller_Action
         $this->_helper->layout->setlayout("userlayout");
     }
 
-
+    public function janeiroAction()
+    {
+        // action body
+        $this->_helper->layout->setlayout("userlayout");
+    }
+    
+    public function fevereiroAction()
+    {
+        // action body
+        $this->_helper->layout->setlayout("userlayout");
+    }
 }
 
