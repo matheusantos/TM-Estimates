@@ -25,5 +25,19 @@ class CalendarioController extends Zend_Controller_Action
         // action body
         $this->_helper->layout->setlayout("userlayout");
     }
+    
+    public function marcoAction()
+    {
+        // action body
+        $this->_helper->layout->setlayout("userlayout");
+    }
+    
+    public function abrilAction()
+    {
+        // action body
+        $this->_helper->layout->setlayout("userlayout");
+    }
+    
+   
 }
 
