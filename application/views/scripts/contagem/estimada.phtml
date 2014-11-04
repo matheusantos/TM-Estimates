@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h3><span class="glyphicon glyphicon-th-list"></span> Contagem estimada</h3>
+    <h3><span class="glyphicon glyphicon-th-list"></span> Contagem Estimada</h3>
 </div>
 <div id="view-content">
     <ul class="nav nav-pills nav-divider" role="tablist">
@@ -8,3 +8,89 @@
         <li role="presentation" class="active"><a href="<?= $this->url(array('controller' => 'contagem', 'action' => 'estimada'), null, true) ?>">Estimada</a></li>
     </ul>
 </div>
+
+<form role="form">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Pontos de função (Detalhe)</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label>Arquivos Lógicos Internos</label>
+                                <span class="form-control input-xlarge uneditable-input"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label>Arquivos de Iterface Externa</label>
+                                <span class="form-control input-xlarge uneditable-input"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label>Entradas Externas</label>
+                                <span class="form-control input-xlarge uneditable-input"></span>
+                            </div>
+                        </div>
+                        <br/><br/><br/><br/>
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label>Saídas Externas</label>
+                                <span class="form-control input-xlarge uneditable-input"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label>Consultas Externas</label>
+                                <span class="form-control input-xlarge uneditable-input"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label>Conversão de Dados</label>
+                                <span class="form-control input-xlarge uneditable-input"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form role="form">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Pontos de função (Resumo)</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label>Não Ajustados</label>
+                                <span class="form-control input-xlarge uneditable-input"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label>Fator de Ajuste</label>
+                                <span class="form-control input-xlarge uneditable-input"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label>Total de Pontos</label>
+                                <span class="form-control input-xlarge uneditable-input"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</form>

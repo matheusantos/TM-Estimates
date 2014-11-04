@@ -51,8 +51,9 @@
                 <img src="img/pacbasic.jpg" alt="">
             </div>
             <h2>Básico</h2>
-            <p class="text-justify"> O pacote básico fornecerá acesso a um administrador,
-                podendo cadastrar até três projetos. </p>
+            <div class="text-justify">
+                <p class="text-justify"> O pacote básico fornecerá acesso a um administrador, podendo cadastrar até três projetos. </p>
+            </div>
             <p><a class="btn" href="<?= $this->url(array('controller' => 'identifica', 'action' => 'index'), null, true) ?>">Compre Aqui! &raquo;</a></p>
         </div>
         <div class="col-md-4">
@@ -60,7 +61,9 @@
                 <img src="img/pacinter.jpg" alt="">
             </div>
             <h2>Intermediário</h2>
-            <p class="text-justify">O pacote intermediário fornecerá acesso a três administradores, podendo cadastrar até oito projetos.</p>
+            <div class="text-justify">
+                <p class="text-justify">O pacote intermediário fornecerá acesso a três administradores, podendo cadastrar até oito projetos.</p>
+            </div>
             <p><a class="btn" href="<?= $this->url(array('controller' => 'identifica', 'action' => 'index'), null, true) ?>">Compre Aqui! &raquo;</a></p>
         </div>
         <div class="col-md-4">
@@ -68,16 +71,18 @@
                 <img src="img/pacpremium.jpg" alt="">
             </div>
             <h2>Premium</h2>
-            <p> O pacote intermediário fornecerá acesso a cinco administradores, podendo cadastrar até doze projetos.</p>
+            <div class="text-justify">
+                <p> O pacote intermediário fornecerá acesso a cinco administradores, podendo cadastrar até doze projetos.</p>
+            </div>
             <p class="text-justify"><a class="btn" href="<?= $this->url(array('controller' => 'identifica', 'action' => 'index'), null, true) ?>">Compre Aqui! &raquo;</a></p>
         </div>
     </div>
 </div><!-- /.container -->
 
 <script>
-    !function ($) {
-        $(function () {
-            
+    !function($) {
+        $(function() {
+
             $('#myCarousel').carousel()
         })
     }(window.jQuery)
