@@ -129,6 +129,12 @@
             <viewScriptFile forActionName="pacotes"/>
 >>>>>>> origin/master
           </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="contagem">
+            <viewScriptFile forActionName="detalhada"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="contagem">
+            <viewScriptFile forActionName="estimada"/>
+          </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
         <viewFiltersDirectory enabled="false"/>

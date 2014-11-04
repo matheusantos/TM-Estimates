@@ -12,7 +12,14 @@ class ContagemController extends Zend_Controller_Action
     {
         $this->_helper->layout->setlayout("userlayout");
     }
-
+    public function detalhadaAction()
+    {
+        $this->_helper->layout->setlayout("userlayout");
+    }
+        public function estimadaAction()
+    {
+        $this->_helper->layout->setlayout("userlayout");
+    }
 
 }
 
