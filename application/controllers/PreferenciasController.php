@@ -1,6 +1,6 @@
 <?php
 
-class FuncaoProcessosController extends Zend_Controller_Action
+class PreferenciasController extends Zend_Controller_Action
 {
 
     public function init()
@@ -10,7 +10,7 @@ class FuncaoProcessosController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        $this->_helper->layout->setlayout("userlayout");
+        // action body
     }
 
 

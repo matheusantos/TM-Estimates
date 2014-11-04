@@ -1,0 +1,75 @@
+<div class="page-header">
+    <h3><span class="glyphicon glyphicon-th-list"></span> Nova Função de dados</h3>
+</div>
+<div class="row">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Função de dados</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="col-md-4">
+                                <div class="col-md-offset-0">
+                                    <label>Cod. Projeto</label>
+                                    <input type="number" class="form-control" id="exampleInputCodProj" placeholder="Código do Projeto">
+                                </div>
+                            </div>
+                            <div class="col-md-4 form-groups">
+                                <label>Função</label>
+                                <select class="form-control">
+                                    <option value  = "ALI" class="form-control"> ALI </option>
+                                    <option value = "F" class="form-control"> AIE </option>
+                                    <option value = "F" class="form-control"> AEC </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="col-md-offset-0">
+                                    <label>Descrição</label>
+                                    <input type="text" class="form-control" id="exampleInputDesc" placeholder="Descrição">
+                                </div>
+                            </div>
+                            <br><br><br><br>
+                            <div class="col-md-4">
+                                <div class="col-md-offset-0">
+                                    <label>Tipos de registro</label>
+                                    <input type="number" class="form-control" id="exampleInputTipReg" placeholder="Tipo de registro">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md-offset-0">
+                                    <label>Tipos de dados</label>
+                                    <input type="number" class="form-control" id="exampleInputTipDad" placeholder="Tipos de dados">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md-offset-0">
+                                    <label>Complexidade</label>
+                                    <input type="text" class="form-control" id="exampleInputComplex" placeholder="Complexidade">
+                                </div>
+                            </div>
+                            <br><br><br><br>
+                            <div class="col-md-4">
+                                <div class="col-md-offset-0">
+                                    <label>Pontos de função</label>
+                                    <input type="text" class="form-control" id="exampleInputDesc" placeholder="Pontos de função">
+                                </div>
+                            </div>
+                            <br><br><br><br>
+                            <div class="col-md-4">
+                                <div class="col-md-offset-0">
+                                    <button type="submit" class="btn btn-success btn-default">Cadastrar</button>
+                                    
+                                    <a href="<?= $this->url(array('controller' => 'funcao-dados', 'action' => 'index'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

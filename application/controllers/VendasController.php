@@ -13,6 +13,13 @@ class VendasController extends Zend_Controller_Action
         // action body
     }
 
+    public function pagamentoAction()
+    {
+        // action body
+    }
+
 
 }
+
+
 

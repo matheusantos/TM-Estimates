@@ -1,0 +1,61 @@
+<div class="page-header">
+    <h3><span class="glyphicon glyphicon-th-list"></span> Nova Função de Transação</h3>
+</div>
+<div class="row">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Função de Transação</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="col-md-4">
+                                <div class="form-groups">
+                                    <label>Projeto</label>
+                                    <input type="number" class="form-control" id="exampleInputCodProj" placeholder="Código do Projeto">
+                                </div>
+                            </div>
+                            <div class="col-md-4 form-groups">
+                                <label>Função</label>
+                                <select class="form-control">
+                                    <option value  = "EE" class="form-control"> EE </option>
+                                    <option value = "SE" class="form-control"> SE </option>
+                                    <option value = "CE" class="form-control"> CE </option>
+                                    <option value = "EEC" class="form-control"> EEC </option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-groups">
+                                    <label>Descrição</label>
+                                    <input type="text" class="form-control" id="exampleInputDesc" placeholder="Descrição">
+                                </div>
+                            </div>
+                            <br><br><br><br>
+                            <div class="col-md-4">
+                                <div class="form-groups">
+                                    <label>Arquivos Referenciados</label>
+                                    <input type="number" class="form-control" id="exampleInputTipReg" placeholder="Tipo de registro">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-groups">
+                                    <label>Tipo de Dados</label>
+                                    <input type="number" class="form-control" id="exampleInputTipReg" placeholder="Tipo de registro">
+                                </div>
+                            </div>
+                            <br><br><br><br>
+                            <div class="col-md-4">
+                                <div class="form-groups">
+                                    <button type="submit" class="btn btn-success btn-default">Cadastrar</button>
+                                    <a href="<?= $this->url(array('controller' => 'funcao-transacao', 'action' => 'index'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

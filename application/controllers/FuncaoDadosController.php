@@ -12,7 +12,11 @@ class FuncaoDadosController extends Zend_Controller_Action
     {
         $this->_helper->layout->setlayout("userlayout");
     }
-
+    
+    public function novoAction()
+    {
+        $this->_helper->layout->setlayout("userlayout");
+    }
 
 }
 

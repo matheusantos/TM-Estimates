@@ -1,4 +1,67 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Detalhar</b> and script/action name <b>fases</b></p>
+<div class="page-header">
+    <h3><span class="glyphicon glyphicon-th-list"></span> Detalhar Fase</h3>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <a href="<?= $this->url(array('controller' => 'detalhar', 'action' => 'novo'), null, true) ?>" class="btn btn btn-success" role="button">Novo</a>
+        <button type="button" class="btn btn-primary">Editar</button>
+        <button type="button" class="btn btn-danger">Excluir</button>
+    </div>
+    <div class="col-md-3">
+        <form action="#" method="get">
+            <div class="input-group">
+                <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
+                <input class="form-control" id="system-search" name="q" placeholder="Search for" required>
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-list-search">
+            <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Descrição</th>
+                    <th>Percentual</th>
+                    <th>Dt. início (Prevista)</th>
+                    <th>Dt. Finalização (Prevista)</th>
+                    <th>Dt. início (Efetiva)</th>
+                    <th>Dt. Finalização (Efetiva)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sample</td>
+                    <td>Filter</td>
+                    <td>12-11-2011 11:11</td>
+                    <td>OK</td>
+                    <td>123</td>
+                    <td>Do some other</td>
+                    <td>12-11-2011 11:11</td>
+                </tr>
+                <tr>
+                    <td>Try</td>
+                    <td>It</td>
+                    <td>11-20-2013 08:56</td>
+                    <td>It</td>
+                    <td>Works</td>
+                    <td>Do some FILTERME</td>
+                    <td>12-11-2011 11:11</td>
+                </tr>
+                <tr>
+                    <td>§</td>
+                    <td>$</td>
+                    <td>%</td>
+                    <td>&</td>
+                    <td>/</td>
+                    <td>!</td>
+                    <td>12-11-2011 11:11</td>
+                </tr>
+            </tbody>
+        </table>   
+    </div>
 </div>

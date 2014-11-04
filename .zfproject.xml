@@ -58,9 +58,6 @@
         <controllerFile controllerName="FuncaoDados">
           <actionMethod actionName="index"/>
         </controllerFile>
-        <controllerFile controllerName="FuncaoProcessos">
-          <actionMethod actionName="index"/>
-        </controllerFile>
         <controllerFile controllerName="FuncaoTransacao">
           <actionMethod actionName="index"/>
         </controllerFile>
@@ -102,6 +99,18 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Detalhar">
             <viewScriptFile forActionName="fases"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Fase">
+            <viewScriptFile forActionName="novo"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Detalhar">
+            <viewScriptFile forActionName="ndfase"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Detalhar">
+            <viewScriptFile forActionName="ndcusto"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Vendas">
+            <viewScriptFile forActionName="pagamento"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
