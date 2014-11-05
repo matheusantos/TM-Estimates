@@ -1,5 +1,5 @@
 <br /><br /><br /><br />
-<form role="form" action="<?= $this->url(array('controller' => 'Preferencias', 'action' => 'pj'), null, true) ?>">
+<form role="form" action="<?= $this->url(array('controller' => 'cadastro-user', 'action' => 'salvar-dados'), null, true) ?>">
     <div class="row clearfix top-buffer">
         <div class="col-md-10">
             <div class="col-md-offset-2">
@@ -10,11 +10,11 @@
                     </div>
                     <div class="panel-body">
                         <label class="checkbox-inline">
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" onclick="setPF()">
+                            <input type="radio" name="pf" id="optionsRadios1" value="option1" onclick="setPF()">
                             Pessoa Física
                         </label>
                         <label class="checkbox-inline">
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked onclick="setPJ()">
+                            <input type="radio" name="pj" id="optionsRadios2" value="option2" checked onclick="setPJ()">
                             Pessoa Jurídica
                         </label>
                     </div>
@@ -34,19 +34,19 @@
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
                                 <label for="InputEmail1">Email</label>
-                                <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
+                                <input type="email" class="form-control" name="email" placeholder="Enter email">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
                                 <label for="InputPassword1">Senha</label>
-                                <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+                                <input type="password" class="form-control" name="senha" placeholder="Password">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
                                 <label for="sInputPassword1">Confirme a senha</label>
-                                <input type="password" class="form-control" id="InputPassword2" placeholder="Confirme a senha">
+                                <input type="password" class="form-control" name="confSenha" placeholder="Confirme a senha">
                             </div>
                         </div>
                     </div>
@@ -67,19 +67,19 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>CNPJ</label>
-                                    <input type="number" class="form-control" id="exampleInputCNPJ" placeholder="CNPJ">
+                                    <input type="number" class="form-control" name="cnpj" placeholder="CNPJ">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Razão Social</label>
-                                    <input type="text" class="form-control" id="InputRazSoc" placeholder="Razão Social">
+                                    <input type="text" class="form-control" name="razSocial" placeholder="Razão Social">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Nome Fantasia</label>
-                                    <input type="text" class="form-control" id="InputNomFan" placeholder="Nome Fantasia">
+                                    <input type="text" class="form-control" name="nomeFant" placeholder="Nome Fantasia">
                                 </div>
                             </div>
                         </div>
@@ -87,13 +87,13 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Telefone</label>
-                                    <input type="tel" class="form-control" id="InputTel" placeholder="(DDD) 1111-1111">
+                                    <input type="tel" class="form-control" name="tel" placeholder="(DDD) 1111-1111">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>FAX</label>
-                                    <input type="tel" class="form-control" id="InputCel" placeholder="(DDD) 1111-1111">
+                                    <input type="tel" class="form-control" name="fax" placeholder="(DDD) 1111-1111">
                                 </div>
                             </div>
                         </div>
@@ -115,13 +115,13 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>CEP</label>
-                                    <input type="cep" class="form-control" id="InputEnd" placeholder="11111-111">
+                                    <input type="cep" class="form-control" name="cep" placeholder="11111-111">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Cidade</label>
-                                    <span class="form-control input-xlarge uneditable-input"></span>
+                                    <input type="cidade" class="form-control" name="cidade" placeholder="cidade">
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -165,19 +165,19 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Rua</label>
-                                    <input type="text" class="form-control" id="InputRua" placeholder="Rua">
+                                    <input type="text" class="form-control" name="rua" placeholder="Rua">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Nº</label>
-                                    <input type="number" class="form-control" id="InputNum" placeholder="Nº">
+                                    <input type="number" class="form-control" name="numero" placeholder="Nº">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Bairro</label>
-                                    <input type="text" class="form-control" id="InputBairro" placeholder="Bairro">
+                                    <input type="text" class="form-control" name="bairro" placeholder="Bairro">
                                 </div>
                             </div>
                         </div>
