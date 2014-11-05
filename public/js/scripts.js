@@ -44,3 +44,12 @@ $(document).ready(function() {
         }
     });
 });
+
+// Masked Input Plugin
+
+jQuery(function($){
+   $("#date").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
+   $("#custo").mask("99.99");
+   $("#tin").mask("99-9999999");
+   $("#ssn").mask("999-99-9999");
+});
