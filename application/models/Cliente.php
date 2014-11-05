@@ -5,20 +5,18 @@ class Application_Model_Cliente extends Zend_Db_Table_Abstract {
     protected $_name = "cliente";
     protected $_primary = "idCliente";
 
-    public function inserir(array $request) {
+    public function inserir(array $request, $id) {
         $dados = array(
-            'Email' => $request['emal'],
-            'Senha' => $request['senha'],
-            'ClientePF_idCPF' => $request['ConfSenha'],
-            'ClientePJ_idCNPJ' => $request['custo'],
-            'EXCLUIDO' => '',
+            'Email' => $request['email'],
+            'Senha' => $request['ConfSenha'],
+            'EXCLUIDO' => FALSE,
             'Cep' => $request['cep'],
-            'Logradouro' => $request['custo'],
-            'Bairro' => $request['custo'],
-            'Numero' => $request['custo'],
-            'Complemento' => $request['custo'],
+            'Logradouro' => $request['rua'],
+            'Bairro' => $request['bairro'],
+            'Numero' => $request['numero'],
+            'Complemento' => NULL,
             'Cidade' => $request['cidade'],
-            'UF' => $request['custo'],
+            'UF' => $request['estado'],
         );
         return $this->insert($dados);
     }

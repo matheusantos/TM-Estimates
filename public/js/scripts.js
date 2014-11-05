@@ -49,7 +49,6 @@ $(document).ready(function() {
 
 jQuery(function($){
    $("#date").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
+   $("#CPF").mask("999.999.999-99",{placeholder:"999.999.999-9"});
    $("#custo").mask("99.99");
-   $("#tin").mask("99-9999999");
-   $("#ssn").mask("999-99-9999");
 });

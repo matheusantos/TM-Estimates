@@ -5,16 +5,19 @@ class Application_Model_ClientePF extends Zend_Db_Table_Abstract {
     protected $_name = "clientepf";
     protected $_primary = "idCPF";
 
-    public function inserir(array $request) {
+    public function inserir(array $request, $id) {
         $data = date('Y-m-d H:i:s');
         
         $dados = array(
             'Nome' => $request['nome'],
             'Sobrenome' => $request['sobrenome'],
-            'Telefone' => $request['custo'],
+            'Telefone' => $request['tel'],
             'datNasc' => $request['datNasc'],
             'Sexo' => $request['sexo'],
-            'dataCadastro' => $data
+            'dataCadastro' => $data,
+            'cliente_idCliente' => $id,
+            'CPF' => $request['cpf'],
+            'RG' => $request['rg']
         );
         return $this->insert($dados);
     }

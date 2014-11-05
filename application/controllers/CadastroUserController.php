@@ -26,7 +26,7 @@ class CadastroUserController extends Zend_Controller_Action
         
         $email = $cliente->_select('Email',$dados['email']);
         
-        if ($dados['email'] == $email['Email'])
+        if ($dados['email'] == $email[0]["Email"])
             die;
         
         $radio = $dados['radio_box'];
@@ -35,9 +35,9 @@ class CadastroUserController extends Zend_Controller_Action
         else
             $model = new Application_Model_ClientePJ();
         
-        $model->inserir($dados);
-        $cliente->inserir($dados);
+        $id = $cliente->inserir($dados);        
+        $model->inserir($dados, $id);
         
-        $this->_redirect("/login");
+        $this->_redirect("/cadastro-user");
     }
 }

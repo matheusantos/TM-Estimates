@@ -6,19 +6,47 @@ CREATE SCHEMA IF NOT EXISTS `estimatech_db` DEFAULT CHARACTER SET utf8 ;
 USE `estimatech_db` ;
 
 -- -----------------------------------------------------
+-- Table `estimatech_db`.`cliente`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`cliente` (
+  `idCliente` INT(11) NOT NULL AUTO_INCREMENT,
+  `Email` VARCHAR(45) NOT NULL,
+  `Senha` VARCHAR(45) NOT NULL,
+  `EXCLUIDO` TINYINT(1) NOT NULL,
+  `Cep` INT(11) NOT NULL,
+  `Logradouro` VARCHAR(45) NOT NULL,
+  `Bairro` VARCHAR(45) NOT NULL,
+  `Numero` INT(11) NOT NULL,
+  `Complemento` VARCHAR(45) NULL,
+  `Cidade` VARCHAR(45) NOT NULL,
+  `UF` VARCHAR(2) NOT NULL,
+  PRIMARY KEY (`idCliente`),
+  UNIQUE INDEX `email_UNIQUE` (`Email` ASC))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `estimatech_db`.`clientepf`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientepf` (
-  `idCPF` INT(11) NOT NULL AUTO_INCREMENT,
+  `idCPF` INT(11) NOT NULL,
   `Nome` VARCHAR(45) NOT NULL,
   `Sobrenome` VARCHAR(45) NOT NULL,
   `Telefone` INT(11) NOT NULL,
   `datNasc` DATE NOT NULL,
   `Sexo` CHAR(1) NOT NULL,
   `dataCadastro` DATETIME NOT NULL,
-  PRIMARY KEY (`idCPF`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  `cliente_idCliente` INT(11) NOT NULL,
+  `CPF` VARCHAR(14) NOT NULL,
+  `RG` VARCHAR(15) NOT NULL,
+  PRIMARY KEY (`idCPF`),
+  INDEX `fk_clientepf_cliente1_idx` (`cliente_idCliente` ASC),
+  CONSTRAINT `fk_clientepf_cliente1`
+    FOREIGN KEY (`cliente_idCliente`)
+    REFERENCES `estimatech_db`.`cliente` (`idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -29,9 +57,16 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientepj` (
   `NomeFantasia` VARCHAR(45) NOT NULL,
   `Telefone` INT(11) NOT NULL,
   `dataCadastro` DATETIME NOT NULL,
-  PRIMARY KEY (`idCNPJ`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  `cliente_idCliente` INT(11) NOT NULL,
+  `CNPJ` VARCHAR(18) NOT NULL,
+  PRIMARY KEY (`idCNPJ`),
+  INDEX `fk_clientepj_cliente1_idx` (`cliente_idCliente` ASC),
+  CONSTRAINT `fk_clientepj_cliente1`
+    FOREIGN KEY (`cliente_idCliente`)
+    REFERENCES `estimatech_db`.`cliente` (`idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -56,53 +91,18 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`compra` (
   `DataCompra` DATE NOT NULL,
   `Validade` DATE NOT NULL,
   `Pacote_idPacote` INT(11) NOT NULL,
-  PRIMARY KEY (`idCompra`),
+  `cliente_idCliente` INT(11) NOT NULL,
+  PRIMARY KEY (`idCompra`, `cliente_idCliente`),
   INDEX `fk_Compra_Pacote1` (`Pacote_idPacote` ASC),
+  INDEX `fk_compra_cliente1_idx` (`cliente_idCliente` ASC),
   CONSTRAINT `fk_Compra_Pacote1`
     FOREIGN KEY (`Pacote_idPacote`)
     REFERENCES `estimatech_db`.`pacote` (`idPacote`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `estimatech_db`.`cliente`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`cliente` (
-  `idCliente` INT(11) NOT NULL AUTO_INCREMENT,
-  `Email` VARCHAR(45) NOT NULL,
-  `Senha` VARCHAR(45) NOT NULL,
-  `Compra_idCompra` INT(11) NOT NULL,
-  `ClientePF_idCPF` INT(11) NULL DEFAULT NULL,
-  `ClientePJ_idCNPJ` INT(11) NULL DEFAULT NULL,
-  `EXCLUIDO` TINYINT(1) NOT NULL,
-  `Cep` INT(11) NULL DEFAULT NULL,
-  `Logradouro` VARCHAR(45) NULL DEFAULT NULL,
-  `Bairro` VARCHAR(45) NULL DEFAULT NULL,
-  `Numero` INT(11) NULL DEFAULT NULL,
-  `Complemento` VARCHAR(45) NULL DEFAULT NULL,
-  `Cidade` VARCHAR(45) NULL DEFAULT NULL,
-  `UF` VARCHAR(2) NULL DEFAULT NULL,
-  PRIMARY KEY (`idCliente`),
-  UNIQUE INDEX `email_UNIQUE` (`Email` ASC),
-  INDEX `fk_Cliente_ClientePF1` (`ClientePF_idCPF` ASC),
-  INDEX `fk_Cliente_ClientePJ1` (`ClientePJ_idCNPJ` ASC),
-  INDEX `fk_Cliente_Compra` (`Compra_idCompra` ASC),
-  CONSTRAINT `fk_Cliente_ClientePF1`
-    FOREIGN KEY (`ClientePF_idCPF`)
-    REFERENCES `estimatech_db`.`clientepf` (`idCPF`)
-    ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Cliente_ClientePJ1`
-    FOREIGN KEY (`ClientePJ_idCNPJ`)
-    REFERENCES `estimatech_db`.`clientepj` (`idCNPJ`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Cliente_Compra`
-    FOREIGN KEY (`Compra_idCompra`)
-    REFERENCES `estimatech_db`.`compra` (`idCompra`)
+  CONSTRAINT `fk_compra_cliente1`
+    FOREIGN KEY (`cliente_idCliente`)
+    REFERENCES `estimatech_db`.`cliente` (`idCliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -128,7 +128,8 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`projeto` (
     REFERENCES `estimatech_db`.`cliente` (`idCliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -140,7 +141,9 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`recursos` (
   `Carga_horaria` INT(11) NOT NULL,
   `Custo` DECIMAL(3,2) NOT NULL,
   PRIMARY KEY (`idRecursos`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
