@@ -38,6 +38,53 @@ class CalendarioController extends Zend_Controller_Action
         $this->_helper->layout->setlayout("userlayout");
     }
     
+    public function maioAction()
+    {
+        // action body
+        $this->_helper->layout->setlayout("userlayout");
+    }
+    
+    public function junhoAction()
+    {
+        // action body
+        $this->_helper->layout->setlayout("userlayout");
+    }
+    
+    public function julhoAction()
+    {
+        // action body
+        $this->_helper->layout->setlayout("userlayout");
+    }
+    
+    public function agostoAction()
+    {
+        // action body
+        $this->_helper->layout->setlayout("userlayout");
+    }
+    
+    public function setembroAction()
+    {
+        // action body
+        $this->_helper->layout->setlayout("userlayout");
+    }
+    
+    public function outubroAction()
+    {
+        // action body
+        $this->_helper->layout->setlayout("userlayout");
+    }
+    
+    public function novembroAction()
+    {
+        // action body
+        $this->_helper->layout->setlayout("userlayout");
+    }
+    
+    public function dezembroAction()
+    {
+        // action body
+        $this->_helper->layout->setlayout("userlayout");
+    }
    
 }
 
