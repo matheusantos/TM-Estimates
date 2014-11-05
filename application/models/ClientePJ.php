@@ -7,9 +7,9 @@ class Application_Model_Recursos extends Zend_Db_Table_Abstract {
 
     public function inserir(array $request) {
         $dados = array(
-            'Descricao' => $request['descricao'],
-            'Carga_horaria' => $request['carga_horaria'],
-            'Custo' => $request['custo'],
+            'idCNPJ' => $request['cnpj'],
+            'NomeFantasia' => $request['nomeFant'],
+            'Telefone' => $request['tel'],
         );
         return $this->insert($dados);
     }
