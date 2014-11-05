@@ -7,43 +7,20 @@
 			<br /><br />
 			<div id="menu">
 
-			<ul>
-		       &nbsp&nbsp&nbsp&nbsp 
-			<li><a href="http://localhost/TM-Estimates/public/calendario/janeiro">  Janeiro </a>
-                        </li>
-                        
-			<li><a href="http://localhost/TM-Estimates/public/calendario/fevereiro"> Fevereiro </a>
-                        </li>
-
-			<li><a href="http://localhost/TM-Estimates/public/calendario/marco"> Março</a>
-			</li>	
-                        
-			<li><a href="http://localhost/TM-Estimates/public/calendario/abril">Abril</a>
-                        </li>    
-                        
-			<li><a href="http://localhost/TM-Estimates/public/calendario/maio"> Maio </a>
-			</li>
-                        
-			<li><a href="http://localhost/TM-Estimates/public/calendario/junho"> Junho </a>
-			</li>
-                        
-			<li><a href="http://localhost/TM-Estimates/public/calendario/julho">Julho</a>    		
-			</li>
-                        
-                        <li><a href="http://localhost/TM-Estimates/public/calendario/agosto"> Agosto </a>
-                        </li>
-			
-                        <li><a href="http://localhost/TM-Estimates/public/calendario/setembro"> Setembro </a>
-                        </li>
-                        
-                        <li><a href="http://localhost/TM-Estimates/public/calendario/outubro"> Outubro </a>
-                        </li>
-                        
-                        <li><a href="http://localhost/TM-Estimates/public/calendario/novembro"> Novembro </a>
-                        </li>
-                        
-                        <li><a href="http://localhost/TM-Estimates/public/calendario/dezembro"> Dezembro </a>
-                        </li>
+			            <ul class="nav nav-pills nav-divider" role="tablist">
+                <li role="presentation"><a href="<?= $this->url(array('controller' => 'calendario', 'index' => 'index'), null, true) ?>">Janeiro</a></li>
+                <li role="presentation"><a href="<?= $this->url(array('controller' => 'calendario', 'action' => 'fevereiro'), null, true) ?>">Fevereiro</a></li>
+                <li role="presentation" class="active"><a href="<?= $this->url(array('controller' => 'calendario', 'action' => 'marco'), null, true) ?>">Março</a></li>
+                <li role="presentation"><a href="<?= $this->url(array('controller' => 'calendario', 'action' => 'abril'), null, true) ?>">Abril</a></li>
+                <li role="presentation"><a href="#">Maio</a></li>
+                <li role="presentation"><a href="#">Junho</a></li>
+                <li role="presentation"><a href="#">Julho</a></li>
+                <li role="presentation"><a href="#">Agosto</a></li>
+                <li role="presentation"><a href="#">Setembro</a></li>
+                <li role="presentation"><a href="#">Outubro</a></li>
+                <li role="presentation"><a href="#">Novembro</a></li>
+                <li role="presentation"><a href="#">Dezembro</a></li>
+            </ul>
                         
 			</div>	
 			</div>
