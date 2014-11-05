@@ -1,5 +1,5 @@
 <br /><br /><br /><br />
-<form role="form">
+<form role="form" method="post" action="<?= $this->url(array('controller' => 'cadastro-user', 'action' => 'salvar-dados'), null, true) ?>">
     <div class="row clearfix top-buffer">
         <div class="col-md-10">
             <div class="col-md-offset-2">
@@ -10,11 +10,11 @@
                     </div>
                     <div class="panel-body">
                         <label class="checkbox-inline">
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked onclick="setPF()">
+                            <input type="radio" name="pf" value="option1" checked onclick="setPF()">
                             Pessoa Física
                         </label>
                         <label class="checkbox-inline">
-                            <input type="radio" name="optionsRadios" id="pj" value="option2" onclick="setPJ()">
+                            <input type="radio" name="pj" value="option2" onclick="setPJ()">
                             Pessoa Jurídica
                         </label>
                     </div>
@@ -33,15 +33,15 @@
                     <div class="panel-body">
                         <div class="col-md-4">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
+                            <input type="email" class="form-control" name="email" placeholder="Enter email">
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Senha</label>
-                            <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+                            <input type="password" class="form-control" name="senha" placeholder="Password">
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">Confirme a senha</label>
-                            <input type="password" class="form-control" id="InputPassword2" placeholder="Confirme a senha">
+                            <input type="password" class="form-control" name="ConfSenha" placeholder="Confirme a senha">
                         </div>
                     </div>
                 </div> <!-- .panel -->
@@ -60,44 +60,44 @@
                         <div class="form-row">
                             <div class="col-md-4 form-group">
                                 <label>Nome</label>
-                                <input type="text" class="form-control" id="InputNome" placeholder="Nome">
+                                <input type="text" class="form-control" name="nome" placeholder="Nome">
                             </div>
                             <div class="col-md-8 form-group">
                                 <label>Sobrenome</label>
-                                <input type="text" class="form-control" id="InputNome" placeholder="Sobrenome">
+                                <input type="text" class="form-control" name="sobrenome" placeholder="Sobrenome">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-md-4 form-groups">
                                 <label>RG</label>
-                                <input type="rg" class="form-control" id="InputRG" placeholder="1111111111">
+                                <input type="rg" class="form-control" name="rg" placeholder="1111111111">
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>CPF</label>
-                                <input type="cpf" class="form-control" id="InputCPF" placeholder="111.111.111-11">
+                                <input type="cpf" class="form-control" name="cpf" placeholder="111.111.111-11">
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>Data de nascimento</label>
-                                <input type="date" class="form-control" id="InputDatNasc" placeholder="DD/MM/AAAA">
+                                <input type="date" class="form-control" name="datNasc" placeholder="DD/MM/AAAA">
                             </div>
                         </div>
                         <br /><br /><br /><br /><br /><br /><br />
                         <div class="form-row">
                             <div class="col-md-4">
                                 <label>Telefone</label>
-                                <input type="tel" class="form-control" id="InputTel" placeholder="(DDD) 1111-1111">
+                                <input type="tel" class="form-control" name="tel" placeholder="(DDD) 1111-1111">
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>Celular</label>
-                                <input type="tel" class="form-control" id="InputCel" placeholder="(DDD) 1111-1111">
+                                <input type="tel" class="form-control" name="cel" placeholder="(DDD) 1111-1111">
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>Sexo</label>
                                 <select class="form-control">
-                                    <option selected="" value="">Selecione o Sexo</option>
-                                    <option value="M" >Masculino</option>
-                                    <option value="F" >Feminino</option>
-                                    <option value="F" >Outros </option>
+                                    <option selected="" value="" name="sexo">Selecione o Sexo</option>
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Feminino</option>
+                                    <option value="F">Outros </option>
                                 </select>
                             </div>
                         </div>
@@ -118,11 +118,11 @@
                     <div class="panel-body">
                         <div class="col-md-4">
                             <label>CEP</label>
-                            <input type="cep" class="form-control" id="exampleInputEnd" placeholder="11111-111">
+                            <input type="cep" class="form-control" name="cep" placeholder="11111-111">
                         </div>
                         <div class="col-md-4">
                             <label>Cidade</label>
-                            <span class="form-control input-xlarge uneditable-input"></span>
+                            <input type="cep" class="form-control" name="cidade" placeholder="11111-111">
                         </div>
                         <div class="col-md-4">
                             <label>Estado</label>
@@ -161,18 +161,18 @@
                         <br/><br/><br/><br/>
                         <div class="col-md-4">
                             <label>Rua</label>
-                            <input type="text" class="form-control" id="exampleInputRua" placeholder="Rua">
+                            <input type="text" class="form-control" name="rua" placeholder="Rua">
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
                                 <label>Nº</label>
-                                <input type="number" class="form-control" id="exampleInputNum" placeholder="Nº">
+                                <input type="number" class="form-control" name="numero" placeholder="Nº">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
                                 <label>Bairro</label>
-                                <input type="text" class="form-control" id="exampleInputBairro" placeholder="Bairro">
+                                <input type="text" class="form-control" name="bairro" placeholder="Bairro">
                             </div>
                         </div>
                     </div>
