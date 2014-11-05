@@ -1,27 +1,37 @@
 <?php
 
-class Application_Model_Recursos extends Zend_Db_Table_Abstract {
+class Application_Model_Cliente extends Zend_Db_Table_Abstract {
 
-    protected $_name = "recursos";
-    protected $_primary = "idRecursos";
+    protected $_name = "cliente";
+    protected $_primary = "idCliente";
 
     public function inserir(array $request) {
         $dados = array(
-            'Descricao' => $request['descricao'],
-            'Carga_horaria' => $request['carga_horaria'],
-            'Custo' => $request['custo'],
+            'Email' => $request['emal'],
+            'Senha' => $request['senha'],
+            'ClientePF_idCPF' => $request['ConfSenha'],
+            'ClientePJ_idCNPJ' => $request['custo'],
+            'EXCLUIDO' => '',
+            'Cep' => $request['cep'],
+            'Logradouro' => $request['custo'],
+            'Bairro' => $request['custo'],
+            'Numero' => $request['custo'],
+            'Complemento' => $request['custo'],
+            'Cidade' => $request['cidade'],
+            'UF' => $request['custo'],
         );
         return $this->insert($dados);
     }
 
-    public function _select($where = null, $order = null, $limit = null) {
+    public function _select($where = null, $valor = null, $order = null, $limit = null) {
         $select = $this->select()
-				->from($this)
-				->order($order)
-				->limit($limit);
+                        ->from($this)
+                        ->order($order)
+                        ->limit($limit);
 		
         if (!is_null($where)) {
-            $select->where($where);
+            $select->where($where.'= ?', $valor);
+            //$select->where($where.'='. $valor);
         }
         return $this->fetchAll($select)->toArray();
     }

@@ -4,6 +4,7 @@ class ProjetoController extends Zend_Controller_Action {
 
     public function init() {
         /* Initialize action controller here */
+        //date_default_timezone_set("");
     }
 
     public function indexAction() {
@@ -27,6 +28,13 @@ class ProjetoController extends Zend_Controller_Action {
     public function novoAction() {
         // action body
         $this->_helper->layout->setlayout("userlayout");
+    }
+
+    public function salvarDadosAction() {
+        $dados = $this->_getAllParams();
+        $model = new Application_Model_Projeto();
+        $model->insert($dados);
+        $this->_redirect("/index");
     }
 
     public function getDadosAction() {
