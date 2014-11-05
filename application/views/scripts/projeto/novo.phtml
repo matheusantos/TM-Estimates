@@ -10,31 +10,31 @@
                         <h3 class="panel-title"><strong>Projeto</strong></h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'Preferencias', 'action' => 'get-Dados'), null, true) ?>">
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="NomeProjeto">Nome Projeto</label>
-                                    <input type="text" class="form-control" id="exampleInputNome" placeholder="Insira Nome Projeto">
+                                    <input type="text" class="form-control"  name="projetoTitulo" placeholder="Insira Nome Projeto">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="DataCricao">Data da Criação</label>
-                                    <input type="date" class="form-control" id="exampleInputCriacao" >
+                                    <input type="date" class="form-control" name="projetoDataCriacao" >
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="DataFim">Data da Finalização</label>
-                                    <input type="date" class="form-control" id="exampleInputFim" >
+                                    <input type="date" class="form-control" name="projetoDataFim" >
                                 </div>
                             </div>
                             <br><br><br><br>
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="situacao">Situação</label>
-                                    <input type="text" class="form-control" id="exampleInputSituacao" placeholder="Insira a situação">
+                                    <input type="text" class="form-control" name="projetoStatus" placeholder="Insira a situação">
                                 </div>
                             </div>
 
