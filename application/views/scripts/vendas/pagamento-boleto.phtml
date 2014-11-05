@@ -52,14 +52,16 @@
                     <div class="panel-body">
                         
                         <label class="checkbox-inline">
-                            <input type="radio" name="optionsRadios" id="visaE" value="option5" checked onclick="setVisaE()">
+                            <input type="radio" name="optionsRadios" 
+
+id="visaE" value="option5" onclick="setVisaE()">
                             <img src="/TM-Estimates/public/img/visaE.jpg" alt="" height="50" width="65">                            
                         </label>
 
                         <label class="checkbox-inline">
                             <input type="radio" name="optionsRadios" 
 
-id="boleto" value="option6" onclick="setBoleto()">
+id="boleto" value="option6" checked onclick="setBoleto()">
                             <img src="/TM-Estimates/public/img/boleto.jpg" alt="" height="50" width="65">                            
                         </label>
 
@@ -71,47 +73,7 @@ id="boleto" value="option6" onclick="setBoleto()">
         </div>
     </div>
 
-    <div class="row clearfix top-buffer">
-        <div class="col-md-10">
-            <div class="col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><strong>Escolha o seu Banco:</strong></h3>
- </div>
-                    <div class="panel-body">
-
-                            <div class="form-row">
-                            <div class="col-md-6">
-                                <label>Pagar pelo:</label>
-                                <select class="form-control">
-                                    <option value  = "1" class="form-
-
-control">Banco do Brasil</option>
-                                    <option value  = "2" class="form-
-
-control"> Banco do Bradesco </option>
-                                    <option value  = "3" class="form-
-
-control"> Banco Santander </option>
-                                    <option value  = "4" class="form-
-
-control"> Banco do Itaú </option>
-                                    <option value  = "5" class="form-
-
-control"> Banco do Nordeste </option>
-                                    
-                                    <option value  = "6" class="form-
-
-control"> Banco da Caixa </option>
-
-                                </select>
-                            </div>
- </div>
-                    </div> <!-- .panel-body -->
-                </div> <!-- .panel -->
-            </div>
-        </div>
-    </div>
+    
 
 
 
@@ -121,7 +83,7 @@ control"> Banco da Caixa </option>
             <div class="col-md-offset-2">
                 <button type="submit" class="btn btn-primary btn-
 
-default">Pagar no seu Banco</button>
+default">imprimir Boleto</button>
                 <button type="submit" class="btn btn-danger btn-
 
 default">Cancelar</button>
@@ -131,5 +93,4 @@ default">Cancelar</button>
 
 </form>
 <br/><br/><br/>
-</div>
 </div>

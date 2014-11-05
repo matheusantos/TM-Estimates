@@ -22,6 +22,26 @@ class VendasController extends Zend_Controller_Action
     {
         // action body
     }
+    
+    public function pagamentoBoletoAction()
+    {
+        // action body
+    }
+    
+    public function pagamentoMasterAction()
+    {
+        // action body
+    }
+    
+    public function pagamentoHiperAction()
+    {
+        // action body
+    }
+    
+    public function pagamentoAmericaAction()
+    {
+        // action body
+    }
 
 }
 

@@ -21,3 +21,18 @@ function setVisa(){
     location.href="http://localhost/TM-Estimates/public/vendas/pagamento";
 }
 
+function setBoleto(){
+    location.href="http://localhost/TM-Estimates/public/vendas/pagamento-boleto";
+}
+
+function setMaster(){
+    location.href="http://localhost/TM-Estimates/public/vendas/pagamento-master";
+}
+
+function setHiper(){
+    location.href="http://localhost/TM-Estimates/public/vendas/pagamento-hiper";
+}
+
+function setAmerica(){
+    location.href="http://localhost/TM-Estimates/public/vendas/pagamento-america";
+}
