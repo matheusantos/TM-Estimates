@@ -36,3 +36,15 @@ function setHiper(){
 function setAmerica(){
     location.href="http://localhost/TM-Estimates/public/vendas/pagamento-america";
 }
+
+function setPag(){
+    location.href="http://localhost/TM-Estimates/public/vendas/pagamento";
+}
+
+function setCancel(){
+    location.href="http://localhost/TM-Estimates/public/vendas";
+}
+
+function setIni(){
+    location.href="http://localhost/TM-Estimates/public";
+}
