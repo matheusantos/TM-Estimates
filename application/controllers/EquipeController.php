@@ -31,7 +31,18 @@ class EquipeController extends Zend_Controller_Action {
         $this->view->assign("dados", $dados); 
     }
 
-    public function novoAction() { }
+    public function novoAction() {
+        // action body
+        $this->_helper->layout->setlayout("userlayout");
+
+        $model = new Application_Model_Recursos();
+        $dados = $model->db_select();
+        $this->view->assign("dados", $dados);
+
+        $model1 = new Application_Model_Projeto();
+        $dados1 = $model1->db_select();
+        $this->view->assign("dados1", $dados1);
+    }
 
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();
