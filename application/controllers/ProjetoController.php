@@ -12,7 +12,7 @@ class ProjetoController extends Zend_Controller_Action {
 
         $this->_helper->layout->setlayout("userlayout");
 
-        $model = new Application_Model_Recursos();
+        $model = new Application_Model_Projeto();
         $dados = $model->_select();
         $this->view->assign("dados", $dados);
 
