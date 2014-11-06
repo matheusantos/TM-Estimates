@@ -40,7 +40,7 @@ class DetalharController extends Zend_Controller_Action {
         $dados = $this->_getAllParams();
         $model = new Application_Model_DetalharFase();
         $model->inserir($dados);
-        $this->_redirect("/detalhar");
+        $this->_redirect("/fase");
     }
 
 }
