@@ -26,17 +26,4 @@ class Application_Model_Fase extends Zend_Db_Table_Abstract {
         return $this->fetchAll($select)->toArray();
     }
 
-    public function update(array $request) {
-        $dados = array(
-            'Descricao' => $request['Desc'],
-        );
-        $where = $this->getAdapter()->quoteInto("contato_id = ?", $request['contato_id']);
-        $this->update($dados, $where);
-    }
-
-    public function delete($id) {
-        $where = $this->getAdapter()->quoteInto("contato_id = ?", $id);
-        $this->delete($where);
-    }
-
 }
