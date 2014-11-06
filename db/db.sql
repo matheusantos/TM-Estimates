@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`cliente` (
   PRIMARY KEY (`idCliente`),
   UNIQUE INDEX `email_UNIQUE` (`Email` ASC))
 ENGINE = InnoDB
-AUTO_INCREMENT = 2
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -68,7 +68,9 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientepf` (
     REFERENCES `estimatech_db`.`cliente` (`idCliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -136,7 +138,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `estimatech_db`.`fase`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`fase` (
-  `idFase` INT(11) NOT NULL,
+  `idFase` INT(11) NOT NULL AUTO_INCREMENT,
   `Descricao` VARCHAR(45) NOT NULL,
   `Percentual` INT(11) NULL DEFAULT NULL,
   `datIniPrev` DATETIME NULL DEFAULT NULL,
@@ -151,8 +153,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`fase` (
     REFERENCES `estimatech_db`.`cliente` (`idCliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -182,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`projeto` (
   `idProjeto` INT(11) NOT NULL AUTO_INCREMENT,
   `Titulo` VARCHAR(45) NOT NULL,
   `DataCriacao` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `DataFininalizacao` DATETIME NULL,
+  `DataFininalizacao` DATETIME NULL DEFAULT NULL,
   `Categoria` VARCHAR(45) NOT NULL,
   `Situacao` CHAR(1) NOT NULL,
   `UltimaAtualizacao` DATETIME NOT NULL,
@@ -195,7 +196,8 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`projeto` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 2;
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
