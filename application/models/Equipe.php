@@ -1,5 +1,5 @@
 <?php
-
+/*! Operações com a tabela Equipe */
 class Application_Model_Equipe extends Zend_Db_Table_Abstract {
 
     protected $_name = "equipe";

@@ -1,8 +1,8 @@
 <?php
-
+/*! Controler Registrar Ambiente */
 class AmbienteController extends Zend_Controller_Action {
 
-    var $usuario;
+    var $usuario; /**< recebe informações do usuário logado */
 
     public function init() {
         if (!Zend_Auth::getInstance()->hasIdentity()) {
@@ -26,6 +26,7 @@ class AmbienteController extends Zend_Controller_Action {
 
     public function novoAction() {  }
 
+    //!< grava os dados no banco de dados
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();
         $model = new Application_Model_Ambiente();

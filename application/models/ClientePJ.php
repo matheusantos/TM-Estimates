@@ -1,5 +1,5 @@
 <?php
-
+/*! Operações na tabela ClientePJ */
 class Application_Model_ClientePJ extends Zend_Db_Table_Abstract {
 
     protected $_name = "clientepj";

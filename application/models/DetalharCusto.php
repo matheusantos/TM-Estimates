@@ -1,5 +1,5 @@
 <?php
-
+/*! Operações na tabela DetalharCusto */
 class Application_Model_DetalharCusto extends Zend_Db_Table_Abstract {
 
     protected $_name = "custofase";

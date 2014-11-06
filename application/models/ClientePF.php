@@ -1,5 +1,5 @@
 <?php
-
+/*! Interações com a tabela ClientePF */
 class Application_Model_ClientePF extends Zend_Db_Table_Abstract {
 
     protected $_name = "clientepf";

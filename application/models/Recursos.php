@@ -1,5 +1,5 @@
 <?php
-
+/*! Operações na tabela Recursos */
 class Application_Model_Recursos extends Zend_Db_Table_Abstract {
 
     protected $_name = "recursos";

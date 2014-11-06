@@ -1,8 +1,8 @@
 <?php
-
+/*! Controler Registrar equipes */
 class EquipeController extends Zend_Controller_Action {
 
-    var $usuario;
+    private $usuario; /**< recebe informações do usuário logado */
 
     public function init() {
         if (!Zend_Auth::getInstance()->hasIdentity()) {
@@ -17,7 +17,8 @@ class EquipeController extends Zend_Controller_Action {
 
         $this->_helper->layout->setlayout("userlayout");
     }
-
+    
+    //!< carrega as equipes cadastradas
     public function indexAction() {
         $db = Zend_Db_Table_Abstract::getDefaultAdapter();
                 
@@ -30,7 +31,8 @@ class EquipeController extends Zend_Controller_Action {
         $dados = $db->fetchAll($var);
         $this->view->assign("dados", $dados); 
     }
-
+    
+    //!< consulta dos dados de Recursos e Proejtos
     public function novoAction() {
         // action body
         $this->_helper->layout->setlayout("userlayout");
@@ -44,6 +46,7 @@ class EquipeController extends Zend_Controller_Action {
         $this->view->assign("dados1", $dados1);
     }
 
+    //!< grava os dados no banco de dados
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();
         $model = new Application_Model_Equipe();

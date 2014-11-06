@@ -1,5 +1,5 @@
 <?php
-
+/*! Operações na tabela DetalharFase */
 class Application_Model_DetalharFase extends Zend_Db_Table_Abstract {
 
     protected $_name = "fase";
