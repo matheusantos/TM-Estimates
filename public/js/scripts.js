@@ -56,7 +56,26 @@ jQuery(function($){
    $("#rg").mask("99.999.999-9");
    $("#cep").mask("99.999-999");
    $("#cnpj").mask("99.999.999/9999-99");
-
-
+  
 });
 
+//validar email
+$(document).ready(function(){
+   $("#form1").submit(function(){
+      var email = $("#email").val();
+      if(email != "")
+      {
+         var filtro = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+         if(filtro.test(email))
+         {
+	   alert("Este endereço de email é válido!");
+	   return true;
+         } else {
+           alert("Este endereço de email não é válido!");
+           return false;
+         }
+      } else {
+	 alert('Digite um email!'); return false;
+      }
+   });
+});
