@@ -10,7 +10,7 @@ class Application_Model_DetalharCusto extends Zend_Db_Table_Abstract {
             'Descricao' => $request['Desc'],
             'ValorPrevisto' => $request['ValorPrev'],
             'ValorEfetivo' => $request['ValorEf'],
-            'fase_idFase' => "2"
+            'fase_idFase' => "6"
         );
         return $this->insert($dados);
     }

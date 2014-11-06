@@ -36,7 +36,9 @@
                      <?php foreach ($this->dados AS $key => $DetalharCusto): ?>
                     <tr>
                         <td><?= $DetalharCusto['idCustoFase'] ?></td>
-                        <td><?= $DetalharCusto['Descricao'] ?></td>
+                        <td><?= $DetalharCusto['descricaoFase'] ?></td>
+                        <td><?= $DetalharCusto['idCustoFase'] ?></td>
+                        <td><?= $DetalharCusto['descricaoCusto'] ?></td>
                         <td><?= $DetalharCusto['ValorPrevisto'] ?></td>
                         <td><?= $DetalharCusto['ValorEfetivo'] ?></td>
                     </tr>
