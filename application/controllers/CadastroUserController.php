@@ -38,6 +38,6 @@ class CadastroUserController extends Zend_Controller_Action
         $id = $cliente->inserir($dados);        
         $model->inserir($dados, $id);
         
-        $this->_redirect("/cadastro-user");
+        $this->_redirect("/login");
     }
 }

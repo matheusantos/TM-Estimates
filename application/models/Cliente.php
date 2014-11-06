@@ -8,7 +8,7 @@ class Application_Model_Cliente extends Zend_Db_Table_Abstract {
     public function inserir(array $request, $id) {
         $dados = array(
             'Email' => $request['email'],
-            'Senha' => $request['ConfSenha'],
+            'Senha' => md5($request['ConfSenha']),
             'EXCLUIDO' => FALSE,
             'Cep' => $request['cep'],
             'Logradouro' => $request['rua'],

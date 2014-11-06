@@ -8,6 +8,16 @@ class ProjetoController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
+
+        $auth = Zend_Auth::getInstance();
+        if ($auth->hasIdentity()) {
+            $identity = $auth->getIdentity();
+            $identity2 = get_object_vars($identity);
+        }
+        
+        echo var_dump($identity2['idCliente']);
+        die;
+
         // action body
 
         $this->_helper->layout->setlayout("userlayout");
