@@ -49,6 +49,14 @@ $(document).ready(function() {
 
 jQuery(function($){
    $("#date").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
-   $("#CPF").mask("999.999.999-99",{placeholder:"999.999.999-9"});
+   $("#CPF").mask("999.999.999-99",{placeholder:"_"});
    $("#custo").mask("99.99");
+   $("#tel").mask("(999) 999-9999");
+   $("#cel").mask("(999) 999-9999");
+   $("#rg").mask("99.999.999-9");
+   $("#cep").mask("99.999-999");
+   $("#cnpj").mask("99.999.999/9999-99");
+
+
 });
+
