@@ -24,6 +24,10 @@ class EquipeController extends Zend_Controller_Action
         $model = new Application_Model_Recursos();
         $dados = $model->_select();
         $this->view->assign("dados", $dados);
+        
+         $model1 = new Application_Model_Projeto();
+        $dados1 = $model1->db_select();
+        $this->view->assign("dados1", $dados1);
     }
 
 
