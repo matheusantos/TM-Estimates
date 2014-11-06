@@ -196,7 +196,7 @@ ENGINE = InnoDB;
 -- Table `estimatech_db`.`fase`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`fase` (
-  `idFase` INT NOT NULL,
+  `idFase` INT NOT NULL AUTO_INCREMENT,
   `Descricao` VARCHAR(45) NOT NULL,
   `Percentual` INT NULL,
   `datIniPrev` DATETIME NULL,
