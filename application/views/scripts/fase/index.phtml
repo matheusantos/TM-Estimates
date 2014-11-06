@@ -29,18 +29,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Sample</td>
-                    <td>Filter</td>
-                </tr>
-                <tr>
-                    <td>Try</td>
-                    <td>It</td>
-                </tr>
-                <tr>
-                    <td>§</td>
-                    <td>$</td>
-                </tr>
+                <?php foreach ($this->dados AS $key => $fase): ?>
+                    <tr>
+                        <td><?= $fase['idFase'] ?></td>
+                        <td><?= $fase['Descricao'] ?></td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>   
     </div>
