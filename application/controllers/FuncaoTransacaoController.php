@@ -5,16 +5,16 @@ class FuncaoTransacaoController extends Zend_Controller_Action
 
     public function init()
     {
-        /* Initialize action controller here */
-    }
-
-    public function indexAction()
-    {
+        if (!Zend_Auth::getInstance()->hasIdentity()) {
+            $this->_redirect('/login');
+        }
         $this->_helper->layout->setlayout("userlayout");
     }
 
-    public function novoAction(){
-        $this->_helper->layout->setlayout("userlayout");
+    public function indexAction() {
+
     }
+
+    public function novoAction(){ }
 }
 

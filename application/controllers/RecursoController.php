@@ -24,10 +24,7 @@ class RecursoController extends Zend_Controller_Action {
         $this->view->assign("dados", $dados);
     }
 
-    public function novoAction() {
-
-        $this->_helper->layout->setlayout("userlayout");
-    }
+    public function novoAction() { }
 
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();

@@ -49,10 +49,7 @@ class ProjetoController extends Zend_Controller_Action {
 //        $this->view->assign("projeto", $projeto);
 //    }
 
-    public function novoAction() {
-        // action body
-        $this->_helper->layout->setlayout("userlayout");
-    }
+    public function novoAction() { }
 
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();

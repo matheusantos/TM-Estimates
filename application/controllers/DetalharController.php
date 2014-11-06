@@ -3,17 +3,17 @@
 class DetalharController extends Zend_Controller_Action {
 
     public function init() {
-        /* Initialize action controller here */
+        if (!Zend_Auth::getInstance()->hasIdentity()) {
+            $this->_redirect('/login');
+        }
+        $this->_helper->layout->setlayout("userlayout");
     }
 
     public function indexAction() {
-        $this->_helper->layout->setlayout("userlayout");
+
     }
 
     public function custosAction() {
-        $this->_helper->layout->setlayout("userlayout");
-
-
         $db = Zend_Db_Table_Abstract::getDefaultAdapter();
         $fase = array(
             "idFase",
@@ -35,19 +35,17 @@ class DetalharController extends Zend_Controller_Action {
     }
 
     public function fasesAction() {
-        $this->_helper->layout->setlayout("userlayout");
-
         $model = new Application_Model_DetalharFase();
         $dados = $model->_select();
         $this->view->assign("dados", $dados);
     }
 
     public function ndfaseAction() {
-        $this->_helper->layout->setlayout("userlayout");
+
     }
 
     public function ndcustoAction() {
-        $this->_helper->layout->setlayout("userlayout");
+
     }
 
     public function showAction() {
