@@ -24,31 +24,19 @@
         <table class="table table-list-search">
             <thead>
                 <tr>
-                    <th>#</th>
                     <th>Projeto</th>
                     <th>Recurso</th>
                     <th>Quantidade de Recursos</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Sample</td>
-                    <td>Filter</td>
-                    <td>12-11-2011 11:11</td>
-                    <td>OK</td>
-                </tr>
-                <tr>
-                    <td>Try</td>
-                    <td>It</td>
-                    <td>11-20-2013 08:56</td>
-                    <td>It</td>
-                </tr>
-                <tr>
-                    <td>§</td>
-                    <td>$</td>
-                    <td>%</td>
-                    <td>&</td>
-                </tr>
+                <?php foreach ($this->dados AS $key => $equipe): ?>
+                    <tr>
+                        <td><?= $equipe['Recursos_idRecursos'] ?></td>
+                        <td><?= $equipe['Projeto_idProjeto'] ?></td>
+                        <td><?= $equipe['QtRecursos'] ?></td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>   
     </div>
