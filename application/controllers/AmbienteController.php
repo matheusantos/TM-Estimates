@@ -1,44 +1,39 @@
 <?php
 
-class AmbienteController extends Zend_Controller_Action
-{
+class AmbienteController extends Zend_Controller_Action {
 
-    public function init()
-    {
-        /* Initialize action controller here */
+    var $usuario;
+
+    public function init() {
+        if (!Zend_Auth::getInstance()->hasIdentity()) {
+            $this->_redirect('/login');
+        }
+
+        $auth = Zend_Auth::getInstance();
+        if ($auth->hasIdentity()) {
+            $identity = $auth->getIdentity();
+            $this->usuario = get_object_vars($identity);
+        }
+
+        $this->_helper->layout->setlayout("userlayout");
     }
 
-    public function indexAction()
-    {
-        // action body
-        $this->_helper->layout->setlayout("userlayout");
-        
+    public function indexAction() {
         $model = new Application_Model_Ambiente();
-        $dados = $model->_select();
+        $dados = $model->db_select('cliente_idCliente', $this->usuario['idCliente']);
         $this->view->assign("dados", $dados);
     }
-    
-        public function showAction() {
-        $model = new Application_Model_Ambiente();
-        $ambiente = $model->find($this->_getParam('id'));
-        $this->view->assign("ambiente", $ambiente);
-    }
 
-    public function novoAction()
-    {
-        // action body
+    public function novoAction() {
+
         $this->_helper->layout->setlayout("userlayout");
     }
-    
-        public function salvarDadosAction() {
+
+    public function salvarDadosAction() {
         $dados = $this->_getAllParams();
         $model = new Application_Model_Ambiente();
-        $model->inserir($dados);
+        $model->inserir($dados, $this->usuario['idCliente']);
         $this->_redirect("/ambiente");
     }
 
-
 }
-
-
-
