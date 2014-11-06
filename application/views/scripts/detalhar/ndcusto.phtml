@@ -10,7 +10,7 @@
                         <h3 class="panel-title"><strong>Custo</strong></h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'detalhar', 'action' => 'salvar-dados-cust'), null, true) ?>">
                             <div class="form-row col-md-12"> 
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -21,13 +21,13 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Item</label>
-                                        <input type="number" class="form-control" id="InputItem" name="Item">
+                                        <input type="text" class="form-control" id="InputItem" name="Item">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Descrição do Custo</label>
-                                        <input type="date" class="form-control" id="InputDescCusto" name="DescCusto">
+                                        <input type="text" class="form-control" id="InputDescCusto" name="Desc">
                                     </div>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Valor Previsto</label>
-                                        <input type="date" class="form-control" id="InputValorPrev" name="=ValorPrev" placeholder="0,00">
+                                        <input class="form-control" id="InputValorPrev" name="ValorPrev" placeholder="0,00">
                                     </div>
                                 </div>
                                 <div class="col-md-4 ">

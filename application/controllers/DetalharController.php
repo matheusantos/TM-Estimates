@@ -12,6 +12,10 @@ class DetalharController extends Zend_Controller_Action {
 
     public function custosAction() {
         $this->_helper->layout->setlayout("userlayout");
+        
+        $model = new Application_Model_DetalharCusto();
+        $dados = $model->_select();
+        $this->view->assign("dados", $dados);
     }
 
     public function fasesAction() {
@@ -36,11 +40,24 @@ class DetalharController extends Zend_Controller_Action {
         $this->view->assign("DetalharFase", $DetalharFase);
     }
     
+        public function showCustAction() {
+        $model = new Application_Model_DetalharCusto();
+        $DetalharCusto = $model->find($this->_getParam('id'));
+        $this->view->assign("DetalharCusto", $DetalharCusto);
+    }
+    
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();
         $model = new Application_Model_DetalharFase();
         $model->inserir($dados);
         $this->_redirect("/fase");
+    }
+    
+        public function salvarDadosCustAction() {
+        $dados = $this->_getAllParams();
+        $model = new Application_Model_DetalharCusto();
+        $model->inserir($dados);
+        $this->_redirect("/Detalhar/custos");
     }
 
 }
