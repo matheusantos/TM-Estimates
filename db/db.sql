@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`cliente` (
   PRIMARY KEY (`idCliente`),
   UNIQUE INDEX `email_UNIQUE` (`Email` ASC))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
+AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`ambiente` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -69,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientepf` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 2
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -153,7 +154,9 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`fase` (
     REFERENCES `estimatech_db`.`cliente` (`idCliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+AUTO_INCREMENT = 3
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -196,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`projeto` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 2
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -208,7 +211,14 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`recursos` (
   `Descricao` VARCHAR(45) NOT NULL,
   `Carga_horaria` INT(11) NOT NULL,
   `Custo` DECIMAL(3,2) NOT NULL,
-  PRIMARY KEY (`idRecursos`))
+  `cliente_idCliente` INT(11) NOT NULL,
+  PRIMARY KEY (`idRecursos`),
+  INDEX `fk_recursos_cliente1_idx` (`cliente_idCliente` ASC),
+  CONSTRAINT `fk_recursos_cliente1`
+    FOREIGN KEY (`cliente_idCliente`)
+    REFERENCES `estimatech_db`.`cliente` (`idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 

@@ -2,34 +2,37 @@
 
 class RecursoController extends Zend_Controller_Action {
 
+    var $usuario;
+
     public function init() {
-        /* Initialize action controller here */
+        if (!Zend_Auth::getInstance()->hasIdentity()) {
+            $this->_redirect('/login');
+        }
+
+        $auth = Zend_Auth::getInstance();
+        if ($auth->hasIdentity()) {
+            $identity = $auth->getIdentity();
+            $this->usuario = get_object_vars($identity);
+        }
+
+        $this->_helper->layout->setlayout("userlayout");
     }
 
     public function indexAction() {
-        // action body
-        $this->_helper->layout->setlayout("userlayout");
-
         $model = new Application_Model_Recursos();
-        $dados = $model->_select();
+        $dados = $model->db_select('cliente_idCliente', $this->usuario['idCliente']);
         $this->view->assign("dados", $dados);
     }
 
-    public function showAction() {
-        $model = new Application_Model_Recursos();
-        $recursos = $model->find($this->_getParam('id'));
-        $this->view->assign("recursos", $recursos);
-    }
-
     public function novoAction() {
-        // action body
+
         $this->_helper->layout->setlayout("userlayout");
     }
 
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();
         $model = new Application_Model_Recursos();
-        $model->inserir($dados);
+        $model->inserir($dados, $this->usuario['idCliente']);
         $this->_redirect("/recurso");
     }
 

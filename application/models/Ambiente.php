@@ -10,7 +10,7 @@ class Application_Model_Ambiente extends Zend_Db_Table_Abstract {
             'Linguagem' => $request['Linguagem'],
             'Esforco' => $request['HorPes'],
             'Produtividade' => $request['PesH'],
-            'Cliente_idCliente' => $id
+            'cliente_idCliente' => $id
         );
         return $this->insert($dados);
     }
