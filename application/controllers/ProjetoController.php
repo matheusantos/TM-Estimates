@@ -12,6 +12,10 @@ class ProjetoController extends Zend_Controller_Action {
 
         $this->_helper->layout->setlayout("userlayout");
 
+        $model = new Application_Model_Recursos();
+        $dados = $model->_select();
+        $this->view->assign("dados", $dados);
+
 //        // Instanciado Tabela Cidade
 //        $model_projeto = new Application_Model_Projeto;
 //
@@ -25,6 +29,12 @@ class ProjetoController extends Zend_Controller_Action {
 //        //die;
     }
 
+    public function showAction() {
+        $model = new Application_Model_Projeto();
+        $projeto = $model->find($this->_getParam('id'));
+        $this->view->assign("projeto", $projeto);
+    }
+
     public function novoAction() {
         // action body
         $this->_helper->layout->setlayout("userlayout");
@@ -33,8 +43,8 @@ class ProjetoController extends Zend_Controller_Action {
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();
         $model = new Application_Model_Projeto();
-        $model->insert($dados);
-        $this->_redirect("/index");
+        $model->inserir($dados);
+        $this->_redirect("/projeto");
     }
 
     public function getDadosAction() {
@@ -51,17 +61,17 @@ class ProjetoController extends Zend_Controller_Action {
     }
 
     /*
-    html {
-        
-        <?php $cidade = $this->cidade; ?>
-        <p>
-            <?php
-            foreach ($cidade as $key => $dado):
-                echo $dado['UF'];
-            endforeach;
-            ?>
-        </p>
-        
-    }
+      html {
+
+      <?php $cidade = $this->cidade; ?>
+      <p>
+      <?php
+      foreach ($cidade as $key => $dado):
+      echo $dado['UF'];
+      endforeach;
+      ?>
+      </p>
+
+      }
      */
 }
