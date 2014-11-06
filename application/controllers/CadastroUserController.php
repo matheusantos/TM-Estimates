@@ -24,7 +24,7 @@ class CadastroUserController extends Zend_Controller_Action
         
         $cliente = new Application_Model_Cliente();
         
-        $email = $cliente->_select('Email',$dados['email']);
+        $email = $cliente->db_select('Email', $dados['email']);
         
         if ($dados['email'] == $email[0]["Email"])
             die;

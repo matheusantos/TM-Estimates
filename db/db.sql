@@ -23,6 +23,27 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`cliente` (
   PRIMARY KEY (`idCliente`),
   UNIQUE INDEX `email_UNIQUE` (`Email` ASC))
 ENGINE = InnoDB
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `estimatech_db`.`ambiente`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`ambiente` (
+  `idAmbiente` INT(11) NOT NULL AUTO_INCREMENT,
+  `Linguagem` VARCHAR(45) NOT NULL,
+  `Esforco` DECIMAL(10,0) NOT NULL,
+  `Produtividade` DECIMAL(10,0) NOT NULL,
+  `cliente_idCliente` INT(11) NOT NULL,
+  PRIMARY KEY (`idAmbiente`),
+  INDEX `fk_ambiente_cliente1_idx` (`cliente_idCliente` ASC),
+  CONSTRAINT `fk_ambiente_cliente1`
+    FOREIGN KEY (`cliente_idCliente`)
+    REFERENCES `estimatech_db`.`cliente` (`idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -30,7 +51,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `estimatech_db`.`clientepf`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientepf` (
-  `idCPF` INT(11) NOT NULL,
+  `idCPF` INT(11) NOT NULL AUTO_INCREMENT,
   `Nome` VARCHAR(45) NOT NULL,
   `Sobrenome` VARCHAR(45) NOT NULL,
   `Telefone` INT(11) NOT NULL,
@@ -47,8 +68,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientepf` (
     REFERENCES `estimatech_db`.`cliente` (`idCliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -113,13 +133,56 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
+-- Table `estimatech_db`.`fase`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`fase` (
+  `idFase` INT(11) NOT NULL,
+  `Descricao` VARCHAR(45) NOT NULL,
+  `Percentual` INT(11) NULL DEFAULT NULL,
+  `datIniPrev` DATETIME NULL DEFAULT NULL,
+  `datFinPrev` DATETIME NULL DEFAULT NULL,
+  `datIniEfet` DATETIME NULL DEFAULT NULL,
+  `datFinEfet` DATETIME NULL DEFAULT NULL,
+  `cliente_idCliente` INT(11) NOT NULL,
+  PRIMARY KEY (`idFase`),
+  INDEX `fk_fase_cliente1_idx` (`cliente_idCliente` ASC),
+  CONSTRAINT `fk_fase_cliente1`
+    FOREIGN KEY (`cliente_idCliente`)
+    REFERENCES `estimatech_db`.`cliente` (`idCliente`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `estimatech_db`.`custofase`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`custofase` (
+  `idCustoFase` INT(11) NOT NULL AUTO_INCREMENT,
+  `Descricao` VARCHAR(45) NOT NULL,
+  `ValorPrevisto` DECIMAL(10,0) NOT NULL,
+  `ValorEfetivo` DECIMAL(10,0) NOT NULL,
+  `fase_idFase` INT(11) NOT NULL,
+  PRIMARY KEY (`idCustoFase`),
+  INDEX `fk_custoFase_fase1_idx` (`fase_idFase` ASC),
+  CONSTRAINT `fk_custoFase_fase1`
+    FOREIGN KEY (`fase_idFase`)
+    REFERENCES `estimatech_db`.`fase` (`idFase`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
 -- Table `estimatech_db`.`projeto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`projeto` (
   `idProjeto` INT(11) NOT NULL AUTO_INCREMENT,
   `Titulo` VARCHAR(45) NOT NULL,
   `DataCriacao` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `DataFininalizacao` DATETIME NOT NULL,
+  `DataFininalizacao` DATETIME NULL,
   `Categoria` VARCHAR(45) NOT NULL,
   `Situacao` CHAR(1) NOT NULL,
   `UltimaAtualizacao` DATETIME NOT NULL,
@@ -132,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`projeto` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+AUTO_INCREMENT = 2;
 
 
 -- -----------------------------------------------------
@@ -145,7 +208,6 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`recursos` (
   `Custo` DECIMAL(3,2) NOT NULL,
   PRIMARY KEY (`idRecursos`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -171,66 +233,6 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`equipe` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `estimatech_db`.`ambiente`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`ambiente` (
-  `idAmbiente` INT NOT NULL AUTO_INCREMENT,
-  `Linguagem` VARCHAR(45) NOT NULL,
-  `Esforco` DECIMAL(10,0) NOT NULL,
-  `Produtividade` DECIMAL(10,0) NOT NULL,
-  `cliente_idCliente` INT(11) NOT NULL,
-  PRIMARY KEY (`idAmbiente`),
-  INDEX `fk_ambiente_cliente1_idx` (`cliente_idCliente` ASC),
-  CONSTRAINT `fk_ambiente_cliente1`
-    FOREIGN KEY (`cliente_idCliente`)
-    REFERENCES `estimatech_db`.`cliente` (`idCliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `estimatech_db`.`fase`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`fase` (
-  `idFase` INT NOT NULL AUTO_INCREMENT,
-  `Descricao` VARCHAR(45) NOT NULL,
-  `Percentual` INT NULL,
-  `datIniPrev` DATETIME NULL,
-  `datFinPrev` DATETIME NULL,
-  `datIniEfet` DATETIME NULL,
-  `datFinEfet` DATETIME NULL,
-  `cliente_idCliente` INT(11) NOT NULL,
-  PRIMARY KEY (`idFase`),
-  INDEX `fk_fase_cliente1_idx` (`cliente_idCliente` ASC),
-  CONSTRAINT `fk_fase_cliente1`
-    FOREIGN KEY (`cliente_idCliente`)
-    REFERENCES `estimatech_db`.`cliente` (`idCliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `estimatech_db`.`custoFase`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`custoFase` (
-  `idCustoFase` INT NOT NULL AUTO_INCREMENT,
-  `Descricao` VARCHAR(45) NOT NULL,
-  `ValorPrevisto` DECIMAL(10,0) NOT NULL,
-  `ValorEfetivo` DECIMAL(10,0) NOT NULL,
-  `fase_idFase` INT NOT NULL,
-  PRIMARY KEY (`idCustoFase`),
-  INDEX `fk_custoFase_fase1_idx` (`fase_idFase` ASC),
-  CONSTRAINT `fk_custoFase_fase1`
-    FOREIGN KEY (`fase_idFase`)
-    REFERENCES `estimatech_db`.`fase` (`idFase`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

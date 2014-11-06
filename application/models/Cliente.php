@@ -5,7 +5,7 @@ class Application_Model_Cliente extends Zend_Db_Table_Abstract {
     protected $_name = "cliente";
     protected $_primary = "idCliente";
 
-    public function inserir(array $request, $id) {
+    public function inserir(array $request) {
         $dados = array(
             'Email' => $request['email'],
             'Senha' => md5($request['ConfSenha']),
@@ -21,7 +21,7 @@ class Application_Model_Cliente extends Zend_Db_Table_Abstract {
         return $this->insert($dados);
     }
 
-    public function _select($where = null, $valor = null, $order = null, $limit = null) {
+    public function db_select($where = null, $valor = null, $order = null, $limit = null) {
         $select = $this->select()
                         ->from($this)
                         ->order($order)
