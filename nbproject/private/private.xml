@@ -3,9 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/TM-Estimates/application/controllers/DetalharController.php</file>
-            <file>file:/C:/xampp/htdocs/TM-Estimates/application/views/scripts/detalhar/custos.phtml</file>
-            <file>file:/C:/xampp/htdocs/TM-Estimates/application/views/scripts/detalhar/fases.phtml</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/views/scripts/equipe/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/controllers/EquipeController.php</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/views/scripts/recurso/novo.phtml</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/models/Recursos.php</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/models/Equipe.php</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/views/scripts/equipe/novo.phtml</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/views/scripts/recurso/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/controllers/RecursoController.php</file>
         </group>
     </open-files>
 </project-private>
