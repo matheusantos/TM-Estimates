@@ -74,7 +74,8 @@ $(document).ready(function(){
            alert("Este endereço de email não é válido!");
            return false;
          }
-      } else {
+      }       
+       else {
 	 alert('Digite um email!'); return false;
       }
    });
