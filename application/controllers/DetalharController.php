@@ -1,5 +1,5 @@
 <?php
-
+/*! Controler detalhar fases e custo */
 class DetalharController extends Zend_Controller_Action {
 
     public function init() {

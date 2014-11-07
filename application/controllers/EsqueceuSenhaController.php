@@ -1,5 +1,5 @@
 <?php
-
+/*! Controler Recuperar Senha */
 class EsqueceuSenhaController extends Zend_Controller_Action
 {
 

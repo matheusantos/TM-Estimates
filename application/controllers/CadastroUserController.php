@@ -1,5 +1,5 @@
 <?php
-
+/*! Controler Cadastro de Usuario */
 class CadastroUserController extends Zend_Controller_Action
 {
 
