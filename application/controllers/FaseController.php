@@ -1,5 +1,5 @@
 <?php
-
+/*! Controler Registrar Fase */
 class FaseController extends Zend_Controller_Action {
 
     var $usuario;
