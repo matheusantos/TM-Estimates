@@ -4,6 +4,8 @@
 
 class EsqueceuSenhaController extends Zend_Controller_Action {
 
+    private $id_user_confirmado;
+    
     public function init() {
         
     }
@@ -24,14 +26,36 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
         $date_time = $zend_date->get('YYYY-MM-dd HH:mm:ss');
 
         $model_cliente = new Application_Model_Cliente();
-        $dados_cliente = $model_cliente->db_select("Email", $email);
-
+        $dados_cliente = $model_cliente->db_select("Email", $email)[0];
+                
         if (empty($dados_cliente)) {
             echo "Colocar mensagem que email não existe";
             die;
         } else {
-            $model_senha = new Application_Model_EsqueseuSenha();
-            $model_senha->inserir(md5($dados['Email'] . $date_time), $date_time, $dados_cliente['idCliente']);
+            $hash = md5($dados_cliente['Email'] . $date_time);
+
+            $model_senha = new Application_Model_Recuperar();
+            $model_senha->db_insert($hash, $date_time, $dados_cliente['idCliente']);
+
+            $config = array('auth' => 'login',
+                            'username' => 'tmestimates@gmail.com',
+                            'password' => 'tmestimates123',
+                            'port' => '465',
+                            'ssl' => 'ssl'
+                );
+
+            $transport = new Zend_Mail_Transport_Smtp('smtp.gmail.com', $config);
+            
+            $mail = new Zend_Mail('UTF-8');
+            $mail->setBodyText('This is the text of the mail.');
+            $mail->setBodyHtml(
+                    '<a href="http://localhost/TM-Estimates/public/Esqueceu-Senha/verifica/id/' . $hash . '">' 
+                    . 'Recuperar Senha'
+                    . '</a>');
+            $mail->setFrom('tmestimates@gmail.com', 'TM-Estimates');
+            $mail->addTo('matheubatista@gmail.com', 'Cliente');
+            $mail->setSubject('TestSubject');
+            $mail->send($transport);
 
             echo "Fazer pagina 'Link enviado para email corresponte'";
             die;
@@ -40,22 +64,38 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
     }
 
     public function verificaAction() {
-        
+
         $id_hash = $this->getParam('id');
         if (!is_null($id_hash)) {
-            $model_senha = new Application_Model_EsqueseuSenha();
-            $model_senha->db_select('Hash', $id_hash);
+            $model_senha = new Application_Model_Recuperar();
+            $recupera = $model_senha->db_select('Hash', $id_hash)[0];
 
-            if (empty($model_senha)) {
+            if (empty($recupera)) {
                 echo "Hash não existe (Tratar Erro)";
                 die;
 //                $this->_redirect("/index");
+            } else if ($recupera['Utilizada'] == TRUE) {
+                echo "Página chave já utilizada!";
+                die;
             } else {
                 $model_senha->db_update($id_hash, TRUE);
-                echo "Página para fazer nova senha";
-                die;
+                
+                echo "Fazer select para pegar a id do user e redirecionar para novaSenha";
+                // Fazer select para pegar a id do user e redirecionar para novaSenha
+                //$id_user_confirmado = 
             }
         }
+    }
+    
+    public function novaSenhaAction() {
+        
+        $new_senha = md5($this->getParam('Senha'));
+        $model_cliente = new Application_Model_Cliente();
+        
+//        $model_cliente->db_update_senha($id_user_confirmado, $new_senha);
+        
+        echo "Página Sucesso!";
+        die;
     }
 
 }

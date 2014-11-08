@@ -25,9 +25,14 @@ class CadastroUserController extends Zend_Controller_Action
         $cliente = new Application_Model_Cliente();
         
         $email = $cliente->db_select('Email', $dados['email']);
-        
-        if ($dados['email'] == $email[0]["Email"])
+
+        if (empty($email))
+            $this->_redirect("/cadastro-user");
+            
+        if ($dados['email'] == $email[0]["Email"]) {
+            echo "Arrumar um jeito de retorna Email ja cadastrado no form";
             die;
+        }
         
         $radio = $dados['radio_box'];
         if ($radio == "pf")

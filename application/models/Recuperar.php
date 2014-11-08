@@ -1,11 +1,11 @@
 <?php
-/*! Operações na tabela Esqueseu Senha */
-class Application_Model_EsqueseuSenha extends Zend_Db_Table_Abstract {
+/*! Operações na tabela Recuperar Senha */
+class Application_Model_Recuperar extends Zend_Db_Table_Abstract {
 
     protected $_name = "recuperarsenha";
     protected $_primary = "idRecuperar";
 
-    public function inserir($hash, $data_time, $id) {
+    public function db_insert($hash, $data_time, $id) {
         $dados = array(
             'Hash' => $hash,
             'Data_hora' => $data_time,
