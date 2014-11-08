@@ -1,5 +1,5 @@
 <?php
-/*! Operações na tabela Ambiente */
+/*! Operações na tabela Esqueseu Senha */
 class Application_Model_EsqueseuSenha extends Zend_Db_Table_Abstract {
 
     protected $_name = "recuperarsenha";

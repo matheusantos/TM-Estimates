@@ -9,22 +9,7 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-
-        $id_hash = $this->getParam('id');
-        if (!is_null($id_hash)) {
-            $model_senha = new Application_Model_EsqueseuSenha();
-            $model_senha->db_select('Hash', $id_hash);
-            
-            if (empty($model_senha)) {
-                echo "Hash não existe (Tratar Erro)";
-                die;
-//                $this->_redirect("/index");
-            } else {
-                $model_senha->db_update($id_hash, TRUE);
-                echo "Página para fazer nova senha";
-                die;
-            }
-        }
+        
     }
 
     public function enviarEmailAction() {
@@ -51,6 +36,25 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
             echo "Fazer pagina 'Link enviado para email corresponte'";
             die;
 //            $this->_redirect("/index");
+        }
+    }
+
+    public function verificaAction() {
+        
+        $id_hash = $this->getParam('id');
+        if (!is_null($id_hash)) {
+            $model_senha = new Application_Model_EsqueseuSenha();
+            $model_senha->db_select('Hash', $id_hash);
+
+            if (empty($model_senha)) {
+                echo "Hash não existe (Tratar Erro)";
+                die;
+//                $this->_redirect("/index");
+            } else {
+                $model_senha->db_update($id_hash, TRUE);
+                echo "Página para fazer nova senha";
+                die;
+            }
         }
     }
 
