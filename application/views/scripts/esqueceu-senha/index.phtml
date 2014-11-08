@@ -10,10 +10,10 @@
                         <h3 class="panel-title"><strong>Esqueceu senha</strong></h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'Esqueceu-Senha', 'action' => 'enviar-Email'), null, true) ?>">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" name="Email" placeholder="Enter email">
+                                <label for="Email">Email</label>
+                                <input type="email" class="form-control" id="Email" name="Email" placeholder="Digite seu email">
                             </div>
                             <button type="submit" class="btn btn-primary btn-default">Enviar</button>
                         </form>
