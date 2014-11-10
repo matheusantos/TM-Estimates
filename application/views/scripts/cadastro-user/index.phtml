@@ -1,5 +1,5 @@
 <br /><br /><br /><br />
-<form role="form" method="post" action="<?= $this->url(array('controller' => 'cadastro-user', 'action' => 'cadastrar'), null, true) ?>">
+<form role="form" name="cadastro" method="post" action="<?= $this->url(array('controller' => 'cadastro-user', 'action' => 'cadastrar'), null, true) ?>">
     <div class="row clearfix top-buffer">
         <div class="col-md-10">
             <div class="col-md-offset-2">
@@ -175,6 +175,13 @@
                                 <input type="text" class="form-control" name="bairro" placeholder="Bairro">
                             </div>
                         </div>
+                        <br/><br/><br/><br/>
+                        <div class="col-md-12">
+                            <div class="col-md-offset-0">
+                                <label>Complemento</label>
+                                <input type="text" class="form-control" name="complemento" placeholder="Complemento">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -184,7 +191,7 @@
     <div class="row clearfix top-buffer">
         <div class="col-md-10">
             <div class="col-md-offset-2">
-                <button type="submit"  class="btn btn-primary btn-default">Cadastrar</button>
+                <button type="submit" onClick="validarSenha()"  class="btn btn-primary btn-default">Cadastrar</button>
                 <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
             </div>
         </div>
