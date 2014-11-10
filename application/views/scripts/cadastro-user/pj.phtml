@@ -1,5 +1,5 @@
 <br /><br /><br /><br />
-<form role="form" action="<?= $this->url(array('controller' => 'cadastro-user', 'action' => 'cadastrar'), null, true) ?>">
+<form role="form" name="cadastro" action="<?= $this->url(array('controller' => 'cadastro-user', 'action' => 'cadastrar'), null, true) ?>">
     <div class="row clearfix top-buffer">
         <div class="col-md-10">
             <div class="col-md-offset-2">
@@ -46,7 +46,7 @@
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
                                 <label for="sInputPassword1">Confirme a senha</label>
-                                <input type="password" class="form-control" name="confSenha" placeholder="Confirme a senha">
+                                <input type="password" class="form-control" id="senha2" name="ConfSenha" placeholder="Confirme a senha" onBlur="validarSenha()">
                             </div>
                         </div>
                     </div>
