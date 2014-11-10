@@ -8,6 +8,10 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <form role="form"  method="post" action="<?= $this->url(array('controller' => 'esqueceu-senha', 'action' => 'salvar-senha'), null, true) ?>">
+                        <div>
+                            <input type="hidden" id="idCliente" name="idCliente" value="<?= $this->dados['idCliente'] ?>">
+                            <input type="hidden" id="hash" name="hash" value="<?= $this->dados['hash'] ?>">
+                        </div>
                         <div class="form-row col-md-12 form-group">
                             <label for="senha">Nova Senha</label>
                             <input type="password" class="form-control" id="senha" name="Senha" placeholder="Password">
