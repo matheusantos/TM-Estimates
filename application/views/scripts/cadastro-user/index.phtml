@@ -1,5 +1,5 @@
 <br /><br /><br /><br />
-<form role="form" method="post" action="<?= $this->url(array('controller' => 'cadastro-user', 'action' => 'cadastrar'), null, true) ?>">
+<form role="form" name="cadastro" method="post" action="<?= $this->url(array('controller' => 'cadastro-user', 'action' => 'cadastrar'), null, true) ?>">
     <div class="row clearfix top-buffer">
         <div class="col-md-10">
             <div class="col-md-offset-2">
@@ -32,7 +32,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="col-md-4">
-                            <label for="email">Email</label>
+                            <label for="exampleInputEmail1">Email</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
                         </div>
                         <div class="col-md-4">
@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-md-4">
                             <label for="senha2">Confirme a senha</label>
-                            <input type="password" class="form-control" id="senha2" name="ConfSenha" placeholder="Confirme a senha">
+                            <input type="password" class="form-control" id="senha2" name="ConfSenha" placeholder="Confirme a senha" onBlur="validarSenha()">
                         </div>                        
                     </div>
                 </div> <!-- .panel -->
@@ -173,6 +173,13 @@
                             <div class="col-md-offset-0">
                                 <label>Bairro</label>
                                 <input type="text" class="form-control" name="bairro" placeholder="Bairro">
+                            </div>
+                        </div>
+                        <br/><br/><br/><br/>
+                        <div class="col-md-12">
+                            <div class="col-md-offset-0">
+                                <label>Complemento</label>
+                                <input type="text" class="form-control" name="complemento" placeholder="Complemento">
                             </div>
                         </div>
                     </div>
