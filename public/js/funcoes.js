@@ -55,5 +55,6 @@ function validarSenha() {
     
     if(senha != rep_senha){
         alert("As senhas não conferem!");
+        document.bgColor='red';
     }
 }
