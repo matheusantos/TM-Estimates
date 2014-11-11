@@ -5,7 +5,7 @@
 class EsqueceuSenhaController extends Zend_Controller_Action {
 
     var $id_user_confirmado;
-    
+
     public function init() {
         
     }
@@ -87,24 +87,36 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
     }
 
     public function novaSenhaAction() {
-        
-        $id_hash = $this->getParam('id');
-        $this->id_user_confirmado = $this->getParam('u');
 
-        $model_senha = new Application_Model_Recuperar();
-        $model_senha->db_update($id_hash, TRUE);
+        $dados = array(
+            "hash" => $this->getParam('id'),
+            "idCliente" => $this->getParam('u')
+        );
+        $this->view->assign("dados", $dados);
+
+        $model_recuperar = new Application_Model_Recuperar();
+        $model_recuperar->db_update($dados['hash'], TRUE);
     }
-    
+
     public function salvarSenhaAction() {
-        
-        echo var_dump($this->id_user_confirmado); die;
 
-        $new_senha = md5($this->getParam('Senha'));
-        $model_cliente = new Application_Model_Cliente();
-        $model_cliente->db_update_senha($this->id_user_confirmado, $new_senha);
+        $dados = $this->getAllParams();
 
-        echo "Página Sucesso!";
-        die;
+        $model_recuperar = new Application_Model_Recuperar();
+        $recupera = $model_recuperar->db_select('Hash', $dados['hash'])[0];
+
+        if (empty($recupera)) {
+            echo "Falha";
+            die;
+        } else {
+            if ($recupera['cliente_idCliente'] == $dados['idCliente']) {
+                $new_senha = md5($dados['ConfSenha']);
+                $model_cliente = new Application_Model_Cliente();
+                $model_cliente->db_update_senha($dados['idCliente'], $new_senha);
+
+                echo "Página Sucesso!";
+                die;
+            }
+        }
     }
-
 }
