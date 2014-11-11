@@ -85,20 +85,36 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
 
     public function novaSenhaAction() {
 
-        $dados = array(
-            "hash" => $this->getParam('id'),
-            "idCliente" => $this->getParam('u')
-        );
-        $this->view->assign("dados", $dados);
+        $hash = $this->getParam('id');
+        $user = $this->getParam('u');
 
         $model_recuperar = new Application_Model_Recuperar();
-        $model_recuperar->db_update($dados['hash'], TRUE);
+        $verifica = $model_recuperar->db_select('Hash', $hash)[0];
+
+        if (!empty($verifica)) {
+            if ($verifica['Utilizada'] == FALSE) {
+                $dados = array(
+                    "hash" => $hash,
+                    "idCliente" => $user
+                );
+                $this->view->assign("dados", $dados);
+
+                $model_recuperar->db_update($dados['hash'], TRUE);
+            } else {
+                echo "Página chave já utilizada!";
+                die;
+            }
+        } else {
+            echo "Hash não existe (Tratar Erro)";
+            die;
+        }
     }
 
     public function salvarSenhaAction() {
 
         $dados = $this->getAllParams();
 
+        var_dump($dados);
         $model_recuperar = new Application_Model_Recuperar();
         $recupera = $model_recuperar->db_select('Hash', $dados['hash'])[0];
 

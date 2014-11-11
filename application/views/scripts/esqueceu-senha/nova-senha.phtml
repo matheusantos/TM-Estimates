@@ -14,11 +14,14 @@
                         </div>
                         <div class="form-row col-md-12 form-group">
                             <label for="senha">Nova Senha</label>
-                            <input type="password" class="form-control" id="senha" name="Senha" placeholder="Password">
+                            <input type="password" class="form-control" id="senha" name="Senha" placeholder="Sua Senha" title="Mínimo de 6 dígitos" pattern=".{6,}"
+                                   onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+                                       if(this.checkValidity()) form.ConfSenha.pattern = this.value;">
                         </div>
                         <div class="form-row col-md-12 form-group">
-                            <label for="senha2">Confirme a senha</label>
-                            <input type="password" class="form-control" id="senha2" name="ConfSenha" placeholder="Confirme a senha">
+                            <label for="ConfSenha">Confirme a senha</label>
+                            <input title="Senhas diferentes" type="password" class="form-control" id="ConfSenha" name="ConfSenha" placeholder="Confirme a senha" pattern=".{6,}"
+                                   onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');">
                         </div>
                         <div class="form-row col-md-12 form-group">
                             <button type="submit" class="btn btn-success btn-default">Confirmar</button>

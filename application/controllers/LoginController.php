@@ -25,8 +25,8 @@ class LoginController extends Zend_Controller_Action {
                 ->setCredentialColumn('Senha');
 
         //Seta as credenciais com dados vindos do formulário de login
-        $authAdapter->setIdentity($this->_getParam('Email'))
-                ->setCredential($this->_getParam('Senha'))
+        $authAdapter->setIdentity($this->_getParam('email'))
+                ->setCredential($this->_getParam('senha'))
                 ->setCredentialTreatment('MD5(?)');
 
         //Realiza autenticação
