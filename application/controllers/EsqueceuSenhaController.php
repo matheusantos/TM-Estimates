@@ -29,8 +29,7 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
         $dados_cliente = $model_cliente->db_select("Email", $email)[0];
 
         if (empty($dados_cliente)) {
-            echo "Colocar mensagem que email não existe";
-            die;
+            $this->_redirect("esqueceu-senha/nao-existe");
         } else {
             $hash = md5($dados_cliente['Email'] . $date_time);
 
@@ -119,6 +118,10 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
     }
     
     public function enviarAction(){
+        
+    }
+    
+        public function naoExisteAction(){
         
     }
 }
