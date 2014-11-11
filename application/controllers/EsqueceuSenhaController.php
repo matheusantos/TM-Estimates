@@ -56,10 +56,8 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
             $mail->addTo($email, 'Cliente');
             $mail->setSubject('Recuperar Senha');
             $mail->send($transport);
-
-            echo "Fazer pagina 'Link enviado para email corresponte'";
-            die;
-//            $this->_redirect("/index");
+            
+            $this->_redirect("esqueceu-senha/enviar");
         }
     }
 
@@ -118,5 +116,9 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
                 die;
             }
         }
+    }
+    
+    public function enviarAction(){
+        
     }
 }
