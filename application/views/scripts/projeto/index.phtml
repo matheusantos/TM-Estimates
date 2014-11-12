@@ -41,6 +41,8 @@
                         <td><?= $projeto['DataCriacao'] ?></td>
                         <td><?= $projeto['DataFininalizacao'] ?></td>
                         <td><?= $projeto['Situacao'] ?></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'index', 'idP'=>$projeto['idProjeto']), null, true) ?>">Editar</a></td>
+                        <td><a>Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
