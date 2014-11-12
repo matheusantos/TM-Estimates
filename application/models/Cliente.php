@@ -16,7 +16,7 @@ class Application_Model_Cliente extends Zend_Db_Table_Abstract {
             'Logradouro' => $request['rua'],
             'Bairro' => $request['bairro'],
             'Numero' => $request['numero'],
-            'Complemento' => NULL,
+            'Complemento' => $request['complemento'],
             'Cidade' => $request['cidade'],
             'UF' => $request['estado'],
         );

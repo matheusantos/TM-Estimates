@@ -11,18 +11,20 @@ USE `estimatech_db` ;
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`cliente` (
   `idCliente` INT(11) NOT NULL AUTO_INCREMENT,
   `Email` VARCHAR(45) NOT NULL,
-  `Senha` VARCHAR(45) NOT NULL,
-  `EXCLUIDO` TINYINT NOT NULL,
+  `Senha` VARCHAR(64) NOT NULL,
+  `EXCLUIDO` TINYINT(1) NOT NULL,
   `Cep` VARCHAR(10) NOT NULL,
   `Logradouro` VARCHAR(45) NOT NULL,
   `Bairro` VARCHAR(45) NOT NULL,
-  `Numero` INT(11) NOT NULL,
+  `Numero` INT(11) NULL,
   `Complemento` VARCHAR(45) NULL DEFAULT NULL,
   `Cidade` VARCHAR(45) NOT NULL,
   `UF` VARCHAR(2) NOT NULL,
+  `DataCriacao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idCliente`),
   UNIQUE INDEX `email_UNIQUE` USING BTREE (`Email` ASC))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -54,10 +56,9 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientepf` (
   `Telefone` VARCHAR(15) NOT NULL,
   `datNasc` DATE NOT NULL,
   `Sexo` CHAR(1) NOT NULL,
-  `dataCadastro` DATETIME NOT NULL,
   `cliente_idCliente` INT(11) NOT NULL,
   `CPF` VARCHAR(14) NOT NULL,
-  `RG` VARCHAR(15) NOT NULL,
+  `RG` VARCHAR(13) NOT NULL,
   PRIMARY KEY (`idCPF`),
   INDEX `fk_clientepf_cliente1_idx` USING BTREE (`cliente_idCliente` ASC),
   CONSTRAINT `clientepf_ibfk_1`
@@ -75,7 +76,6 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientepj` (
   `idCNPJ` INT(11) NOT NULL AUTO_INCREMENT,
   `NomeFantasia` VARCHAR(45) NOT NULL,
   `Telefone` VARCHAR(15) NOT NULL,
-  `dataCadastro` DATETIME NOT NULL,
   `cliente_idCliente` INT(11) NOT NULL,
   `CNPJ` VARCHAR(18) NOT NULL,
   PRIMARY KEY (`idCNPJ`),
@@ -148,7 +148,8 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`fase` (
     REFERENCES `estimatech_db`.`cliente` (`idCliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -190,7 +191,8 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`projeto` (
     REFERENCES `estimatech_db`.`cliente` (`idCliente`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -209,7 +211,8 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`recursos` (
     REFERENCES `estimatech_db`.`cliente` (`idCliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -232,20 +235,22 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`equipe` (
     REFERENCES `estimatech_db`.`recursos` (`idRecursos`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
 -- Table `estimatech_db`.`recuperarsenha`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`recuperarsenha` (
-  `idRecuperar` INT NOT NULL AUTO_INCREMENT,
-  `Hash` VARCHAR(32) NOT NULL,
+  `idRecuperar` INT(11) NOT NULL AUTO_INCREMENT,
+  `Hash` VARCHAR(64) NOT NULL,
   `Data_hora` DATETIME NOT NULL,
-  `Utilizada` TINYINT NOT NULL,
+  `Utilizada` TINYINT(1) NOT NULL,
   `cliente_idCliente` INT(11) NOT NULL,
   PRIMARY KEY (`idRecuperar`),
   INDEX `fk_recuperarsenha_cliente1_idx` (`cliente_idCliente` ASC),
+  UNIQUE INDEX `Hash_UNIQUE` (`Hash` ASC),
   CONSTRAINT `fk_recuperarsenha_cliente1`
     FOREIGN KEY (`cliente_idCliente`)
     REFERENCES `estimatech_db`.`cliente` (`idCliente`)
