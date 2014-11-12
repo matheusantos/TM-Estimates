@@ -37,6 +37,8 @@
                         <td><?= $recursos['Descricao'] ?></td>
                         <td><?= $recursos['Carga_horaria'] ?></td>
                         <td><?= $recursos['Custo'] ?></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'recurso', 'idP'=>$recursos['idRecursos']), null, true) ?>">Editar</a></td>
+                        <td><a>Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

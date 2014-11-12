@@ -33,6 +33,8 @@
                     <tr>
                         <td><?= $fase['idFase'] ?></td>
                         <td><?= $fase['Descricao'] ?></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'fase', 'idP'=>$fase['idFase']), null, true) ?>">Editar</a></td>
+                        <td><a>Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
