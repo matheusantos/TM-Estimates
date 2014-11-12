@@ -15,14 +15,15 @@ class CadastroUserController extends Zend_Controller_Action {
     public function pjAction() {
         // action body
     }
+    
+    public function emailJaCadastradoAction(){
+        
+    }
 
-    public function verificaemail() {
-        $email = $cliente->db_select('Email', $dados['email']);
-
-        if (!empty($email)) {
-            echo "Arrumar um jeito de retorna Email ja cadastrado no form";
-            die;
-        }
+    public function verificaemailAction() {
+  
+            $this->_redirect("/login");
+        
     }
 
     public function cadastrarAction() {
@@ -34,7 +35,7 @@ class CadastroUserController extends Zend_Controller_Action {
         $email = $cliente->db_select('Email', $dados['email']);
 
         if (!empty($email)) {
-            echo "Arrumar um jeito de retorna Email ja cadastrado no form";
+             $this->_redirect("cadastro-user/email-ja-cadastrado");
             die;
         }
 
