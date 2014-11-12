@@ -110,8 +110,7 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
                 $model_cliente = new Application_Model_Cliente();
                 $model_cliente->db_update_senha($dados['idCliente'], $new_senha);
 
-                echo "Página Sucesso!";
-                die;
+                $this->_redirect("esqueceu-senha/sucesso");
             }
         }
     }
@@ -125,6 +124,10 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
     }
     
            public function expiradoAction(){
+        
+    }
+    
+    public function sucessoAction(){
         
     }
 }
