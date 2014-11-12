@@ -48,13 +48,3 @@ function setCancel() {
 function setIni() {
     location.href = "http://localhost/TM-Estimates/public";
 }
-
-function validarSenha() {
-    var senha = cadastro.senha.value;
-    var rep_senha = cadastro.ConfSenha.value;
-    
-    if(senha != rep_senha){
-        alert("As senhas não conferem!");
-        document.bgColor='red';
-    }
-}
