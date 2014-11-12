@@ -32,8 +32,8 @@
                     </div>
                     <div class="panel-body">
                         <div class="col-md-4">
-                            <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" onBlur="">
+                            <label for="email">Email</label>
+                            <input required type="email" class="form-control" id="email" name="email" placeholder="Enter email">
                         </div>
                         <div class="col-md-4">
                             <label for="senha">Senha</label>
@@ -63,41 +63,41 @@
                         <div class="form-row">
                             <div class="col-md-4 form-group">
                                 <label>Nome</label>
-                                <input type="text" class="form-control"  name="nome" placeholder="Nome">
+                                <input required type="text" class="form-control"  name="nome" placeholder="Nome">
                             </div>
                             <div class="col-md-8 form-group">
                                 <label>Sobrenome</label>
-                                <input type="text" class="form-control" name="sobrenome" placeholder="Sobrenome">
+                                <input required type="text" class="form-control" name="sobrenome" placeholder="Sobrenome">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-md-4 form-groups">
                                 <label>RG</label>
-                                <input class="form-control" name="rg" id="rg" placeholder="1111111111">
+                                <input required class="form-control" name="rg" id="rg">
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>CPF</label>
-                                <input class="form-control" name="cpf" id="CPF" placeholder="123.456.789-00">
+                                <input required class="form-control" name="cpf" id="CPF">
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>Data de nascimento</label>
-                                <input required type="" class="form-control" name="datNasc" id="date">
+                                <input required required type="" class="form-control" name="datNasc" id="date">
                             </div>
                         </div>
                         <br /><br /><br /><br /><br /><br /><br />
                         <div class="form-row">
                             <div class="col-md-4">
                                 <label>Telefone</label>
-                                <input type="tel" class="form-control" id="tel" name="tel" placeholder="(DDD) 1111-1111">
+                                <input type="tel" class="form-control" id="tel" name="tel">
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>Celular</label>
-                                <input type="tel" class="form-control" id="cel" name="cel" placeholder="(DDD) 1111-1111">
+                                <input type="tel" class="form-control" id="cel" name="cel">
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>Sexo</label>
                                 <select class="form-control" name="sexo">
-                                    <option selected="" value="" >Selecione o Sexo</option>
+                                    <option required selected="" value="" >Selecione o Sexo</option>
                                     <option value="M">Masculino</option>
                                     <option value="F">Feminino</option>
                                     <option value="O">Outros </option>
@@ -121,16 +121,16 @@
                     <div class="panel-body">
                         <div class="col-md-4">
                             <label>CEP</label>
-                            <input type="text" class="form-control" name="cep" id="cep" placeholder="11111-111">
+                            <input required type="text" class="form-control" name="cep" id="cep">
                         </div>
                         <div class="col-md-4">
                             <label>Cidade</label>
-                            <input type="text" class="form-control" name="cidade" placeholder="Cidade">
+                            <input required type="text" class="form-control" name="cidade" placeholder="Cidade">
                         </div>
                         <div class="col-md-4">
                             <label>Estado</label>
 <!--                            <span class="form-control input-xlarge uneditable-input"></span>-->
-                            <select name="estado" class="form-control">
+                            <select required name="estado" class="form-control">
                                 <option selected="" value="">Selecione o Estado (UF)</option>
                                 <option value="ac">Acre</option>
                                 <option value="al">Alagoas</option>
@@ -164,7 +164,7 @@
                         <br/><br/><br/><br/>
                         <div class="col-md-4">
                             <label>Rua</label>
-                            <input type="text" class="form-control" name="rua" placeholder="Rua">
+                            <input required type="text" class="form-control" name="rua" placeholder="Rua">
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
@@ -175,7 +175,7 @@
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
                                 <label>Bairro</label>
-                                <input type="text" class="form-control" name="bairro" placeholder="Bairro">
+                                <input required type="text" class="form-control" name="bairro" placeholder="Bairro">
                             </div>
                         </div>
                         <br/><br/><br/><br/>

@@ -34,19 +34,19 @@
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
                                 <label for="InputEmail1">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                                <input required type="email" class="form-control" id="email" name="email" placeholder="Enter email">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
                                 <label for="InputPassword1">Senha</label>
-                                <input type="password" class="form-control" name="senha" placeholder="Senha">
+                                <input required type="password" class="form-control" name="senha" placeholder="Senha">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
                                 <label for="sInputPassword1">Confirme a senha</label>
-                                <input type="password" class="form-control" id="senha2" name="ConfSenha" placeholder="Confirme a senha" onBlur="validarSenha()">
+                                <input required type="password" class="form-control" id="senha2" name="ConfSenha" placeholder="Confirme a senha" onBlur="validarSenha()">
                             </div>
                         </div>
                     </div>
@@ -67,19 +67,19 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>CNPJ</label>
-                                    <input  id="cnpj" class="form-control" name="cnpj" placeholder="CNPJ">
+                                    <input required id="cnpj" class="form-control" name="cnpj" placeholder="CNPJ">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Razão Social</label>
-                                    <input type="text" class="form-control" name="razSocial" placeholder="Razão Social">
+                                    <input required type="text" class="form-control" name="razSocial" placeholder="Razão Social">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nome Fantasia</label>
-                                    <input type="text" class="form-control" name="nomeFant" placeholder="Nome Fantasia">
+                                    <input required type="text" class="form-control" name="nomeFant" placeholder="Nome Fantasia">
                                 </div>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Telefone</label>
-                                    <input type="tel" id="tel" class="form-control" name="tel" placeholder="(DDD) 1111-1111">
+                                    <input type="tel" id="tel" class="form-control" name="tel">
                                 </div>
                             </div>
                         </div>
@@ -109,20 +109,20 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>CEP</label>
-                                    <input type="cep" id="cep" class="form-control" name="cep" placeholder="11111-111">
+                                    <input required type="cep" id="cep" class="form-control" name="cep">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Cidade</label>
-                                    <input type="cidade" class="form-control" name="cidade" placeholder="cidade">
+                                    <input required type="cidade" class="form-control" name="cidade" placeholder="cidade">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Estado</label>
                                     <!--<span class="form-control input-xlarge uneditable-input"></span>-->
-                                    <select name="estado"  class="form-control">
+                                    <select required name="estado"  class="form-control">
                                         <option selected="" value="">Selecione o Estado (UF)</option>
                                         <option value="Acre">Acre</option>
                                         <option value="Alagoas">Alagoas</option>
@@ -159,7 +159,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Rua</label>
-                                    <input type="text" class="form-control" name="rua" placeholder="Rua">
+                                    <input required type="text" class="form-control" name="rua" placeholder="Rua">
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -171,7 +171,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Bairro</label>
-                                    <input type="text" class="form-control" name="bairro" placeholder="Bairro">
+                                    <input required type="text" class="form-control" name="bairro" placeholder="Bairro">
                                 </div>
                             </div>
                             <br/><br/><br/><br/>
