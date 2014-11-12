@@ -68,8 +68,7 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
             $recupera = $model_senha->db_select('Hash', $id_hash)[0];
 
             if (empty($recupera)) {
-                echo "Hash não existe (Tratar Erro)";
-                die;
+                $this->_redirect("esqueceu-senha/expirado");
 //                $this->_redirect("/index");
             } else if ($recupera['Utilizada'] == TRUE) {
                 echo "Página chave já utilizada!";
@@ -122,6 +121,10 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
     }
     
         public function naoExisteAction(){
+        
+    }
+    
+           public function expiradoAction(){
         
     }
 }
