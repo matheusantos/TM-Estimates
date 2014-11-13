@@ -1,11 +1,20 @@
 <?php
 /*! Controler detalhar fases e custo */
 class DetalharController extends Zend_Controller_Action {
-
+    
+    private $usuario;
+    
     public function init() {
         if (!Zend_Auth::getInstance()->hasIdentity()) {
             $this->_redirect('/login');
         }
+        
+        $auth = Zend_Auth::getInstance();
+        if ($auth->hasIdentity()) {
+            $identity = $auth->getIdentity();
+            $this->usuario = get_object_vars($identity);
+        }
+        
         $this->_helper->layout->setlayout("userlayout");
     }
 
@@ -17,7 +26,7 @@ class DetalharController extends Zend_Controller_Action {
         $db = Zend_Db_Table_Abstract::getDefaultAdapter();
         $fase = array(
             "idFase",
-            "descricaoFase" => "descricao",
+            "descricaoFase" => "descricao"
         );
         $custofase = array(
             "idCustoFase",
@@ -28,6 +37,7 @@ class DetalharController extends Zend_Controller_Action {
 
         $jun = $db->select()
                   ->from('fase', $fase)
+                  ->where('cliente_idCliente = '. $this->usuario['idCliente'])
                   ->joinInner('custofase', 'fase.idFase = custofase.fase_idFase',$custofase);
                     
         $junF = $db->fetchAll($jun);
@@ -36,7 +46,7 @@ class DetalharController extends Zend_Controller_Action {
 
     public function fasesAction() {
         $model = new Application_Model_DetalharFase();
-        $dados = $model->db_select();
+        $dados = $model->db_select('cliente_idCliente', $this->usuario['idCliente']);
         $this->view->assign("dados", $dados);
     }
 
@@ -45,32 +55,15 @@ class DetalharController extends Zend_Controller_Action {
     }
 
     public function ndcustoAction() {
-
-    }
-
-    public function showAction() {
         $model = new Application_Model_DetalharFase();
-        $DetalharFase = $model->find($this->_getParam('id'));
-        $this->view->assign("DetalharFase", $DetalharFase);
-    }
-
-    public function showCustAction() {
-        $model = new Application_Model_DetalharCusto();
-        $DetalharCusto = $model->find($this->_getParam('id'));
-        $this->view->assign("DetalharCusto", $DetalharCusto);
-    }
-
-    public function salvarDadosAction() {
-        $dados = $this->_getAllParams();
-        $model = new Application_Model_DetalharFase();
-        $model->inserir($dados);
-        $this->_redirect("detalhar/fases");
+        $dados = $model->db_select();
+        $this->view->assign("dados", $dados);
     }
 
     public function salvarDadosCustAction() {
         $dados = $this->_getAllParams();
         $model = new Application_Model_DetalharCusto();
-        $model->inserir($dados);
+        $model->db_inserir($dados);
         $this->_redirect("/Detalhar/custos");
     }
 

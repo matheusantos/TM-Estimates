@@ -15,7 +15,13 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Fase</label>
-                                        <input type="number" class="form-control" id="InputFase" name="Fase" placeholder="Número">
+                                        <!--<input type="number" class="form-control" id="InputFase" name="Fase" placeholder="Número">-->
+                                        <select class="form-control" name="Fase">
+                                            <!--<option value  = "" class="form-control"> </option>-->
+                                            <?php foreach ($this->dados as $key => $value) { ?>
+                                                <option value="<?= $value["idFase"] ?>" class="form-control"> <?= $value['Descricao'] ?> </option>
+                                            <?php } ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
