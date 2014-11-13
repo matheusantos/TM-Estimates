@@ -36,7 +36,7 @@ class DetalharController extends Zend_Controller_Action {
 
     public function fasesAction() {
         $model = new Application_Model_DetalharFase();
-        $dados = $model->_select();
+        $dados = $model->db_select();
         $this->view->assign("dados", $dados);
     }
 
@@ -64,7 +64,7 @@ class DetalharController extends Zend_Controller_Action {
         $dados = $this->_getAllParams();
         $model = new Application_Model_DetalharFase();
         $model->inserir($dados);
-        $this->_redirect("/fase");
+        $this->_redirect("detalhar/fases");
     }
 
     public function salvarDadosCustAction() {
