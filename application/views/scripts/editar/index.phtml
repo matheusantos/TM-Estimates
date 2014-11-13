@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h3><span class="glyphicon glyphicon-th-list"></span> Novo Projeto</h3>
+    <h3><span class="glyphicon glyphicon-th-list"></span> Editar Projeto</h3>
 </div>
 <div class="row">
     <div class="row clearfix top-buffer">
@@ -10,24 +10,24 @@
                         <h3 class="panel-title"><strong>Projeto</strong></h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'projeto', 'action' => 'salvar-Dados'), null, true) ?>">
+                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'editar', 'action' => 'atualiza-pr'), null, true) ?>">
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="NomeProjeto">Nome Projeto</label>
-                                    <input required type="text" class="form-control"  name="projetoTitulo" placeholder="Insira Nome Projeto">
+                                    <input type="text" class="form-control"  name="projetoTitulo" placeholder="Insira Nome Projeto" value="<?=$this->dados_cliente[0]['Titulo']?>">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="DataCricao">Data da Criação</label>
-                                    <input required type="date" class="form-control" id="date" name="projetoDataCriacao" value="<?= date('Y-m-d')?>">
+                                    <input type="" class="form-control" name="projetoDataCriacao" value="<?=$this->dados_cliente[0]['DataCriacao']?>">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="DataFim">Data da Finalização</label>
-                                    <input type="date" class="form-control" id="date2" name="projetoDataFim" >
+                                    <input type="" class="form-control" name="projetoDataFim" value="<?=$this->dados_cliente[0]['DataFininalizacao']?>">
                                 </div>
                             </div>
                             <br><br><br><br>
@@ -43,16 +43,17 @@
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="situacao">Situação</label>
-                                    <select class="form-control" name="projetoSituacao">
+                                    <select class="form-control" name="projetoSituacao" value="<?=$this->dados_cliente[0]['Situacao']?>">
                                         <option selected="" value="A">Andamento</option>
                                         <option value="F" >Finalizado</option>
                                     </select>
                                 </div>
                             </div>
+                            <input type = "hidden" name="id" value ="<?= $this->id ?>">
                             <br><br><br><br>
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
-                                    <button type="submit" class="btn btn-success btn-default">Cadastrar</button>
+                                    <button type="submit" class="btn btn-success btn-default">Atualizar</button>
                                     <a href="<?= $this->url(array('controller' => 'projeto', 'action' => 'index'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
                                 </div>
                             </div>

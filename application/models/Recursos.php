@@ -5,7 +5,7 @@ class Application_Model_Recursos extends Zend_Db_Table_Abstract {
     protected $_name = "recursos";
     protected $_primary = "idRecursos";
 
-    public function inserir(array $request, $id) {
+    public function db_inserir(array $request, $id) {
         $dados = array(
             'Descricao' => $request['descricao'],
             'Carga_horaria' => $request['carga_horaria'],
@@ -26,6 +26,24 @@ class Application_Model_Recursos extends Zend_Db_Table_Abstract {
             //$select->where($where.'='. $valor);
         }
         return $this->fetchAll($select)->toArray();
+    }
+    
+    public function db_update(array $request) {
+        
+        $dados = array(
+            'Descricao' => $request['descricao'],
+            'Carga_horaria' => $request['carga_horaria'],
+            'Custo' => $request['custo'],
+        );
+        
+        $where = $this->getAdapter()->quoteInto('idRecursos = ?', $request['id']);
+        
+        $this->update($dados, $where);
+    }
+    
+        public function db_delete($id) {
+        $where = $this->getAdapter()->quoteInto("idRecursos = ?", $id);
+        $this->delete($where);
     }
 
 }

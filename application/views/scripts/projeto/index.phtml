@@ -4,8 +4,6 @@
 <div class="row">
     <div class="col-md-3">
         <a href="<?= $this->url(array('controller' => 'projeto', 'action' => 'novo'), null, true) ?>" class="btn btn btn-success" role="button">Novo</a>
-        <button type="button" class="btn btn-primary">Editar</button>
-        <button type="button" class="btn btn-danger">Excluir</button>
     </div>
     <div class="col-md-3">
         <form action="#" method="get">
@@ -41,6 +39,8 @@
                         <td><?= $projeto['DataCriacao'] ?></td>
                         <td><?= $projeto['DataFininalizacao'] ?></td>
                         <td><?= $projeto['Situacao'] ?></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'index', 'idP'=>$projeto['idProjeto']), null, true) ?>">Editar</a></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-pr', 'idP' => $projeto['idProjeto']), null, true) ?>">Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

@@ -18,7 +18,7 @@ class Application_Model_DetalharFase extends Zend_Db_Table_Abstract {
         return $this->insert($dados);
     }
 
-    public function _select($where = null, $order = null, $limit = null) {
+    public function db_select($where = null, $order = null, $limit = null) {
         $select = $this->select()
                 ->from($this)
                 ->order($order)
@@ -35,7 +35,7 @@ class Application_Model_DetalharFase extends Zend_Db_Table_Abstract {
         return $arr[0];
     }
 
-    public function update(array $request) {
+    public function db_update(array $request) {
         $dados = array(
             'Descricao' => $request['Desc'],
             'Percentual' => $request['Percentual'],
@@ -44,12 +44,12 @@ class Application_Model_DetalharFase extends Zend_Db_Table_Abstract {
             'datIniEfet' => $request['DatIniEfe'],
             'datFinEfet' => $request['DatFinEfe'],
         );
-        $where = $this->getAdapter()->quoteInto("contato_id = ?", $request['contato_id']);
+        $where = $this->getAdapter()->quoteInto("idFase = ?", $request['id']);
         $this->update($dados, $where);
     }
 
-    public function delete($id) {
-        $where = $this->getAdapter()->quoteInto("contato_id = ?", $id);
+    public function db_delete($id) {
+        $where = $this->getAdapter()->quoteInto("idFase = ?", $id);
         $this->delete($where);
     }
 

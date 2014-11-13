@@ -1,5 +1,7 @@
 <?php
-/*! Operações na tabela Projeto */
+
+/* ! Operações na tabela Projeto */
+
 class Application_Model_Projeto extends Zend_Db_Table_Abstract {
 
     protected $_name = "projeto";
@@ -10,8 +12,8 @@ class Application_Model_Projeto extends Zend_Db_Table_Abstract {
 
         $dados = array(
             'Titulo' => $request['projetoTitulo'],
-//            'DataCriacao' => $request['projetoDataCriacao'],
-//            'DataFininalizacao' => $request['projetoDataFim'],
+            'DataCriacao' => $request['projetoDataCriacao'],
+            'DataFininalizacao' => $request['projetoDataFim'],
             'Categoria' => $request['projetoCategoria'],
             'Situacao' => $request['projetoSituacao'],
             'UltimaAtualizacao' => $my_format,
@@ -32,4 +34,36 @@ class Application_Model_Projeto extends Zend_Db_Table_Abstract {
         }
         return $this->fetchAll($select)->toArray();
     }
+
+    /* public function ed_select($id){
+      $db = Zend_Db_Table_Abstract::getDefaultAdapter();
+      $select = $db->select()
+      ->from('projeto')
+      ->where('idProjeto='.$id);
+      return $db->fetchAll($select);
+      } */
+
+    public function db_update(array $request) {
+        
+        $my_format = date('Y-m-d H:i:s');
+
+        $dados = array(
+            'Titulo' => $request['projetoTitulo'],
+//            'DataCriacao' => $request['projetoDataCriacao'],
+//            'DataFininalizacao' => $request['projetoDataFim'],
+            'Categoria' => $request['projetoCategoria'],
+            'Situacao' => $request['projetoSituacao'],
+            'UltimaAtualizacao' => $my_format,
+       );
+        
+        $where = $this->getAdapter()->quoteInto('idProjeto = ?', $request['id']);
+        
+        $this->update($dados, $where);
+    }
+    
+        public function db_delete($id) {
+        $where = $this->getAdapter()->quoteInto("idProjeto = ?", $id);
+        $this->delete($where);
+    }
+
 }

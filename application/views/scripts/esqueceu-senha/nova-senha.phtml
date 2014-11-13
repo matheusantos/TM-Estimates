@@ -1,0 +1,35 @@
+<br/><br/><br/>
+<div class="page-header top-buffer">
+    <h3><span class=""></span> Recuperar Senha</h3>
+</div>
+<div class="row">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form role="form"  method="post" action="<?= $this->url(array('controller' => 'esqueceu-senha', 'action' => 'salvar-senha'), null, true) ?>">
+                        <div>
+                            <input type="hidden" name="hash" value="<?= $this->dados['hash'] ?>">
+                            <input type="hidden" name="idCliente" value="<?= $this->dados['idCliente'] ?>">
+                        </div>
+                        <div class="form-row col-md-12 form-group">
+                            <label for="senha">Nova Senha</label>
+                            <input required type="password" class="form-control" id="Senha" name="Senha" placeholder="Password"
+                                   onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+                                       if(this.checkValidity()) form.ConfSenha.pattern = this.value;">
+                        </div>
+                        <div class="form-row col-md-12 form-group">
+                            <label for="senha2">Confirme a senha</label>
+                            <input required type="password" class="form-control" id="ConfSenha" name="ConfSenha" placeholder="Confirme a senha"
+                                   onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');">
+                        </div>
+                        <div class="form-row col-md-12 form-group">
+                            <button type="submit" class="btn btn-success btn-default">Confirmar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

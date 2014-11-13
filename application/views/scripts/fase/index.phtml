@@ -4,8 +4,6 @@
 <div class="row">
     <div class="col-md-3">
         <a href="<?= $this->url(array('controller' => 'fase', 'action' => 'novo'), null, true) ?>" class="btn btn btn-success" role="button">Novo</a>
-        <button type="button" class="btn btn-primary">Editar</button>
-        <button type="button" class="btn btn-danger">Excluir</button>
     </div>
     <div class="col-md-3">
         <form action="#" method="get">
@@ -33,6 +31,8 @@
                     <tr>
                         <td><?= $fase['idFase'] ?></td>
                         <td><?= $fase['Descricao'] ?></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'fase', 'idP'=>$fase['idFase']), null, true) ?>">Editar</a></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-fa', 'idP'=>$fase['idFase']), null, true) ?>">Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

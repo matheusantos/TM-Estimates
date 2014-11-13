@@ -1,5 +1,7 @@
 <?php
-/*! Operações com a tabela Equipe */
+
+/* ! Operações com a tabela Equipe */
+
 class Application_Model_Equipe extends Zend_Db_Table_Abstract {
 
     protected $_name = "equipe";
@@ -16,15 +18,33 @@ class Application_Model_Equipe extends Zend_Db_Table_Abstract {
 
     public function db_select($where = null, $valor = null, $order = null, $limit = null) {
         $select = $this->select()
-                        ->from($this)
-                        ->order($order)
-                        ->limit($limit);
-		
+                ->from($this)
+                ->order($order)
+                ->limit($limit);
+
         if (!is_null($where)) {
-            $select->where($where.'= ?', $valor);
+            $select->where($where . '= ?', $valor);
             //$select->where($where.'='. $valor);
         }
         return $this->fetchAll($select)->toArray();
+    }
+
+    public function db_update(array $request) {
+
+        $dados = array(
+            'Projeto_idProjeto' => $request['Projeto'],
+            'Recursos_idRecursos' => $request['Recurso'],
+            'QtRecursos' => $request['QtdRec'],
+        );
+
+        $where = $this->getAdapter()->quoteInto('Projeto_idProjeto = ?', $request['id']);
+
+        $this->update($dados, $where);
+    }
+
+    public function db_delete($id) {
+        $where = $this->getAdapter()->quoteInto("Recursos_idRecursos = ?", $id);
+        $this->delete($where);
     }
 
 }

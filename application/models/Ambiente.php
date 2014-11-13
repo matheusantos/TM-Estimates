@@ -33,18 +33,18 @@ class Application_Model_Ambiente extends Zend_Db_Table_Abstract {
         return $arr[0];
     }
 
-    public function update(array $request) {
+    public function db_update(array $request) {
         $dados = array(
             'Linguagem' => $request['Linguagem'],
             'Esforco' => $request['HorPes'],
             'Produtividade' => $request['PesH'],
         );
-        $where = $this->getAdapter()->quoteInto("contato_id = ?", $request['contato_id']);
+        $where = $this->getAdapter()->quoteInto("idAmbiente = ?", $request['id']);
         $this->update($dados, $where);
     }
 
-    public function delete($id) {
-        $where = $this->getAdapter()->quoteInto("contato_id = ?", $id);
+    public function db_delete($id) {
+        $where = $this->getAdapter()->quoteInto("idAmbiente = ?", $id);
         $this->delete($where);
     }
 

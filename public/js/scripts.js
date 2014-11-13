@@ -48,12 +48,13 @@ $(document).ready(function() {
 // Masked Input Plugin
 
 jQuery(function($){
-   $("#date").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
-   $("#CPF").mask("999.999.999-99",{placeholder:"_"});
-   $("#custo").mask("99.99");
-   $("#tel").mask("(999) 999-9999");
-   $("#cel").mask("(999) 999-9999");
-   $("#rg").mask("99.999.999-9");
+   $("#date").mask("9999-99-99",{placeholder:"yyyy/mm/dd"});
+   $("#date2").mask("9999-99-99",{placeholder:"yyyy/mm/dd"});
+   $("#CPF").mask("999.999.999-99");
+   $("#custo").mask("99,99",{placeholder:"000"});
+   $("#tel").mask("(99) 9999-9999");
+   $("#cel").mask("(99) 9999-9999");
+   $("#rg").mask("99.999.999-99");
    $("#cep").mask("99.999-999");
    $("#cnpj").mask("99.999.999/9999-99");
   
