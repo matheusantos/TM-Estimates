@@ -27,9 +27,9 @@ class RecursoController extends Zend_Controller_Action {
     public function novoAction() { }
 
     public function salvarDadosAction() {
-        $dados = $this->_getAllParams();
+        $dados = $this->getAllParams();
         $model = new Application_Model_Recursos();
-        $model->inserir($dados, $this->usuario['idCliente']);
+        $model->db_inserir($dados, $this->usuario['idCliente']);
         $this->_redirect("/recurso");
     }
 

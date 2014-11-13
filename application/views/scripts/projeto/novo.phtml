@@ -14,20 +14,20 @@
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="NomeProjeto">Nome Projeto</label>
-                                    <input type="text" class="form-control"  name="projetoTitulo" placeholder="Insira Nome Projeto">
+                                    <input required type="text" class="form-control"  name="projetoTitulo" placeholder="Insira Nome Projeto">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="DataCricao">Data da Criação</label>
-                                    <input type="date" class="form-control" name="projetoDataCriacao" >
+                                    <input required type="date" class="form-control" id="date" name="projetoDataCriacao" value="<?= date('Y-m-d')?>">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="DataFim">Data da Finalização</label>
-                                    <input type="date" class="form-control" name="projetoDataFim" >
+                                    <input type="date" class="form-control" id="date2" name="projetoDataFim" >
                                 </div>
                             </div>
                             <br><br><br><br>

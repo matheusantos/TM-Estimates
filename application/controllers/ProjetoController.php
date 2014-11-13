@@ -31,7 +31,7 @@ class ProjetoController extends Zend_Controller_Action {
     
     //!< salva o projeto do Cliente
     public function salvarDadosAction() {
-        $dados = $this->_getAllParams();
+        $dados = $this->getAllParams();
         $model = new Application_Model_Projeto();
         $model->inserir($dados, $this->usuario['idCliente']);
         $this->_redirect("/projeto");
