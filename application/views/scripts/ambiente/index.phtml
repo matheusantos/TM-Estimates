@@ -36,7 +36,7 @@
                         <td><?= $ambiente['Esforco'] ?></td>
                         <td><?= $ambiente['Produtividade'] ?></td>
                         <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'ambiente', 'idP' => $ambiente['idAmbiente']), null, true) ?>">Editar</a></td>
-                        <td><a>Excluir</a></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-am', 'idP' => $ambiente['idAmbiente']), null, true) ?>">Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

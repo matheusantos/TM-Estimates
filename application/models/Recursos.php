@@ -40,5 +40,10 @@ class Application_Model_Recursos extends Zend_Db_Table_Abstract {
         
         $this->update($dados, $where);
     }
+    
+        public function db_delete($id) {
+        $where = $this->getAdapter()->quoteInto("idRecursos = ?", $id);
+        $this->delete($where);
+    }
 
 }

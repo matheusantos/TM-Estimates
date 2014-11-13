@@ -57,32 +57,67 @@ class EditarController extends Zend_Controller_Action {
         $dados_cliente = $model_cliente->db_update($dados);
         $this->_redirect("projeto/index");
     }
-    
-       public function atualizaFaAction() {
+
+    public function atualizaFaAction() {
         $dados = $this->_getAllParams();
         $model_cliente = new Application_Model_Fase();
         $dados_cliente = $model_cliente->db_update($dados);
         $this->_redirect("fase/index");
     }
-    
-           public function atualizaReAction() {
+
+    public function atualizaReAction() {
         $dados = $this->_getAllParams();
         $model_cliente = new Application_Model_Recursos();
         $dados_cliente = $model_cliente->db_update($dados);
         $this->_redirect("recurso/index");
     }
-    
-               public function atualizaAmAction() {
+
+    public function atualizaAmAction() {
         $dados = $this->_getAllParams();
         $model_cliente = new Application_Model_Ambiente();
         $dados_cliente = $model_cliente->db_update($dados);
         $this->_redirect("ambiente/index");
     }
-    
-                   public function atualizaEqAction() {
+
+    public function atualizaEqAction() {
         $dados = $this->_getAllParams();
         $model_cliente = new Application_Model_Equipe();
         $dados_cliente = $model_cliente->db_update($dados);
+        $this->_redirect("equipe/index");
+    }
+
+    public function excluirAmAction() {
+        $dados = $this->getParam('idP');
+        $model_cliente = new Application_Model_Ambiente();
+        $dados_cliente = $model_cliente->db_delete($dados);
+        $this->_redirect("ambiente/index");
+    }
+
+    public function excluirPrAction() {
+        $dados = $this->getParam('idP');
+        $model_cliente = new Application_Model_Projeto();
+        $dados_cliente = $model_cliente->db_delete($dados);
+        $this->_redirect("projeto/index");
+    }
+
+    public function excluirFaAction() {
+        $dados = $this->getParam('idP');
+        $model_cliente = new Application_Model_Fase();
+        $dados_cliente = $model_cliente->db_delete($dados);
+        $this->_redirect("fase/index");
+    }
+
+    public function excluirReAction() {
+        $dados = $this->getParam('idP');
+        $model_cliente = new Application_Model_Recursos();
+        $dados_cliente = $model_cliente->db_delete($dados);
+        $this->_redirect("recurso/index");
+    }
+
+    public function excluirEqAction() {
+        $dados = $this->getParam('idP');
+        $model_cliente = new Application_Model_Equipe();
+        $dados_cliente = $model_cliente->db_delete($dados);
         $this->_redirect("equipe/index");
     }
 

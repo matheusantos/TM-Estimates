@@ -43,8 +43,8 @@ class Application_Model_Ambiente extends Zend_Db_Table_Abstract {
         $this->update($dados, $where);
     }
 
-    public function delete($id) {
-        $where = $this->getAdapter()->quoteInto("contato_id = ?", $id);
+    public function db_delete($id) {
+        $where = $this->getAdapter()->quoteInto("idAmbiente = ?", $id);
         $this->delete($where);
     }
 

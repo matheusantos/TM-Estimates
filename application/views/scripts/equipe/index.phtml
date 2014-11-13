@@ -34,7 +34,7 @@
                         <td><?= $equipe['Projeto_idProjeto'] ?></td>
                         <td><?= $equipe['QtRecursos'] ?></td>
                         <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'equipe', 'idP' => $equipe['Recursos_idRecursos']), null, true) ?>">Editar</a></td>
-                        <td><a>Excluir</a></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-eq', 'idP' => $equipe['Recursos_idRecursos']), null, true) ?>">Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

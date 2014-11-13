@@ -60,5 +60,10 @@ class Application_Model_Projeto extends Zend_Db_Table_Abstract {
         
         $this->update($dados, $where);
     }
+    
+        public function db_delete($id) {
+        $where = $this->getAdapter()->quoteInto("idProjeto = ?", $id);
+        $this->delete($where);
+    }
 
 }

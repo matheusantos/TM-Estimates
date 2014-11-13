@@ -40,7 +40,7 @@
                         <td><?= $projeto['DataFininalizacao'] ?></td>
                         <td><?= $projeto['Situacao'] ?></td>
                         <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'index', 'idP'=>$projeto['idProjeto']), null, true) ?>">Editar</a></td>
-                        <td><a>Excluir</a></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-pr', 'idP' => $projeto['idProjeto']), null, true) ?>">Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
