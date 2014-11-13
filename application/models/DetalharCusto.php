@@ -26,5 +26,20 @@ class Application_Model_DetalharCusto extends Zend_Db_Table_Abstract {
         }
         return $this->fetchAll($select)->toArray();
     }
+    
+    public function db_update(array $request) {
+        $dados = array(
+            'Descricao' => $request['Desc'],
+            'ValorPrevisto' => $request['ValorPrev'],
+            'ValorEfetivo' => $request['ValorEf']
+        );
+        $where = $this->getAdapter()->quoteInto("idCustoFase = ?", $request['id']);
+        $this->update($dados, $where);
+    }
+    
+        public function db_delete($id) {
+        $where = $this->getAdapter()->quoteInto("idCustoFase = ?", $id);
+        $this->delete($where);
+    }
 
 }

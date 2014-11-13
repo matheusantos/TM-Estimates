@@ -32,12 +32,10 @@ class Application_Model_Equipe extends Zend_Db_Table_Abstract {
     public function db_update(array $request) {
 
         $dados = array(
-            'Projeto_idProjeto' => $request['Projeto'],
-            'Recursos_idRecursos' => $request['Recurso'],
             'QtRecursos' => $request['QtdRec'],
         );
 
-        $where = $this->getAdapter()->quoteInto('Projeto_idProjeto = ?', $request['id']);
+        $where = $this->getAdapter()->quoteInto('Recursos_idRecursos = ?', $request['id']);
 
         $this->update($dados, $where);
     }
