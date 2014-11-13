@@ -35,17 +35,17 @@
                                 <div class="col-md-offset-0">
                                     <label for="situacao">Categoria</label>
                                     <select class="form-control" name="projetoCategoria">
-                                        <option selected="" value="DESENVOLVIMENTO">Desenvolvimento</option>
-                                        <option value="MELHORIA" >Melhoria</option>
+                                        <option value="DESENVOLVIMENTO" <?php if($this->dados_cliente[0]['Categoria'] == 'DESENVOLVIMENTO') echo 'selected'; else '';?> >Desenvolvimento</option>
+                                        <option value="MELHORIA" <?php if($this->dados_cliente[0]['Categoria'] == 'MELHORIA') echo 'selected'; else '';?> >Melhoria</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="situacao">Situação</label>
-                                    <select class="form-control" name="projetoSituacao" value="<?=$this->dados_cliente[0]['Situacao']?>">
-                                        <option selected="" value="A">Andamento</option>
-                                        <option value="F" >Finalizado</option>
+                                    <select class="form-control" name="projetoSituacao">
+                                        <option value="A" <?php if($this->dados_cliente[0]['Situacao'] == 'A') echo 'selected'; else '';?>>Andamento</option>
+                                        <option value="F" <?php if($this->dados_cliente[0]['Situacao'] == 'F') echo 'selected'; else '';?>>Finalizado</option>
                                     </select>
                                 </div>
                             </div>
