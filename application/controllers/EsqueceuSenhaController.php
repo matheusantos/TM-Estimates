@@ -68,11 +68,9 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
             $recupera = $model_senha->db_select('Hash', $id_hash)[0];
 
             if (empty($recupera)) {
-                $this->_redirect("esqueceu-senha/expirado");
-//                $this->_redirect("/index");
+                $this->_redirect("error/");
             } else if ($recupera['Utilizada'] == TRUE) {
-                echo "Página chave já utilizada!";
-                die;
+                $this->_redirect("esqueceu-senha/expirado");
             } else {
                 //$this->view->assign("idCliente", $recupera['cliente_idCliente']);
                 $this->_redirect("esqueceu-senha/nova-senha/id/" . $recupera['Hash'] . '/u/' . $recupera['cliente_idCliente']);
@@ -102,8 +100,7 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
         $recupera = $model_recuperar->db_select('Hash', $dados['hash'])[0];
 
         if (empty($recupera)) {
-            echo "Falha";
-            die;
+            $this->_redirect("error/");
         } else {
             if ($recupera['cliente_idCliente'] == $dados['idCliente']) {
                 $new_senha = md5($dados['ConfSenha']);
@@ -118,12 +115,8 @@ class EsqueceuSenhaController extends Zend_Controller_Action {
     public function enviarAction(){
         
     }
-    
-        public function naoExisteAction(){
-        
-    }
-    
-           public function expiradoAction(){
+
+    public function expiradoAction(){
         
     }
     

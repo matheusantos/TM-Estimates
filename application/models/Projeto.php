@@ -12,8 +12,8 @@ class Application_Model_Projeto extends Zend_Db_Table_Abstract {
 
         $dados = array(
             'Titulo' => $request['projetoTitulo'],
-//            'DataCriacao' => $request['projetoDataCriacao'],
-//            'DataFininalizacao' => $request['projetoDataFim'],
+            'DataCriacao' => $request['projetoDataCriacao'],
+            'DataFininalizacao' => $request['projetoDataFim'],
             'Categoria' => $request['projetoCategoria'],
             'Situacao' => $request['projetoSituacao'],
             'UltimaAtualizacao' => $my_format,

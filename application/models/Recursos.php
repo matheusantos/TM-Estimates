@@ -5,7 +5,7 @@ class Application_Model_Recursos extends Zend_Db_Table_Abstract {
     protected $_name = "recursos";
     protected $_primary = "idRecursos";
 
-    public function inserir(array $request, $id) {
+    public function db_inserir(array $request, $id) {
         $dados = array(
             'Descricao' => $request['descricao'],
             'Carga_horaria' => $request['carga_horaria'],
