@@ -25,5 +25,13 @@ class Application_Model_Fase extends Zend_Db_Table_Abstract {
         }
         return $this->fetchAll($select)->toArray();
     }
+    
+    public function db_update(array $request) {
+        $dados = array(
+            'Descricao' => $request['Desc'],
+        );
+        $where = $this->getAdapter()->quoteInto("idFase = ?", $request['id']);
+        $this->update($dados, $where);
+    }
 
 }

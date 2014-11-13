@@ -27,5 +27,18 @@ class Application_Model_Recursos extends Zend_Db_Table_Abstract {
         }
         return $this->fetchAll($select)->toArray();
     }
+    
+    public function db_update(array $request) {
+        
+        $dados = array(
+            'Descricao' => $request['descricao'],
+            'Carga_horaria' => $request['carga_horaria'],
+            'Custo' => $request['custo'],
+        );
+        
+        $where = $this->getAdapter()->quoteInto('idRecursos = ?', $request['id']);
+        
+        $this->update($dados, $where);
+    }
 
 }

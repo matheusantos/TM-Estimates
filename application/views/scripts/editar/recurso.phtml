@@ -10,7 +10,7 @@
                         <h3 class="panel-title"><strong>Recurso</strong></h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'recurso', 'action' => 'salvar-dados'), null, true) ?>">
+                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'editar', 'action' => 'atualiza-re'), null, true) ?>">
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label>Função</label>
@@ -31,6 +31,7 @@
                                 </div>
                             </div>
                             <br><br><br><br>
+                            <input type = "hidden" name="id" value ="<?= $this->id ?>">
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <button type="submit" class="btn btn-success btn-default">Atualizar</button>

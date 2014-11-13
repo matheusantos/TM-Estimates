@@ -26,5 +26,18 @@ class Application_Model_Equipe extends Zend_Db_Table_Abstract {
         }
         return $this->fetchAll($select)->toArray();
     }
+    
+    public function db_update(array $request) {
+        
+         $dados = array(
+            'Projeto_idProjeto' => $request['Projeto'],
+            'Recursos_idRecursos' => $request['Recurso'],
+            'QtRecursos' => $request['QtdRec'],
+        );
+        
+        $where = $this->getAdapter()->quoteInto('Projeto_idProjeto = ?', $request['id']);
+        
+        $this->update($dados, $where);
+    }
 
 }

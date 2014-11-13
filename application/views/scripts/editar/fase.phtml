@@ -6,13 +6,14 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <form role="form"  method="post" action="<?= $this->url(array('controller' => 'fase', 'action' => 'salvar-dados'), null, true) ?>">
+                    <form role="form"  method="post" action="<?= $this->url(array('controller' => 'editar', 'action' => 'atualiza-fa'), null, true) ?>">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <!--<label>Descrição</label>-->
                                 <input type="text" class="form-control" id="exampleInputDesc" name="Desc" placeholder="Descrição" value="<?=$this->dados_cliente[0]['Descricao']?>">
                             </div>
                         </div>
+                        <input type = "hidden" name="id" value ="<?= $this->id ?>">
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-success btn-default">Atualizar</button>
                             <a href="<?= $this->url(array('controller' => 'fase', 'action' => 'index'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
