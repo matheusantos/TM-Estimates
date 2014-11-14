@@ -3,6 +3,9 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
+
+-- -----------------------------------------------------
+-- Schema estimatech_db
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `estimatech_db` DEFAULT CHARACTER SET utf8 ;
 USE `estimatech_db` ;
@@ -281,11 +284,11 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`Colaboradores` (
   `custoHoraN3` DECIMAL(3) NULL,
   `custoHoraN2` DECIMAL(3) NULL,
   `custoHoraN1` DECIMAL(3) NULL,
-  `quantColabN5` INT NULL,
-  `quantColabN4` INT NULL,
-  `quantColabN3` INT NULL,
-  `quantColabN2` INT NULL,
-  `quantColabN1` INT NULL,
+  `quantHorasbN5` INT NULL,
+  `quantHorasN4` INT NULL,
+  `quantHorasN3` INT NULL,
+  `quantHorasN2` INT NULL,
+  `quantHorasN1` INT NULL,
   `idProjeto` INT NULL,
   PRIMARY KEY (`idColaboradores`),
   INDEX `fkidprojeto_idx` (`idProjeto` ASC),
@@ -296,7 +299,28 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`Colaboradores` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
-DEFAULT CHARACTER SET = utf8;
+
+-- -----------------------------------------------------
+-- Table `estimatech_db`.`funcDados`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`funcDados` (
+  `idfuncDados` INT NOT NULL AUTO_INCREMENT,
+  `funcDadoscol` VARCHAR(45) NULL,
+  `funcao` CHAR(3) NULL,
+  `descricao` VARCHAR(45) NULL,
+  `tiposRegistro` INT NULL,
+  `tiposDados` INT NULL,
+  `complexidade` VARCHAR(45) NULL,
+  `pontoFunc` INT NULL,
+  `idProjeto` INT NULL,
+  PRIMARY KEY (`idfuncDados`),
+  INDEX `fkproj_idx` (`idProjeto` ASC),
+  CONSTRAINT `fkproj`
+    FOREIGN KEY (`idProjeto`)
+    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
