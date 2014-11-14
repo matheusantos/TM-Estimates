@@ -3,9 +3,6 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-
--- -----------------------------------------------------
--- Schema estimatech_db
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `estimatech_db` DEFAULT CHARACTER SET utf8 ;
 USE `estimatech_db` ;
@@ -29,6 +26,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`cliente` (
   PRIMARY KEY (`idCliente`),
   UNIQUE INDEX `email_UNIQUE` USING BTREE (`Email` ASC))
 ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -73,6 +71,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientepf` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -264,6 +263,39 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`recuperarsenha` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `estimatech_db`.`Colaboradores`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`Colaboradores` (
+  `idColaboradores` INT NOT NULL AUTO_INCREMENT,
+  `quantcolabN5` INT NULL,
+  `quantcolabN4` INT NULL,
+  `quantcolabN3` INT NULL,
+  `quantcolabN2` INT NULL,
+  `quantcolabN1` INT NULL,
+  `custoHoraN5` DECIMAL(3) NULL,
+  `custoHoraN4` DECIMAL(3) NULL,
+  `custoHoraN3` DECIMAL(3) NULL,
+  `custoHoraN2` DECIMAL(3) NULL,
+  `custoHoraN1` DECIMAL(3) NULL,
+  `quantColabN5` INT NULL,
+  `quantColabN4` INT NULL,
+  `quantColabN3` INT NULL,
+  `quantColabN2` INT NULL,
+  `quantColabN1` INT NULL,
+  `idProjeto` INT NULL,
+  PRIMARY KEY (`idColaboradores`),
+  INDEX `fkidprojeto_idx` (`idProjeto` ASC),
+  CONSTRAINT `fkidprojeto`
+    FOREIGN KEY (`idProjeto`)
+    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
 DEFAULT CHARACTER SET = utf8;
 
 
