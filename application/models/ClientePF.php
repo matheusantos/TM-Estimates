@@ -21,7 +21,7 @@ class Application_Model_ClientePF extends Zend_Db_Table_Abstract {
         return $this->insert($dados);
     }
 
-    public function _select($where = null, $order = null, $limit = null) {
+    public function db_select($where = null, $order = null, $limit = null) {
         $select = $this->select()
                         ->from($this)
                         ->order($order)

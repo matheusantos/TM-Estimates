@@ -1,0 +1,163 @@
+<br /><br /><br /><br />
+<form role="form" method="post" name="cadastro" action="<?= $this->url(array('controller' => 'cadastro-user', 'action' => 'cadastrar'), null, true) ?>">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <label><h1>Dados de Pessoa Jurídica</h1></label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <button type="submit" class="btn btn-primary btn-default">Editar</button>
+                <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index'), null, true) ?>" class="btn btn-danger btn-default" role="button">Excluir</a>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Dados Empresarial</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>CNPJ</label>
+                                    <input disabled="" required id="cnpj" class="form-control" name="cnpj" placeholder="CNPJ">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Razão Social</label>
+                                    <input disabled="" required type="text" class="form-control" name="razSocial" placeholder="Razão Social">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Nome Fantasia</label>
+                                    <input disabled="" required type="text" class="form-control" name="nomeFant" placeholder="Nome Fantasia">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Telefone</label>
+                                    <input disabled=""  type="tel" id="tel" class="form-control" name="tel">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Endereço</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>CEP</label>
+                                    <input disabled="" required type="cep" id="cep" class="form-control" name="cep">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Cidade</label>
+                                    <input disabled="" required type="cidade" class="form-control" name="cidade" placeholder="cidade">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Estado</label>
+                                    <!--<span class="form-control input-xlarge uneditable-input"></span>-->
+                                    <select disabled="" required name="estado"  class="form-control">
+                                        <option selected="" value="">Selecione o Estado (UF)</option>
+                                        <option value="Acre">Acre</option>
+                                        <option value="Alagoas">Alagoas</option>
+                                        <option value="Amapá">Amapá</option>
+                                        <option value="Amazonas">Amazonas</option>
+                                        <option value="Bahia">Bahia</option>
+                                        <option value="Ceará">Ceará</option>
+                                        <option value="Distrito Federal">Distrito Federal</option>
+                                        <option value="Espírito Santo">Espírito Santo</option>
+                                        <option value="Goiás">Goiás</option>
+                                        <option value="Maranhão">Maranhão</option>
+                                        <option value="Mato Grosso">Mato Grosso</option>
+                                        <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                                        <option value="Minas Gerais">Minas Gerais</option>
+                                        <option value="Pará">Pará</option>
+                                        <option value="Paraíba">Paraíba</option>
+                                        <option value="Paraná">Paraná</option>
+                                        <option value="Pernambuco">Pernambuco</option>
+                                        <option value="Piauí">Piauí</option>
+                                        <option value="Rio de Janeiro">Rio de Janeiro</option>
+                                        <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                                        <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                                        <option value="Rondônia">Rondônia</option>
+                                        <option value="Roraima">Roraima</option>
+                                        <option value="Santa Catarina">Santa Catarina</option>
+                                        <option value="São Paulo">São Paulo</option>
+                                        <option value="Sergipe">Sergipe</option>
+                                        <option value="Tocantins">Tocantins</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Rua</label>
+                                    <input disabled="" required type="text" class="form-control" name="rua" placeholder="Rua">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Nº</label>
+                                    <input disabled="" type="number" class="form-control" name="numero" placeholder="Nº">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Bairro</label>
+                                    <input disabled="" required type="text" class="form-control" name="bairro" placeholder="Bairro">
+                                </div>
+                            </div>
+                            <br/><br/><br/><br/>
+                            <div class="col-md-12">
+                                <div class="col-md-offset-0">
+                                    <label>Complemento</label>
+                                    <input disabled="" type="text" class="form-control" name="complemento" placeholder="Complemento">
+                                </div>
+                            </div>
+                            <br/><br/><br/><br/><br/><br/><br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <button disabled="" type="submit" class="btn btn-primary btn-default">Cadastrar</button>
+                <a disabled="" href="<?= $this->url(array('controller' => 'index', 'action' => 'index'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+<br/><br/><br/>

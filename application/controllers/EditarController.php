@@ -2,8 +2,18 @@
 
 class EditarController extends Zend_Controller_Action {
 
+    var $usuario; /*     * < recebe informações do usuário logado */
+
     public function init() {
-        $this->_helper->layout->setlayout("userlayout");
+        if (!Zend_Auth::getInstance()->hasIdentity()) {
+            
+        }
+
+        $auth = Zend_Auth::getInstance();
+        if ($auth->hasIdentity()) {
+            $identity = $auth->getIdentity();
+            $this->usuario = get_object_vars($identity);
+        }
     }
 
     public function indexAction() {
@@ -32,7 +42,7 @@ class EditarController extends Zend_Controller_Action {
         $this->view->assign("id", $id);
         $this->view->assign("dados_cliente", $dados_cliente);
     }
-    
+
     public function detalharFaseAction() {
         $id = $this->getParam('idP');
 
@@ -41,7 +51,7 @@ class EditarController extends Zend_Controller_Action {
         $this->view->assign("id", $id);
         $this->view->assign("dados_cliente", $dados_cliente);
     }
-    
+
     public function detalharCustoAction() {
         $id = $this->getParam('idP');
 
@@ -82,14 +92,14 @@ class EditarController extends Zend_Controller_Action {
         $dados_cliente = $model_cliente->db_update($dados);
         $this->_redirect("fase/index");
     }
-    
+
     public function atualizaDtFaAction() {
         $dados = $this->_getAllParams();
         $model_cliente = new Application_Model_DetalharFase();
         $dados_cliente = $model_cliente->db_update($dados);
         $this->_redirect("detalhar/fases");
     }
-    
+
     public function atualizaDtCuAction() {
         $dados = $this->_getAllParams();
         $model_cliente = new Application_Model_DetalharCusto();
@@ -138,14 +148,14 @@ class EditarController extends Zend_Controller_Action {
         $dados_cliente = $model_cliente->db_delete($dados);
         $this->_redirect("fase/index");
     }
-    
-        public function excluirDtFaAction() {
+
+    public function excluirDtFaAction() {
         $dados = $this->getParam('idP');
         $model_cliente = new Application_Model_DetalharFase();
         $dados_cliente = $model_cliente->db_delete($dados);
         $this->_redirect("detalhar/fases");
     }
-    
+
     public function excluirDtCuAction() {
         $dados = $this->getParam('idP');
         $model_cliente = new Application_Model_DetalharCusto();
@@ -165,6 +175,24 @@ class EditarController extends Zend_Controller_Action {
         $model_cliente = new Application_Model_Equipe();
         $dados_cliente = $model_cliente->db_delete($dados);
         $this->_redirect("equipe/index");
+    }
+
+    public function editarUserAction() {
+        //
+        //$this->view->assign("dados", $dados);
+        $idCliente = $this->usuario['idCliente'];
+        $modelPF = new Application_Model_ClientePF();
+        $dadosPF = $modelPF->db_select('cliente_idCliente', $this->usuario['idCliente']);
+        if (!empty($dadosPF)) {
+            $this->_redirect("preferencias/index");
+        }
+        $modelPJ = new Application_Model_ClientePJ();
+        $dadosPJ = $modelPJ->db_select('cliente_idCliente', $this->usuario['idCliente']);
+
+        if (!empty($dadosPJ)) {
+            $this->_redirect("preferencias/pj");
+        }
+        $this->view->assign("id", $id);
     }
 
 }
