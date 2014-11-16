@@ -14,13 +14,13 @@
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="NomeProjeto">Nome Projeto</label>
-                                    <input type="text" class="form-control"  name="projetoTitulo" placeholder="Insira Nome Projeto" value="<?=$this->dados_cliente[0]['Titulo']?>">
+                                    <input required type="text" class="form-control"  name="projetoTitulo" placeholder="Insira Nome Projeto" value="<?=$this->dados_cliente[0]['Titulo']?>">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="DataCricao">Data da Criação</label>
-                                    <input type="" class="form-control" name="projetoDataCriacao" value="<?=$this->dados_cliente[0]['DataCriacao']?>">
+                                    <input required type="" class="form-control" name="projetoDataCriacao" value="<?=$this->dados_cliente[0]['DataCriacao']?>">
                                 </div>
                             </div>
 
@@ -34,7 +34,7 @@
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="situacao">Categoria</label>
-                                    <select class="form-control" name="projetoCategoria">
+                                    <select required class="form-control" name="projetoCategoria">
                                         <option value="DESENVOLVIMENTO" <?php if($this->dados_cliente[0]['Categoria'] == 'DESENVOLVIMENTO') echo 'selected'; else '';?> >Desenvolvimento</option>
                                         <option value="MELHORIA" <?php if($this->dados_cliente[0]['Categoria'] == 'MELHORIA') echo 'selected'; else '';?> >Melhoria</option>
                                     </select>
@@ -43,7 +43,7 @@
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
                                     <label for="situacao">Situação</label>
-                                    <select class="form-control" name="projetoSituacao">
+                                    <select required class="form-control" name="projetoSituacao">
                                         <option value="A" <?php if($this->dados_cliente[0]['Situacao'] == 'A') echo 'selected'; else '';?>>Andamento</option>
                                         <option value="F" <?php if($this->dados_cliente[0]['Situacao'] == 'F') echo 'selected'; else '';?>>Finalizado</option>
                                     </select>

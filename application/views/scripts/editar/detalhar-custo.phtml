@@ -22,7 +22,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Descrição do Custo</label>
-                                        <input type="text" class="form-control" id="InputDescCusto" name="Desc" value="<?= $this->dados_cliente[0]['Descricao'] ?>">
+                                        <input required type="text" class="form-control" id="InputDescCusto" name="Desc" value="<?= $this->dados_cliente[0]['Descricao'] ?>">
                                     </div>
                                 </div>
                             </div>
@@ -30,13 +30,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Valor Previsto</label>
-                                        <input class="form-control" id="InputValorPrev" name="ValorPrev" placeholder="0,00" value="<?= $this->dados_cliente[0]['ValorPrevisto'] ?>">
+                                        <input required class="form-control" id="InputValorPrev" name="ValorPrev" placeholder="0,00" value="<?= $this->dados_cliente[0]['ValorPrevisto'] ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6 ">
                                     <div class="form-group">
                                         <label>Valor Efetivo</label>;
-                                        <input class="form-control" id="InputdtValorEf" name="ValorEf" placeholder="0,00" value="<?= $this->dados_cliente[0]['ValorEfetivo'] ?>">
+                                        <input required class="form-control" id="InputdtValorEf" name="ValorEf" placeholder="0,00" value="<?= $this->dados_cliente[0]['ValorEfetivo'] ?>">
                                     </div>
                                 </div>
                             </div>
