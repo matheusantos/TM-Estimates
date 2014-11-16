@@ -20,7 +20,7 @@ class Application_Model_ClientePJ extends Zend_Db_Table_Abstract {
      public function db_select($id){
       $db = Zend_Db_Table_Abstract::getDefaultAdapter();
       $select = $db->select()
-      ->from('clientepf')
+      ->from('clientepj')
       ->where('cliente_idCliente='.$id);
       return $db->fetchAll($select);
       } 

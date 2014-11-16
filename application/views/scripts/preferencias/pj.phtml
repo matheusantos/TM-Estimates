@@ -1,4 +1,3 @@
-<br /><br /><br /><br />
 <form role="form" method="post" name="cadastro" action="<?= $this->url(array('controller' => 'cadastro-user', 'action' => 'cadastrar'), null, true) ?>">
     <div class="row clearfix top-buffer">
         <div class="col-md-10">
@@ -11,7 +10,7 @@
         <div class="col-md-10">
             <div class="col-md-offset-2">
                 <button type="submit" class="btn btn-primary btn-default">Editar</button>
-                <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index'), null, true) ?>" class="btn btn-danger btn-default" role="button">Excluir</a>
+                <a href="<?= $this->url(array('controller' => 'preferencias', 'action' => 'excluir-pf', 'idP' => $this->cliente['idCliente']), null, true) ?>" class="btn btn-danger btn-default" role="button">Excluir</a>
             </div>
         </div>
     </div>
@@ -28,19 +27,19 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>CNPJ</label>
-                                    <input disabled="" required id="cnpj" class="form-control" name="cnpj" placeholder="CNPJ">
+                                    <input disabled="" required id="cnpj" class="form-control" name="cnpj" placeholder="CNPJ" value="<?= $this->dadosPJ[0]['CNPJ'] ?>">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Razão Social</label>
-                                    <input disabled="" required type="text" class="form-control" name="razSocial" placeholder="Razão Social">
+                                    <input disabled="" required type="text" class="form-control" name="razSocial" placeholder="Razão Social" value="<?= $this->dadosPJ[0]['NomeFantasia'] ?>">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nome Fantasia</label>
-                                    <input disabled="" required type="text" class="form-control" name="nomeFant" placeholder="Nome Fantasia">
+                                    <input disabled="" required type="text" class="form-control" name="nomeFant" placeholder="Nome Fantasia" value="<?= $this->dadosPJ[0]['NomeFantasia'] ?>">
                                 </div>
                             </div>
                         </div>
@@ -48,7 +47,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Telefone</label>
-                                    <input disabled=""  type="tel" id="tel" class="form-control" name="tel">
+                                    <input disabled=""  type="tel" id="tel" class="form-control" name="tel" value="<?= $this->dadosPJ[0]['Telefone'] ?>">
                                 </div>
                             </div>
                         </div>
@@ -66,84 +65,73 @@
                         <h3 class="panel-title"><strong>Endereço</strong></h3>
                     </div>
                     <div class="panel-body">
-                        <div class="form-row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>CEP</label>
-                                    <input disabled="" required type="cep" id="cep" class="form-control" name="cep">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Cidade</label>
-                                    <input disabled="" required type="cidade" class="form-control" name="cidade" placeholder="cidade">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Estado</label>
-                                    <!--<span class="form-control input-xlarge uneditable-input"></span>-->
-                                    <select disabled="" required name="estado"  class="form-control">
-                                        <option selected="" value="">Selecione o Estado (UF)</option>
-                                        <option value="Acre">Acre</option>
-                                        <option value="Alagoas">Alagoas</option>
-                                        <option value="Amapá">Amapá</option>
-                                        <option value="Amazonas">Amazonas</option>
-                                        <option value="Bahia">Bahia</option>
-                                        <option value="Ceará">Ceará</option>
-                                        <option value="Distrito Federal">Distrito Federal</option>
-                                        <option value="Espírito Santo">Espírito Santo</option>
-                                        <option value="Goiás">Goiás</option>
-                                        <option value="Maranhão">Maranhão</option>
-                                        <option value="Mato Grosso">Mato Grosso</option>
-                                        <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
-                                        <option value="Minas Gerais">Minas Gerais</option>
-                                        <option value="Pará">Pará</option>
-                                        <option value="Paraíba">Paraíba</option>
-                                        <option value="Paraná">Paraná</option>
-                                        <option value="Pernambuco">Pernambuco</option>
-                                        <option value="Piauí">Piauí</option>
-                                        <option value="Rio de Janeiro">Rio de Janeiro</option>
-                                        <option value="Rio Grande do Sul">Rio Grande do Sul</option>
-                                        <option value="Rio Grande do Norte">Rio Grande do Norte</option>
-                                        <option value="Rondônia">Rondônia</option>
-                                        <option value="Roraima">Roraima</option>
-                                        <option value="Santa Catarina">Santa Catarina</option>
-                                        <option value="São Paulo">São Paulo</option>
-                                        <option value="Sergipe">Sergipe</option>
-                                        <option value="Tocantins">Tocantins</option>
-                                    </select>
-                                </div>
+                        <div class="col-md-4">
+                            <label>CEP</label>
+                            <input disabled="" required type="text" class="form-control" name="cep" id="cep" value="<?= $this->cliente['Cep'] ?>">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Cidade</label>
+                            <input disabled="" required type="text" class="form-control" name="cidade" placeholder="Cidade" value="<?= $this->cliente['Cidade'] ?>">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Estado</label>
+<!--                            <span class="form-control input-xlarge uneditable-input"></span>-->
+                            <select disabled="" required name="estado" class="form-control">
+                                <option value="">Selecione o Estado (UF)</option>
+                                <option value="ac" <?php if ($this->cliente['UF'] == 'ac') echo 'selected';else ''; ?>>Acre</option>
+                                <option value="al" <?php if ($this->cliente['UF'] == 'al') echo 'selected';else ''; ?>>Alagoas</option>
+                                <option value="am" <?php if ($this->cliente['UF'] == 'am') echo 'selected';else ''; ?>>Amazonas</option>
+                                <option value="ap" <?php if ($this->cliente['UF'] == 'ap') echo 'selected';else ''; ?>>Amapá</option>
+                                <option value="ba" <?php if ($this->cliente['UF'] == 'ba') echo 'selected';else ''; ?>>Bahia</option>
+                                <option value="ce" <?php if ($this->cliente['UF'] == 'ce') echo 'selected';else ''; ?>>Ceará</option>
+                                <option value="df" <?php if ($this->cliente['UF'] == 'df') echo 'selected';else ''; ?>>Distrito Federal</option>
+                                <option value="es" <?php if ($this->cliente['UF'] == 'es') echo 'selected';else ''; ?>>Espírito Santo</option>
+                                <option value="go" <?php if ($this->cliente['UF'] == 'go') echo 'selected';else ''; ?>>Goiás</option>
+                                <option value="ma" <?php if ($this->cliente['UF'] == 'ma') echo 'selected';else ''; ?>>Maranhão</option>
+                                <option value="mt" <?php if ($this->cliente['UF'] == 'mt') echo 'selected';else ''; ?>>Mato Grosso</option>
+                                <option value="ms" <?php if ($this->cliente['UF'] == 'ms') echo 'selected';else ''; ?>>Mato Grosso do Sul</option>
+                                <option value="mg" <?php if ($this->cliente['UF'] == 'mg') echo 'selected';else ''; ?>>Minas Gerais</option>
+                                <option value="pa" <?php if ($this->cliente['UF'] == 'pa') echo 'selected';else ''; ?>>Pará</option>
+                                <option value="pb" <?php if ($this->cliente['UF'] == 'pb') echo 'selected';else ''; ?>>Paraíba</option>
+                                <option value="pr" <?php if ($this->cliente['UF'] == 'pr') echo 'selected';else ''; ?>>Paraná</option>
+                                <option value="pe" <?php if ($this->cliente['UF'] == 'pe') echo 'selected';else ''; ?>>Pernambuco</option>
+                                <option value="pi" <?php if ($this->cliente['UF'] == 'pi') echo 'selected';else ''; ?>>Piauí</option>
+                                <option value="rj" <?php if ($this->cliente['UF'] == 'rj') echo 'selected';else ''; ?>>Rio de Janeiro</option>
+                                <option value="rn" <?php if ($this->cliente['UF'] == 'rn') echo 'selected';else ''; ?>>Rio Grande do Norte</option>
+                                <option value="ro" <?php if ($this->cliente['UF'] == 'ro') echo 'selected';else ''; ?>>Rondônia</option>
+                                <option value="rs" <?php if ($this->cliente['UF'] == 'rs') echo 'selected';else ''; ?>>Rio Grande do Sul</option>
+                                <option value="rr <?php if ($this->cliente['UF'] == 'rr') echo 'selected';else ''; ?>">Roraima</option>
+                                <option value="sc" <?php if ($this->cliente['UF'] == 'sc') echo 'selected';else ''; ?>>Santa Catarina</option>
+                                <option value="se" <?php if ($this->cliente['UF'] == 'se') echo 'selected';else ''; ?>>Sergipe</option>
+                                <option value="sp" <?php if ($this->cliente['UF'] == 'sp') echo 'selected';else ''; ?>>São Paulo</option>
+                                <option value="to <?php if ($this->cliente['UF'] == 'to') echo 'selected';else ''; ?>">Tocantins</option> 
+                            </select>
+                        </div>
+                        <br/><br/><br/><br/>
+                        <div class="col-md-4">
+                            <label>Rua</label>
+                            <input disabled="" required type="text" class="form-control" name="rua" placeholder="Rua" value="<?= $this->cliente['Logradouro'] ?>">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label>Nº</label>
+                                <input disabled="" type="number" class="form-control" name="numero" placeholder="Nº" value="<?= $this->cliente['Numero'] ?>">
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Rua</label>
-                                    <input disabled="" required type="text" class="form-control" name="rua" placeholder="Rua">
-                                </div>
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label>Bairro</label>
+                                <input disabled="" required type="text" class="form-control" name="bairro" placeholder="Bairro" value="<?= $this->cliente['Bairro'] ?>">
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Nº</label>
-                                    <input disabled="" type="number" class="form-control" name="numero" placeholder="Nº">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Bairro</label>
-                                    <input disabled="" required type="text" class="form-control" name="bairro" placeholder="Bairro">
-                                </div>
-                            </div>
-                            <br/><br/><br/><br/>
-                            <div class="col-md-12">
-                                <div class="col-md-offset-0">
-                                    <label>Complemento</label>
-                                    <input disabled="" type="text" class="form-control" name="complemento" placeholder="Complemento">
-                                </div>
-                            </div>
-                            <br/><br/><br/><br/><br/><br/><br/>
                         </div>
+                        <br/><br/><br/><br/>
+                        <div class="col-md-12">
+                            <div class="col-md-offset-0">
+                                <label>Complemento</label>
+                                <input disabled="" type="text" class="form-control" name="complemento" placeholder="Complemento" value="<?= $this->cliente['Complemento'] ?>">
+                            </div>
+                        </div>
+                        <br/><br/><br/><br/>
                     </div>
                 </div>
             </div>

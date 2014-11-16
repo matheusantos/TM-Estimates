@@ -17,7 +17,7 @@ class PreferenciasController extends Zend_Controller_Action {
     public function indexAction() {
         $cliente = $this->usuario;
         $modelPF = new Application_Model_ClientePF();
-        $dadosPF = $modelPF->db_select($cliente);
+        $dadosPF = $modelPF->db_select($cliente['idCliente']);
         $this->view->assign("cliente", $cliente);
         $this->view->assign("dadosPF", $dadosPF);
     }
@@ -25,7 +25,7 @@ class PreferenciasController extends Zend_Controller_Action {
     public function pjAction() {
         $cliente = $this->usuario;
         $modelPJ = new Application_Model_ClientePJ();
-        $dadosPJ = $modelPJ->db_select($cliente);
+        $dadosPJ = $modelPJ->db_select($cliente['idCliente']);
         $this->view->assign("cliente", $cliente);
         $this->view->assign("dadosPJ", $dadosPJ);
     }
