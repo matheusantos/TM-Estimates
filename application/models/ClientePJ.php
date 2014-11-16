@@ -10,6 +10,7 @@ class Application_Model_ClientePJ extends Zend_Db_Table_Abstract {
         
         $dados = array(
             'NomeFantasia' => $request['nomeFant'],
+            'RazaoSocial' => $request['razSocial'],
             'Telefone' => $request['tel'],
             'cliente_idCliente'=> $id,
             'CNPJ' => $request['cnpj']

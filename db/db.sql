@@ -85,6 +85,7 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientepj` (
   `idCNPJ` INT(11) NOT NULL AUTO_INCREMENT,
   `NomeFantasia` VARCHAR(45) NOT NULL,
+  `RazaoSocial` VARCHAR(45) NOT NULL,
   `Telefone` VARCHAR(15) NULL,
   `cliente_idCliente` INT(11) NOT NULL,
   `CNPJ` VARCHAR(18) NOT NULL,
