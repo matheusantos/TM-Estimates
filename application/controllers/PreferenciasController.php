@@ -16,7 +16,7 @@ class PreferenciasController extends Zend_Controller_Action {
 
     public function indexAction() {
         $modelPF = new Application_Model_ClientePF();
-        $dadosPF = $modelPF->db_select('cliente_idCliente', $this->usuario['idCliente']);
+        $dadosPF = $modelPF->db_select($this->usuario['idCliente']);
         $cliente = $this->usuario;
         $this->view->assign("cliente", $cliente);
         $this->view->assign("dadosPF", $dadosPF);
