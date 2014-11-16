@@ -186,12 +186,13 @@ class EditarController extends Zend_Controller_Action {
         if (!empty($dadosPF)) {
             $this->_redirect("preferencias/index");
         }
-        $modelPJ = new Application_Model_ClientePJ();
+         $modelPJ = new Application_Model_ClientePJ();
         $dadosPJ = $modelPJ->db_select($idCliente);
 
         if (!empty($dadosPJ)) {
             $this->_redirect("preferencias/pj");
         }
+        
         $this->view->assign("id", $id);
     }
 
