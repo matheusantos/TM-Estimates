@@ -182,7 +182,7 @@ class EditarController extends Zend_Controller_Action {
         //$this->view->assign("dados", $dados);
         $idCliente = $this->usuario['idCliente'];
         $modelPF = new Application_Model_ClientePF();
-        $dadosPF = $modelPF->db_select('cliente_idCliente', $this->usuario['idCliente']);
+        $dadosPF = $modelPF->db_select($idCliente);
         if (!empty($dadosPF)) {
             $this->_redirect("preferencias/index");
         }
