@@ -15,15 +15,19 @@ class PreferenciasController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-        $modelPF = new Application_Model_ClientePF();
-        $dadosPF = $modelPF->db_select($this->usuario['idCliente']);
         $cliente = $this->usuario;
+        $modelPF = new Application_Model_ClientePF();
+        $dadosPF = $modelPF->db_select($cliente);
         $this->view->assign("cliente", $cliente);
         $this->view->assign("dadosPF", $dadosPF);
     }
 
     public function pjAction() {
-        
+        $cliente = $this->usuario;
+        $modelPJ = new Application_Model_ClientePJ();
+        $dadosPJ = $modelPJ->db_select($cliente);
+        $this->view->assign("cliente", $cliente);
+        $this->view->assign("dadosPJ", $dadosPJ);
     }
     
     public function excluirPfAction(){
