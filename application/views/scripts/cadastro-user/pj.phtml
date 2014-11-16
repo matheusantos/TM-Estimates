@@ -33,20 +33,23 @@
                     <div class="panel-body">
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
-                                <label for="InputEmail1">Email</label>
+                                <label for="email">Email</label>
                                 <input required type="email" class="form-control" id="email" name="email" placeholder="Enter email">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
-                                <label for="InputPassword1">Senha</label>
-                                <input required type="password" class="form-control" name="senha" placeholder="Senha">
+                                <label for="senha">Senha</label>
+                                <input required type="password" class="form-control" name="senha" placeholder="Senha"
+                                       onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+                                       if(this.checkValidity()) form.ConfSenha.pattern = this.value;">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
-                                <label for="sInputPassword1">Confirme a senha</label>
-                                <input required type="password" class="form-control" id="senha2" name="ConfSenha" placeholder="Confirme a senha" onBlur="validarSenha()">
+                                <label for="ConfSenha">Confirme a senha</label>
+                                <input required type="password" class="form-control" id="ConfSenha" name="ConfSenha" placeholder="Confirme a senha"
+                                       onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');">
                             </div>
                         </div>
                     </div>
