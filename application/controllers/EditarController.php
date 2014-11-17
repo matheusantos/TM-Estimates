@@ -24,6 +24,16 @@ class EditarController extends Zend_Controller_Action {
         $this->view->assign("id", $id);
         $this->view->assign("dados_cliente", $dados_cliente);
     }
+    
+    public function itensInfluenciaAction() {
+        $this->_helper->layout->setlayout("userlayout");
+        //$id = $this->getParam('idP');
+
+        //$model_cliente = new Application_Model_Projeto();
+        //$dados_cliente = $model_cliente->db_select('idProjeto', $id, null, null);
+        //$this->view->assign("id", $id);
+        //$this->view->assign("dados_cliente", $dados_cliente);
+    }
 
     public function equipeAction() {
         $id = $this->getParam('idP');

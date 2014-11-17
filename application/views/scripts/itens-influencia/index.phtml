@@ -1,0 +1,191 @@
+<div class="page-header">
+    <h3><span class="glyphicon glyphicon-th-list"></span> Itens de influência</h3>
+</div>
+<div class="col-md-6">
+    <div class="col-md-offset-3">
+        <a href="<?= $this->url(array('controller' => 'itens-influencia', 'action' => 'novo'), null, true) ?>" class="btn btn btn-success" role="button">Novo</a>
+        <a href="<?= $this->url(array('controller' => 'editar', 'action' => 'itens-influencia'), null, true) ?>" class="btn btn btn-primary" role="button">Editar</a>
+    </div>
+</div>
+<div class="row">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Itens de influência</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'ambiente', 'action' => 'salvar-dados'), null, true) ?>">
+                            <br><br>
+                            <div class="col-md-4 form-groups">
+                                <label>Comunicação de dados</label>
+                                <select disabled=""required class="form-control">
+                                    <option value  = "0" class="form-control text-center">0</option>
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 form-groups">
+                                <label>Processamento distribuído</label>
+                                <select disabled="" required class="form-control">
+                                    <option value  = "0" class="form-control text-center">0</option>
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4 form-groups">
+                                <label>Performace</label>
+                                <select disabled="" required class="form-control">
+                                    <option value  = "0" class="form-control text-center">0</option>
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+                            <br><br><br><br>
+                            <div class="col-md-4 form-groups">
+                                <label>Config. altamente utilizada</label>
+                                <select disabled="" required class="form-control">
+                                    <option value  = "0" class="form-control text-center">0</option>
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 form-groups">
+                                <label>Faixa de transações</label>
+                                <select disabled="" required class="form-control">
+                                    <option value  = "0" class="form-control text-center">0</option>
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4 form-groups">
+                                <label>Entrada de dados On-Line</label>
+                                <select disabled="" required class="form-control">
+                                    <option value  = "0" class="form-control text-center">0</option>
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+                            <br><br><br><br>
+                            <div class="col-md-4 form-groups">
+                                <label>Eficiência do usuário final</label>
+                                <select disabled="" required class="form-control">
+                                    <option value  = "0" class="form-control text-center">0</option>
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 form-groups">
+                                <label>Atualização On-Line</label>
+                                <select disabled="" required class="form-control">
+                                    <option value  = "0" class="form-control text-center">0</option>
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4 form-groups">
+                                <label>Complexidade processamento</label>
+                                <select disabled="" required class="form-control">
+                                    <option value  = "0" class="form-control text-center">0</option>
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+                            <br><br><br><br>
+                            <div class="col-md-4 form-groups">
+                                <label>Reutilização</label>
+                                <select disabled="" required class="form-control">
+                                    <option value  = "0" class="form-control text-center">0</option>
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 form-groups">
+                                <label>Facilidade de instalação</label>
+                                <select disabled="" required class="form-control">
+                                    <option value  = "0" class="form-control text-center">0</option>
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4 form-groups">
+                                <label>Facilidade de operação</label>
+                                <select disabled="" required class="form-control">
+                                    <option value  = "0" class="form-control text-center">0</option>
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+                            <br><br><br><br>
+                            <div class="col-md-4 form-groups">
+                                <label>Multiplas localidades</label>
+                                <select disabled="" required class="form-control">
+                                    <option value  = "0" class="form-control text-center">0</option>
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4 form-groups">
+                                <label>Facilidade de mudanças</label>
+                                <select disabled="" required class="form-control">
+                                    <option value  = "0" class="form-control text-center">0</option>
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+                            <br><br><br><br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
