@@ -12,9 +12,15 @@
                     <div class="panel-body">
                         <form role="form">
                             <div class="col-md-4">
-                                <div class="col-md-offset-0">
-                                    <label>Cod. Projeto</label>
-                                    <input required type="number" class="form-control" id="exampleInputCodProj" name="CodProj" placeholder="Código do Projeto">
+                                <div class="form-group">
+                                    <label>Projeto</label>
+                                    <select required class="form-control" name="Projeto">
+                                        <option value  = "" class="form-control"> </option>
+                                        <?php foreach ($this->dados1 as $key => $value) { ?>
+                                            <option value="<?= $value["idProjeto"] ?>" class="form-control"> <?= $value['Titulo'] ?> </option>
+                                        <?php } ?>
+                                    </select>
+                                    <!--<input type="" class="form-control" id="exampleInputProj" placeholder="Projeto">-->
                                 </div>
                             </div>
                             <div class="col-md-4 form-groups">
@@ -22,7 +28,6 @@
                                 <select required class="form-control">
                                     <option value  = "ALI" class="form-control"> ALI </option>
                                     <option value = "F" class="form-control"> AIE </option>
-                                    <option value = "F" class="form-control"> AEC </option>
                                 </select>
                             </div>
 
@@ -35,27 +40,14 @@
                             <br><br><br><br>
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
-                                    <label>Tipos de registro</label>
-                                    <input required type="number" class="form-control" id="exampleInputTipReg" name="TipRegis" placeholder="Tipo de registro">
+                                    <label>Qtd. Tipos de registro</label>
+                                    <input required type="number" class="form-control" id="exampleInputTipReg" name="TipRegis" placeholder="Quantidade de Tipos de registro">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
-                                    <label>Tipos de dados</label>
-                                    <input required type="number" class="form-control" id="exampleInputTipDad" name="TipDados" placeholder="Tipos de dados">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="col-md-offset-0">
-                                    <label>Complexidade</label>
-                                    <input type="text" class="form-control" id="exampleInputComplex" name="Complex" placeholder="Complexidade">
-                                </div>
-                            </div>
-                            <br><br><br><br>
-                            <div class="col-md-4">
-                                <div class="col-md-offset-0">
-                                    <label>Pontos de função</label>
-                                    <input type="text" class="form-control" id="exampleInputDesc" name="PtsFunc" placeholder="Pontos de função">
+                                    <label>Qtd. Tipos de dados</label>
+                                    <input required type="number" class="form-control" id="exampleInputTipDad" name="TipDados" placeholder="Quantidades de Tipos de dados">
                                 </div>
                             </div>
                             <br><br><br><br>

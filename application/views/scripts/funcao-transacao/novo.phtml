@@ -12,9 +12,15 @@
                     <div class="panel-body">
                         <form role="form">
                             <div class="col-md-4">
-                                <div class="form-groups">
+                                <div class="form-group">
                                     <label>Projeto</label>
-                                    <input required type="number" class="form-control" id="exampleInputCodProj" name="CodProj" placeholder="Código do Projeto">
+                                    <select required class="form-control" name="Projeto">
+                                        <option value  = "" class="form-control"> </option>
+                                        <?php foreach ($this->dados1 as $key => $value) { ?>
+                                            <option value="<?= $value["idProjeto"] ?>" class="form-control"> <?= $value['Titulo'] ?> </option>
+                                        <?php } ?>
+                                    </select>
+                                    <!--<input type="" class="form-control" id="exampleInputProj" placeholder="Projeto">-->
                                 </div>
                             </div>
                             <div class="col-md-4 form-groups">
@@ -23,7 +29,6 @@
                                     <option value  = "EE" class="form-control"> EE </option>
                                     <option value = "SE" class="form-control"> SE </option>
                                     <option value = "CE" class="form-control"> CE </option>
-                                    <option value = "EEC" class="form-control"> EEC </option>
                                 </select>
                             </div>
                             <div class="col-md-4">
@@ -35,14 +40,14 @@
                             <br><br><br><br>
                             <div class="col-md-4">
                                 <div class="form-groups">
-                                    <label>Arquivos Referenciados</label>
-                                    <input required type="number" class="form-control" id="exampleInputTipReg" name="ArqRef" placeholder="Tipo de registro">
+                                    <label>Qtd. Arquivos Referenciados</label>
+                                    <input required type="number" class="form-control" id="exampleInputTipReg" name="ArqRef" placeholder="Quantidade de arquivos referenciados">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-groups">
-                                    <label>Tipo de Dados</label>
-                                    <input required type="number" class="form-control" id="exampleInputTipReg" name="TipDados" placeholder="Tipo de registro">
+                                    <label>Qtd. Tipos de Dados</label>
+                                    <input required type="number" class="form-control" id="exampleInputTipReg" name="TipDados" placeholder="Quantidade de Tipos de dados">
                                 </div>
                             </div>
                             <br><br><br><br>
