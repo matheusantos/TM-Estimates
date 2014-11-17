@@ -35,21 +35,26 @@ class EditarController extends Zend_Controller_Action {
     }
 
     public function faseAction() {
+        $this->_helper->layout->setlayout("userlayout");
         $id = $this->getParam('idP');
 
         $model_cliente = new Application_Model_Fase();
         $dados_cliente = $model_cliente->db_select('idFase', $id, null, null);
         $this->view->assign("id", $id);
         $this->view->assign("dados_cliente", $dados_cliente);
+        
     }
 
     public function detalharFaseAction() {
+        $this->_helper->layout->setlayout("userlayout");
+        
         $id = $this->getParam('idP');
 
         $model_cliente = new Application_Model_DetalharFase();
         $dados_cliente = $model_cliente->db_select('idFase', $id, null, null);
         $this->view->assign("id", $id);
         $this->view->assign("dados_cliente", $dados_cliente);
+        
     }
 
     public function detalharCustoAction() {
@@ -235,7 +240,7 @@ class EditarController extends Zend_Controller_Action {
         $id = $cliente->db_update($dados);
         $model->db_update($dados, $id);
 
-        $this->_redirect("preferencias/index");
+        $this->_redirect("preferencias/pj");
     }
 
 }

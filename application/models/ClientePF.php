@@ -40,7 +40,6 @@ class Application_Model_ClientePF extends Zend_Db_Table_Abstract {
             'Celular' => $request['cel'],
             'datNasc' => $request['datNasc'],
             'Sexo' => $request['sexo'],
-            'cliente_idCliente' => $id,
             'CPF' => $request['cpf'],
             'RG' => $request['rg']
         );

@@ -31,7 +31,6 @@ class Application_Model_ClientePJ extends Zend_Db_Table_Abstract {
             'NomeFantasia' => $request['nomeFant'],
             'RazaoSocial' => $request['razSocial'],
             'Telefone' => $request['tel'],
-            'cliente_idCliente'=> $id,
             'CNPJ' => $request['cnpj']
         );
         $where = $this->getAdapter()->quoteInto("cliente_idCliente = ?", $request['id']);

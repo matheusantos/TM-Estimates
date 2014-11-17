@@ -128,11 +128,11 @@
             </div>
         </div>
     </div>
-
+<input type = "hidden" name="id" value ="<?= $this->cliente['idCliente'] ?>">
     <div class="row clearfix top-buffer">
         <div class="col-md-10">
             <div class="col-md-offset-2">
-                <button type="submit" class="btn btn-primary btn-default">Cadastrar</button>
+                <button type="submit" class="btn btn-primary btn-default">Atualizar</button>
                 <a  href="<?= $this->url(array('controller' => 'preferencias', 'action' => 'pj'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
             </div>
         </div>

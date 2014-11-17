@@ -11,25 +11,36 @@
                     </div>
                     <div class="panel-body">
                         <form role="form" method="post" action="<?= $this->url(array('controller' => 'recurso', 'action' => 'salvar-dados'), null, true) ?>">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="col-md-offset-0">
                                     <label>Função</label>
                                     <input required type="text" class="form-control" name="descricao" placeholder="Função">
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="col-md-offset-0">
                                     <label>Carga Horária/Dia</label>
                                     <input required type="number" class="form-control" name="carga_horaria" placeholder="0">
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="col-md-offset-0">
                                     <label>Custo/Hora</label>
                                     <input required type="text" class="form-control" id="custo" name="custo">
                                 </div>
                             </div>
+                            <div class="col-md-6 form-groups">
+                                <label>Nível</label>
+                                <select required class="form-control">
+                                    <option value  = "1" class="form-control text-center">1</option>
+                                    <option value = "2" class="form-control text-center">2</option>
+                                    <option value = "3" class="form-control text-center">3</option>
+                                    <option value = "4" class="form-control text-center">4</option>
+                                    <option value = "5" class="form-control text-center">5</option>
+                                </select>
+                            </div>
+                            <br><br><br><br>
                             <br><br><br><br>
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">
