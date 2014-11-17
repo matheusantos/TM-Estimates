@@ -1,5 +1,5 @@
 <br /><br />
-<form role="form" name="cadastro">
+<form role="form" name="cadastro" method="post" action="<?= $this->url(array('controller' => 'editar', 'action' => 'atualizar-pf'), null, true) ?>">
     <div class="row clearfix top-buffer">
         <div class="col-md-10">
             <div class="col-md-offset-2">
@@ -7,15 +7,6 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-10">
-            <div class="col-md-offset-2">
-                <a href="<?= $this->url(array('controller' => 'editar', 'action' => 'pf', 'idP' => $this->cliente['idCliente']), null, true) ?>" class="btn btn-primary btn-default" role="button">Editar</a>
-                <a href="<?= $this->url(array('controller' => 'preferencias', 'action' => 'excluir-pf', 'idP' => $this->cliente['idCliente']), null, true) ?>" class="btn btn-danger btn-default" role="button">Excluir</a>
-            </div>
-        </div>
-    </div>
-    <br><br>
 
     <div class="row ">
         <div class="col-md-10">
@@ -28,40 +19,40 @@
                         <div class="form-row">
                             <div class="col-md-4 form-group">
                                 <label>Nome</label>
-                                <input disabled="" required type="text" class="form-control"  name="nome" placeholder="Nome" value="<?= $this->dadosPF[0]['Nome'] ?>">
+                                <input  required type="text" class="form-control"  name="nome" placeholder="Nome" value="<?= $this->dadosPF[0]['Nome'] ?>">
                             </div>
                             <div class="col-md-8 form-group">
                                 <label>Sobrenome</label>
-                                <input disabled="" required type="text" class="form-control" name="sobrenome" placeholder="Sobrenome" value="<?= $this->dadosPF[0]['Sobrenome'] ?>">
+                                <input  required type="text" class="form-control" name="sobrenome" placeholder="Sobrenome" value="<?= $this->dadosPF[0]['Sobrenome'] ?>">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-md-4 form-groups">
                                 <label>RG</label>
-                                <input disabled="" required class="form-control" name="rg" id="rg" value="<?= $this->dadosPF[0]['RG'] ?>">
+                                <input  required class="form-control" name="rg" id="rg" value="<?= $this->dadosPF[0]['RG'] ?>">
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>CPF</label>
-                                <input disabled="" required class="form-control" name="cpf" id="CPF" value="<?= $this->dadosPF[0]['CPF'] ?>">
+                                <input  required class="form-control" name="cpf" id="CPF" value="<?= $this->dadosPF[0]['CPF'] ?>">
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>Data de nascimento</label>
-                                <input disabled="" required required type="" class="form-control" name="datNasc" id="date" value="<?= $this->dadosPF[0]['datNasc'] ?>">
+                                <input  required required type="" class="form-control" name="datNasc" id="date" value="<?= $this->dadosPF[0]['datNasc'] ?>">
                             </div>
                         </div>
                         <br /><br /><br /><br /><br /><br /><br />
                         <div class="form-row">
                             <div class="col-md-4">
                                 <label>Telefone</label>
-                                <input disabled="" type="tel" class="form-control" id="tel" name="tel" value="<?= $this->dadosPF[0]['Telefone'] ?>">
+                                <input  type="tel" class="form-control" id="tel" name="tel" value="<?= $this->dadosPF[0]['Telefone'] ?>">
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>Celular</label>
-                                <input disabled="" type="tel" class="form-control" id="cel" name="cel" value="<?= $this->dadosPF[0]['Celular'] ?>">
+                                <input  type="tel" class="form-control" id="cel" name="cel" value="<?= $this->dadosPF[0]['Celular'] ?>">
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>Sexo</label>
-                                <select disabled="" class="form-control" name="sexo">
+                                <select  class="form-control" name="sexo">
                                     <option required selected="" value="" >Selecione o Sexo</option>
                                     <option value="M" <?php if ($this->dadosPF[0]['Sexo'] == 'M') echo 'selected';?>>Masculino</option>
                                     <option value="F" <?php if ($this->dadosPF[0]['Sexo'] == 'F') echo 'selected'; else ''; ?>>Feminino</option>
@@ -86,16 +77,16 @@
                     <div class="panel-body">
                         <div class="col-md-4">
                             <label>CEP</label>
-                            <input disabled="" required type="text" class="form-control" name="cep" id="cep" value="<?= $this->cliente['Cep'] ?>">
+                            <input  required type="text" class="form-control" name="cep" id="cep" value="<?= $this->cliente['Cep'] ?>">
                         </div>
                         <div class="col-md-4">
                             <label>Cidade</label>
-                            <input disabled="" required type="text" class="form-control" name="cidade" placeholder="Cidade" value="<?= $this->cliente['Cidade'] ?>">
+                            <input  required type="text" class="form-control" name="cidade" placeholder="Cidade" value="<?= $this->cliente['Cidade'] ?>">
                         </div>
                         <div class="col-md-4">
                             <label>Estado</label>
 <!--                            <span class="form-control input-xlarge uneditable-input"></span>-->
-                            <select disabled="" required name="estado" class="form-control">
+                            <select  required name="estado" class="form-control">
                                 <option value="">Selecione o Estado (UF)</option>
                                 <option value="ac" <?php if ($this->cliente['UF'] == 'ac') echo 'selected';else ''; ?>>Acre</option>
                                 <option value="al" <?php if ($this->cliente['UF'] == 'al') echo 'selected';else ''; ?>>Alagoas</option>
@@ -129,25 +120,25 @@
                         <br/><br/><br/><br/>
                         <div class="col-md-4">
                             <label>Rua</label>
-                            <input disabled="" required type="text" class="form-control" name="rua" placeholder="Rua" value="<?= $this->cliente['Logradouro'] ?>">
+                            <input  required type="text" class="form-control" name="rua" placeholder="Rua" value="<?= $this->cliente['Logradouro'] ?>">
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
                                 <label>Nº</label>
-                                <input disabled="" type="number" class="form-control" name="numero" placeholder="Nº" value="<?= $this->cliente['Numero'] ?>">
+                                <input  type="number" class="form-control" name="numero" placeholder="Nº" value="<?= $this->cliente['Numero'] ?>">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-offset-0">
                                 <label>Bairro</label>
-                                <input disabled="" required type="text" class="form-control" name="bairro" placeholder="Bairro" value="<?= $this->cliente['Bairro'] ?>">
+                                <input  required type="text" class="form-control" name="bairro" placeholder="Bairro" value="<?= $this->cliente['Bairro'] ?>">
                             </div>
                         </div>
                         <br/><br/><br/><br/>
                         <div class="col-md-12">
                             <div class="col-md-offset-0">
                                 <label>Complemento</label>
-                                <input disabled="" type="text" class="form-control" name="complemento" placeholder="Complemento" value="<?= $this->cliente['Complemento'] ?>">
+                                <input  type="text" class="form-control" name="complemento" placeholder="Complemento" value="<?= $this->cliente['Complemento'] ?>">
                             </div>
                         </div>
                         <br/><br/><br/><br/>
@@ -158,6 +149,15 @@
     </div>
 
     <input type = "hidden" name="id" value ="<?= $this->cliente['idCliente'] ?>">
+
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <button type="submit" class="btn btn-success btn-default">Atualizar</button>
+                <a href="<?= $this->url(array('controller' => 'preferencias', 'action' => 'index'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
+            </div>
+        </div>
+    </div>
 
 </form>
 <br/><br/><br/>

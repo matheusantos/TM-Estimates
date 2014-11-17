@@ -24,6 +24,18 @@ class Application_Model_ClientePJ extends Zend_Db_Table_Abstract {
       ->from('clientepj')
       ->where('cliente_idCliente='.$id);
       return $db->fetchAll($select);
-      } 
+      }
+      
+       public function db_update(array $request) {
+        $dados = array(
+            'NomeFantasia' => $request['nomeFant'],
+            'RazaoSocial' => $request['razSocial'],
+            'Telefone' => $request['tel'],
+            'cliente_idCliente'=> $id,
+            'CNPJ' => $request['cnpj']
+        );
+        $where = $this->getAdapter()->quoteInto("cliente_idCliente = ?", $request['id']);
+        $this->update($dados, $where);
+    }
 
 }

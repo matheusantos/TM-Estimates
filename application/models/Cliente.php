@@ -48,5 +48,20 @@ class Application_Model_Cliente extends Zend_Db_Table_Abstract {
         $where = $this->getAdapter()->quoteInto("idCliente = ?", $id);
         $this->delete($where);
     }
+    
+    public function db_update(array $request) {
+        $dados = array(
+            'EXCLUIDO' => FALSE,
+            'Cep' => $request['cep'],
+            'Logradouro' => $request['rua'],
+            'Bairro' => $request['bairro'],
+            'Numero' => $request['numero'],
+            'Complemento' => $request['complemento'],
+            'Cidade' => $request['cidade'],
+            'UF' => $request['estado'],
+        );
+        $where = $this->getAdapter()->quoteInto("idCliente = ?", $request['id']);
+        $this->update($dados, $where);
+    }
 
 }

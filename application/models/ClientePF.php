@@ -31,5 +31,21 @@ class Application_Model_ClientePF extends Zend_Db_Table_Abstract {
                 ->where('cliente_idCliente=' . $id);
         return $db->fetchAll($select);
     }
+    
+    public function db_update(array $request) {
+        $dados = array(
+            'Nome' => $request['nome'],
+            'Sobrenome' => $request['sobrenome'],
+            'Telefone' => $request['tel'],
+            'Celular' => $request['cel'],
+            'datNasc' => $request['datNasc'],
+            'Sexo' => $request['sexo'],
+            'cliente_idCliente' => $id,
+            'CPF' => $request['cpf'],
+            'RG' => $request['rg']
+        );
+        $where = $this->getAdapter()->quoteInto("cliente_idCliente = ?", $request['id']);
+        $this->update($dados, $where);
+    }
 
 }

@@ -186,14 +186,56 @@ class EditarController extends Zend_Controller_Action {
         if (!empty($dadosPF)) {
             $this->_redirect("preferencias/index");
         }
-         $modelPJ = new Application_Model_ClientePJ();
+        $modelPJ = new Application_Model_ClientePJ();
         $dadosPJ = $modelPJ->db_select($idCliente);
 
         if (!empty($dadosPJ)) {
             $this->_redirect("preferencias/pj");
         }
-        
+
         $this->view->assign("id", $id);
+    }
+
+    public function pfAction() {
+        $this->_helper->layout->setlayout("userlayout");
+
+        $cliente = $this->usuario;
+        $modelPF = new Application_Model_ClientePF();
+        $dadosPF = $modelPF->db_select($cliente['idCliente']);
+        $this->view->assign("cliente", $cliente);
+        $this->view->assign("dadosPF", $dadosPF);
+    }
+
+    public function pjAction() {
+        $this->_helper->layout->setlayout("userlayout");
+
+        $cliente = $this->usuario;
+        $modelPJ = new Application_Model_ClientePJ();
+        $dadosPJ = $modelPJ->db_select($cliente['idCliente']);
+        $this->view->assign("cliente", $cliente);
+        $this->view->assign("dadosPJ", $dadosPJ);
+    }
+
+    public function atualizarPfAction() {
+        $dados = $this->_getAllParams();
+
+        $cliente = new Application_Model_Cliente();
+        $model = new Application_Model_ClientePF();
+        $id = $cliente->db_update($dados);
+        $model->db_update($dados, $id);
+
+        $this->_redirect("preferencias/index");
+    }
+    
+        public function atualizarPjAction() {
+        $dados = $this->_getAllParams();
+
+        $cliente = new Application_Model_Cliente();
+        $model = new Application_Model_ClientePJ();
+        $id = $cliente->db_update($dados);
+        $model->db_update($dados, $id);
+
+        $this->_redirect("preferencias/index");
     }
 
 }
