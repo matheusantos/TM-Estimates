@@ -10,10 +10,10 @@
                         <h3 class="panel-title"><strong>Itens de influência</strong></h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'ambiente', 'action' => 'salvar-dados'), null, true) ?>">
+                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'itens-influencia', 'action' => 'salvar-dados'), null, true) ?>">
                             <div class="col-md-4 form-groups">
                                 <label>Comunicação de dados</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="comDados">
                                     <option value  = "0" class="form-control text-center">0</option>
                                     <option value  = "1" class="form-control text-center">1</option>
                                     <option value = "2" class="form-control text-center">2</option>
@@ -24,7 +24,7 @@
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>Processamento distribuído</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="procDistr">
                                     <option value  = "0" class="form-control text-center">0</option>
                                     <option value  = "1" class="form-control text-center">1</option>
                                     <option value = "2" class="form-control text-center">2</option>
@@ -36,7 +36,7 @@
 
                             <div class="col-md-4 form-groups">
                                 <label>Performace</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="perf">
                                     <option value  = "0" class="form-control text-center">0</option>
                                     <option value  = "1" class="form-control text-center">1</option>
                                     <option value = "2" class="form-control text-center">2</option>
@@ -48,7 +48,7 @@
                             <br><br><br><br>
                             <div class="col-md-4 form-groups">
                                 <label>Config. altamente utilizada</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="configUtil">
                                     <option value  = "0" class="form-control text-center">0</option>
                                     <option value  = "1" class="form-control text-center">1</option>
                                     <option value = "2" class="form-control text-center">2</option>
@@ -59,7 +59,7 @@
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>Faixa de transações</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="faiTran">
                                     <option value  = "0" class="form-control text-center">0</option>
                                     <option value  = "1" class="form-control text-center">1</option>
                                     <option value = "2" class="form-control text-center">2</option>
@@ -71,7 +71,7 @@
 
                             <div class="col-md-4 form-groups">
                                 <label>Entrada de dados On-Line</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="entDadOn">
                                     <option value  = "0" class="form-control text-center">0</option>
                                     <option value  = "1" class="form-control text-center">1</option>
                                     <option value = "2" class="form-control text-center">2</option>
@@ -83,7 +83,7 @@
                             <br><br><br><br>
                             <div class="col-md-4 form-groups">
                                 <label>Eficiência do usuário final</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="eficUserFin">
                                     <option value  = "0" class="form-control text-center">0</option>
                                     <option value  = "1" class="form-control text-center">1</option>
                                     <option value = "2" class="form-control text-center">2</option>
@@ -94,7 +94,7 @@
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>Atualização On-Line</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="attOn">
                                     <option value  = "0" class="form-control text-center">0</option>
                                     <option value  = "1" class="form-control text-center">1</option>
                                     <option value = "2" class="form-control text-center">2</option>
@@ -106,7 +106,7 @@
 
                             <div class="col-md-4 form-groups">
                                 <label>Complexidade processamento</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="comProc">
                                     <option value  = "0" class="form-control text-center">0</option>
                                     <option value  = "1" class="form-control text-center">1</option>
                                     <option value = "2" class="form-control text-center">2</option>
@@ -118,7 +118,7 @@
                             <br><br><br><br>
                             <div class="col-md-4 form-groups">
                                 <label>Reutilização</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="reut">
                                     <option value  = "0" class="form-control text-center">0</option>
                                     <option value  = "1" class="form-control text-center">1</option>
                                     <option value = "2" class="form-control text-center">2</option>
@@ -129,7 +129,7 @@
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>Facilidade de instalação</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="facInst">
                                     <option value  = "0" class="form-control text-center">0</option>
                                     <option value  = "1" class="form-control text-center">1</option>
                                     <option value = "2" class="form-control text-center">2</option>
@@ -141,7 +141,7 @@
 
                             <div class="col-md-4 form-groups">
                                 <label>Facilidade de operação</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="facOp">
                                     <option value  = "0" class="form-control text-center">0</option>
                                     <option value  = "1" class="form-control text-center">1</option>
                                     <option value = "2" class="form-control text-center">2</option>
@@ -153,7 +153,7 @@
                             <br><br><br><br>
                             <div class="col-md-4 form-groups">
                                 <label>Multiplas localidades</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="mulLoc">
                                     <option value  = "0" class="form-control text-center">0</option>
                                     <option value  = "1" class="form-control text-center">1</option>
                                     <option value = "2" class="form-control text-center">2</option>
@@ -165,7 +165,7 @@
 
                             <div class="col-md-4 form-groups">
                                 <label>Facilidade de mudanças</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="facMud">
                                     <option value  = "0" class="form-control text-center">0</option>
                                     <option value  = "1" class="form-control text-center">1</option>
                                     <option value = "2" class="form-control text-center">2</option>
