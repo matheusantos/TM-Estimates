@@ -276,6 +276,52 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
+-- Table `estimatech_db`.`funcaodados`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`funcaodados` (
+  `idFuncaoDados` INT(11) NOT NULL AUTO_INCREMENT,
+  `Descricao` VARCHAR(45) NOT NULL,
+  `Funcao` VARCHAR(3) NOT NULL,
+  `qtdTiposRegistro` INT(11) NOT NULL,
+  `qtdTiposDados` VARCHAR(45) NOT NULL,
+  `PF` INT(11) NULL DEFAULT NULL,
+  `Complexidade` VARCHAR(6) NULL DEFAULT NULL,
+  `projeto_idProjeto` INT(11) NOT NULL,
+  PRIMARY KEY (`idFuncaoDados`),
+  INDEX `fk_funcaoDados_projeto1_idx` (`projeto_idProjeto` ASC),
+  CONSTRAINT `fk_funcaoDados_projeto1`
+    FOREIGN KEY (`projeto_idProjeto`)
+    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `estimatech_db`.`funcaotransacao`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`funcaotransacao` (
+  `idFuncaoTransacao` INT(11) NOT NULL AUTO_INCREMENT,
+  `Descricao` VARCHAR(45) NOT NULL,
+  `Funcao` VARCHAR(3) NOT NULL,
+  `qtdArquivoRef` INT(11) NOT NULL,
+  `qtdTipoDados` VARCHAR(45) NOT NULL,
+  `PF` INT(11) NULL DEFAULT NULL,
+  `Complexidade` VARCHAR(6) NULL DEFAULT NULL,
+  `projeto_idProjeto` INT(11) NOT NULL,
+  PRIMARY KEY (`idFuncaoTransacao`),
+  INDEX `fk_funcaoTransacao_projeto1_idx` (`projeto_idProjeto` ASC),
+  CONSTRAINT `fk_funcaoTransacao_projeto1`
+    FOREIGN KEY (`projeto_idProjeto`)
+    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
 -- Table `estimatech_db`.`funcdados`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`funcdados` (
@@ -292,6 +338,37 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`funcdados` (
   INDEX `fkproj_idx` (`idProjeto` ASC),
   CONSTRAINT `fkproj`
     FOREIGN KEY (`idProjeto`)
+    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `estimatech_db`.`itensinfluencia`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`itensinfluencia` (
+  `idItensInfluencia` INT(11) NOT NULL AUTO_INCREMENT,
+  `ComunicaoDados` INT(11) NOT NULL DEFAULT '0',
+  `ProcDistribuido` INT(11) NOT NULL DEFAULT '0',
+  `Performace` INT(11) NOT NULL DEFAULT '0',
+  `ConfAltaUtil` INT(11) NOT NULL DEFAULT '0',
+  `FaixaTransacoes` INT(11) NOT NULL DEFAULT '0',
+  `EntradaDadosOnLine` INT(11) NOT NULL DEFAULT '0',
+  `EficUserFinal` INT(11) NOT NULL DEFAULT '0',
+  `AtualizacaoOnLine` INT(11) NOT NULL DEFAULT '0',
+  `ComplexidadeProc` INT(11) NOT NULL DEFAULT '0',
+  `Reutilizacao` INT(11) NOT NULL DEFAULT '0',
+  `FacilidadeInstalacao` INT(11) NOT NULL DEFAULT '0',
+  `FacilidadeOperacao` INT(11) NOT NULL DEFAULT '0',
+  `MultiplasLocalidades` INT(11) NOT NULL DEFAULT '0',
+  `FacilidadeMudancas` INT(11) NOT NULL DEFAULT '0',
+  `projeto_idProjeto` INT(11) NOT NULL,
+  PRIMARY KEY (`idItensInfluencia`),
+  INDEX `fk_itensInfluencia_projeto1_idx` (`projeto_idProjeto` ASC),
+  CONSTRAINT `fk_itensInfluencia_projeto1`
+    FOREIGN KEY (`projeto_idProjeto`)
     REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
@@ -319,80 +396,22 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`recuperarsenha` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+USE `estimatech_db` ;
 
 -- -----------------------------------------------------
--- Table `estimatech_db`.`itensInfluencia`
+-- Placeholder table for view `estimatech_db`.`clienteFuncaoDados`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`itensInfluencia` (
-  `idItensInfluencia` INT NOT NULL AUTO_INCREMENT,
-  `ComunicaoDados` INT NOT NULL DEFAULT 0,
-  `ProcDistribuido` INT NOT NULL DEFAULT 0,
-  `Performace` INT NOT NULL DEFAULT 0,
-  `ConfAltaUtil` INT NOT NULL DEFAULT 0,
-  `FaixaTransacoes` INT NOT NULL DEFAULT 0,
-  `EntradaDadosOnLine` INT NOT NULL DEFAULT 0,
-  `EficUserFinal` INT NOT NULL DEFAULT 0,
-  `AtualizacaoOnLine` INT NOT NULL DEFAULT 0,
-  `ComplexidadeProc` INT NOT NULL DEFAULT 0,
-  `Reutilizacao` INT NOT NULL DEFAULT 0,
-  `FacilidadeInstalacao` INT NOT NULL DEFAULT 0,
-  `FacilidadeOperacao` INT NOT NULL DEFAULT 0,
-  `MultiplasLocalidades` INT NOT NULL DEFAULT 0,
-  `FacilidadeMudancas` INT NOT NULL DEFAULT 0,
-  `projeto_idProjeto` INT(11) NOT NULL,
-  PRIMARY KEY (`idItensInfluencia`),
-  INDEX `fk_itensInfluencia_projeto1_idx` (`projeto_idProjeto` ASC),
-  CONSTRAINT `fk_itensInfluencia_projeto1`
-    FOREIGN KEY (`projeto_idProjeto`)
-    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB;
-
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`clienteFuncaoDados` (`idFuncaoDados` INT, `Descricao` INT, `Funcao` INT, `qtdTiposRegistro` INT, `qtdTiposDados` INT, `PF` INT, `Complexidade` INT, `projeto_idProjeto` INT, `Cliente_idCliente` INT);
 
 -- -----------------------------------------------------
--- Table `estimatech_db`.`funcaoDados`
+-- View `estimatech_db`.`clienteFuncaoDados`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`funcaoDados` (
-  `idFuncaoDados` INT NOT NULL AUTO_INCREMENT,
-  `Descricao` VARCHAR(45) NOT NULL,
-  `Funcao` VARCHAR(3) NOT NULL,
-  `qtdTiposRegistro` INT NOT NULL,
-  `qtdTiposDados` VARCHAR(45) NOT NULL,
-  `PF` INT NULL,
-  `Complexidade` VARCHAR(6) NULL,
-  `projeto_idProjeto` INT(11) NOT NULL,
-  PRIMARY KEY (`idFuncaoDados`),
-  INDEX `fk_funcaoDados_projeto1_idx` (`projeto_idProjeto` ASC),
-  CONSTRAINT `fk_funcaoDados_projeto1`
-    FOREIGN KEY (`projeto_idProjeto`)
-    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `estimatech_db`.`funcaoTransacao`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`funcaoTransacao` (
-  `idFuncaoTransacao` INT NOT NULL AUTO_INCREMENT,
-  `Descricao` VARCHAR(45) NOT NULL,
-  `Funcao` VARCHAR(3) NOT NULL,
-  `qtdArquivoRef` INT NOT NULL,
-  `qtdTipoDados` VARCHAR(45) NOT NULL,
-  `PF` INT NULL,
-  `Complexidade` VARCHAR(6) NULL,
-  `projeto_idProjeto` INT(11) NOT NULL,
-  PRIMARY KEY (`idFuncaoTransacao`),
-  INDEX `fk_funcaoTransacao_projeto1_idx` (`projeto_idProjeto` ASC),
-  CONSTRAINT `fk_funcaoTransacao_projeto1`
-    FOREIGN KEY (`projeto_idProjeto`)
-    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB;
-
+DROP TABLE IF EXISTS `estimatech_db`.`clienteFuncaoDados`;
+USE `estimatech_db`;
+CREATE  OR REPLACE VIEW `clienteFuncaoDados` AS
+SELECT fd.*, p.Cliente_idCliente
+FROM projeto AS p, cliente AS c, funcaodados AS fd
+WHERE c.idCliente = p.Cliente_idCliente;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
