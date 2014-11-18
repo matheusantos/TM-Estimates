@@ -239,6 +239,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`recursos` (
   `Descricao` VARCHAR(45) NOT NULL,
   `Carga_horaria` INT(11) NOT NULL,
   `Custo` VARCHAR(6) NOT NULL,
+  `Nivel` INT(1) NOT NULL DEFAULT 0,
   `cliente_idCliente` INT(11) NOT NULL,
   PRIMARY KEY (`idRecursos`),
   INDEX `fk_recursos_cliente1_idx` USING BTREE (`cliente_idCliente` ASC),
@@ -247,8 +248,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`recursos` (
     REFERENCES `estimatech_db`.`cliente` (`idCliente`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
