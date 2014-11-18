@@ -14,8 +14,8 @@ class DetalharController extends Zend_Controller_Action {
             $identity = $auth->getIdentity();
             $this->usuario = get_object_vars($identity);
         }
-        
         $this->_helper->layout->setlayout("userlayout");
+        $this->view->assign("email", $this->usuario['Email']);
     }
 
     public function indexAction() {

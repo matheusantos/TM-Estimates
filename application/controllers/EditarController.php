@@ -6,7 +6,7 @@ class EditarController extends Zend_Controller_Action {
 
     public function init() {
         if (!Zend_Auth::getInstance()->hasIdentity()) {
-            
+            $this->_redirect('/login');
         }
 
         $auth = Zend_Auth::getInstance();
@@ -14,6 +14,7 @@ class EditarController extends Zend_Controller_Action {
             $identity = $auth->getIdentity();
             $this->usuario = get_object_vars($identity);
         }
+        $this->view->assign("email", $this->usuario['Email']);
     }
 
     public function indexAction() {

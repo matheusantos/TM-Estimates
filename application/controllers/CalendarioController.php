@@ -9,6 +9,7 @@ class CalendarioController extends Zend_Controller_Action
             $this->_redirect('/login');
         }
         $this->_helper->layout->setlayout("userlayout");
+        $this->view->assign("email", $this->usuario['Email']);
     }
 
     public function indexAction()

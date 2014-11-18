@@ -68,7 +68,30 @@
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory enabled="false"/>
-      <modelsDirectory/>
+      <modelsDirectory>
+        <modelFile modelName="ClienteFuncaoTransacao"/>
+        <modelFile modelName="ClienteFuncaoDados"/>
+        <dbTableDirectory>
+          <dbTableFile dbTableName="Ambiente"/>
+          <dbTableFile dbTableName="Cliente"/>
+          <dbTableFile dbTableName="Clientefuncaodados"/>
+          <dbTableFile dbTableName="Clientepf"/>
+          <dbTableFile dbTableName="Clientepj"/>
+          <dbTableFile dbTableName="Colaboradores"/>
+          <dbTableFile dbTableName="Compra"/>
+          <dbTableFile dbTableName="Custofase"/>
+          <dbTableFile dbTableName="Equipe"/>
+          <dbTableFile dbTableName="Fase"/>
+          <dbTableFile dbTableName="Funcaodados"/>
+          <dbTableFile dbTableName="Funcaotransacao"/>
+          <dbTableFile dbTableName="Funcdados"/>
+          <dbTableFile dbTableName="Itensinfluencia"/>
+          <dbTableFile dbTableName="Pacote"/>
+          <dbTableFile dbTableName="Projeto"/>
+          <dbTableFile dbTableName="Recuperarsenha"/>
+          <dbTableFile dbTableName="Recursos"/>
+        </dbTableDirectory>
+      </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
       <viewsDirectory>
@@ -112,7 +135,6 @@
           <viewControllerScriptsDirectory forControllerName="Vendas">
             <viewScriptFile forActionName="pagamento"/>
           </viewControllerScriptsDirectory>
-<<<<<<< HEAD
           <viewControllerScriptsDirectory forControllerName="calendario">
             <viewScriptFile forActionName="janeiro"/>
           </viewControllerScriptsDirectory>
@@ -121,13 +143,6 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="vendas">
             <viewScriptFile forActionName="pagamentoDebito"/>
-=======
-          <viewControllerScriptsDirectory forControllerName="index">
-            <viewScriptFile forActionName="sobre"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="index">
-            <viewScriptFile forActionName="pacotes"/>
->>>>>>> origin/master
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="contagem">
             <viewScriptFile forActionName="detalhada"/>

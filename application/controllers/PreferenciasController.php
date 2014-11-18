@@ -6,12 +6,14 @@ class PreferenciasController extends Zend_Controller_Action {
         if (!Zend_Auth::getInstance()->hasIdentity()) {
             $this->_redirect('/login');
         }
-         $auth = Zend_Auth::getInstance();
+        
+        $auth = Zend_Auth::getInstance();
         if ($auth->hasIdentity()) {
             $identity = $auth->getIdentity();
             $this->usuario = get_object_vars($identity);
         }
         $this->_helper->layout->setlayout("userlayout");
+        $this->view->assign("email", $this->usuario['Email']);
     }
 
     public function indexAction() {
@@ -29,8 +31,8 @@ class PreferenciasController extends Zend_Controller_Action {
         $this->view->assign("cliente", $cliente);
         $this->view->assign("dadosPJ", $dadosPJ);
     }
-    
-    public function excluirPfAction(){
+
+    public function excluirPfAction() {
         $dados = $this->getParam('idP');
         $model_cliente = new Application_Model_Cliente();
         $dados_cliente = $model_cliente->db_delete($dados);
