@@ -203,6 +203,13 @@ class EditarController extends Zend_Controller_Action {
         $dados_cliente = $model_cliente->db_delete($dados);
         $this->_redirect("equipe/index");
     }
+    
+    public function excluirIiAction() {
+        $dados = $this->getParam('idP');
+        $model = new Application_Model_ItensInfluencia();
+        $dados_ii = $model->db_delete($dados);
+        $this->_redirect("itens-influencia/index");
+    }
 
     public function editarUserAction() {
         //

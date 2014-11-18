@@ -21,7 +21,7 @@
 
                         <td><?= $value['idItensInfluencia'] ?></td>
                         <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'itens-influencia', 'idP' => $value['projeto_idProjeto']), null, true) ?>">Editar</a></td>
-                       
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-ii', 'idP' => $value['idItensInfluencia']), null, true) ?>">Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

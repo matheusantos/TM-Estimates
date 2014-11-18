@@ -67,7 +67,7 @@ class Application_Model_ItensInfluencia extends Zend_Db_Table_Abstract {
     }
 
     public function db_delete($id) {
-        $where = $this->getAdapter()->quoteInto("idFase = ?", $id);
+        $where = $this->getAdapter()->quoteInto("idItensInfluencia = ?", $id);
         $this->delete($where);
     }
 
