@@ -18,13 +18,22 @@ class FuncaoDadosController extends Zend_Controller_Action
     }
 
     public function indexAction() {
-        
+        $model = new Application_Model_FuncaoDados();
+        $dados = $model->db_select();
+        $this->view->assign("dados", $dados);
     }
     
     public function novoAction() { 
         $model1 = new Application_Model_Projeto();
         $dados1 = $model1->db_select();
         $this->view->assign("dados1", $dados1);
+    }
+    
+    public function salvarDadosAction() {
+        $dados = $this->_getAllParams();
+        $model = new Application_Model_FuncaoDados();
+        $model->inserir($dados);
+        $this->_redirect("funcao-dados/index");
     }
 
 }

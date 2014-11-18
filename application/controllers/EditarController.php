@@ -25,7 +25,7 @@ class EditarController extends Zend_Controller_Action {
         $this->view->assign("id", $id);
         $this->view->assign("dados_cliente", $dados_cliente);
     }
-    
+
     public function itensInfluenciaAction() {
         $this->_helper->layout->setlayout("userlayout");
         $id = $this->getParam('idP');
@@ -46,6 +46,15 @@ class EditarController extends Zend_Controller_Action {
         $this->view->assign("dados_cliente", $dados_cliente);
     }
 
+    public function funcdadosAction() {
+        $this->_helper->layout->setlayout("userlayout");
+        $id = $this->getParam('idP');
+        $model = new Application_Model_FuncaoDados();
+        $dados = $model->db_select('idFuncaoDados', $id, null, null);
+        $this->view->assign("id", $id);
+        $this->view->assign("dados", $dados);
+    }
+
     public function faseAction() {
         $this->_helper->layout->setlayout("userlayout");
         $id = $this->getParam('idP');
@@ -54,19 +63,17 @@ class EditarController extends Zend_Controller_Action {
         $dados_cliente = $model_cliente->db_select('idFase', $id, null, null);
         $this->view->assign("id", $id);
         $this->view->assign("dados_cliente", $dados_cliente);
-        
     }
 
     public function detalharFaseAction() {
         $this->_helper->layout->setlayout("userlayout");
-        
+
         $id = $this->getParam('idP');
 
         $model_cliente = new Application_Model_DetalharFase();
         $dados_cliente = $model_cliente->db_select('idFase', $id, null, null);
         $this->view->assign("id", $id);
         $this->view->assign("dados_cliente", $dados_cliente);
-        
     }
 
     public function detalharCustoAction() {
@@ -112,7 +119,7 @@ class EditarController extends Zend_Controller_Action {
         $dados_cliente = $model_cliente->db_update($dados);
         $this->_redirect("fase/index");
     }
-    
+
     public function atualizaIiAction() {
         $dados = $this->_getAllParams();
         $model_cliente = new Application_Model_ItensInfluencia();
@@ -176,6 +183,13 @@ class EditarController extends Zend_Controller_Action {
         $this->_redirect("fase/index");
     }
 
+    public function excluirFdAction() {
+        $dados = $this->getParam('idP');
+        $model_cliente = new Application_Model_FuncaoDados();
+        $dados_cliente = $model_cliente->db_delete($dados);
+        $this->_redirect("funcao-dados/index");
+    }
+
     public function excluirDtFaAction() {
         $dados = $this->getParam('idP');
         $model_cliente = new Application_Model_DetalharFase();
@@ -203,7 +217,7 @@ class EditarController extends Zend_Controller_Action {
         $dados_cliente = $model_cliente->db_delete($dados);
         $this->_redirect("equipe/index");
     }
-    
+
     public function excluirIiAction() {
         $dados = $this->getParam('idP');
         $model = new Application_Model_ItensInfluencia();
@@ -260,8 +274,15 @@ class EditarController extends Zend_Controller_Action {
 
         $this->_redirect("preferencias/index");
     }
-    
-        public function atualizarPjAction() {
+
+    public function atualizarFdAction() {
+        $dados = $this->_getAllParams();
+        $model = new Application_Model_FuncaoDados();
+        $dados_func = $model->db_update($dados);
+        $this->_redirect("funcao-dados/index");
+    }
+
+    public function atualizarPjAction() {
         $dados = $this->_getAllParams();
 
         $cliente = new Application_Model_Cliente();
