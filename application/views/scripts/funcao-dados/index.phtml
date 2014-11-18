@@ -29,6 +29,7 @@
                     <th>Qtd. Tipos de registro</th>
                     <th>Qtd. Tipos de dados</th>
                     <th>Ponto de função</th>
+                    <th>Complexidade</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,6 +42,7 @@
                         <td><?= $funcdados['qtdTiposRegistro'] ?></td>
                         <td><?= $funcdados['qtdTiposDados'] ?></td>
                         <td><?= $funcdados['PF'] ?></td>
+                        <td><?php if($funcdados['Complexidade'] == 1) echo 'Baixa';if($funcdados['Complexidade'] == 2) echo 'Media';if($funcdados['Complexidade'] == 3) echo 'Alta' ?></td>
                         <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'funcdados', 'idP'=>$funcdados['idFuncaoDados']), null, true) ?>">Editar</a></td>
                         <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-fd', 'idP'=>$funcdados['idFuncaoDados']), null, true) ?>">Excluir</a></td>
                     </tr>

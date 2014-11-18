@@ -24,11 +24,54 @@ class Application_Model_Calculos extends Zend_Db_Table_Abstract {
                 ($qh4*$vh4*$n4*8)+($qh5*$vh5*$n5*8));
     }
     
-    public function PontoFuncao($aliB, $aliM, $aliA, $aieB, $aieM, $aieA, $eeB, $eeM, $eeA,
-            $seB, $seM, $seA, $ceB, $ceM, $ceA){
+    public function FuncDados($where = null, $descricao = null, $order = null, $limit = null){
+        $Complexidade;  //Variável para verificar a complexidade de ALI E AIE
+        $pfDados;       //Variável para receber os pontos de função dos Dados
         
-       $pf = ($aliB*7 + $aliM*10 + $aliA*15 + $aieB*5 + $aieM*7 + $aliA*10 + $eeB*3 + $eeM*4 + $eeA*6 +
-               $seB*4 + $seM*5 + $seA*6);
+        $TipoDados = $this->select()
+                ->from('funcaodados', array('qtdTiposDados'))
+                ->where('Descricao =', $descricao);
+        
+        $TiposRegistro = $this->select()
+                ->from('funcaodados', array('qtdTiposRegistro'))
+                ->where('Descricao =', $descricao);
+        
+        $Funcao = $this->select()
+                ->from('funcaodados', array('Funcao'))
+                ->where('Descricao =', $where);
+        
+        //Verificando a complexidade da Função de Dados
+        if((($TipoDados < 20)&&($TiposRegistro==1)) || 
+                (($TipoDados>=20 || $TipoDados<=50) &&($TiposRegistro==1)) ||
+                (($TipoDados < 20) && ($TiposRegistro>=2 || $TiposRegistro<=5))){
+            $Complexidade = 1;
+        }
+        else if(($TipoDados<20 && $TiposRegistro>5)
+                || (($TipoDados>=20 || $TipoDados<=50) &&($TiposRegistro>=2 || $TiposRegistro<=5))
+                || (($TipoDados>50)&&($TiposRegistro==1))){
+            $Complexidade = 2;
+        }
+        else if((($TipoDados>50)&&($TiposRegistro>=2 || $TiposRegistro<=5))||
+                (($TipoDados>50) &&($TiposRegistro>5))||
+                (($TipoDados>=20 || $TipoDados<=50)&&($TiposRegistro>5))){
+            $Complexidade = 3;
+        }
+        
+        if(($Funcao == 'ALI' && $Complexidade = 1) || ($Funcao == 'AIE' && $Complexidade = 2)){
+            
+            $pfDados = 7;
+        }
+        else if(($Funcao == 'ALI' && $Complexidade = 2) || ($Funcao == 'AIE' && $Complexidade= 3)){
+            $pfDados = 10;
+        }
+        else if($Funcao == 'ALI' && $Complexidade = 3){
+            $pfDados = 15;
+        }
+        else if ($Funcao == 'AIE' && $Complexidade = 1) {
+            $pfDados = 5;
+        }
+        
+        
     }
     
     public function fatorReajuste($comDad, $proDis, $perf, $confAltUti, $taxTrans, $entDados, $efiUsuFin,
