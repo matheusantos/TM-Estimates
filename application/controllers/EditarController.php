@@ -54,6 +54,15 @@ class EditarController extends Zend_Controller_Action {
         $this->view->assign("id", $id);
         $this->view->assign("dados", $dados);
     }
+    
+    public function functrancAction() {
+        $this->_helper->layout->setlayout("userlayout");
+        $id = $this->getParam('idP');
+        $model = new Application_Model_FuncaoTransacao();
+        $dados = $model->db_select('idFuncaoTransacao', $id, null, null);
+        $this->view->assign("id", $id);
+        $this->view->assign("dados", $dados);
+    }
 
     public function faseAction() {
         $this->_helper->layout->setlayout("userlayout");
@@ -125,6 +134,13 @@ class EditarController extends Zend_Controller_Action {
         $model_cliente = new Application_Model_ItensInfluencia();
         $dados = $model_cliente->db_update($dados);
         $this->_redirect("itens-influencia/index");
+    }
+    
+    public function atualizaFtAction() {
+        $dados = $this->_getAllParams();
+        $model = new Application_Model_FuncaoTransacao();
+        $model->db_update($dados);
+        $this->_redirect("funcao-transacao/index");
     }
 
     public function atualizaDtFaAction() {
@@ -223,6 +239,13 @@ class EditarController extends Zend_Controller_Action {
         $model = new Application_Model_ItensInfluencia();
         $dados_ii = $model->db_delete($dados);
         $this->_redirect("itens-influencia/index");
+    }
+    
+    public function excluirFtAction() {
+        $dados = $this->getParam('idP');
+        $model = new Application_Model_FuncaoTransacao();
+        $dados_ii = $model->db_delete($dados);
+        $this->_redirect("funcao-transacao/index");
     }
 
     public function editarUserAction() {

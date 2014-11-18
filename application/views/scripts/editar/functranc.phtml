@@ -1,0 +1,55 @@
+<div class="page-header">
+    <h3><span class="glyphicon glyphicon-th-list"></span> Nova Função de Transação</h3>
+</div>
+<div class="row">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Função de Transação</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'editar', 'action' => 'atualiza-ft'), null, true) ?>">
+                                     <div class="col-md-6 form-groups">
+                                <label>Função</label>
+                                <select required class="form-control" name="funcao">
+                                    <option value  = "EE" class="form-control" <?php if($this->dados[0]['Funcao'] == 'EE') echo 'selected'; else '';?>> EE </option>
+                                    <option value = "SE" class="form-control"<?php if($this->dados[0]['Funcao'] == 'SE') echo 'selected'; else '';?>> SE </option>
+                                    <option value = "CE" class="form-control"<?php if($this->dados[0]['Funcao'] == 'CE') echo 'selected'; else '';?>> CE </option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-groups">
+                                    <label>Descrição</label>
+                                    <input required type="text" class="form-control" id="exampleInputDesc" name="Descri" placeholder="Descrição" value="<?= $this->dados[0]['Descricao'] ?>">
+                                </div>
+                            </div>
+                            <br><br><br><br>
+                            <div class="col-md-6">
+                                <div class="form-groups">
+                                    <label>Qtd. Arquivos Referenciados</label>
+                                    <input required type="number" class="form-control" id="exampleInputTipReg" name="ArqRef" placeholder="Quantidade de arquivos referenciados" value="<?= $this->dados[0]['qtdArquivoRef'] ?>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-groups">
+                                    <label>Qtd. Tipos de Dados</label>
+                                    <input required type="number" class="form-control" id="exampleInputTipReg" name="TipDados" placeholder="Quantidade de Tipos de dados" value="<?= $this->dados[0]['qtdTipoDados'] ?>">
+                                </div>
+                            </div>
+                            <br><br><br><br>
+                            <input type = "hidden" name="id" value ="<?= $this->id ?>">
+                            <div class="col-md-4">
+                                <div class="form-groups">
+                                    <button type="submit" class="btn btn-success btn-default">Atualizar</button>
+                                    <a href="<?= $this->url(array('controller' => 'funcao-transacao', 'action' => 'index'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

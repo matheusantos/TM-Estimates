@@ -10,7 +10,7 @@
                         <h3 class="panel-title"><strong>Função de Transação</strong></h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'funcao-transacao', 'action' => 'salvar-dados'), null, true) ?>">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Projeto</label>
@@ -25,7 +25,7 @@
                             </div>
                             <div class="col-md-4 form-groups">
                                 <label>Função</label>
-                                <select required class="form-control">
+                                <select required class="form-control" name="funcao">
                                     <option value  = "EE" class="form-control"> EE </option>
                                     <option value = "SE" class="form-control"> SE </option>
                                     <option value = "CE" class="form-control"> CE </option>
