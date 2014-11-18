@@ -17,6 +17,7 @@ class EditarController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
+        $this->_helper->layout->setlayout("userlayout");
         $id = $this->getParam('idP');
 
         $model_cliente = new Application_Model_Projeto();
@@ -27,15 +28,16 @@ class EditarController extends Zend_Controller_Action {
     
     public function itensInfluenciaAction() {
         $this->_helper->layout->setlayout("userlayout");
-        //$id = $this->getParam('idP');
+        $id = $this->getParam('idP');
 
-        //$model_cliente = new Application_Model_Projeto();
-        //$dados_cliente = $model_cliente->db_select('idProjeto', $id, null, null);
-        //$this->view->assign("id", $id);
-        //$this->view->assign("dados_cliente", $dados_cliente);
+        $model = new Application_Model_ItensInfluencia();
+        $dados = $model->db_select('projeto_idProjeto', $id, null, null);
+        $this->view->assign("id", $id);
+        $this->view->assign("dados", $dados);
     }
 
     public function equipeAction() {
+        $this->_helper->layout->setlayout("userlayout");
         $id = $this->getParam('idP');
 
         $model_cliente = new Application_Model_Equipe();
@@ -68,6 +70,7 @@ class EditarController extends Zend_Controller_Action {
     }
 
     public function detalharCustoAction() {
+        $this->_helper->layout->setlayout("userlayout");
         $id = $this->getParam('idP');
 
         $model_cliente = new Application_Model_DetalharCusto();
@@ -77,6 +80,7 @@ class EditarController extends Zend_Controller_Action {
     }
 
     public function ambienteAction() {
+        $this->_helper->layout->setlayout("userlayout");
         $id = $this->getParam('idP');
 
         $model_cliente = new Application_Model_Ambiente();
@@ -86,6 +90,7 @@ class EditarController extends Zend_Controller_Action {
     }
 
     public function recursoAction() {
+        $this->_helper->layout->setlayout("userlayout");
         $id = $this->getParam('idP');
 
         $model_cliente = new Application_Model_Recursos();
@@ -106,6 +111,13 @@ class EditarController extends Zend_Controller_Action {
         $model_cliente = new Application_Model_Fase();
         $dados_cliente = $model_cliente->db_update($dados);
         $this->_redirect("fase/index");
+    }
+    
+    public function atualizaIiAction() {
+        $dados = $this->_getAllParams();
+        $model_cliente = new Application_Model_ItensInfluencia();
+        $dados = $model_cliente->db_update($dados);
+        $this->_redirect("itens-influencia/index");
     }
 
     public function atualizaDtFaAction() {

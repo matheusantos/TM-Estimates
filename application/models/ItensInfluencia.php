@@ -9,7 +9,7 @@ class Application_Model_ItensInfluencia extends Zend_Db_Table_Abstract {
 
     public function db_inserir(array $request, $id) {
         $dados = array(
-            'ComunicacaoDados' => $request['comDados'],
+            'ComunicaoDados' => $request['comDados'],
             'ProcDistribuido' => $request['procDistr'],
             'Performace' => $request['perf'],
             'ConfAltaUtil' => $request['configUtil'],
@@ -47,7 +47,7 @@ class Application_Model_ItensInfluencia extends Zend_Db_Table_Abstract {
 
     public function db_update(array $request) {
         $dados = array(
-            'ComunicacaoDados' => $request['comDados'],
+            'ComunicaoDados' => $request['comDados'],
             'ProcDistribuido' => $request['procDistr'],
             'Performace' => $request['perf'],
             'ConfAltaUtil' => $request['configUtil'],
@@ -60,10 +60,9 @@ class Application_Model_ItensInfluencia extends Zend_Db_Table_Abstract {
             'FacilidadeInstalacao' => $request['facInst'],
             'FacilidadeOperacao' => $request['facOp'],
             'MultiplasLocalidades' => $request['mulLoc'],
-            'FacilidadeMudancas' => $request['facMud'],
-            'projeto_idProjeto' => $id
+            'FacilidadeMudancas' => $request['facMud']
         );
-        $where = $this->getAdapter()->quoteInto("idItensInfluencia = ?", $request['id']);
+        $where = $this->getAdapter()->quoteInto("projeto_idProjeto = ?", $request['id']);
         $this->update($dados, $where);
     }
 

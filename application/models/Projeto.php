@@ -34,6 +34,7 @@ class Application_Model_Projeto extends Zend_Db_Table_Abstract {
         }
         return $this->fetchAll($select)->toArray();
     }
+   
 
     /* public function ed_select($id){
       $db = Zend_Db_Table_Abstract::getDefaultAdapter();
