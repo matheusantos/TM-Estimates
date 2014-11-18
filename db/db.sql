@@ -365,6 +365,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`itensinfluencia` (
   `MultiplasLocalidades` INT(11) NOT NULL DEFAULT '0',
   `FacilidadeMudancas` INT(11) NOT NULL DEFAULT '0',
   `projeto_idProjeto` INT(11) NOT NULL,
+  `FatorAjuste` FLOAT(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idItensInfluencia`),
   INDEX `fk_itensInfluencia_projeto1_idx` (`projeto_idProjeto` ASC),
   CONSTRAINT `fk_itensInfluencia_projeto1`
