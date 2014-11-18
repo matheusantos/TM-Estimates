@@ -8,22 +8,20 @@ class Application_Model_ItensInfluencia extends Zend_Db_Table_Abstract {
     protected $_primary = "idItensInfluencia";
 
     public function db_inserir(array $request, $id) {
+        $cgs=$request['comDados'] + $request['procDistr'] + $request['perf'] + $request['configUtil'] + 
+        $request['faiTran'] + $request['entDadOn'] + $request['eficUserFin'] + $request['attOn']
+        + $request['comProc'] + $request['reut'] + $request['facInst'] + $request['facOp'] 
+        + $request['mulLoc'] + $request['facMud'];
+        $fatorAjuste = ($cgs *0.01)+0.65;
         $dados = array(
-            'ComunicaoDados' => $request['comDados'],
-            'ProcDistribuido' => $request['procDistr'],
-            'Performace' => $request['perf'],
-            'ConfAltaUtil' => $request['configUtil'],
-            'FaixaTransacoes' => $request['faiTran'],
-            'EntradaDadosOnLine' => $request['entDadOn'],
-            'EficUserFinal' => $request['eficUserFin'],
-            'AtualizacaoOnLine' => $request['attOn'],
-            'ComplexidadeProc' => $request['comProc'],
-            'Reutilizacao' => $request['reut'],
-            'FacilidadeInstalacao' => $request['facInst'],
-            'FacilidadeOperacao' => $request['facOp'],
-            'MultiplasLocalidades' => $request['mulLoc'],
-            'FacilidadeMudancas' => $request['facMud'],
-            'projeto_idProjeto' => $id
+            'ComunicaoDados' => $request['comDados'], 'ProcDistribuido' => $request['procDistr'],
+            'Performace' => $request['perf'], 'ConfAltaUtil' => $request['configUtil'],
+            'FaixaTransacoes' => $request['faiTran'],'EntradaDadosOnLine' => $request['entDadOn'],
+            'EficUserFinal' => $request['eficUserFin'],'AtualizacaoOnLine' => $request['attOn'],
+            'ComplexidadeProc' => $request['comProc'], 'Reutilizacao' => $request['reut'],
+            'FacilidadeInstalacao' => $request['facInst'],'FacilidadeOperacao' => $request['facOp'],
+            'MultiplasLocalidades' => $request['mulLoc'],'FacilidadeMudancas' => $request['facMud'],
+            'projeto_idProjeto' => $id, 'FatorAjuste' => $fatorAjuste
         );
         return $this->insert($dados);
     }
