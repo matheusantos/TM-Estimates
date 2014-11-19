@@ -400,7 +400,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `estimatech_db`.`estimativasCusto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`estimativasCusto` (
-  `idestimativasCusto` INT NOT NULL,
+  `idestimativasCusto` INT NOT NULL AUTO_INCREMENT,
   `Data` DATE NOT NULL,
   `Estimativa` INT NOT NULL,
   `projeto_idProjeto` INT(11) NOT NULL,
@@ -418,7 +418,7 @@ ENGINE = InnoDB;
 -- Table `estimatech_db`.`estimativasEsforco`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`estimativasEsforco` (
-  `idEstimativasEsforco` INT NOT NULL,
+  `idEstimativasEsforco` INT NOT NULL AUTO_INCREMENT,
   `Data` DATE NOT NULL,
   `Estimativa` INT NOT NULL,
   `projeto_idProjeto` INT(11) NOT NULL,
@@ -436,7 +436,7 @@ ENGINE = InnoDB;
 -- Table `estimatech_db`.`estimativasPrazo`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`estimativasPrazo` (
-  `idEstimativasPrazo` INT NOT NULL,
+  `idEstimativasPrazo` INT NOT NULL AUTO_INCREMENT,
   `Data` DATE NOT NULL,
   `Estimativa` INT NOT NULL,
   `projeto_idProjeto` INT(11) NOT NULL,
@@ -454,7 +454,7 @@ ENGINE = InnoDB;
 -- Table `estimatech_db`.`estimativasProdutividade`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`estimativasProdutividade` (
-  `idEstimativasProdutividade` INT NOT NULL,
+  `idEstimativasProdutividade` INT NOT NULL AUTO_INCREMENT,
   `Data` DATE NOT NULL,
   `Estimativa` INT NOT NULL,
   `projeto_idProjeto` INT(11) NOT NULL,
