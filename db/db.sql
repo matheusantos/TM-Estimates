@@ -409,6 +409,11 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`clienteFuncaoDados` (`idFuncaoDados`
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`clienteEquipe` (`Cliente_idCliente` INT, `Recursos_idRecursos` INT, `Projeto_idProjeto` INT, `QtRecursos` INT);
 
 -- -----------------------------------------------------
+-- Placeholder table for view `estimatech_db`.`view_clienteCustoFase`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_clienteCustoFase` (`idCustoFase` INT, `descricaoCusto` INT, `ValorPrevisto` INT, `ValorEfetivo` INT, `descricaoFase` INT, `cliente_idCliente` INT);
+
+-- -----------------------------------------------------
 -- View `estimatech_db`.`clienteFuncaoDados`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `estimatech_db`.`clienteFuncaoDados`;
@@ -427,6 +432,17 @@ CREATE  OR REPLACE VIEW `clienteEquipe` AS
 SELECT p.Cliente_idCliente, eq.*
 FROM projeto AS p, equipe AS eq
 WHERE eq.Projeto_idProjeto = p.idProjeto;
+
+-- -----------------------------------------------------
+-- View `estimatech_db`.`view_clienteCustoFase`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `estimatech_db`.`view_clienteCustoFase`;
+USE `estimatech_db`;
+CREATE  OR REPLACE VIEW `view_clienteCustoFase` AS
+SELECT cf.idCustoFase, cf.Descricao AS descricaoCusto, cf.ValorPrevisto, cf.ValorEfetivo, f.Descricao AS descricaoFase, f.cliente_idCliente
+FROM custofase AS cf
+INNER JOIN fase AS f
+ON f.idFase = cf.fase_idFase;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

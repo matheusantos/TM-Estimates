@@ -3,7 +3,7 @@
 class Application_Model_ClienteEquipe {
 
     public function db_select($where = null, $valor = null, $order = null, $limit = null) {
-        $dao = new Application_Model_DbTable_Cleinteequipe();
+        $dao = new Application_Model_DbTable_Clienteequipe();
         $select = $dao->select()
                 ->from($dao)
                 ->order($order)
@@ -16,7 +16,7 @@ class Application_Model_ClienteEquipe {
     }
 
     public function db_find($id, $id2) {
-        $dao = new Application_Model_DbTable_Cleinteequipe();
+        $dao = new Application_Model_DbTable_Clienteequipe();
         $arr = $dao->find($id, $id2)->toArray();
         return $arr;
     }

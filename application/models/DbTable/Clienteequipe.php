@@ -1,6 +1,6 @@
 <?php
 
-class Application_Model_DbTable_Cleinteequipe extends Zend_Db_Table_Abstract
+class Application_Model_DbTable_Clienteequipe extends Zend_Db_Table_Abstract
 {
 
     protected $_name = 'clienteEquipe';

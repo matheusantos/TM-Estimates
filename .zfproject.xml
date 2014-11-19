@@ -91,8 +91,10 @@
           <dbTableFile dbTableName="Recuperarsenha"/>
           <dbTableFile dbTableName="Recursos"/>
           <dbTableFile dbTableName="Cleinteequipe"/>
+          <dbTableFile dbTableName="ViewClienteDetalharCusto"/>
         </dbTableDirectory>
         <modelFile modelName="ClienteEquipe"/>
+        <modelFile modelName="ViewClienteDetalharCusto"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
