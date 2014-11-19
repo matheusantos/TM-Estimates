@@ -2,7 +2,7 @@
 
 /* ! Controler Estimativa de Custo */
 
-class EstimarCustoController extends Zend_Controller_Action {
+class EstimarEsforcoController extends Zend_Controller_Action {
 
     public function init() {
         if (!Zend_Auth::getInstance()->hasIdentity()) {
