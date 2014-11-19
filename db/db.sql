@@ -227,8 +227,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`custofase` (
     REFERENCES `estimatech_db`.`fase` (`idFase`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -395,6 +394,78 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`recuperarsenha` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `estimatech_db`.`estimativasCusto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`estimativasCusto` (
+  `idestimativasCusto` INT NOT NULL,
+  `Data` DATE NOT NULL,
+  `Estimativa` INT NOT NULL,
+  `projeto_idProjeto` INT(11) NOT NULL,
+  PRIMARY KEY (`idestimativasCusto`),
+  INDEX `fk_estimativasCusto_projeto1_idx` (`projeto_idProjeto` ASC),
+  CONSTRAINT `fk_estimativasCusto_projeto1`
+    FOREIGN KEY (`projeto_idProjeto`)
+    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `estimatech_db`.`estimativasEsforco`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`estimativasEsforco` (
+  `idEstimativasEsforco` INT NOT NULL,
+  `Data` DATE NOT NULL,
+  `Estimativa` INT NOT NULL,
+  `projeto_idProjeto` INT(11) NOT NULL,
+  PRIMARY KEY (`idEstimativasEsforco`),
+  INDEX `fk_estimativasEsforco_projeto1_idx` (`projeto_idProjeto` ASC),
+  CONSTRAINT `fk_estimativasEsforco_projeto1`
+    FOREIGN KEY (`projeto_idProjeto`)
+    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `estimatech_db`.`estimativasPrazo`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`estimativasPrazo` (
+  `idEstimativasPrazo` INT NOT NULL,
+  `Data` DATE NOT NULL,
+  `Estimativa` INT NOT NULL,
+  `projeto_idProjeto` INT(11) NOT NULL,
+  PRIMARY KEY (`idEstimativasPrazo`),
+  INDEX `fk_estimativasPrazo_projeto1_idx` (`projeto_idProjeto` ASC),
+  CONSTRAINT `fk_estimativasPrazo_projeto1`
+    FOREIGN KEY (`projeto_idProjeto`)
+    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `estimatech_db`.`estimativasProdutividade`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`estimativasProdutividade` (
+  `idEstimativasProdutividade` INT NOT NULL,
+  `Data` DATE NOT NULL,
+  `Estimativa` INT NOT NULL,
+  `projeto_idProjeto` INT(11) NOT NULL,
+  PRIMARY KEY (`idEstimativasProdutividade`),
+  INDEX `fk_estimativasProdutividade_projeto1_idx` (`projeto_idProjeto` ASC),
+  CONSTRAINT `fk_estimativasProdutividade_projeto1`
+    FOREIGN KEY (`projeto_idProjeto`)
+    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 USE `estimatech_db` ;
 
