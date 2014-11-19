@@ -10,6 +10,7 @@ class Application_Model_Recursos extends Zend_Db_Table_Abstract {
             'Descricao' => $request['descricao'],
             'Carga_horaria' => $request['carga_horaria'],
             'Custo' => $request['custo'],
+            'Nivel' => $request['nivel'],
             'cliente_idCliente' => $id
         );
         return $this->insert($dados);
@@ -34,6 +35,7 @@ class Application_Model_Recursos extends Zend_Db_Table_Abstract {
             'Descricao' => $request['descricao'],
             'Carga_horaria' => $request['carga_horaria'],
             'Custo' => $request['custo'],
+            'Nivel' => $request['nivel'],
         );
         
         $where = $this->getAdapter()->quoteInto('idRecursos = ?', $request['id']);
