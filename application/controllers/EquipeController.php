@@ -20,15 +20,9 @@ class EquipeController extends Zend_Controller_Action {
     
     //!< carrega as equipes cadastradas
     public function indexAction() {
-        $db = Zend_Db_Table_Abstract::getDefaultAdapter();
-                
-        $var = $db->select()
-                ->from('projeto', array())
-                ->from('equipe')
-                ->where('Cliente_idCLiente = ' . $this->usuario['idCliente'])
-                ->where('idProjeto = Projeto_idProjeto');
+        $model = new Application_Model_ClienteEquipe();
+        $dados = $model->db_select('Cliente_idCliente', $this->usuario['idCliente']);
         
-        $dados = $db->fetchAll($var);
         $this->view->assign("dados", $dados); 
     }
     
@@ -48,7 +42,7 @@ class EquipeController extends Zend_Controller_Action {
 
     //!< grava os dados no banco de dados
     public function salvarDadosAction() {
-        $dados = $this->_getAllParams();
+        $dados = $this->getAllParams();
         $model = new Application_Model_Equipe();
         $model->inserir($dados);
         $this->_redirect("/equipe");

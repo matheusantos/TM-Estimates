@@ -271,8 +271,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`equipe` (
     REFERENCES `estimatech_db`.`recursos` (`idRecursos`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -405,6 +404,11 @@ USE `estimatech_db` ;
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`clienteFuncaoDados` (`idFuncaoDados` INT, `Descricao` INT, `Funcao` INT, `qtdTiposRegistro` INT, `qtdTiposDados` INT, `PF` INT, `Complexidade` INT, `projeto_idProjeto` INT, `Cliente_idCliente` INT);
 
 -- -----------------------------------------------------
+-- Placeholder table for view `estimatech_db`.`clienteEquipe`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`clienteEquipe` (`Cliente_idCliente` INT, `Recursos_idRecursos` INT, `Projeto_idProjeto` INT, `QtRecursos` INT);
+
+-- -----------------------------------------------------
 -- View `estimatech_db`.`clienteFuncaoDados`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `estimatech_db`.`clienteFuncaoDados`;
@@ -413,6 +417,16 @@ CREATE  OR REPLACE VIEW `clienteFuncaoDados` AS
 SELECT fd.*, p.Cliente_idCliente
 FROM projeto AS p, cliente AS c, funcaodados AS fd
 WHERE c.idCliente = p.Cliente_idCliente;
+
+-- -----------------------------------------------------
+-- View `estimatech_db`.`clienteEquipe`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `estimatech_db`.`clienteEquipe`;
+USE `estimatech_db`;
+CREATE  OR REPLACE VIEW `clienteEquipe` AS
+SELECT p.Cliente_idCliente, eq.*
+FROM projeto AS p, equipe AS eq
+WHERE eq.Projeto_idProjeto = p.idProjeto;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

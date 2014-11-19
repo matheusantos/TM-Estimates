@@ -90,7 +90,9 @@
           <dbTableFile dbTableName="Projeto"/>
           <dbTableFile dbTableName="Recuperarsenha"/>
           <dbTableFile dbTableName="Recursos"/>
+          <dbTableFile dbTableName="Cleinteequipe"/>
         </dbTableDirectory>
+        <modelFile modelName="ClienteEquipe"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
