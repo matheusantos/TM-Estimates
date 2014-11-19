@@ -217,8 +217,8 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`custofase` (
   `idCustoFase` INT(11) NOT NULL AUTO_INCREMENT,
   `Descricao` VARCHAR(45) NOT NULL,
-  `ValorPrevisto` DECIMAL(10,0) NOT NULL,
-  `ValorEfetivo` DECIMAL(10,0) NOT NULL,
+  `ValorPrevisto` VARCHAR(15) NOT NULL,
+  `ValorEfetivo` VARCHAR(15) NOT NULL,
   `fase_idFase` INT(11) NOT NULL,
   PRIMARY KEY (`idCustoFase`),
   INDEX `fk_custoFase_fase1_idx` USING BTREE (`fase_idFase` ASC),
