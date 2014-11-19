@@ -14,26 +14,25 @@
                             <div class="col-md-6">
                                 <div class="col-md-offset-0">
                                     <label>Função</label>
-                                    <input required type="text" class="form-control" name="descricao" placeholder="Função" value="<?=$this->dados_cliente[0]['Descricao']?>">
+                                    <input required type="text" class="form-control" name="descricao" placeholder="Função" value="<?= $this->dados_cliente[0]['Descricao'] ?>">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="col-md-offset-0">
                                     <label>Carga Horária/Dia</label>
-                                    <input required type="number" class="form-control" name="carga_horaria" placeholder="0" value="<?=$this->dados_cliente[0]['Carga_horaria']?>">
+                                    <input required type="number" class="form-control" name="carga_horaria" placeholder="0" value="<?= $this->dados_cliente[0]['Carga_horaria'] ?>">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="col-md-offset-0">
                                     <label>Custo/Hora</label>
-                                    <input required type="" class="form-control" id="custo" name="custo" value="<?=$this->dados_cliente[0]['Custo']?>">
+                                    <input required type="" class="form-control" id="custo" name="custo" value="<?= $this->dados_cliente[0]['Custo'] ?>">
                                 </div>
                             </div>
                             <div class="col-md-6 form-groups">
                                 <label>Nível</label>
                                 <select required class="form-control" name="nivel">
-                               <option value  = "0" class="form-control text-center"<?php if ($this->dados_cliente[0]['Nivel'] == '0') echo 'selected'; ?>>0</option>
                                     <option value  = "1" class="form-control text-center"<?php if ($this->dados_cliente[0]['Nivel'] == '1') echo 'selected'; ?>>1</option>
                                     <option value = "2" class="form-control text-center"<?php if ($this->dados_cliente[0]['Nivel'] == '2') echo 'selected'; ?>>2</option>
                                     <option value = "3" class="form-control text-center"<?php if ($this->dados_cliente[0]['Nivel'] == '3') echo 'selected'; ?>>3</option>

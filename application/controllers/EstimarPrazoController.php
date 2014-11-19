@@ -1,6 +1,8 @@
 <?php
 
-class AdministradoresController extends Zend_Controller_Action {
+/* ! Controler Estimativa de Custo */
+
+class EstimarPrazoController extends Zend_Controller_Action {
 
     public function init() {
         if (!Zend_Auth::getInstance()->hasIdentity()) {
@@ -17,14 +19,12 @@ class AdministradoresController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-        
+        $model1 = new Application_Model_Projeto();
+        $dados1 = $model1->db_select();
+        $this->view->assign("dados1", $dados1);
     }
-
-    public function gerenciarAction() {
-        
-    }
-
-    public function novoAction() {
+    
+        public function gerarPrazoAction() {
         $model1 = new Application_Model_Projeto();
         $dados1 = $model1->db_select();
         $this->view->assign("dados1", $dados1);

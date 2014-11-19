@@ -19,7 +19,14 @@ class EstimarCustoController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-        
+        $model1 = new Application_Model_Projeto();
+        $dados1 = $model1->db_select();
+        $this->view->assign("dados1", $dados1);
     }
-
+    
+    public function gerarCustoAction() {
+        $model1 = new Application_Model_Projeto();
+        $dados1 = $model1->db_select();
+        $this->view->assign("dados1", $dados1);
+    }
 }

@@ -1,14 +1,14 @@
-$(document).ready(function () {
+$(document).ready(function() {
     var activeSystemClass = $('.list-group-item.active');
 
     //something is entered in search form
-    $('#system-search').keyup(function () {
+    $('#system-search').keyup(function() {
         var that = this;
         // affect all table rows on in systems table
         var tableBody = $('.table-list-search tbody');
         var tableRowsClass = $('.table-list-search tbody tr');
         $('.search-sf').remove();
-        tableRowsClass.each(function (i, val) {
+        tableRowsClass.each(function(i, val) {
 
             //Lower text for case insensitive
             var rowText = $(val).text().toLowerCase();
@@ -47,7 +47,7 @@ $(document).ready(function () {
 
 // Masked Input Plugin
 
-jQuery(function ($) {
+jQuery(function($) {
     $("#date").mask("9999-99-99", {placeholder: "yyyy/mm/dd"});
     $("#date2").mask("9999-99-99", {placeholder: "yyyy/mm/dd"});
     $("#CPF").mask("999.999.999-99");
@@ -68,8 +68,8 @@ jQuery(function ($) {
 });
 
 //validar email
-$(document).ready(function () {
-    $("#form1").submit(function () {
+$(document).ready(function() {
+    $("#form1").submit(function() {
         var email = $("#email").val();
         if (email != "")
         {
@@ -89,3 +89,19 @@ $(document).ready(function () {
         }
     });
 });
+
+function setValor() {
+    var iSelect = document.getElementById("nivel");
+    var input = document.getElementById("custo");
+
+    if (iSelect.value == 1)
+        input.value = 6.25;
+    if (iSelect.value == 2)
+        input.value = 12.50;
+    if (iSelect.value == 3)
+        input.value = 18.75;
+    if (iSelect.value == 4)
+        input.value = 25.00;
+    if (iSelect.value == 5)
+        input.value = 31.25;
+}
