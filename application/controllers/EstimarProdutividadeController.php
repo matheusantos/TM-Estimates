@@ -23,5 +23,11 @@ class EstimarProdutividadeController extends Zend_Controller_Action {
         $dados1 = $model1->db_select();
         $this->view->assign("dados1", $dados1);
     }
+    
+        public function gerarProdutividadeAction() {
+        $model1 = new Application_Model_Projeto();
+        $dados1 = $model1->db_select();
+        $this->view->assign("dados1", $dados1);
+    }
 
 }
