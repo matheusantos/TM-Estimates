@@ -23,8 +23,7 @@ class Application_Model_FuncaoTransacao extends Zend_Db_Table_Abstract {
             'Funcao' => $request['funcao'], 'Descricao' => $request['Descri'],
             'qtdArquivoRef' => $request['ArqRef'],'qtdTipoDados' => $request['TipDados'],
             'projeto_idProjeto' => $request['Projeto'],'Complexidade' => $Complexidade, 'PF' => $pfTrans,
-        ); echo $pfTrans;
-        die;
+        );
         return $this->insert($request['TipDados']);
     }
 
