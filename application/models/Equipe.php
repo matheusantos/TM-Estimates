@@ -4,21 +4,20 @@
 
 class Application_Model_Equipe extends Zend_Db_Table_Abstract {
 
-    protected $_name = "equipe";
-    protected $_primary = "Recursos_idRecursos";
-
-    public function inserir(array $request) {
+    public function db_insert(array $request) {
+        $dao = new Application_Model_DbTable_Equipe();
         $dados = array(
             'Projeto_idProjeto' => $request['Projeto'],
             'Recursos_idRecursos' => $request['Recurso'],
             'QtRecursos' => $request['QtdRec'],
         );
-        return $this->insert($dados);
+        return $dao->insert($dados);
     }
 
     public function db_select($where = null, $valor = null, $order = null, $limit = null) {
-        $select = $this->select()
-                ->from($this)
+        $dao = new Application_Model_DbTable_Equipe();
+        $select = $dao->select()
+                ->from($dao)
                 ->order($order)
                 ->limit($limit);
 
@@ -26,23 +25,22 @@ class Application_Model_Equipe extends Zend_Db_Table_Abstract {
             $select->where($where . '= ?', $valor);
             //$select->where($where.'='. $valor);
         }
-        return $this->fetchAll($select)->toArray();
+        return $dao->fetchAll($select)->toArray();
     }
 
     public function db_update(array $request) {
-
+        $dao = new Application_Model_DbTable_Equipe();
         $dados = array(
             'QtRecursos' => $request['QtdRec'],
         );
-
-        $where = $this->getAdapter()->quoteInto('Recursos_idRecursos = ?', $request['id']);
-
-        $this->update($dados, $where);
+        $where = $dao->getAdapter()->quoteInto('Recursos_idRecursos = ?', $request['id']);
+        $dao->update($dados, $where);
     }
 
     public function db_delete($id) {
-        $where = $this->getAdapter()->quoteInto("Recursos_idRecursos = ?", $id);
-        $this->delete($where);
+        $dao = new Application_Model_DbTable_Equipe();
+        $where = $dao->getAdapter()->quoteInto("Recursos_idRecursos = ?", $id);
+        $dao->delete($where);
     }
 
 }

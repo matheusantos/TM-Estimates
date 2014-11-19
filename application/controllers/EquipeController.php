@@ -44,7 +44,7 @@ class EquipeController extends Zend_Controller_Action {
     public function salvarDadosAction() {
         $dados = $this->getAllParams();
         $model = new Application_Model_Equipe();
-        $model->inserir($dados);
+        $model->db_insert($dados);
         $this->_redirect("/equipe");
     }
 
