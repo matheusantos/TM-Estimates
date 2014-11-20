@@ -24,7 +24,11 @@ class RecursoController extends Zend_Controller_Action {
         $this->view->assign("dados", $dados);
     }
 
-    public function novoAction() { }
+    public function novoAction() {
+        $model1 = new Application_Model_Projeto();
+        $dados1 = $model1->db_select();
+        $this->view->assign("dados1", $dados1);
+    }
 
     public function salvarDadosAction() {
         $dados = $this->getAllParams();
