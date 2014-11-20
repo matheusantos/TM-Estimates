@@ -57,8 +57,7 @@ class EstimarCustoController extends Zend_Controller_Action {
         $soma5 = $soma5[0]['SUM(Carga_horaria)'];
         
         $custo =(($n5*$soma5*31.25*8)+($n4*$soma4*25*8)+($n3*$soma3*18.75*8)+($n2*$soma2*12.5*8)+($n1*$soma1*6.25*8));
-        echo $custo;
-        die;
+    
         $model = new Application_Model_Estimarcusto();
         $model->db_inserir($dados, $custo);
         $this->_redirect("estimar-custo/index");
