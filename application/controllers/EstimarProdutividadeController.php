@@ -19,15 +19,29 @@ class EstimarProdutividadeController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-        $model1 = new Application_Model_Projeto();
-        $dados1 = $model1->db_select();
-        $this->view->assign("dados1", $dados1);
+        $model = new Application_Model_Estimarprodutividade();
+        $produtividade = $model->db_select();
+        $this->view->assign("produtividade", $produtividade);
     }
     
         public function gerarProdutividadeAction() {
         $model1 = new Application_Model_Projeto();
         $dados1 = $model1->db_select();
         $this->view->assign("dados1", $dados1);
+    }
+    
+        public function salvarDadosAction() {
+        $dados = $this->_getAllParams();
+        $model = new Application_Model_Estimarprodutividade();
+        $model->inserir($dados);
+        $this->_redirect("estimar-produtividade/index");
+    }
+
+    public function excluirAction() {
+        $dados = $this->getParam('idP');
+        $model = new Application_Model_Estimarprodutividade();
+        $model->db_delete($dados);
+        $this->_redirect("estimar-produtividade/index");
     }
 
 }

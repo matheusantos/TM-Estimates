@@ -29,14 +29,13 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($this->dados AS $key => $projeto): ?>
+                <?php foreach ($this->prazo AS $key => $prazo): ?>
                     <tr>
-                        <td><?= $projeto['idProjeto'] ?></td>
-                        <td><?= $projeto['Titulo'] ?></td>
-                        <td><?= $projeto['Categoria'] ?></td>
-                        <td><?= $projeto['DataCriacao'] ?></td>
-                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'index', 'idP'=>$projeto['idProjeto']), null, true) ?>">Editar</a></td>
-                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-pr', 'idP' => $projeto['idProjeto']), null, true) ?>">Excluir</a></td>
+                        <td><?= $prazo['idEstimativasPrazo'] ?></td>
+                        <td><?= $prazo['Data'] ?></td>
+                        <td><?= $prazo['projeto_idProjeto'] ?></td>
+                        <td><?= $prazo['Estimativa'] ?></td>
+                        <td><a href="<?= $this->url(array('controller' => 'estimar-prazo', 'action' => 'excluir', 'idP' => $prazo['idEstimativasPrazo']), null, true) ?>">Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

@@ -31,16 +31,16 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($this->dados AS $key => $projeto): ?>
+                <?php foreach ($this->dados AS $key => $prazo): ?>
                     <tr>
-                        <td><?= $projeto['idProjeto'] ?></td>
-                        <td><?= $projeto['Titulo'] ?></td>
-                        <td><?= $projeto['Categoria'] ?></td>
-                        <td><?= $projeto['DataCriacao'] ?></td>
-                        <td><?= $projeto['DataFininalizacao'] ?></td>
-                        <td><?= $projeto['Situacao'] ?></td>
-                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'index', 'idP'=>$projeto['idProjeto']), null, true) ?>">Editar</a></td>
-                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-pr', 'idP' => $projeto['idProjeto']), null, true) ?>">Excluir</a></td>
+                        <td><?= $prazo['idProjeto'] ?></td>
+                        <td><?= $prazo['Titulo'] ?></td>
+                        <td><?= $prazo['Categoria'] ?></td>
+                        <td><?= $prazo['DataCriacao'] ?></td>
+                        <td><?= $prazo['DataFininalizacao'] ?></td>
+                        <td><?= $prazo['Situacao'] ?></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'index', 'idP'=>$prazo['idProjeto']), null, true) ?>">Editar</a></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-pr', 'idP' => $prazo['idProjeto']), null, true) ?>">Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
