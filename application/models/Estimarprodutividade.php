@@ -5,12 +5,11 @@ class Application_Model_Estimarprodutividade extends Zend_Db_Table_Abstract {
     protected $_name = "estimativasprodutividade";
     protected $_primary = "idEstimativasProdutividade";
 
-    public function inserir(array $request) {
+    public function inserir(array $request, $estimativa) {
         $my_format = date('Y-m-d H:i:s');
-        
         $dados = array(
             'projeto_idProjeto' => $request['Projeto'],
-            'Estimativa' => '0',
+            'Estimativa' => $estimativa,
             'Data' => $my_format
         );
         return $this->insert($dados);
@@ -28,6 +27,7 @@ class Application_Model_Estimarprodutividade extends Zend_Db_Table_Abstract {
         }
         return $this->fetchAll($select)->toArray();
     }
+    
 
     public function find($id) {
         $arr = $this->find($id)->toArray();
