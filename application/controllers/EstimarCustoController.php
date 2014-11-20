@@ -46,14 +46,17 @@ class EstimarCustoController extends Zend_Controller_Action {
         $n5 = count($n5);
 
         $soma1 = $model->soma_select(1, $dados['Projeto']);
+        $soma1 = $soma1[0]['SUM(Carga_horaria)'];
         $soma2 = $model->soma_select(2, $dados['Projeto']);
+        $soma2 = $soma2[0]['SUM(Carga_horaria)'];
         $soma3 = $model->soma_select(3, $dados['Projeto']);
+        $soma3 = $soma3[0]['SUM(Carga_horaria)'];
         $soma4 = $model->soma_select(4, $dados['Projeto']);
+        $soma4 = $soma4[0]['SUM(Carga_horaria)'];
         $soma5 = $model->soma_select(5, $dados['Projeto']);
-        
-        $custo = 
+        $soma5 = $soma5[0]['SUM(Carga_horaria)'];
 
-        $model = new Application_Model_Estimarcusto();
+        $custo = $model = new Application_Model_Estimarcusto();
         $model->db_inserir($dados, $custo);
         $this->_redirect("estimar-custo/index");
     }
