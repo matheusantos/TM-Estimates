@@ -32,6 +32,19 @@ class EstimarCustoController extends Zend_Controller_Action {
 
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();
+        
+        $model = new Application_Model_Recursos();
+        $n1 = $model->n_select(1, $dados['Projeto']);
+        $n1 = count($n1);
+        $n2 = $model->n_select(2, $dados['Projeto']);
+        $n2 = count($n2);
+        $n3 = $model->n_select(3, $dados['Projeto']);
+        $n3 = count($n3);
+        $n4 = $model->n_select(4, $dados['Projeto']);
+        $n4 = count($n4);
+        $n5 = $model->n_select(5, $dados['Projeto']);
+        $n5 = count($n5);
+        
         $model = new Application_Model_Estimarcusto();
         $model->db_inserir($dados);
         $this->_redirect("estimar-custo/index");

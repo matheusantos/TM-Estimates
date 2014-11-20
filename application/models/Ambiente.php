@@ -5,7 +5,7 @@ class Application_Model_Ambiente extends Zend_Db_Table_Abstract {
     protected $_name = "ambiente";
     protected $_primary = "idAmbiente";
 
-    public function inserir(array $request, $id) {
+    public function db_inserir(array $request, $id) {
         $dados = array(
             'Linguagem' => $request['Linguagem'],
             'Esforco' => $request['HorPes'],

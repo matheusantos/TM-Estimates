@@ -20,7 +20,7 @@ class AmbienteController extends Zend_Controller_Action {
 
     public function indexAction() {
         $model = new Application_Model_Ambiente();
-        $dados = $model->db_select('cliente_idCliente', $this->usuario['idCliente']);
+        $dados = $model->db_select();
         $this->view->assign("dados", $dados);
     }
 
@@ -28,9 +28,9 @@ class AmbienteController extends Zend_Controller_Action {
 
     //!< grava os dados no banco de dados
     public function salvarDadosAction() {
-        $dados = $this->_getAllParams();
+        $dados = $this->getAllParams();
         $model = new Application_Model_Ambiente();
-        $model->inserir($dados, $this->usuario['idCliente']);
+        $model->db_inserir($dados, $this->usuario['idCliente']);
         $this->_redirect("/ambiente");
     }
 
