@@ -19,8 +19,8 @@ class EstimarCustoController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-        $model = new Application_Model_Estimarcusto();
-        $custo = $model->db_select();
+        $model = new Application_Model_ViewEstimativasCusto();
+        $custo = $model->db_select('Cliente_idCliente', $this->usuario['idCliente']);
         $this->view->assign("custo", $custo);
     }
 
@@ -33,7 +33,7 @@ class EstimarCustoController extends Zend_Controller_Action {
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();
         $model = new Application_Model_Estimarcusto();
-        $model->inserir($dados);
+        $model->db_inserir($dados);
         $this->_redirect("estimar-custo/index");
     }
 

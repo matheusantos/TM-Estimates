@@ -19,8 +19,8 @@ class EstimarPrazoController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-        $model = new Application_Model_Estimarprazo();
-        $prazo = $model->db_select();
+        $model = new Application_Model_ViewEstimativasPrazo();
+        $prazo = $model->db_select('Cliente_idCliente', $this->usuario['idCliente']);
         $this->view->assign("prazo", $prazo);
     }
 
@@ -33,7 +33,7 @@ class EstimarPrazoController extends Zend_Controller_Action {
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();
         $model = new Application_Model_Estimarprazo();
-        $model->inserir($dados);
+        $model->db_inserir($dados);
         $this->_redirect("estimar-prazo/index");
     }
 

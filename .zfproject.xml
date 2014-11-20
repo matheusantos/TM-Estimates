@@ -92,9 +92,18 @@
           <dbTableFile dbTableName="Recursos"/>
           <dbTableFile dbTableName="Cleinteequipe"/>
           <dbTableFile dbTableName="ViewClienteDetalharCusto"/>
+          <dbTableFile dbTableName="ViewEstimativasCusto"/>
+          <dbTableFile dbTableName="EstimavasCusto"/>
+          <dbTableFile dbTableName="ViewEstimativasPrazo"/>
+          <dbTableFile dbTableName="ViewEstimativasEsforco"/>
+          <dbTableFile dbTableName="ViewEstimativasProdutividade"/>
         </dbTableDirectory>
         <modelFile modelName="ClienteEquipe"/>
         <modelFile modelName="ViewClienteDetalharCusto"/>
+        <modelFile modelName="ViewEstimativasCusto"/>
+        <modelFile modelName="ViewEstimativasPrazo"/>
+        <modelFile modelName="ViewEstimativasEsforco"/>
+        <modelFile modelName="ViewEstimativasProdutividade"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>

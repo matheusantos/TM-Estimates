@@ -19,8 +19,8 @@ class EstimarEsforcoController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-        $model = new Application_Model_Estimaresforco();
-        $esforco = $model->db_select();
+        $model = new Application_Model_ViewEstimativasEsforco();
+        $esforco = $model->db_select('Cliente_idCliente', $this->usuario['idCliente']);
         $this->view->assign("esforco", $esforco);
     }
     
@@ -33,7 +33,7 @@ class EstimarEsforcoController extends Zend_Controller_Action {
         public function salvarDadosAction() {
         $dados = $this->_getAllParams();
         $model = new Application_Model_Estimaresforco();
-        $model->inserir($dados);
+        $model->db_inserir($dados);
         $this->_redirect("estimar-esforco/index");
     }
 

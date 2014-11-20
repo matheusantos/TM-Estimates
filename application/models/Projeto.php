@@ -2,7 +2,7 @@
 
 /* ! Operações na tabela Projeto */
 
-class Application_Model_Projeto extends Zend_Db_Table_Abstract {
+class Application_Model_Projeto {
 
     protected $_name = "projeto";
     protected $_primary = "idProjeto";

@@ -33,7 +33,7 @@
                     <tr>
                         <td><?= $produtividade['idEstimativasProdutividade'] ?></td>
                         <td><?= $produtividade['Data'] ?></td>
-                        <td><?= $produtividade['projeto_idProjeto'] ?></td>
+                        <td><?= $produtividade['Titulo'] ?></td>
                         <td><?= $produtividade['Estimativa'] ?></td>
                         <td><a href="<?= $this->url(array('controller' => 'estimar-produtividade', 'action' => 'excluir', 'idP' => $produtividade['idEstimativasProdutividade']), null, true) ?>">Excluir</a></td>
                     </tr>

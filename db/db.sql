@@ -471,6 +471,26 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`clienteEquipe` (`Cliente_idCliente` 
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_clienteCustoFase` (`idCustoFase` INT, `descricaoCusto` INT, `ValorPrevisto` INT, `ValorEfetivo` INT, `descricaoFase` INT, `cliente_idCliente` INT);
 
 -- -----------------------------------------------------
+-- Placeholder table for view `estimatech_db`.`view_EstimativasCusto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_EstimativasCusto` (`idestimativasCusto` INT, `Data` INT, `Estimativa` INT, `projeto_idProjeto` INT, `Titulo` INT, `Cliente_idCliente` INT);
+
+-- -----------------------------------------------------
+-- Placeholder table for view `estimatech_db`.`view_EstimativasPrazo`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_EstimativasPrazo` (`idEstimativasPrazo` INT, `Data` INT, `Estimativa` INT, `projeto_idProjeto` INT, `Titulo` INT, `Cliente_idCliente` INT);
+
+-- -----------------------------------------------------
+-- Placeholder table for view `estimatech_db`.`view_EstimativasEsforco`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_EstimativasEsforco` (`idEstimativasEsforco` INT, `Data` INT, `Estimativa` INT, `projeto_idProjeto` INT, `Titulo` INT, `Cliente_idCliente` INT);
+
+-- -----------------------------------------------------
+-- Placeholder table for view `estimatech_db`.`view_EstimativasProdutividade`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_EstimativasProdutividade` (`idEstimativasProdutividade` INT, `Data` INT, `Estimativa` INT, `projeto_idProjeto` INT, `Titulo` INT, `Cliente_idCliente` INT);
+
+-- -----------------------------------------------------
 -- View `estimatech_db`.`clienteFuncaoDados`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `estimatech_db`.`clienteFuncaoDados`;
@@ -500,6 +520,50 @@ SELECT cf.idCustoFase, cf.Descricao AS descricaoCusto, cf.ValorPrevisto, cf.Valo
 FROM custofase AS cf
 INNER JOIN fase AS f
 ON f.idFase = cf.fase_idFase;
+
+-- -----------------------------------------------------
+-- View `estimatech_db`.`view_EstimativasCusto`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `estimatech_db`.`view_EstimativasCusto`;
+USE `estimatech_db`;
+CREATE  OR REPLACE VIEW `view_EstimativasCusto` AS
+SELECT ec.*, p.Titulo, p.Cliente_idCliente
+FROM estimativasCusto AS ec
+INNER JOIN projeto AS p
+ON p.idProjeto = ec.projeto_idProjeto;
+
+-- -----------------------------------------------------
+-- View `estimatech_db`.`view_EstimativasPrazo`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `estimatech_db`.`view_EstimativasPrazo`;
+USE `estimatech_db`;
+CREATE  OR REPLACE VIEW `view_EstimativasPrazo` AS
+SELECT ec.*, p.Titulo, p.Cliente_idCliente
+FROM estimativasPrazo AS ec
+INNER JOIN projeto AS p
+ON p.idProjeto = ec.projeto_idProjeto;
+
+-- -----------------------------------------------------
+-- View `estimatech_db`.`view_EstimativasEsforco`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `estimatech_db`.`view_EstimativasEsforco`;
+USE `estimatech_db`;
+CREATE  OR REPLACE VIEW `view_EstimativasEsforco` AS
+SELECT ec.*, p.Titulo, p.Cliente_idCliente
+FROM estimativasEsforco AS ec
+INNER JOIN projeto AS p
+ON p.idProjeto = ec.projeto_idProjeto;
+
+-- -----------------------------------------------------
+-- View `estimatech_db`.`view_EstimativasProdutividade`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `estimatech_db`.`view_EstimativasProdutividade`;
+USE `estimatech_db`;
+CREATE  OR REPLACE VIEW `view_EstimativasProdutividade` AS
+SELECT ec.*, p.Titulo, p.Cliente_idCliente
+FROM estimativasProdutividade AS ec
+INNER JOIN projeto AS p
+ON p.idProjeto = ec.projeto_idProjeto;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

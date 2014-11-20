@@ -19,8 +19,8 @@ class EstimarProdutividadeController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-        $model = new Application_Model_Estimarprodutividade();
-        $produtividade = $model->db_select();
+        $model = new Application_Model_ViewEstimativasProdutividade();
+        $produtividade = $model->db_select('Cliente_idCliente', $this->usuario['idCliente']);
         $this->view->assign("produtividade", $produtividade);
     }
     
