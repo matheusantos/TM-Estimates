@@ -497,11 +497,8 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_ambiente` (`idAmbiente` INT, `L
 -- -----------------------------------------------------
 -- Placeholder table for view `estimatech_db`.`view_recurso`
 -- -----------------------------------------------------
-<<<<<<< HEAD
+
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_recurso` (`idRecursos` INT, `Descricao` INT, `Carga_horaria` INT, `Custo` INT, `Nivel` INT, `projeto_idProjeto` INT, `Titulo` INT, `Cliente_idCliente` INT);
-=======
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_recurso` (`Titulo` INT, `Cliente_idCliente` INT);
->>>>>>> ce7b6c8929c7d96c610e0be4eb29a81c6df7704b
 
 -- -----------------------------------------------------
 -- View `estimatech_db`.`clienteFuncaoDados`
