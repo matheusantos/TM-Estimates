@@ -40,7 +40,18 @@
                                     <option value = "5" class="form-control text-center">5</option>
                                 </select>
                             </div>
-                            <br><br><br><br>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Projeto</label>
+                                    <select required class="form-control" name="Projeto">
+                                        <option value  = "" class="form-control"> </option>
+                                        <?php foreach ($this->dados1 as $key => $value) { ?>
+                                            <option value="<?= $value["idProjeto"] ?>" class="form-control"> <?= $value['Titulo'] ?> </option>
+                                        <?php } ?>
+                                    </select>
+                                    <!--<input type="" class="form-control" id="exampleInputProj" placeholder="Projeto">-->
+                                </div>
+                            </div>
                             <br><br><br><br>
                             <div class="col-md-4">
                                 <div class="col-md-offset-0">

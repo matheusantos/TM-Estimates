@@ -3,12 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/TM-Estimates/application/controllers/IndexController.php</file>
-            <file>file:/C:/xampp/htdocs/TM-Estimates/application/models/ClienteFuncaoTransacao.php</file>
-            <file>file:/C:/xampp/htdocs/TM-Estimates/application/views/scripts/projeto/index.phtml</file>
-            <file>file:/C:/xampp/htdocs/TM-Estimates/application/layout/script/layout.phtml</file>
-            <file>file:/C:/xampp/htdocs/TM-Estimates/application/models/ClienteFuncaoDados.php</file>
-            <file>file:/C:/xampp/htdocs/TM-Estimates/application/controllers/FuncaoDadosController.php</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/views/scripts/administradores/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/controllers/EditarController.php</file>
         </group>
     </open-files>
 </project-private>
