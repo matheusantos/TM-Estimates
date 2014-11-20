@@ -93,15 +93,31 @@ $(document).ready(function() {
 function setValor() {
     var iSelect = document.getElementById("nivel");
     var input = document.getElementById("custo");
+    var input1 = document.getElementById("custo1");
 
-    if (iSelect.value == 1)
+    if (iSelect.value == 1){
         input.value = 6.25;
-    if (iSelect.value == 2)
+        input1.value = 6.25;
+    }
+        
+    if (iSelect.value == 2){
         input.value = 12.50;
-    if (iSelect.value == 3)
+        input1.value = 12.50;
+    }
+        
+    if (iSelect.value == 3){
         input.value = 18.75;
-    if (iSelect.value == 4)
-        input.value = 25.00;
-    if (iSelect.value == 5)
+        input1.value = 18.75;
+    }
+        
+    if (iSelect.value == 4){
+         input.value = 25.00;
+          input1.value = 25.00;
+    }
+       
+    if (iSelect.value == 5){
         input.value = 31.25;
+        input1.value = 31.25;
+    }
+        
 }

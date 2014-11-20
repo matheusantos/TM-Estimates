@@ -1,6 +1,6 @@
 <?php
 /*! Operações na tabela Ambiente */
-class Application_Model_Estimarprodutividade {
+class Application_Model_Estimarprodutividade extends Zend_Db_Table_Abstract{
 
     protected $_name = "estimativasprodutividade";
     protected $_primary = "idEstimativasProdutividade";
@@ -8,7 +8,7 @@ class Application_Model_Estimarprodutividade {
     public function inserir(array $request, $estimativa) {
         $my_format = date('Y-m-d');
         
-        $dao = new Application_Model_DbTable_ViewEstimativasEsforco();
+        $dao = new Application_Model_DbTable_ViewEstimativasProdutividade();
         $dados = array(
             'projeto_idProjeto' => $request['Projeto'],
             'Estimativa' => $estimativa,
@@ -18,9 +18,8 @@ class Application_Model_Estimarprodutividade {
     }
 
     public function db_delete($id) {
-        $dao = new Application_Model_DbTable_ViewEstimativasEsforco();
-        $where = $dao->getAdapter()->quoteInto("idEstimativasProdutividade = ?", $id);
-        $dao->delete($where);
+        $where = $this->getAdapter()->quoteInto("idEstimativasProdutividade = ?", $id);
+        $this->delete($where);
     }
 
 }
