@@ -11,26 +11,13 @@ class Application_Model_Recursos extends Zend_Db_Table_Abstract {
         $dados = array(
             'Descricao' => $request['descricao'],
             'Carga_horaria' => $request['carga_horaria'],
-            'Custo' => $request['custo'],
+            'Custo' => $request['custo1'],
             'Nivel' => $request['nivel'],
-            'cliente_idCliente' => $id,
             'projeto_idProjeto' => $request['Projeto']
         );
         return $this->insert($dados);
     }
 
-    public function db_select($where = null, $valor = null, $order = null, $limit = null) {
-        $select = $this->select()
-                ->from($this)
-                ->order($order)
-                ->limit($limit);
-
-        if (!is_null($where)) {
-            $select->where($where . '= ?', $valor);
-            //$select->where($where.'='. $valor);
-        }
-        return $this->fetchAll($select)->toArray();
-    }
     
     public function n_select($nivel, $id) {
         

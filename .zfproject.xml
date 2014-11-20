@@ -97,6 +97,7 @@
           <dbTableFile dbTableName="ViewEstimativasPrazo"/>
           <dbTableFile dbTableName="ViewEstimativasEsforco"/>
           <dbTableFile dbTableName="ViewEstimativasProdutividade"/>
+          <dbTableFile dbTableName="ViewRecurso"/>
         </dbTableDirectory>
         <modelFile modelName="ClienteEquipe"/>
         <modelFile modelName="ViewClienteDetalharCusto"/>
@@ -104,6 +105,7 @@
         <modelFile modelName="ViewEstimativasPrazo"/>
         <modelFile modelName="ViewEstimativasEsforco"/>
         <modelFile modelName="ViewEstimativasProdutividade"/>
+        <modelFile modelName="ViewRecurso"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>

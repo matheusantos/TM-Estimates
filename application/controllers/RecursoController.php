@@ -19,7 +19,7 @@ class RecursoController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-        $model = new Application_Model_Recursos();
+        $model = new Application_Model_ViewRecurso();
         $dados = $model->db_select('cliente_idCliente', $this->usuario['idCliente']);
         $this->view->assign("dados", $dados);
     }
