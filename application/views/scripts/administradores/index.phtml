@@ -26,6 +26,16 @@
                 </tr>
             </thead>
             <tbody>
+                <?php foreach ($this->dados AS $key => $colaboradores): ?>
+                    <tr>
+                        <td><?= $colaboradores['idColaboradores'] ?></td>
+                        <td><?= $colaboradores['Nome'] ?></td>
+                        <td><?= $colaboradores['Email'] ?></td>
+                        <td><?= $colaboradores['idProjeto'] ?></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'colaboradores', 'idP' => $colaboradores['idColaboradores']), null, true) ?>">Editar</a></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-co', 'idP' => $colaboradores['idColaboradores']), null, true) ?>">Excluir</a></td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>   
     </div>

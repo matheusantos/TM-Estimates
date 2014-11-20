@@ -56,6 +56,15 @@ class EditarController extends Zend_Controller_Action {
         $this->view->assign("dados", $dados);
     }
     
+    public function colaboradoresAction() {
+        $this->_helper->layout->setlayout("userlayout");
+        $id = $this->getParam('idP');
+        $model = new Application_Model_Colaboradores();
+        $dados = $model->db_select('idColaboradores', $id, null, null);
+        $this->view->assign("id", $id);
+        $this->view->assign("dados", $dados);
+    }
+    
     public function functrancAction() {
         $this->_helper->layout->setlayout("userlayout");
         $id = $this->getParam('idP');
@@ -121,6 +130,13 @@ class EditarController extends Zend_Controller_Action {
         $model_cliente = new Application_Model_Projeto();
         $dados_cliente = $model_cliente->db_update($dados);
         $this->_redirect("projeto/index");
+    }
+    
+    public function atualizaCoAction() {
+        $dados = $this->_getAllParams();
+        $model_cliente = new Application_Model_Colaboradores();
+        $dados_cliente = $model_cliente->db_update($dados);
+        $this->_redirect("administradores/index");
     }
 
     public function atualizaFaAction() {
@@ -212,6 +228,13 @@ class EditarController extends Zend_Controller_Action {
         $model_cliente = new Application_Model_DetalharFase();
         $dados_cliente = $model_cliente->db_delete($dados);
         $this->_redirect("detalhar/fases");
+    }
+    
+    public function excluirCoAction() {
+        $dados = $this->getParam('idP');
+        $model_cliente = new Application_Model_Colaboradores();
+        $model_cliente->db_delete($dados);
+        $this->_redirect("administradores/index");
     }
 
     public function excluirDtCuAction() {
