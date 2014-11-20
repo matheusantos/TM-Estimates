@@ -497,7 +497,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_ambiente` (`idAmbiente` INT, `L
 -- -----------------------------------------------------
 -- Placeholder table for view `estimatech_db`.`view_recurso`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_recurso` (`idAmbiente` INT, `Linguagem` INT, `Esforco` INT, `Produtividade` INT, `projeto_idProjeto` INT, `Titulo` INT, `Cliente_idCliente` INT);
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_recurso` (`Titulo` INT, `Cliente_idCliente` INT);
 
 -- -----------------------------------------------------
 -- View `estimatech_db`.`clienteFuncaoDados`
@@ -583,7 +583,7 @@ CREATE  OR REPLACE VIEW `view_ambiente` AS
 SELECT a.*, p.Titulo, p.Cliente_idCliente
 FROM ambiente AS a
 INNER JOIN projeto AS p
-ON p.idProjeto = ec.projeto_idProjeto;
+ON p.idProjeto = a.projeto_idProjeto;
 
 -- -----------------------------------------------------
 -- View `estimatech_db`.`view_recurso`
@@ -591,10 +591,10 @@ ON p.idProjeto = ec.projeto_idProjeto;
 DROP TABLE IF EXISTS `estimatech_db`.`view_recurso`;
 USE `estimatech_db`;
 CREATE  OR REPLACE VIEW `view_recurso` AS
-SELECT a.*, p.Titulo, p.Cliente_idCliente
-FROM ambiente AS a
+SELECT r.*, p.Titulo, p.Cliente_idCliente
+FROM recurso AS r
 INNER JOIN projeto AS p
-ON p.idProjeto = ec.projeto_idProjeto;
+ON p.idProjeto = r.projeto_idProjeto;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
