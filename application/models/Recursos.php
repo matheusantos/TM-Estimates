@@ -27,6 +27,16 @@ class Application_Model_Recursos extends Zend_Db_Table_Abstract {
 
         return $this->fetchAll($select)->toArray();
     }
+    
+     public function soma_select($nivel, $id) {
+
+        $select = $this->select()
+        ->from($this, new Zend_Db_Expr('SUM(Carga_horaria)'))
+        ->where('Nivel' . '= ?', $nivel)
+        ->where('projeto_idProjeto' . '= ?', $id);
+
+        return $this->fetchAll($select)->toArray();
+    }
 
     public function db_update(array $request) {
 

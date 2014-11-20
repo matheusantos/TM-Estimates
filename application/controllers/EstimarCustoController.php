@@ -32,7 +32,7 @@ class EstimarCustoController extends Zend_Controller_Action {
 
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();
-        
+
         $model = new Application_Model_Recursos();
         $n1 = $model->n_select(1, $dados['Projeto']);
         $n1 = count($n1);
@@ -44,9 +44,17 @@ class EstimarCustoController extends Zend_Controller_Action {
         $n4 = count($n4);
         $n5 = $model->n_select(5, $dados['Projeto']);
         $n5 = count($n5);
+
+        $soma1 = $model->soma_select(1, $dados['Projeto']);
+        $soma2 = $model->soma_select(2, $dados['Projeto']);
+        $soma3 = $model->soma_select(3, $dados['Projeto']);
+        $soma4 = $model->soma_select(4, $dados['Projeto']);
+        $soma5 = $model->soma_select(5, $dados['Projeto']);
         
+        $custo = 
+
         $model = new Application_Model_Estimarcusto();
-        $model->db_inserir($dados);
+        $model->db_inserir($dados, $custo);
         $this->_redirect("estimar-custo/index");
     }
 

@@ -2,13 +2,13 @@
 /*! Operações na tabela Ambiente */
 class Application_Model_Estimarcusto {
 
-    public function db_inserir(array $request) {
+    public function db_inserir(array $request, $custo) {
         $my_format = date('Y-m-d');
         
         $dao = new Application_Model_DbTable_EstimavasCusto();
         $dados = array(
             'projeto_idProjeto' => $request['Projeto'],
-            'Estimativa' => '0',
+            'Estimativa' => $custo,
             'Data' => $my_format
         );
         return $dao->insert($dados);
