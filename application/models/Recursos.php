@@ -31,7 +31,19 @@ class Application_Model_Recursos extends Zend_Db_Table_Abstract {
         }
         return $this->fetchAll($select)->toArray();
     }
+<<<<<<< HEAD
 
+=======
+    
+    public function n_select($nivel, $id) {
+        
+        $select = $this->select()
+                ->from($this, new Zend_Db_Expr('SUM(Nivel)'))
+                ->where('Nivel =', $nivel)
+                ->where('projeto_idProjeto =', $id);
+    }
+    
+>>>>>>> origin/master
     public function db_update(array $request) {
 
         $dados = array(
