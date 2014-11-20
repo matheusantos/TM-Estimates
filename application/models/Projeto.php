@@ -4,12 +4,10 @@
 
 class Application_Model_Projeto {
 
-    protected $_name = "projeto";
-    protected $_primary = "idProjeto";
-
     public function inserir(array $request, $id) {
         $my_format = date('Y-m-d H:i:s');
 
+        $dao = new Application_Model_DbTable_Projeto();
         $dados = array(
             'Titulo' => $request['projetoTitulo'],
             'DataCriacao' => $request['projetoDataCriacao'],
@@ -19,22 +17,21 @@ class Application_Model_Projeto {
             'UltimaAtualizacao' => $my_format,
             'Cliente_idCliente' => $id
         );
-        return $this->insert($dados);
+        return $dao->insert($dados);
     }
 
     public function db_select($where = null, $valor = null, $order = null, $limit = null) {
-        $select = $this->select()
-                ->from($this)
+        $dao = new Application_Model_DbTable_Projeto();
+        $select = $dao->select()
+                ->from($dao)
                 ->order($order)
                 ->limit($limit);
 
         if (!is_null($where)) {
             $select->where($where . '= ?', $valor);
-            //$select->where($where.'='. $valor);
         }
-        return $this->fetchAll($select)->toArray();
+        return $dao->fetchAll($select)->toArray();
     }
-   
 
     /* public function ed_select($id){
       $db = Zend_Db_Table_Abstract::getDefaultAdapter();
@@ -45,9 +42,10 @@ class Application_Model_Projeto {
       } */
 
     public function db_update(array $request) {
-        
+
         $my_format = date('Y-m-d H:i:s');
 
+        $dao = new Application_Model_DbTable_Projeto();
         $dados = array(
             'Titulo' => $request['projetoTitulo'],
 //            'DataCriacao' => $request['projetoDataCriacao'],
@@ -55,16 +53,17 @@ class Application_Model_Projeto {
             'Categoria' => $request['projetoCategoria'],
             'Situacao' => $request['projetoSituacao'],
             'UltimaAtualizacao' => $my_format,
-       );
-        
-        $where = $this->getAdapter()->quoteInto('idProjeto = ?', $request['id']);
-        
-        $this->update($dados, $where);
+        );
+
+        $where = $dao->getAdapter()->quoteInto('idProjeto = ?', $request['id']);
+
+        $dao->update($dados, $where);
     }
-    
-        public function db_delete($id) {
-        $where = $this->getAdapter()->quoteInto("idProjeto = ?", $id);
-        $this->delete($where);
+
+    public function db_delete($id) {
+        $dao = new Application_Model_DbTable_Projeto();
+        $where = $dao->getAdapter()->quoteInto("idProjeto = ?", $id);
+        $dao->delete($where);
     }
 
 }
