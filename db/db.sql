@@ -28,29 +28,6 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `estimatech_db`.`projeto`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`projeto` (
-  `idProjeto` INT(11) NOT NULL AUTO_INCREMENT,
-  `Titulo` VARCHAR(45) NOT NULL,
-  `DataCriacao` DATE NOT NULL,
-  `DataFininalizacao` DATE NULL DEFAULT NULL,
-  `Categoria` VARCHAR(45) NOT NULL,
-  `Situacao` CHAR(1) NOT NULL,
-  `UltimaAtualizacao` DATETIME NOT NULL,
-  `Cliente_idCliente` INT(11) NOT NULL,
-  PRIMARY KEY (`idProjeto`),
-  INDEX `fk_Projeto_Cliente1` USING BTREE (`Cliente_idCliente` ASC),
-  CONSTRAINT `projeto_ibfk_1`
-    FOREIGN KEY (`Cliente_idCliente`)
-    REFERENCES `estimatech_db`.`cliente` (`idCliente`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
 -- Table `estimatech_db`.`ambiente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`ambiente` (
@@ -58,12 +35,12 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`ambiente` (
   `Linguagem` VARCHAR(45) NOT NULL,
   `Esforco` DECIMAL(10,0) NOT NULL,
   `Produtividade` DECIMAL(10,0) NOT NULL,
-  `projeto_idProjeto` INT(11) NOT NULL,
+  `cliente_idCliente` INT(11) NOT NULL,
   PRIMARY KEY (`idAmbiente`),
-  INDEX `fk_ambiente_projeto1_idx` (`projeto_idProjeto` ASC),
-  CONSTRAINT `fk_ambiente_projeto1`
-    FOREIGN KEY (`projeto_idProjeto`)
-    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
+  INDEX `fk_ambiente_cliente1_idx` (`cliente_idCliente` ASC),
+  CONSTRAINT `fk_ambiente_cliente1`
+    FOREIGN KEY (`cliente_idCliente`)
+    REFERENCES `estimatech_db`.`cliente` (`idCliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -108,6 +85,29 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientepj` (
   INDEX `fk_clientepj_cliente1_idx` USING BTREE (`cliente_idCliente` ASC),
   CONSTRAINT `clientepj_ibfk_1`
     FOREIGN KEY (`cliente_idCliente`)
+    REFERENCES `estimatech_db`.`cliente` (`idCliente`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `estimatech_db`.`projeto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`projeto` (
+  `idProjeto` INT(11) NOT NULL AUTO_INCREMENT,
+  `Titulo` VARCHAR(45) NOT NULL,
+  `DataCriacao` DATE NOT NULL,
+  `DataFininalizacao` DATE NULL DEFAULT NULL,
+  `Categoria` VARCHAR(45) NOT NULL,
+  `Situacao` CHAR(1) NOT NULL,
+  `UltimaAtualizacao` DATETIME NOT NULL,
+  `Cliente_idCliente` INT(11) NOT NULL,
+  PRIMARY KEY (`idProjeto`),
+  INDEX `fk_Projeto_Cliente1` USING BTREE (`Cliente_idCliente` ASC),
+  CONSTRAINT `projeto_ibfk_1`
+    FOREIGN KEY (`Cliente_idCliente`)
     REFERENCES `estimatech_db`.`cliente` (`idCliente`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
@@ -490,14 +490,8 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_EstimativasEsforco` (`idEstimat
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_EstimativasProdutividade` (`idEstimativasProdutividade` INT, `Data` INT, `Estimativa` INT, `projeto_idProjeto` INT, `Titulo` INT, `Cliente_idCliente` INT);
 
 -- -----------------------------------------------------
--- Placeholder table for view `estimatech_db`.`view_ambiente`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_ambiente` (`idAmbiente` INT, `Linguagem` INT, `Esforco` INT, `Produtividade` INT, `projeto_idProjeto` INT, `Titulo` INT, `Cliente_idCliente` INT);
-
--- -----------------------------------------------------
 -- Placeholder table for view `estimatech_db`.`view_recurso`
 -- -----------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_recurso` (`idRecursos` INT, `Descricao` INT, `Carga_horaria` INT, `Custo` INT, `Nivel` INT, `projeto_idProjeto` INT, `Titulo` INT, `Cliente_idCliente` INT);
 
 -- -----------------------------------------------------
@@ -574,17 +568,6 @@ SELECT ec.*, p.Titulo, p.Cliente_idCliente
 FROM estimativasProdutividade AS ec
 INNER JOIN projeto AS p
 ON p.idProjeto = ec.projeto_idProjeto;
-
--- -----------------------------------------------------
--- View `estimatech_db`.`view_ambiente`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `estimatech_db`.`view_ambiente`;
-USE `estimatech_db`;
-CREATE  OR REPLACE VIEW `view_ambiente` AS
-SELECT a.*, p.Titulo, p.Cliente_idCliente
-FROM ambiente AS a
-INNER JOIN projeto AS p
-ON p.idProjeto = a.projeto_idProjeto;
 
 -- -----------------------------------------------------
 -- View `estimatech_db`.`view_recurso`
