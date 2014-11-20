@@ -31,9 +31,6 @@ class Application_Model_Recursos extends Zend_Db_Table_Abstract {
         }
         return $this->fetchAll($select)->toArray();
     }
-<<<<<<< HEAD
-
-=======
     
     public function n_select($nivel, $id) {
         
@@ -43,7 +40,7 @@ class Application_Model_Recursos extends Zend_Db_Table_Abstract {
                 ->where('projeto_idProjeto =', $id);
     }
     
->>>>>>> origin/master
+
     public function db_update(array $request) {
 
         $dados = array(
