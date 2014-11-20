@@ -121,22 +121,9 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`colaboradores` (
   `idColaboradores` INT(11) NOT NULL AUTO_INCREMENT,
-  `quantcolabN5` INT(11) NULL DEFAULT NULL,
-  `quantcolabN4` INT(11) NULL DEFAULT NULL,
-  `quantcolabN3` INT(11) NULL DEFAULT NULL,
-  `quantcolabN2` INT(11) NULL DEFAULT NULL,
-  `quantcolabN1` INT(11) NULL DEFAULT NULL,
-  `custoHoraN5` DECIMAL(3,0) NULL DEFAULT NULL,
-  `custoHoraN4` DECIMAL(3,0) NULL DEFAULT NULL,
-  `custoHoraN3` DECIMAL(3,0) NULL DEFAULT NULL,
-  `custoHoraN2` DECIMAL(3,0) NULL DEFAULT NULL,
-  `custoHoraN1` DECIMAL(3,0) NULL DEFAULT NULL,
-  `quantHorasbN5` INT(11) NULL DEFAULT NULL,
-  `quantHorasN4` INT(11) NULL DEFAULT NULL,
-  `quantHorasN3` INT(11) NULL DEFAULT NULL,
-  `quantHorasN2` INT(11) NULL DEFAULT NULL,
-  `quantHorasN1` INT(11) NULL DEFAULT NULL,
-  `idProjeto` INT(11) NULL DEFAULT NULL,
+  `Nome` VARCHAR(45) NOT NULL,
+  `Email` VARCHAR(45) NOT NULL,
+  `idProjeto` INT(11) NOT NULL,
   PRIMARY KEY (`idColaboradores`),
   INDEX `fkidprojeto_idx` (`idProjeto` ASC),
   CONSTRAINT `fkidprojeto`
@@ -144,8 +131,7 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`colaboradores` (
     REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
