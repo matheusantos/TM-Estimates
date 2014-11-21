@@ -1,10 +1,12 @@
 <?php
-/*! Operações na tabela Ambiente */
+
+/* ! Operações na tabela Ambiente */
+
 class Application_Model_Estimarprazo {
 
     public function db_inserir(array $request, $prazo) {
         $my_format = date('Y-m-d');
-        
+
         $dao = new Application_Model_DbTable_EstimavasCusto();
         $dados = array(
             'projeto_idProjeto' => $request['Projeto'],
@@ -18,6 +20,11 @@ class Application_Model_Estimarprazo {
         $dao = new Application_Model_DbTable_EstimavasCusto();
         $where = $dao->getAdapter()->quoteInto("idEstimativasPrazo = ?", $id);
         $dao->delete($where);
+    }
+
+    public function est_delete($id) {
+        $where = $this->getAdapter()->quoteInto("projeto_idProjeto = ?", $id);
+        $this->delete($where);
     }
 
 }

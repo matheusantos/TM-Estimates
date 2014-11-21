@@ -44,8 +44,9 @@ class EstimarProdutividadeController extends Zend_Controller_Action {
         $n5 = $model->n_select(5, $dados['Projeto']);
         $n5 = count($n5);
         $estProd = ($n5 * 5) + ($n4 * 4) + ($n3 * 3) + ($n2 * 2) + $n1;
-
+        
         $model = new Application_Model_Estimarprodutividade();
+        $model->est_delete($dados['Projeto']);
         $model->inserir($dados, $estProd);
         $this->_redirect("estimar-produtividade/index");
     }

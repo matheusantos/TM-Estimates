@@ -29,5 +29,10 @@ class Application_Model_Estimarprodutividade extends Zend_Db_Table_Abstract{
         $where = $this->getAdapter()->quoteInto("idEstimativasProdutividade = ?", $id);
         $this->delete($where);
     }
+    
+        public function est_delete($id) {
+        $where = $this->getAdapter()->quoteInto("projeto_idProjeto = ?", $id);
+        $this->delete($where);
+    }
 
 }
