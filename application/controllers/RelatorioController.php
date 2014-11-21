@@ -28,9 +28,9 @@ class RelatorioController extends Zend_Controller_Action
         $rows = $model->db_select();
         
         // instancia a classe FPDF
-        $pdf = new FPDF();
+        $pdf = new FPDF('P','mm','A4');
         $pdf->AddPage();
-        $pdf->SetFont('Arial','',12);
+        $pdf->SetFont('Arial','B',12);
     
                     
         $pdf->Cell(36,10,'Projeto',0,0,'L');
@@ -48,10 +48,12 @@ class RelatorioController extends Zend_Controller_Action
         $pdf->Cell(40,5,' ',0,0,'C');
         $pdf->Cell(40,5,' ',0,1,'C');
         
+        $pdf->SetFont('Arial','',12);
+        
         // percorre os dados 
         foreach ($rows as $dados)
         {
-            $pdf->Cell(90,10,$dados['Titulo'],0,0,'L');
+            $pdf->Cell(36,10,$dados['Titulo'],0,0,'L');
             //$pdf->Cell(60,10,$dados['nascimento'],0,0,'L');
             //$pdf->Cell(40,10,$dados['id_depto'],0,1,'C');            
         }
