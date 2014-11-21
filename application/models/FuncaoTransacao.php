@@ -27,6 +27,15 @@ class Application_Model_FuncaoTransacao extends Zend_Db_Table_Abstract {
         return $this->insert($request['TipDados']);
     }
 
+    public function pfTotal_select($id) {
+        $dao = new Application_Model_FuncaoTransacao();
+        $select = $dao->select()
+                         ->from($this, new Zend_Db_Expr('SUM(PF)'))
+                         ->where('projeto_idProjeto'.'= ?',$id);
+        
+        return $dao->fetchAll($select)->toArray();
+    }
+    
     public function db_select($where = null, $valor = null, $order = null, $limit = null) {
         $select = $this->select()
                         ->from($this)

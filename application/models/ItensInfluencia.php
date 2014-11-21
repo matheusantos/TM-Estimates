@@ -63,6 +63,16 @@ class Application_Model_ItensInfluencia extends Zend_Db_Table_Abstract {
         $where = $this->getAdapter()->quoteInto("projeto_idProjeto = ?", $request['id']);
         $this->update($dados, $where);
     }
+    
+    public function itens_select($id) {
+        $dao = new Application_Model_ItensInfluencia();
+        $select = $dao->select()
+                         ->from($this, 'FatorAjuste')
+                         ->where('projeto_idProjeto'.'= ?',$id);
+        
+        return $dao->fetchAll($select)->toArray();
+    }
+    
 
     public function db_delete($id) {
         $where = $this->getAdapter()->quoteInto("idItensInfluencia = ?", $id);

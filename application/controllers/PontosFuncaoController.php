@@ -30,9 +30,20 @@ class PontosFuncaoController extends Zend_Controller_Action {
 
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();
+        $model = new Application_Model_FuncaoTransacao();
+        $pfTrans = $model->pfTotal_select($dados['Projeto']);
+        
+        $model = new Application_Model_FuncaoDados();
+        $pfDados = $model->pfTotal_select($dados['Projeto']);
+        
+        $model = new Application_Model_ItensInfluencia();
+        $ajuste = $model->itens_select($dados['Projeto']);
+        
+        $pfTotal = (($pfDados + $pfTrans) * $ajuste);
+        
         $model = new Application_Model_PontosFuncao();
         $model->pf_delete($dados['Projeto']);
-        $model->inserir($dados);
+        $model->inserir($dados, $pfTotal);
         $this->_redirect("pontos-funcao/index");
     }
     
