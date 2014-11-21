@@ -2,24 +2,25 @@
 
 /* ! Operações na tabela Ambiente */
 
-class Application_Model_Estimarprazo {
+class Application_Model_Estimarprazo extends Zend_Db_Table_Abstract{
 
-    public function db_inserir(array $request, $prazo) {
+    protected $_name = "estimativasprazo";
+    protected $_primary = "idEstimativasPrazo";
+
+    public function db_inserir(array $request) {
         $my_format = date('Y-m-d');
-
-        $dao = new Application_Model_DbTable_EstimavasCusto();
+        
         $dados = array(
             'projeto_idProjeto' => $request['Projeto'],
-            'Estimativa' => $prazo,
+            'Estimativa' => '0',
             'Data' => $my_format
         );
-        return $dao->insert($dados);
+        return $this->insert($dados);
     }
 
     public function db_delete($id) {
-        $dao = new Application_Model_DbTable_EstimavasCusto();
-        $where = $dao->getAdapter()->quoteInto("idEstimativasPrazo = ?", $id);
-        $dao->delete($where);
+        $where = $this->getAdapter()->quoteInto("idEstimativasPrazo = ?", $id);
+        $this->delete($where);
     }
 
     public function est_delete($id) {
