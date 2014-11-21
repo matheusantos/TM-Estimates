@@ -1,14 +1,13 @@
 <?php
-/*! Operações na tabela Ambiente */
-class Application_Model_Estimarprodutividade extends Zend_Db_Table_Abstract{
 
-    protected $_name = "estimativasprodutividade";
-    protected $_primary = "idEstimativasProdutividade";
+/* ! Operações na tabela Ambiente */
+
+class Application_Model_Estimarprodutividade {
 
     public function inserir(array $request, $estimativa) {
         $my_format = date('Y-m-d');
-        
-        $dao = new Application_Model_DbTable_ViewEstimativasProdutividade();
+
+        $dao = new Application_Model_DbTable_EstimativasProdutividade();
         $dados = array(
             'projeto_idProjeto' => $request['Projeto'],
             'Estimativa' => $estimativa,
@@ -16,23 +15,26 @@ class Application_Model_Estimarprodutividade extends Zend_Db_Table_Abstract{
         );
         return $dao->insert($dados);
     }
-    
-    public function select_prod($id) {
-        $select = $this->select()
-        ->from($this, 'Estimativa')
-        ->where('projeto_idProjeto' . '= ?', $id);
 
-        return $this->fetchAll($select)->toArray();
+    public function select_prod($id) {
+        $dao = new Application_Model_DbTable_EstimativasProdutividade();
+        $select = $dao->select()
+                ->from($dao, 'Estimativa')
+                ->where('projeto_idProjeto' . '= ?', $id);
+
+        return $dao->fetchAll($select)->toArray();
     }
 
     public function db_delete($id) {
-        $where = $this->getAdapter()->quoteInto("idEstimativasProdutividade = ?", $id);
-        $this->delete($where);
+        $dao = new Application_Model_DbTable_EstimativasProdutividade();
+        $where = $dao->getAdapter()->quoteInto("idEstimativasProdutividade = ?", $id);
+        $dao->delete($where);
     }
-    
-        public function est_delete($id) {
-        $where = $this->getAdapter()->quoteInto("projeto_idProjeto = ?", $id);
-        $this->delete($where);
+
+    public function est_delete($id) {
+        $dao = new Application_Model_DbTable_EstimativasProdutividade();
+        $where = $dao->getAdapter()->quoteInto("projeto_idProjeto = ?", $id);
+        $dao->delete($where);
     }
 
 }

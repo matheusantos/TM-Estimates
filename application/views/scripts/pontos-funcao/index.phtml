@@ -29,13 +29,13 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($this->produtividade AS $key => $produtividade): ?>
+                <?php foreach ($this->pontos AS $key => $pontos): ?>
                     <tr>
-                        <td><?= $produtividade['idEstimativasProdutividade'] ?></td>
-                        <td><?= $produtividade['Data'] ?></td>
-                        <td><?= $produtividade['Titulo'] ?></td>
-                        <td><?= $produtividade['Estimativa'] ?></td>
-                        <td><a href="<?= $this->url(array('controller' => 'pontos-funcao', 'action' => 'excluir', 'idP' => $produtividade['idEstimativasProdutividade']), null, true) ?>">Excluir</a></td>
+                        <td><?= $pontos['idPontosfuncao'] ?></td>
+                        <td><?= $pontos['Data'] ?></td>
+                        <td><?= $pontos['Titulo'] ?></td>
+                        <td><?= $pontos['Estimativa'] ?></td>
+                        <td><a href="<?= $this->url(array('controller' => 'pontos-funcao', 'action' => 'excluir', 'idP' => $pontos['idPontosfuncao']), null, true) ?>">Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

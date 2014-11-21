@@ -97,11 +97,13 @@
           <dbTableFile dbTableName="ViewEstimativasPrazo"/>
           <dbTableFile dbTableName="ViewEstimativasEsforco"/>
           <dbTableFile dbTableName="ViewEstimativasProdutividade"/>
-<<<<<<< HEAD
           <dbTableFile dbTableName="ViewRecurso"/>
-=======
           <dbTableFile dbTableName="ViewAmbiente"/>
->>>>>>> origin/master
+          <dbTableFile dbTableName="EstimativasEsforco"/>
+          <dbTableFile dbTableName="EstimativasProdutividade"/>
+          <dbTableFile dbTableName="EstimativasPrazo"/>
+          <dbTableFile dbTableName="ViewPontosFuncao"/>
+          <dbTableFile dbTableName="PontosFuncao"/>
         </dbTableDirectory>
         <modelFile modelName="ClienteEquipe"/>
         <modelFile modelName="ViewClienteDetalharCusto"/>
@@ -109,11 +111,10 @@
         <modelFile modelName="ViewEstimativasPrazo"/>
         <modelFile modelName="ViewEstimativasEsforco"/>
         <modelFile modelName="ViewEstimativasProdutividade"/>
-<<<<<<< HEAD
         <modelFile modelName="ViewRecurso"/>
-=======
         <modelFile modelName="ViewAmbiente"/>
->>>>>>> origin/master
+        <modelFile modelName="ViewPontosFuncao"/>
+        <modelFile modelName="PontosFuncao"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>

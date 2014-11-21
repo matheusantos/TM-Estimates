@@ -17,16 +17,12 @@ class PontosFuncaoController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-        $model = new Application_Model_Colaboradores();
-        $dados = $model->db_select();
-        $this->view->assign("dados", $dados);
+        $model = new Application_Model_ViewPontosFuncao();
+        $pontos = $model->db_select();
+        $this->view->assign("pontos", $pontos);
     }
 
-    public function gerenciarAction() {
-        
-    }
-
-        public function gerarPontosFuncaoAction() {
+    public function gerarPontosFuncaoAction() {
         $model1 = new Application_Model_Projeto();
         $dados1 = $model1->db_select();
         $this->view->assign("dados1", $dados1);
@@ -34,9 +30,17 @@ class PontosFuncaoController extends Zend_Controller_Action {
 
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();
-        $model = new Application_Model_Colaboradores();
-        $model->inserir($dados, $this->usuario['idCliente']);
-        $this->_redirect("administradores/index");
+        $model = new Application_Model_PontosFuncao();
+        $model->pf_delete($dados['Projeto']);
+        $model->inserir($dados);
+        $this->_redirect("pontos-funcao/index");
     }
-
+    
+        public function excluirAction() {
+        $dados = $this->getParam('idP');
+        $model = new Application_Model_PontosFuncao();
+        $model->db_delete($dados);
+        $this->_redirect("pontos-funcao/index");
+    }
+    
 }
