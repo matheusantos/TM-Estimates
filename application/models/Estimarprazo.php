@@ -16,13 +16,7 @@ class Application_Model_Estimarprazo extends Zend_Db_Table_Abstract{
             'Estimativa' => $prazo,
             'Data' => $my_format
         );
-<<<<<<< HEAD
         return $dao->insert($dados);
-=======
-        echo $prazo;
-        die;
-        return $this->insert($dados);
->>>>>>> origin/master
     }
 
     public function db_delete($id) {
