@@ -33,7 +33,7 @@ class EstimarEsforcoController extends Zend_Controller_Action {
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();
         $model = new Application_Model_Estimarprodutividade();
-        $prod = $model->select_prod($dados['projeto_idProjeto']);
+        $prod = $model->select_prod($dados['Projeto']);
         $estima = 16 / prod;
         $model = new Application_Model_Estimaresforco();
         $model->est_delete($dados['Projeto']);

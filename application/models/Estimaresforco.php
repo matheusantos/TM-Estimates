@@ -31,8 +31,9 @@ class Application_Model_Estimaresforco extends Zend_Db_Table_Abstract {
     }
 
     public function est_delete($id) {
-        $where = $this->getAdapter()->quoteInto("projeto_idProjeto = ?", $id);
-        $this->delete($where);
+        $dao = new Application_Model_DbTable_ViewEstimativasEsforco();
+        $where = $dao->getAdapter()->quoteInto("projeto_idProjeto = ?", $id);
+        $dao->delete($where);
     }
 
 }
