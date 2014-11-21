@@ -32,6 +32,9 @@ class EstimarPrazoController extends Zend_Controller_Action {
 
     public function salvarDadosAction() {
         $dados = $this->_getAllParams();
+        $model = new Application_Model_Estimaresforco();
+        $esforco = $model->esforco_select($dados['projeto_idProjeto']);
+        
         $model = new Application_Model_Estimarprazo();
         $model->db_inserir($dados);
         $this->_redirect("estimar-prazo/index");

@@ -16,6 +16,14 @@ class Application_Model_Estimarprodutividade extends Zend_Db_Table_Abstract{
         );
         return $dao->insert($dados);
     }
+    
+    public function select_prod($id) {
+        $select = $this->select()
+        ->from($this, 'Estimativa')
+        ->where('projeto_idProjeto' . '= ?', $id);
+
+        return $this->fetchAll($select)->toArray();
+    }
 
     public function db_delete($id) {
         $where = $this->getAdapter()->quoteInto("idEstimativasProdutividade = ?", $id);
