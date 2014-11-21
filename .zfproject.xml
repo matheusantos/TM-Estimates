@@ -117,6 +117,7 @@
         <modelFile modelName="ViewPontosFuncao"/>
         <modelFile modelName="PontosFuncao"/>
         <modelFile modelName="ViewRelatorio"/>
+        <modelFile modelName="Relatorio"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
