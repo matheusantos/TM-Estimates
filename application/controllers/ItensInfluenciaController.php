@@ -41,6 +41,7 @@ class ItensInfluenciaController extends Zend_Controller_Action {
         $dados = $this->_getAllParams();
 
         $model = new Application_Model_ItensInfluencia();
+         $model->i_delete($dados['Projeto']);
         $model->db_inserir($dados, $dados['Projeto']);
         $this->_redirect("itens-influencia/index");
     }

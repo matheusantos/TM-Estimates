@@ -68,5 +68,10 @@ class Application_Model_ItensInfluencia extends Zend_Db_Table_Abstract {
         $where = $this->getAdapter()->quoteInto("idItensInfluencia = ?", $id);
         $this->delete($where);
     }
+    
+        public function i_delete($id) {
+        $where = $this->getAdapter()->quoteInto("projeto_idProjeto = ?", $id);
+        $this->delete($where);
+    }
 
 }
