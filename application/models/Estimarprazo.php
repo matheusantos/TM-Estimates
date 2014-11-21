@@ -7,14 +7,16 @@ class Application_Model_Estimarprazo extends Zend_Db_Table_Abstract{
     protected $_name = "estimativasprazo";
     protected $_primary = "idEstimativasPrazo";
 
-    public function db_inserir(array $request) {
+    public function db_inserir(array $request, $prazo) {
         $my_format = date('Y-m-d');
         
         $dados = array(
             'projeto_idProjeto' => $request['Projeto'],
-            'Estimativa' => '0',
+            'Estimativa' => $prazo,
             'Data' => $my_format
         );
+        echo $prazo;
+        die;
         return $this->insert($dados);
     }
 
