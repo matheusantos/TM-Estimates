@@ -31,18 +31,32 @@ class EquipeController extends Zend_Controller_Action {
         // action body
         $this->_helper->layout->setlayout("userlayout");
 
-        $model = new Application_Model_Recursos();
-        $dados = $model->db_select();
+        $model = new Application_Model_ViewRecurso();
+        $dados = $model->db_select('Cliente_idCliente', $this->usuario['idCliente']);
         $this->view->assign("dados", $dados);
 
         $model1 = new Application_Model_Projeto();
-        $dados1 = $model1->db_select();
+        $dados1 = $model1->db_select('Cliente_idCliente', $this->usuario['idCliente']);
         $this->view->assign("dados1", $dados1);
     }
 
     //!< grava os dados no banco de dados
     public function salvarDadosAction() {
         $dados = $this->getAllParams();
+        
+        $model = new Application_Model_ClienteEquipe();
+        $lista = $model->db_select('Cliente_idCliente', $this->usuario['idCliente']);
+        
+        foreach ($lista as $value) {
+            $r = $value['Recursos_idRecursos'];
+            $p = $value['Projeto_idProjeto'];
+            
+            if (strcmp($r, $dados['Recurso']) == 0 && strcmp($p, $dados['Projeto']) == 0) {
+                $this->_redirect("/equipe");
+                break;
+            }
+        }
+        
         $model = new Application_Model_Equipe();
         $model->db_insert($dados);
         $this->_redirect("/equipe");
