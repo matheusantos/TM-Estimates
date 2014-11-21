@@ -4,6 +4,9 @@
 
 class Application_Model_Estimaresforco extends Zend_Db_Table_Abstract {
 
+    protected $_name = "estimativasesforco";
+    protected $_primary = "idEstimativasEsforco";
+    
     public function db_inserir(array $request, $estima) {
         $my_format = date('Y-m-d');
 
@@ -25,15 +28,13 @@ class Application_Model_Estimaresforco extends Zend_Db_Table_Abstract {
     }
 
     public function db_delete($id) {
-        $dao = new Application_Model_DbTable_ViewEstimativasEsforco();
-        $where = $dao->getAdapter()->quoteInto("idEstimativasEsforco = ?", $id);
-        $dao->delete($where);
+        $where = $this->getAdapter()->quoteInto("idEstimativasEsforco = ?", $id);
+        $this->delete($where);
     }
 
     public function est_delete($id) {
-        $dao = new Application_Model_DbTable_ViewEstimativasEsforco();
-        $where = $dao->getAdapter()->quoteInto("projeto_idProjeto = ?", $id);
-        $dao->delete($where);
+        $where = $this->getAdapter()->quoteInto("projeto_idProjeto = ?", $id);
+        $this->delete($where);
     }
 
 }
