@@ -20,16 +20,17 @@ class Application_Model_PontosFuncao {
         $where = $dao->getAdapter()->quoteInto("idPontosFuncao = ?", $id);
         $dao->delete($where);
     }
-    public function pf_select($id){
-    $dao = new Application_Model_PontosFuncao();
+
+    public function pf_select($id) {
+        $dao = new Application_Model_DbTable_PontosFuncao();
         $select = $dao->select()
-                         ->from($this, 'Estimativa')
-                         ->where('projeto_idProjeto'.'= ?',$id);
-        
+                ->from($dao, 'Estimativa')
+                ->where('projeto_idProjeto' . '= ?', $id);
+
         return $dao->fetchAll($select)->toArray();
     }
-    
-        public function pf_delete($id) {
+
+    public function pf_delete($id) {
         $dao = new Application_Model_DbTable_PontosFuncao();
         $where = $dao->getAdapter()->quoteInto("projeto_idProjeto = ?", $id);
         $dao->delete($where);

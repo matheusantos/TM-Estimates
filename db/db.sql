@@ -28,49 +28,6 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `estimatech_db`.`projeto`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`projeto` (
-  `idProjeto` INT(11) NOT NULL AUTO_INCREMENT,
-  `Titulo` VARCHAR(45) NOT NULL,
-  `DataCriacao` DATE NOT NULL,
-  `DataFininalizacao` DATE NULL DEFAULT NULL,
-  `Categoria` VARCHAR(45) NOT NULL,
-  `Situacao` CHAR(1) NOT NULL,
-  `UltimaAtualizacao` DATETIME NOT NULL,
-  `Cliente_idCliente` INT(11) NOT NULL,
-  PRIMARY KEY (`idProjeto`),
-  INDEX `fk_Projeto_Cliente1` USING BTREE (`Cliente_idCliente` ASC),
-  CONSTRAINT `projeto_ibfk_1`
-    FOREIGN KEY (`Cliente_idCliente`)
-    REFERENCES `estimatech_db`.`cliente` (`idCliente`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `estimatech_db`.`ambiente`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`ambiente` (
-  `idAmbiente` INT(11) NOT NULL AUTO_INCREMENT,
-  `Linguagem` VARCHAR(45) NOT NULL,
-  `Esforco` DECIMAL(10,0) NOT NULL,
-  `Produtividade` DECIMAL(10,0) NOT NULL,
-  `projeto_idProjeto` INT(11) NOT NULL,
-  PRIMARY KEY (`idAmbiente`),
-  INDEX `fk_ambiente_projeto1_idx` (`projeto_idProjeto` ASC),
-  CONSTRAINT `fk_ambiente_projeto1`
-    FOREIGN KEY (`projeto_idProjeto`)
-    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
 -- Table `estimatech_db`.`clientepf`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientepf` (
@@ -92,7 +49,6 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientepf` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
-
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -110,6 +66,29 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientepj` (
   INDEX `fk_clientepj_cliente1_idx` USING BTREE (`cliente_idCliente` ASC),
   CONSTRAINT `clientepj_ibfk_1`
     FOREIGN KEY (`cliente_idCliente`)
+    REFERENCES `estimatech_db`.`cliente` (`idCliente`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `estimatech_db`.`projeto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`projeto` (
+  `idProjeto` INT(11) NOT NULL AUTO_INCREMENT,
+  `Titulo` VARCHAR(45) NOT NULL,
+  `DataCriacao` DATE NOT NULL,
+  `DataFininalizacao` DATE NULL DEFAULT NULL,
+  `Categoria` VARCHAR(45) NOT NULL,
+  `Situacao` CHAR(1) NOT NULL,
+  `UltimaAtualizacao` DATETIME NOT NULL,
+  `Cliente_idCliente` INT(11) NOT NULL,
+  PRIMARY KEY (`idProjeto`),
+  INDEX `fk_Projeto_Cliente1` USING BTREE (`Cliente_idCliente` ASC),
+  CONSTRAINT `projeto_ibfk_1`
+    FOREIGN KEY (`Cliente_idCliente`)
     REFERENCES `estimatech_db`.`cliente` (`idCliente`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
@@ -336,7 +315,8 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`estimativasprodutividade` (
     REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -442,6 +422,25 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
+-- Table `estimatech_db`.`pontosfuncao`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`pontosfuncao` (
+  `idPontosfuncao` INT(11) NOT NULL AUTO_INCREMENT,
+  `Data` DATE NOT NULL,
+  `Estimativa` INT(11) NOT NULL,
+  `projeto_idProjeto` INT(11) NOT NULL,
+  PRIMARY KEY (`idPontosfuncao`),
+  INDEX `fk_pontosfuncao_projeto1_idx` (`projeto_idProjeto` ASC),
+  CONSTRAINT `fk_pontosfuncao_projeto1`
+    FOREIGN KEY (`projeto_idProjeto`)
+    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
 -- Table `estimatech_db`.`recuperarsenha`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`recuperarsenha` (
@@ -461,40 +460,17 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`recuperarsenha` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-
--- -----------------------------------------------------
--- Table `estimatech_db`.`pontosfuncao`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`pontosfuncao` (
-  `idPontosfuncao` INT NOT NULL AUTO_INCREMENT,
-  `Data` DATE NOT NULL,
-  `Estimativa` INT NOT NULL,
-  `projeto_idProjeto` INT(11) NOT NULL,
-  PRIMARY KEY (`idPontosfuncao`),
-  INDEX `fk_pontosfuncao_projeto1_idx` (`projeto_idProjeto` ASC),
-  CONSTRAINT `fk_pontosfuncao_projeto1`
-    FOREIGN KEY (`projeto_idProjeto`)
-    REFERENCES `estimatech_db`.`projeto` (`idProjeto`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
 USE `estimatech_db` ;
 
 -- -----------------------------------------------------
 -- Placeholder table for view `estimatech_db`.`clienteequipe`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`clienteequipe` (`Cliente_idCliente` INT, `Recursos_idRecursos` INT, `Projeto_idProjeto` INT, `QtRecursos` INT);
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`clienteequipe` (`Recursos_idRecursos` INT, `Projeto_idProjeto` INT, `QtRecursos` INT, `Descricao` INT, `Titulo` INT, `Cliente_idCliente` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `estimatech_db`.`clientefuncaodados`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientefuncaodados` (`idFuncaoDados` INT, `Descricao` INT, `Funcao` INT, `qtdTiposRegistro` INT, `qtdTiposDados` INT, `PF` INT, `Complexidade` INT, `projeto_idProjeto` INT, `Cliente_idCliente` INT);
-
--- -----------------------------------------------------
--- Placeholder table for view `estimatech_db`.`view_ambiente`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_ambiente` (`idAmbiente` INT, `Linguagem` INT, `Esforco` INT, `Produtividade` INT, `projeto_idProjeto` INT, `Titulo` INT, `Cliente_idCliente` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `estimatech_db`.`view_clientecustofase`
@@ -522,21 +498,27 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_estimativasprazo` (`idEstimativ
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_estimativasprodutividade` (`idEstimativasProdutividade` INT, `Data` INT, `Estimativa` INT, `projeto_idProjeto` INT, `Titulo` INT, `Cliente_idCliente` INT);
 
 -- -----------------------------------------------------
--- Placeholder table for view `estimatech_db`.`view_recurso`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_recurso` (`idRecursos` INT, `Descricao` INT, `Carga_horaria` INT, `Custo` INT, `Nivel` INT, `projeto_idProjeto` INT, `Titulo` INT, `Cliente_idCliente` INT);
-
--- -----------------------------------------------------
 -- Placeholder table for view `estimatech_db`.`view_pontosfuncao`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_pontosfuncao` (`idPontosfuncao` INT, `Data` INT, `Estimativa` INT, `projeto_idProjeto` INT, `Titulo` INT);
+
+-- -----------------------------------------------------
+-- Placeholder table for view `estimatech_db`.`view_recurso`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_recurso` (`idRecursos` INT, `Descricao` INT, `Carga_horaria` INT, `Custo` INT, `Nivel` INT, `projeto_idProjeto` INT, `Titulo` INT, `Cliente_idCliente` INT);
 
 -- -----------------------------------------------------
 -- View `estimatech_db`.`clienteequipe`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `estimatech_db`.`clienteequipe`;
 USE `estimatech_db`;
-CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `estimatech_db`.`clienteequipe` AS select `p`.`Cliente_idCliente` AS `Cliente_idCliente`,`eq`.`Recursos_idRecursos` AS `Recursos_idRecursos`,`eq`.`Projeto_idProjeto` AS `Projeto_idProjeto`,`eq`.`QtRecursos` AS `QtRecursos` from (`estimatech_db`.`projeto` `p` join `estimatech_db`.`equipe` `eq`) where (`eq`.`Projeto_idProjeto` = `p`.`idProjeto`);
+CREATE  OR REPLACE VIEW `clienteequipe` AS
+SELECT eq.*, r.Descricao, p.Titulo, p.Cliente_idCliente
+FROM equipe AS eq
+INNER JOIN projeto AS p
+ON p.idProjeto = eq.Projeto_idProjeto
+INNER JOIN recursos AS r
+ON r.idRecursos = eq.Recursos_idRecursos;
 
 -- -----------------------------------------------------
 -- View `estimatech_db`.`clientefuncaodados`
@@ -544,13 +526,6 @@ CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY D
 DROP TABLE IF EXISTS `estimatech_db`.`clientefuncaodados`;
 USE `estimatech_db`;
 CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `estimatech_db`.`clientefuncaodados` AS select `fd`.`idFuncaoDados` AS `idFuncaoDados`,`fd`.`Descricao` AS `Descricao`,`fd`.`Funcao` AS `Funcao`,`fd`.`qtdTiposRegistro` AS `qtdTiposRegistro`,`fd`.`qtdTiposDados` AS `qtdTiposDados`,`fd`.`PF` AS `PF`,`fd`.`Complexidade` AS `Complexidade`,`fd`.`projeto_idProjeto` AS `projeto_idProjeto`,`p`.`Cliente_idCliente` AS `Cliente_idCliente` from ((`estimatech_db`.`projeto` `p` join `estimatech_db`.`cliente` `c`) join `estimatech_db`.`funcaodados` `fd`) where (`c`.`idCliente` = `p`.`Cliente_idCliente`);
-
--- -----------------------------------------------------
--- View `estimatech_db`.`view_ambiente`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `estimatech_db`.`view_ambiente`;
-USE `estimatech_db`;
-CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `estimatech_db`.`view_ambiente` AS select `a`.`idAmbiente` AS `idAmbiente`,`a`.`Linguagem` AS `Linguagem`,`a`.`Esforco` AS `Esforco`,`a`.`Produtividade` AS `Produtividade`,`a`.`projeto_idProjeto` AS `projeto_idProjeto`,`p`.`Titulo` AS `Titulo`,`p`.`Cliente_idCliente` AS `Cliente_idCliente` from (`estimatech_db`.`ambiente` `a` join `estimatech_db`.`projeto` `p` on((`p`.`idProjeto` = `a`.`projeto_idProjeto`)));
 
 -- -----------------------------------------------------
 -- View `estimatech_db`.`view_clientecustofase`
@@ -588,23 +563,18 @@ USE `estimatech_db`;
 CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `estimatech_db`.`view_estimativasprodutividade` AS select `ec`.`idEstimativasProdutividade` AS `idEstimativasProdutividade`,`ec`.`Data` AS `Data`,`ec`.`Estimativa` AS `Estimativa`,`ec`.`projeto_idProjeto` AS `projeto_idProjeto`,`p`.`Titulo` AS `Titulo`,`p`.`Cliente_idCliente` AS `Cliente_idCliente` from (`estimatech_db`.`estimativasprodutividade` `ec` join `estimatech_db`.`projeto` `p` on((`p`.`idProjeto` = `ec`.`projeto_idProjeto`)));
 
 -- -----------------------------------------------------
+-- View `estimatech_db`.`view_pontosfuncao`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `estimatech_db`.`view_pontosfuncao`;
+USE `estimatech_db`;
+CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `estimatech_db`.`view_pontosfuncao` AS select `pf`.`idPontosfuncao` AS `idPontosfuncao`,`pf`.`Data` AS `Data`,`pf`.`Estimativa` AS `Estimativa`,`pf`.`projeto_idProjeto` AS `projeto_idProjeto`,`p`.`Titulo` AS `Titulo` from (`estimatech_db`.`pontosfuncao` `pf` join `estimatech_db`.`projeto` `p` on((`pf`.`projeto_idProjeto` = `p`.`idProjeto`)));
+
+-- -----------------------------------------------------
 -- View `estimatech_db`.`view_recurso`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `estimatech_db`.`view_recurso`;
 USE `estimatech_db`;
 CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `estimatech_db`.`view_recurso` AS select `r`.`idRecursos` AS `idRecursos`,`r`.`Descricao` AS `Descricao`,`r`.`Carga_horaria` AS `Carga_horaria`,`r`.`Custo` AS `Custo`,`r`.`Nivel` AS `Nivel`,`r`.`projeto_idProjeto` AS `projeto_idProjeto`,`p`.`Titulo` AS `Titulo`,`p`.`Cliente_idCliente` AS `Cliente_idCliente` from (`estimatech_db`.`recursos` `r` join `estimatech_db`.`projeto` `p` on((`p`.`idProjeto` = `r`.`projeto_idProjeto`)));
-
--- -----------------------------------------------------
--- View `estimatech_db`.`view_pontosfuncao`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `estimatech_db`.`view_pontosfuncao`;
-USE `estimatech_db`;
-CREATE  OR REPLACE VIEW `view_pontosfuncao` AS
-select pf.*, p.Titulo
-from pontosfuncao AS pf
-join projeto AS p
-on pf.projeto_idProjeto = p.idProjeto
-;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

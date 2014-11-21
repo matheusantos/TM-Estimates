@@ -8,19 +8,19 @@ class Application_Model_ItensInfluencia extends Zend_Db_Table_Abstract {
     protected $_primary = "idItensInfluencia";
 
     public function db_inserir(array $request, $id) {
-        $cgs=$request['comDados'] + $request['procDistr'] + $request['perf'] + $request['configUtil'] + 
-        $request['faiTran'] + $request['entDadOn'] + $request['eficUserFin'] + $request['attOn']
-        + $request['comProc'] + $request['reut'] + $request['facInst'] + $request['facOp'] 
-        + $request['mulLoc'] + $request['facMud'];
-        $fatorAjuste = ($cgs *0.01)+0.65;
+        $cgs = $request['comDados'] + $request['procDistr'] + $request['perf'] + $request['configUtil'] +
+                $request['faiTran'] + $request['entDadOn'] + $request['eficUserFin'] + $request['attOn'] + 
+                $request['comProc'] + $request['reut'] + $request['facInst'] + $request['facOp'] + 
+                $request['mulLoc'] + $request['facMud'];
+        $fatorAjuste = ($cgs * 0.01) + 0.65;
         $dados = array(
             'ComunicaoDados' => $request['comDados'], 'ProcDistribuido' => $request['procDistr'],
             'Performace' => $request['perf'], 'ConfAltaUtil' => $request['configUtil'],
-            'FaixaTransacoes' => $request['faiTran'],'EntradaDadosOnLine' => $request['entDadOn'],
-            'EficUserFinal' => $request['eficUserFin'],'AtualizacaoOnLine' => $request['attOn'],
+            'FaixaTransacoes' => $request['faiTran'], 'EntradaDadosOnLine' => $request['entDadOn'],
+            'EficUserFinal' => $request['eficUserFin'], 'AtualizacaoOnLine' => $request['attOn'],
             'ComplexidadeProc' => $request['comProc'], 'Reutilizacao' => $request['reut'],
-            'FacilidadeInstalacao' => $request['facInst'],'FacilidadeOperacao' => $request['facOp'],
-            'MultiplasLocalidades' => $request['mulLoc'],'FacilidadeMudancas' => $request['facMud'],
+            'FacilidadeInstalacao' => $request['facInst'], 'FacilidadeOperacao' => $request['facOp'],
+            'MultiplasLocalidades' => $request['mulLoc'], 'FacilidadeMudancas' => $request['facMud'],
             'projeto_idProjeto' => $id, 'FatorAjuste' => $fatorAjuste
         );
         return $this->insert($dados);
@@ -63,23 +63,22 @@ class Application_Model_ItensInfluencia extends Zend_Db_Table_Abstract {
         $where = $this->getAdapter()->quoteInto("projeto_idProjeto = ?", $request['id']);
         $this->update($dados, $where);
     }
-    
+
     public function itens_select($id) {
-        $dao = new Application_Model_ItensInfluencia();
+        $dao = new Application_Model_DbTable_Itensinfluencia();
         $select = $dao->select()
-                         ->from($this, 'FatorAjuste')
-                         ->where('projeto_idProjeto'.'= ?',$id);
-        
+                ->from($dao, 'FatorAjuste')
+                ->where('projeto_idProjeto' . '= ?', $id);
+
         return $dao->fetchAll($select)->toArray();
     }
-    
 
     public function db_delete($id) {
         $where = $this->getAdapter()->quoteInto("idItensInfluencia = ?", $id);
         $this->delete($where);
     }
-    
-        public function i_delete($id) {
+
+    public function i_delete($id) {
         $where = $this->getAdapter()->quoteInto("projeto_idProjeto = ?", $id);
         $this->delete($where);
     }
