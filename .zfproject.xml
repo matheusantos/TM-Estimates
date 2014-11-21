@@ -104,6 +104,7 @@
           <dbTableFile dbTableName="EstimativasPrazo"/>
           <dbTableFile dbTableName="ViewPontosFuncao"/>
           <dbTableFile dbTableName="PontosFuncao"/>
+          <dbTableFile dbTableName="ViewRelatorio"/>
         </dbTableDirectory>
         <modelFile modelName="ClienteEquipe"/>
         <modelFile modelName="ViewClienteDetalharCusto"/>
@@ -115,6 +116,7 @@
         <modelFile modelName="ViewAmbiente"/>
         <modelFile modelName="ViewPontosFuncao"/>
         <modelFile modelName="PontosFuncao"/>
+        <modelFile modelName="ViewRelatorio"/>
         <modelFile modelName="Relatorio"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>

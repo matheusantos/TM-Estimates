@@ -508,6 +508,11 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_pontosfuncao` (`idPontosfuncao`
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_recurso` (`idRecursos` INT, `Descricao` INT, `Carga_horaria` INT, `Custo` INT, `Nivel` INT, `projeto_idProjeto` INT, `Titulo` INT, `Cliente_idCliente` INT);
 
 -- -----------------------------------------------------
+-- Placeholder table for view `estimatech_db`.`view_relatorio`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_relatorio` (`idProjeto` INT, `Titulo` INT, `Custo` INT, `Prazo` INT, `Esforco` INT, `Produtividade` INT);
+
+-- -----------------------------------------------------
 -- View `estimatech_db`.`clienteequipe`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `estimatech_db`.`clienteequipe`;
@@ -575,6 +580,23 @@ CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY D
 DROP TABLE IF EXISTS `estimatech_db`.`view_recurso`;
 USE `estimatech_db`;
 CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `estimatech_db`.`view_recurso` AS select `r`.`idRecursos` AS `idRecursos`,`r`.`Descricao` AS `Descricao`,`r`.`Carga_horaria` AS `Carga_horaria`,`r`.`Custo` AS `Custo`,`r`.`Nivel` AS `Nivel`,`r`.`projeto_idProjeto` AS `projeto_idProjeto`,`p`.`Titulo` AS `Titulo`,`p`.`Cliente_idCliente` AS `Cliente_idCliente` from (`estimatech_db`.`recursos` `r` join `estimatech_db`.`projeto` `p` on((`p`.`idProjeto` = `r`.`projeto_idProjeto`)));
+
+-- -----------------------------------------------------
+-- View `estimatech_db`.`view_relatorio`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `estimatech_db`.`view_relatorio`;
+USE `estimatech_db`;
+CREATE  OR REPLACE VIEW `view_relatorio` AS
+select p.idProjeto, p.Titulo, ec.Estimativa as Custo, epra.Estimativa as Prazo, ee.Estimativa as Esforco, epro.Estimativa as Produtividade
+from projeto as p
+inner join estimativascusto as ec
+on p.idProjeto = ec.projeto_idProjeto
+inner join estimativasprazo as epra
+on p.idProjeto = epra.projeto_idProjeto
+inner join estimativasesforco as ee
+on p.idProjeto = ee.projeto_idProjeto
+inner join estimativasprodutividade as epro
+on p.idProjeto = epro.projeto_idProjeto;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
