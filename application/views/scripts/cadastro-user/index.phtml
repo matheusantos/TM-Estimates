@@ -37,7 +37,7 @@
                         </div>
                         <div class="col-md-4">
                             <label for="senha">Senha</label>
-                            <input required type="password" class="form-control" id="senha" name="senha" placeholder="Password"
+                            <input title="Mínimo 6 caracteres" required type="password" class="form-control" id="senha" name="senha" placeholder="Password" pattern=".{6,}"
                                    onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
                                        if(this.checkValidity()) form.ConfSenha.pattern = this.value;">
                         </div>
