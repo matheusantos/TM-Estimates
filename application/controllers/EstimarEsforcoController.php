@@ -41,7 +41,6 @@ class EstimarEsforcoController extends Zend_Controller_Action {
         $pf = $pf[0]['Estimativa'];
         
         $estima = $pf/$prod;
-        
         $model = new Application_Model_Estimaresforco();
         $model->est_delete($dados['Projeto']);
         $model->db_inserir($dados, $estima);
