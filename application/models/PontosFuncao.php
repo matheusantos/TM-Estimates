@@ -20,14 +20,9 @@ class Application_Model_PontosFuncao {
         $where = $dao->getAdapter()->quoteInto("idPontosFuncao = ?", $id);
         $dao->delete($where);
     }
-<<<<<<< HEAD
-    public function pf_select($id){
-    $dao = new Application_Model_DbTable_PontosFuncao();
-=======
 
     public function pf_select($id) {
         $dao = new Application_Model_DbTable_PontosFuncao();
->>>>>>> origin/master
         $select = $dao->select()
                 ->from($dao, 'Estimativa')
                 ->where('projeto_idProjeto' . '= ?', $id);
