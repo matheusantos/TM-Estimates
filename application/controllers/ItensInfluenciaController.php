@@ -17,13 +17,10 @@ class ItensInfluenciaController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-        $model1 = new Application_Model_Projeto();
-        $dados1 = $model1->db_select();
 
-        $model = new Application_Model_ItensInfluencia();
+        $model = new Application_Model_ViewItensInfluencia();
         $dados = $model->db_select();
 
-        $this->view->assign("dados1", $dados1);
         $this->view->assign("dados", $dados);
     }
 

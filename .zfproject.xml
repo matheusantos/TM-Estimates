@@ -105,6 +105,7 @@
           <dbTableFile dbTableName="ViewPontosFuncao"/>
           <dbTableFile dbTableName="PontosFuncao"/>
           <dbTableFile dbTableName="ViewRelatorio"/>
+          <dbTableFile dbTableName="ViewItensInfluencia"/>
         </dbTableDirectory>
         <modelFile modelName="ClienteEquipe"/>
         <modelFile modelName="ViewClienteDetalharCusto"/>
@@ -118,6 +119,7 @@
         <modelFile modelName="PontosFuncao"/>
         <modelFile modelName="ViewRelatorio"/>
         <modelFile modelName="Relatorio"/>
+        <modelFile modelName="ViewItensInfluencia"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>

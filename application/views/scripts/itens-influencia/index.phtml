@@ -11,13 +11,13 @@
             <thead>
                 <tr>
                     <th>Projeto</th>
-                    <th>item de influência</th>
+                    <th>Item de Influência</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($this->dados AS $key => $value): ?>
                     <tr>
-                        <td><?= $value['projeto_idProjeto'] ?></td>
+                        <td><?= $value['Titulo'] ?></td>
 
                         <td><?= $value['idItensInfluencia'] ?></td>
                         <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'itens-influencia', 'idP' => $value['projeto_idProjeto']), null, true) ?>">Editar</a></td>
