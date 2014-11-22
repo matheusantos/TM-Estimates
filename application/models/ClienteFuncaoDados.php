@@ -11,7 +11,6 @@ class Application_Model_ClienteFuncaoDados {
 
         if (!is_null($where)) {
             $select->where($where . '= ?', $valor);
-            //$select->where($where.'='. $valor);
         }
         return $dao->fetchAll($select)->toArray();
     }

@@ -468,9 +468,9 @@ USE `estimatech_db` ;
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`clienteequipe` (`Recursos_idRecursos` INT, `Projeto_idProjeto` INT, `QtRecursos` INT, `Descricao` INT, `Titulo` INT, `Cliente_idCliente` INT);
 
 -- -----------------------------------------------------
--- Placeholder table for view `estimatech_db`.`clientefuncaodados`
+-- Placeholder table for view `estimatech_db`.`view_funcaodados`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `estimatech_db`.`clientefuncaodados` (`idFuncaoDados` INT, `Descricao` INT, `Funcao` INT, `qtdTiposRegistro` INT, `qtdTiposDados` INT, `PF` INT, `Complexidade` INT, `projeto_idProjeto` INT, `Cliente_idCliente` INT);
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_funcaodados` (`idFuncaoDados` INT, `Descricao` INT, `Funcao` INT, `qtdTiposRegistro` INT, `qtdTiposDados` INT, `PF` INT, `Complexidade` INT, `projeto_idProjeto` INT, `Cliente_idCliente` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `estimatech_db`.`view_clientecustofase`
@@ -513,6 +513,11 @@ CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_recurso` (`idRecursos` INT, `De
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_relatorio` (`idProjeto` INT, `Titulo` INT, `Custo` INT, `Prazo` INT, `Esforco` INT, `Produtividade` INT);
 
 -- -----------------------------------------------------
+-- Placeholder table for view `estimatech_db`.`view_itensinfluencia`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estimatech_db`.`view_itensinfluencia` (`idItensInfluencia` INT, `ComunicaoDados` INT, `ProcDistribuido` INT, `Performace` INT, `ConfAltaUtil` INT, `FaixaTransacoes` INT, `EntradaDadosOnLine` INT, `EficUserFinal` INT, `AtualizacaoOnLine` INT, `ComplexidadeProc` INT, `Reutilizacao` INT, `FacilidadeInstalacao` INT, `FacilidadeOperacao` INT, `MultiplasLocalidades` INT, `FacilidadeMudancas` INT, `projeto_idProjeto` INT, `FatorAjuste` INT, `Cliente_idCliente` INT, `Titulo` INT);
+
+-- -----------------------------------------------------
 -- View `estimatech_db`.`clienteequipe`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `estimatech_db`.`clienteequipe`;
@@ -526,11 +531,15 @@ INNER JOIN recursos AS r
 ON r.idRecursos = eq.Recursos_idRecursos;
 
 -- -----------------------------------------------------
--- View `estimatech_db`.`clientefuncaodados`
+-- View `estimatech_db`.`view_funcaodados`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `estimatech_db`.`clientefuncaodados`;
+DROP TABLE IF EXISTS `estimatech_db`.`view_funcaodados`;
 USE `estimatech_db`;
-CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `estimatech_db`.`clientefuncaodados` AS select `fd`.`idFuncaoDados` AS `idFuncaoDados`,`fd`.`Descricao` AS `Descricao`,`fd`.`Funcao` AS `Funcao`,`fd`.`qtdTiposRegistro` AS `qtdTiposRegistro`,`fd`.`qtdTiposDados` AS `qtdTiposDados`,`fd`.`PF` AS `PF`,`fd`.`Complexidade` AS `Complexidade`,`fd`.`projeto_idProjeto` AS `projeto_idProjeto`,`p`.`Cliente_idCliente` AS `Cliente_idCliente` from ((`estimatech_db`.`projeto` `p` join `estimatech_db`.`cliente` `c`) join `estimatech_db`.`funcaodados` `fd`) where (`c`.`idCliente` = `p`.`Cliente_idCliente`);
+CREATE  OR REPLACE VIEW `view_funcaodados` AS
+select fd.*, p.Cliente_idCliente 
+from funcaodados as fd 
+inner join projeto as p 
+on p.idProjeto = fd.Projeto_idProjeto;
 
 -- -----------------------------------------------------
 -- View `estimatech_db`.`view_clientecustofase`
@@ -597,6 +606,18 @@ inner join estimativasesforco as ee
 on p.idProjeto = ee.projeto_idProjeto
 inner join estimativasprodutividade as epro
 on p.idProjeto = epro.projeto_idProjeto;
+
+-- -----------------------------------------------------
+-- View `estimatech_db`.`view_itensinfluencia`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `estimatech_db`.`view_itensinfluencia`;
+USE `estimatech_db`;
+CREATE  OR REPLACE VIEW `view_itensinfluencia` AS
+select inf.*, p.Cliente_idCliente, p.Titulo
+from itensinfluencia as inf
+inner join projeto as p
+on inf.projeto_idProjeto = p.idProjeto
+;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
