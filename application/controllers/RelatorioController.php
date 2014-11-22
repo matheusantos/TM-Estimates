@@ -22,7 +22,7 @@ class RelatorioController extends Zend_Controller_Action {
     }
 
     public function relatorioAction() {
-        require_once('C:/xampp/htdocs/TM-Estimates/library/fpdf17/fpdf.php');
+        require_once('C:/xampp/htdocs/TM-Estimates/library/fpdf/fpdf.php');
         // muito importante desabilitar a view de renderizar
         $this->_helper->viewRenderer->setNoRender();
 
@@ -45,7 +45,7 @@ class RelatorioController extends Zend_Controller_Action {
             $pdf->Cell(109, 5, ' ', 0, 0, 'C');
             $pdf->Cell(40, 5, ' ', 0, 0, 'C');
             $pdf->Cell(40, 5, ' ', 0, 1, 'C');
-            $pdf->Cell(190, 20, 'Relatorio de estimativas', 0, 0, 'C');
+            $pdf->Cell(190, 20, 'Relatório de estimativas', 0, 0, 'C');
             $pdf->Cell(109, 5, ' ', 0, 0, 'C');
             $pdf->Cell(40, 5, ' ', 0, 0, 'C');
             $pdf->Cell(40, 5, ' ', 0, 1, 'C');
@@ -63,7 +63,7 @@ class RelatorioController extends Zend_Controller_Action {
 
             $pdf->Cell(36, 10, 'Projeto', 0, 0, 'L');
             $pdf->Cell(36, 10, 'Est. de custo', 0, 0, 'L');
-            $pdf->Cell(36, 10, 'Est. de Esforco', 0, 0, 'L');
+            $pdf->Cell(36, 10, 'Est. de Esforço', 0, 0, 'L');
             $pdf->Cell(36, 10, 'Est. de Prazo', 0, 0, 'L');
             $pdf->Cell(36, 10, 'Est. de Produtividade', 0, 0, 'L');
             //$pdf->Cell(20,10,'Est. de Pontos de função',0,0,'L');
