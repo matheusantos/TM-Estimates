@@ -35,12 +35,11 @@ class EstimarEsforcoController extends Zend_Controller_Action {
         $model = new Application_Model_Estimarprodutividade();
         $prod = $model->select_prod($dados['Projeto']);
         $produt = (int)$prod;
-        Var_dump($dados['Projeto']);
-        Die;
         
         $model = new Application_Model_PontosFuncao();
         $pf = $model->pf_select($dados['Projeto']);
-        
+        Var_dump($dados['Projeto']);
+        Die;
         
         $estima = $pf/$produt;
         

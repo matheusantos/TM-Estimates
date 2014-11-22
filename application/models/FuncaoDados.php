@@ -46,11 +46,9 @@ class Application_Model_FuncaoDados extends Zend_Db_Table_Abstract {
     }
 
     public function pfTotal_select($id) {
-<<<<<<< HEAD
-        $dao = new Application_Model_FuncaoDados();
-=======
+
         $dao = new Application_Model_DbTable_Funcaodados();
->>>>>>> origin/master
+
         $select = $dao->select()
                 ->from($dao, new Zend_Db_Expr('SUM(PF)'))
                 ->where('projeto_idProjeto' . '= ?', $id);
