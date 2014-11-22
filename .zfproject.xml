@@ -179,6 +179,9 @@
           <viewControllerScriptsDirectory forControllerName="contagem">
             <viewScriptFile forActionName="estimada"/>
           </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="relatorio">
+            <viewScriptFile forActionName="enviar"/>
+          </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
         <viewFiltersDirectory enabled="false"/>

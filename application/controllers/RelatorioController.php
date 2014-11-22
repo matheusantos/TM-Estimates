@@ -4,6 +4,13 @@ class RelatorioController extends Zend_Controller_Action {
 
     public function init() {
         /* Initialize action controller here */
+         $auth = Zend_Auth::getInstance();
+        if ($auth->hasIdentity()) {
+            $identity = $auth->getIdentity();
+            $this->usuario = get_object_vars($identity);
+        }
+        $this->_helper->layout->setlayout("userlayout");
+        $this->view->assign("email", $this->usuario['Email']);
     }
 
     public function indexAction() {
