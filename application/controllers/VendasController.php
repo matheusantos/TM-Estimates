@@ -21,8 +21,12 @@ class VendasController extends Zend_Controller_Action {
         // action body
     }
 
+    public function processarAction() {
+        $this->redirect('vendas/pagamento');
+    }
+    
     public function pagamentoAction() {
-        // action body
+        
     }
 
     public function pagamentoDebitoAction() {
