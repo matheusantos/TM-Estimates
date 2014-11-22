@@ -34,19 +34,17 @@ class EstimarPrazoController extends Zend_Controller_Action {
         $dados = $this->_getAllParams();
         $model = new Application_Model_Estimaresforco();
         $esfor = $model->esforco_select($dados['Projeto']);
-        $esforco = (int)$esfor;
+        $esfor= $esfor[0]['Estimativa'];
         
         $model = new Application_Model_Estimarprodutividade();
         $produ = $model->select_prod($dados['Projeto']);
-        $prod = (int)$produ;
+        $produ = $produ[0]['Estimativa'];
         
-        $prazo = ($esforco*3)/($prod*5);
+        $prazo = ($esfor*3)/($produ*5);
 
         $model = new Application_Model_Estimarprazo();
         $model->est_delete($dados['Projeto']);
         $model->db_inserir($dados, $prazo);
-        echo $prazo;
-        die;
         $this->_redirect("estimar-prazo/index");
     }
 

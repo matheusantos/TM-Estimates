@@ -39,8 +39,8 @@ class PontosFuncaoController extends Zend_Controller_Action {
         $pfDados = $pfDados[0]['SUM(PF)'];
         
         $model = new Application_Model_ItensInfluencia();
-        $ajust  = $model->itens_select($dados['Projeto']);
-        $ajuste = (int)$ajust;
+        $ajuste  = $model->itens_select($dados['Projeto']);
+        $ajuste = $ajuste[0]['FatorAjuste'];
         
         $pfTotal = (($pfDados + $pfTrans) * $ajuste);
         
