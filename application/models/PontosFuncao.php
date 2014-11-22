@@ -24,10 +24,6 @@ class Application_Model_PontosFuncao {
     
     public function pf_select($id) {
         $dao = new Application_Model_DbTable_PontosFuncao();
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
         $select = $dao->select()
                 ->from($dao, 'Estimativa')
                 ->where('projeto_idProjeto' . '= ?', $id);

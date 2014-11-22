@@ -57,12 +57,8 @@ class EstimarCustoController extends Zend_Controller_Action {
         $soma5 = $soma5[0]['SUM(Carga_horaria)'];
         
         $model = new Application_Model_Estimarprazo();
-<<<<<<< HEAD
         $pra = $model->prazo_select($dados['Projeto']);
         $prazo = (int)$pra;
-=======
-        $prazo = $model->prazo_select($dados['Projeto']);
->>>>>>> origin/master
         
         $custo = (($n5 * $soma5 * 31.25) + ($n4 * $soma4 * 25) + ($n3 * $soma3 * 18.75) + ($n2 * $soma2 * 12.5) + ($n1 * $soma1 * 6.25))*($prazo);
         $model = new Application_Model_Estimarcusto();
