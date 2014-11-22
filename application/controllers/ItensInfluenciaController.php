@@ -6,7 +6,7 @@ class ItensInfluenciaController extends Zend_Controller_Action {
         if (!Zend_Auth::getInstance()->hasIdentity()) {
             $this->_redirect('/login');
         }
-        
+
         $auth = Zend_Auth::getInstance();
         if ($auth->hasIdentity()) {
             $identity = $auth->getIdentity();
@@ -22,7 +22,7 @@ class ItensInfluenciaController extends Zend_Controller_Action {
 
         $model = new Application_Model_ItensInfluencia();
         $dados = $model->db_select();
-        
+
         $this->view->assign("dados1", $dados1);
         $this->view->assign("dados", $dados);
     }
@@ -33,15 +33,15 @@ class ItensInfluenciaController extends Zend_Controller_Action {
 
     public function novoAction() {
         $model1 = new Application_Model_Projeto();
-        $dados1 = $model1->db_select();
+        $dados1 = $model1->db_select('Cliente_idCliente', $this->usuario['idCliente']);
         $this->view->assign("dados1", $dados1);
     }
 
     public function salvarDadosAction() {
-        $dados = $this->_getAllParams();
+        $dados = $this->getAllParams();
 
         $model = new Application_Model_ItensInfluencia();
-         $model->i_delete($dados['Projeto']);
+        $model->i_delete($dados['Projeto']);
         $model->db_inserir($dados, $dados['Projeto']);
         $this->_redirect("itens-influencia/index");
     }
