@@ -21,6 +21,7 @@ class Application_Model_PontosFuncao {
         $dao->delete($where);
     }
 
+    
     public function pf_select($id) {
         $dao = new Application_Model_DbTable_PontosFuncao();
         $select = $dao->select()
