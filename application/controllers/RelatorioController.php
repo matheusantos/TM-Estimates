@@ -91,7 +91,7 @@ class RelatorioController extends Zend_Controller_Action {
 
         //$pdf->Cell(0,10,'Page '.$pdf->PageNo().'/{nb}',0,0,'C');
         //gera o relatorio
-        $pdf->Output();
+        $pdf->Output('relatorio.pdf', 'I');
     }
 
 }
