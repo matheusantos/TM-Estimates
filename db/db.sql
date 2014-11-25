@@ -249,7 +249,7 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`estimativascusto` (
   `idestimativasCusto` INT(11) NOT NULL AUTO_INCREMENT,
   `Data` DATE NOT NULL,
-  `Estimativa` INT(11) NOT NULL,
+  `Estimativa` FLOAT NOT NULL,
   `projeto_idProjeto` INT(11) NOT NULL,
   PRIMARY KEY (`idestimativasCusto`),
   INDEX `fk_estimativasCusto_projeto1_idx` (`projeto_idProjeto` ASC),
@@ -268,7 +268,7 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`estimativasesforco` (
   `idEstimativasEsforco` INT(11) NOT NULL AUTO_INCREMENT,
   `Data` DATE NOT NULL,
-  `Estimativa` INT(11) NOT NULL,
+  `Estimativa` FLOAT NOT NULL,
   `projeto_idProjeto` INT(11) NOT NULL,
   PRIMARY KEY (`idEstimativasEsforco`),
   INDEX `fk_estimativasEsforco_projeto1_idx` (`projeto_idProjeto` ASC),
@@ -287,7 +287,7 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`estimativasprazo` (
   `idEstimativasPrazo` INT(11) NOT NULL AUTO_INCREMENT,
   `Data` DATE NOT NULL,
-  `Estimativa` INT(11) NOT NULL,
+  `Estimativa` FLOAT NOT NULL,
   `projeto_idProjeto` INT(11) NOT NULL,
   PRIMARY KEY (`idEstimativasPrazo`),
   INDEX `fk_estimativasPrazo_projeto1_idx` (`projeto_idProjeto` ASC),
@@ -306,7 +306,7 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `estimatech_db`.`estimativasprodutividade` (
   `idEstimativasProdutividade` INT(11) NOT NULL AUTO_INCREMENT,
   `Data` DATE NOT NULL,
-  `Estimativa` INT(11) NOT NULL,
+  `Estimativa` FLOAT NOT NULL,
   `projeto_idProjeto` INT(11) NOT NULL,
   PRIMARY KEY (`idEstimativasProdutividade`),
   INDEX `fk_estimativasProdutividade_projeto1_idx` (`projeto_idProjeto` ASC),
