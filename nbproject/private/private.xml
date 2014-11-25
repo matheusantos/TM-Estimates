@@ -3,10 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/TM-Estimates/application/controllers/EstimarProdutividadeController.php</file>
-            <file>file:/C:/xampp/htdocs/TM-Estimates/application/controllers/EstimarCustoController.php</file>
-            <file>file:/C:/xampp/htdocs/TM-Estimates/application/controllers/EstimarEsforcoController.php</file>
-            <file>file:/C:/xampp/htdocs/TM-Estimates/application/controllers/EstimarPrazoController.php</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/views/scripts/relatorio/enviar.phtml</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/layout/script/userlayout.phtml</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/models/FuncaoTransacao.php</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/controllers/RelatorioController.php</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/views/scripts/relatorio/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/models/ClienteFuncaoDados.php</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/controllers/FuncaoDadosController.php</file>
+            <file>file:/C:/xampp/htdocs/TM-Estimates/application/controllers/FuncaoTransacaoController.php</file>
         </group>
     </open-files>
 </project-private>
