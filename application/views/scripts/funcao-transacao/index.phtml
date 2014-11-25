@@ -28,13 +28,15 @@
                     <th>Descrição</th>
                     <th>Qtd. Arquivos Referenciados</th>
                     <th>Qtd. Tipos de Dados</th>
+                    <th>Pontos de Função</th>
+                    <th>Complexidade</th>
                 </tr>
             </thead>
             <tbody>
                  <?php foreach ($this->dados AS $key => $functranc): ?>
                     <tr>
                         <td><?= $functranc['idFuncaoTransacao'] ?></td>
-                        <td><?= $functranc['projeto_idProjeto'] ?></td>
+                        <td><?= $functranc['Titulo'] ?></td>
                         <td><?= $functranc['Funcao'] ?></td>
                         <td><?= $functranc['Descricao'] ?></td>
                         <td><?= $functranc['qtdArquivoRef'] ?></td>

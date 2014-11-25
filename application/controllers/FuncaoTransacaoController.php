@@ -24,7 +24,7 @@ class FuncaoTransacaoController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-        $model = new Application_Model_FuncaoTransacao();
+        $model = new Application_Model_ViewFuncaoTransacao();
         $dados = $model->db_select();
         $this->view->assign("dados", $dados);
     }

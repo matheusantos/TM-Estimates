@@ -36,7 +36,11 @@ class PreferenciasController extends Zend_Controller_Action {
         $dados = $this->getParam('idP');
         $model_cliente = new Application_Model_Cliente();
         $dados_cliente = $model_cliente->db_delete($dados);
-        $this->_redirect("/index");
+        
+        //Limpa dados da Sessão
+        Zend_Auth::getInstance()->clearIdentity();
+        //Redireciona a requisição para a tela de Autenticacao novamente
+        $this->_redirect('/index');
     }
 
 }

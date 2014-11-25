@@ -50,6 +50,10 @@ $(document).ready(function() {
 jQuery(function($) {
     $("#date").mask("9999-99-99", {placeholder: "yyyy/mm/dd"});
     $("#date2").mask("9999-99-99", {placeholder: "yyyy/mm/dd"});
+    $("#DatIniPre").mask("9999-99-99", {placeholder: "yyyy/mm/dd"});
+    $("#DatFinPre").mask("9999-99-99", {placeholder: "yyyy/mm/dd"});
+    $("#DatIniEfe").mask("9999-99-99", {placeholder: "yyyy/mm/dd"});
+    $("#DatFinEfe").mask("9999-99-99", {placeholder: "yyyy/mm/dd"});
     $("#CPF").mask("999.999.999-99");
     $("#tel").mask("(99) 9999-9999");
     $("#cel").mask("(99) 9999-9999");

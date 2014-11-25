@@ -37,8 +37,8 @@
                         <td><?= $DetalharCusto['descricaoFase'] ?></td>
                         <td><?= $DetalharCusto['idCustoFase'] ?></td>
                         <td><?= $DetalharCusto['descricaoCusto'] ?></td>
-                        <td><?= $DetalharCusto['ValorPrevisto'] ?></td>
-                        <td><?= $DetalharCusto['ValorEfetivo'] ?></td>
+                        <td>R$ <?= $DetalharCusto['ValorPrevisto'] ?></td>
+                        <td>R$ <?= $DetalharCusto['ValorEfetivo'] ?></td>
                         <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'detalhar-custo', 'idP'=>$DetalharCusto['idCustoFase']), null, true) ?>">Editar</a></td>
                         <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-dt-cu', 'idP'=>$DetalharCusto['idCustoFase']), null, true) ?>">Excluir</a></td>
                     </tr>

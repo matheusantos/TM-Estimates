@@ -136,7 +136,7 @@ class EditarController extends Zend_Controller_Action {
         $dados = $this->_getAllParams();
         $model_cliente = new Application_Model_Colaboradores();
         $dados_cliente = $model_cliente->db_update($dados);
-        $this->_redirect("administradores/index");
+        $this->_redirect("colaboradores/index");
     }
 
     public function atualizaFaAction() {
@@ -234,7 +234,7 @@ class EditarController extends Zend_Controller_Action {
         $dados = $this->getParam('idP');
         $model_cliente = new Application_Model_Colaboradores();
         $model_cliente->db_delete($dados);
-        $this->_redirect("administradores/index");
+        $this->_redirect("colaboradores/index");
     }
 
     public function excluirDtCuAction() {

@@ -13,6 +13,9 @@
         <controllerFile controllerName="Administradores">
           <actionMethod actionName="index"/>
         </controllerFile>
+        <controllerFile controllerName="Colaboradores">
+          <actionMethod actionName="index"/>
+        </controllerFile>
         <controllerFile controllerName="Ambiente">
           <actionMethod actionName="index"/>
         </controllerFile>
@@ -106,6 +109,7 @@
           <dbTableFile dbTableName="PontosFuncao"/>
           <dbTableFile dbTableName="ViewRelatorio"/>
           <dbTableFile dbTableName="ViewItensInfluencia"/>
+          <dbTableFile dbTableName="ViewFuncaoTransacao"/>
         </dbTableDirectory>
         <modelFile modelName="ClienteEquipe"/>
         <modelFile modelName="ViewClienteDetalharCusto"/>
@@ -120,6 +124,7 @@
         <modelFile modelName="ViewRelatorio"/>
         <modelFile modelName="Relatorio"/>
         <modelFile modelName="ViewItensInfluencia"/>
+        <modelFile modelName="ViewFuncaoTransacao"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
@@ -181,6 +186,15 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="relatorio">
             <viewScriptFile forActionName="enviar"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="novo">
+            <viewScriptFile forActionName="Colaboradores"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="novo">
+            <viewScriptFile forActionName="Colaboradores"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Colaboradores">
+            <viewScriptFile forActionName="novo"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
