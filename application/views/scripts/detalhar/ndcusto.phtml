@@ -12,36 +12,36 @@
                     <div class="panel-body">
                         <form role="form" method="post" action="<?= $this->url(array('controller' => 'detalhar', 'action' => 'salvar-dados-cust'), null, true) ?>">
                             <div class="form-row col-md-12"> 
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Fase</label>
-                                        <input type="number" class="form-control" id="InputFase" name="Fase" placeholder="Número">
+                                        <!--<input type="number" class="form-control" id="InputFase" name="Fase" placeholder="Número">-->
+                                        <select required class="form-control" name="Fase">
+                                            <!--<option value  = "" class="form-control"> </option>-->
+                                            <?php foreach ($this->dados as $key => $value) { ?>
+                                                <option value="<?= $value["idFase"] ?>" class="form-control"> <?= $value['Descricao'] ?> </option>
+                                            <?php } ?>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Item</label>
-                                        <input type="text" class="form-control" id="InputItem" name="Item">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Descrição do Custo</label>
-                                        <input type="text" class="form-control" id="InputDescCusto" name="Desc">
+                                        <input required type="text" class="form-control" id="InputDescCusto" name="Desc">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-row col-md-12"> 
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Valor Previsto</label>
-                                        <input class="form-control" id="InputValorPrev" name="ValorPrev" placeholder="0,00">
+                                        <input required class="form-control" id="ValorPrev" name="ValorPrev">
                                     </div>
                                 </div>
-                                <div class="col-md-4 ">
+                                <div class="col-md-6 ">
                                     <div class="form-group">
                                         <label>Valor Efetivo</label>;
-                                        <input class="form-control" id="InputdtValorEf" name="ValorEf" placeholder="0,00">
+                                        <input required class="form-control" id="ValorEf" name="ValorEf">
                                     </div>
                                 </div>
                             </div>

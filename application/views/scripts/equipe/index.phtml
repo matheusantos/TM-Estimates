@@ -30,8 +30,8 @@
             <tbody>
                 <?php foreach ($this->dados AS $key => $equipe): ?>
                     <tr>
-                        <td><?= $equipe['Recursos_idRecursos'] ?></td>
-                        <td><?= $equipe['Projeto_idProjeto'] ?></td>
+                        <td><?= $equipe['Titulo'] ?></td>
+                        <td><?= $equipe['Descricao'] ?></td>
                         <td><?= $equipe['QtRecursos'] ?></td>
                         <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'equipe', 'idP' => $equipe['Recursos_idRecursos']), null, true) ?>">Editar</a></td>
                         <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-eq', 'idP' => $equipe['Recursos_idRecursos']), null, true) ?>">Excluir</a></td>

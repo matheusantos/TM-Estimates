@@ -1,0 +1,44 @@
+<div class="page-header">
+    <h3><span class="glyphicon glyphicon-th-list"></span> Estimativas de Esforço</h3>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <a href="<?= $this->url(array('controller' => 'estimar-esforco', 'action' => 'gerar-esforco'), null, true) ?>" class="btn btn btn-success" role="button">Novo</a>
+    </div>
+    <div class="col-md-3">
+        <form action="#" method="get">
+            <div class="input-group">
+                <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
+                <input class="form-control" id="system-search" name="q" placeholder="Search for" required>
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-list-search">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Data</th>
+                    <th>Projeto</th>
+                    <th>Estimativa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($this->esforco AS $key => $esforco): ?>
+                    <tr>
+                        <td><?= $esforco['idEstimativasEsforco'] ?></td>
+                        <td><?= $esforco['Data'] ?></td>
+                        <td><?= $esforco['Titulo'] ?></td>
+                        <td><?= $esforco['Estimativa'] ?></td>
+                        <td><a href="<?= $this->url(array('controller' => 'estimar-esforco', 'action' => 'excluir', 'idP' => $esforco['idEstimativasEsforco']), null, true) ?>">Excluir</a></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>   
+    </div>
+</div>

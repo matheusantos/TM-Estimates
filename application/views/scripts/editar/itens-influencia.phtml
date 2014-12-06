@@ -1,0 +1,192 @@
+<div class="page-header">
+    <h3><span class="glyphicon glyphicon-th-list"></span> Itens de influência</h3>
+</div>
+
+<div class="row">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Itens de influência</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'editar', 'action' => 'atualiza-ii'), null, true) ?>">
+                            <div class="col-md-4 form-groups">
+                                <label>Comunicação de dados</label>
+                                <select required class="form-control" name="comDados">
+                                    <option value  = "0" class="form-control text-center"<?php if ($this->dados[0]['ComunicaoDados'] == '0') echo 'selected'; ?>>0</option>
+                                    <option value  = "1" class="form-control text-center"<?php if ($this->dados[0]['ComunicaoDados'] == '1') echo 'selected'; ?>>1</option>
+                                    <option value = "2" class="form-control text-center"<?php if ($this->dados[0]['ComunicaoDados'] == '2') echo 'selected'; ?>>2</option>
+                                    <option value = "3" class="form-control text-center"<?php if ($this->dados[0]['ComunicaoDados'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value = "4" class="form-control text-center"<?php if ($this->dados[0]['ComunicaoDados'] == '4') echo 'selected'; ?>>4</option>
+                                    <option value = "5" class="form-control text-center"<?php if ($this->dados[0]['ComunicaoDados'] == '5') echo 'selected'; ?>>5</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 form-groups">
+                                <label>Processamento distribuído</label>
+                                <select required class="form-control" name="procDistr">
+                                    <option value  = "0" class="form-control text-center"<?php if ($this->dados[0]['ProcDistribuido'] == '0') echo 'selected'; ?>>0</option>
+                                    <option value  = "1" class="form-control text-center"<?php if ($this->dados[0]['ProcDistribuido'] == '1') echo 'selected'; ?>>1</option>
+                                    <option value = "2" class="form-control text-center"<?php if ($this->dados[0]['ProcDistribuido'] == '2') echo 'selected'; ?>>2</option>
+                                    <option value = "3" class="form-control text-center"<?php if ($this->dados[0]['ProcDistribuido'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value = "4" class="form-control text-center"<?php if ($this->dados[0]['ProcDistribuido'] == '4') echo 'selected'; ?>>4</option>
+                                    <option value = "5" class="form-control text-center"<?php if ($this->dados[0]['ProcDistribuido'] == '5') echo 'selected'; ?>>5</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4 form-groups">
+                                <label>Performace</label>
+                                <select required class="form-control" name="perf">
+                                    <option value  = "0" class="form-control text-center"<?php if ($this->dados[0]['Performace'] == '0') echo 'selected'; ?>>0</option>
+                                    <option value  = "1" class="form-control text-center"<?php if ($this->dados[0]['Performace'] == '1') echo 'selected'; ?>>1</option>
+                                    <option value = "2" class="form-control text-center"<?php if ($this->dados[0]['Performace'] == '2') echo 'selected'; ?>>2</option>
+                                    <option value = "3" class="form-control text-center"<?php if ($this->dados[0]['Performace'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value = "4" class="form-control text-center"<?php if ($this->dados[0]['Performace'] == '4') echo 'selected'; ?>>4</option>
+                                    <option value = "5" class="form-control text-center"<?php if ($this->dados[0]['Performace'] == '5') echo 'selected'; ?>>5</option>
+                                </select>
+                            </div>
+                            <br><br><br><br>
+                            <div class="col-md-4 form-groups">
+                                <label>Config. altamente utilizada</label>
+                                <select required class="form-control" name="configUtil">
+                                    <option value  = "0" class="form-control text-center"<?php if ($this->dados[0]['ConfAltaUtil'] == '0') echo 'selected'; ?>>0</option>
+                                    <option value  = "1" class="form-control text-center"<?php if ($this->dados[0]['ConfAltaUtil'] == '1') echo 'selected'; ?>>1</option>
+                                    <option value = "2" class="form-control text-center"<?php if ($this->dados[0]['ConfAltaUtil'] == '2') echo 'selected'; ?>>2</option>
+                                    <option value = "3" class="form-control text-center"<?php if ($this->dados[0]['ConfAltaUtil'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value = "4" class="form-control text-center"<?php if ($this->dados[0]['ConfAltaUtil'] == '4') echo 'selected'; ?>>4</option>
+                                    <option value = "5" class="form-control text-center"<?php if ($this->dados[0]['ConfAltaUtil'] == '5') echo 'selected'; ?>>5</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 form-groups">
+                                <label>Faixa de transações</label>
+                                <select required class="form-control" name="faiTran">
+                                    <option value  = "0" class="form-control text-center"<?php if ($this->dados[0]['FaixaTransacoes'] == '0') echo 'selected'; ?>>0</option>
+                                    <option value  = "1" class="form-control text-center"<?php if ($this->dados[0]['FaixaTransacoes'] == '1') echo 'selected'; ?>>1</option>
+                                    <option value = "2" class="form-control text-center"<?php if ($this->dados[0]['FaixaTransacoes'] == '2') echo 'selected'; ?>>2</option>
+                                    <option value = "3" class="form-control text-center"<?php if ($this->dados[0]['FaixaTransacoes'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value = "4" class="form-control text-center"<?php if ($this->dados[0]['FaixaTransacoes'] == '4') echo 'selected'; ?>>4</option>
+                                    <option value = "5" class="form-control text-center"<?php if ($this->dados[0]['FaixaTransacoes'] == '5') echo 'selected'; ?>>5</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4 form-groups">
+                                <label>Entrada de dados On-Line</label>
+                                <select required class="form-control" name="entDadOn">
+                                    <option value  = "0" class="form-control text-center"<?php if ($this->dados[0]['EntradaDadosOnLine'] == '0') echo 'selected'; ?>>0</option>
+                                    <option value  = "1" class="form-control text-center"<?php if ($this->dados[0]['EntradaDadosOnLine'] == '1') echo 'selected'; ?>>1</option>
+                                    <option value = "2" class="form-control text-center"<?php if ($this->dados[0]['EntradaDadosOnLine'] == '2') echo 'selected'; ?>>2</option>
+                                    <option value = "3" class="form-control text-center"<?php if ($this->dados[0]['EntradaDadosOnLine'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value = "4" class="form-control text-center"<?php if ($this->dados[0]['EntradaDadosOnLine'] == '4') echo 'selected'; ?>>4</option>
+                                    <option value = "5" class="form-control text-center"<?php if ($this->dados[0]['EntradaDadosOnLine'] == '5') echo 'selected'; ?>>5</option>
+                                </select>
+                            </div>
+                            <br><br><br><br>
+                            <div class="col-md-4 form-groups">
+                                <label>Eficiência do usuário final</label>
+                                <select required class="form-control" name="eficUserFin">
+                                    <option value  = "0" class="form-control text-center"<?php if ($this->dados[0]['EficUserFinal'] == '0') echo 'selected'; ?>>0</option>
+                                    <option value  = "1" class="form-control text-center"<?php if ($this->dados[0]['EficUserFinal'] == '1') echo 'selected'; ?>>1</option>
+                                    <option value = "2" class="form-control text-center"<?php if ($this->dados[0]['EficUserFinal'] == '2') echo 'selected'; ?>>2</option>
+                                    <option value = "3" class="form-control text-center"<?php if ($this->dados[0]['EficUserFinal'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value = "4" class="form-control text-center"<?php if ($this->dados[0]['EficUserFinal'] == '4') echo 'selected'; ?>>4</option>
+                                    <option value = "5" class="form-control text-center"<?php if ($this->dados[0]['EficUserFinal'] == '5') echo 'selected'; ?>>5</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 form-groups">
+                                <label>Atualização On-Line</label>
+                                <select required class="form-control" name="attOn">
+                                    <option value  = "0" class="form-control text-center"<?php if ($this->dados[0]['AtualizacaoOnLine'] == '0') echo 'selected'; ?>>0</option>
+                                    <option value  = "1" class="form-control text-center"<?php if ($this->dados[0]['AtualizacaoOnLine'] == '1') echo 'selected'; ?>>1</option>
+                                    <option value = "2" class="form-control text-center"<?php if ($this->dados[0]['AtualizacaoOnLine'] == '2') echo 'selected'; ?>>2</option>
+                                    <option value = "3" class="form-control text-center"<?php if ($this->dados[0]['AtualizacaoOnLine'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value = "4" class="form-control text-center"<?php if ($this->dados[0]['AtualizacaoOnLine'] == '4') echo 'selected'; ?>>4</option>
+                                    <option value = "5" class="form-control text-center"<?php if ($this->dados[0]['AtualizacaoOnLine'] == '5') echo 'selected'; ?>>5</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4 form-groups">
+                                <label>Complexidade processamento</label>
+                                <select required class="form-control" name="comProc">
+                                    <option value  = "0" class="form-control text-center"<?php if ($this->dados[0]['ComplexidadeProc'] == '0') echo 'selected'; ?>>0</option>
+                                    <option value  = "1" class="form-control text-center"<?php if ($this->dados[0]['ComplexidadeProc'] == '1') echo 'selected'; ?>>1</option>
+                                    <option value = "2" class="form-control text-center"<?php if ($this->dados[0]['ComplexidadeProc'] == '2') echo 'selected'; ?>>2</option>
+                                    <option value = "3" class="form-control text-center"<?php if ($this->dados[0]['ComplexidadeProc'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value = "4" class="form-control text-center"<?php if ($this->dados[0]['ComplexidadeProc'] == '4') echo 'selected'; ?>>4</option>
+                                    <option value = "5" class="form-control text-center"<?php if ($this->dados[0]['ComplexidadeProc'] == '5') echo 'selected'; ?>>5</option>
+                                </select>
+                            </div>
+                            <br><br><br><br>
+                            <div class="col-md-4 form-groups">
+                                <label>Reutilização</label>
+                                <select required class="form-control" name="reut">
+                                    <option value  = "0" class="form-control text-center"<?php if ($this->dados[0]['Reutilizacao'] == '0') echo 'selected'; ?>>0</option>
+                                    <option value  = "1" class="form-control text-center"<?php if ($this->dados[0]['Reutilizacao'] == '1') echo 'selected'; ?>>1</option>
+                                    <option value = "2" class="form-control text-center"<?php if ($this->dados[0]['Reutilizacao'] == '2') echo 'selected'; ?>>2</option>
+                                    <option value = "3" class="form-control text-center"<?php if ($this->dados[0]['Reutilizacao'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value = "4" class="form-control text-center"<?php if ($this->dados[0]['Reutilizacao'] == '4') echo 'selected'; ?>>4</option>
+                                    <option value = "5" class="form-control text-center"<?php if ($this->dados[0]['Reutilizacao'] == '5') echo 'selected'; ?>>5</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 form-groups">
+                                <label>Facilidade de instalação</label>
+                                <select required class="form-control" name="facInst">
+                                    <option value  = "0" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeInstalacao'] == '0') echo 'selected'; ?>>0</option>
+                                    <option value  = "1" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeInstalacao'] == '1') echo 'selected'; ?>>1</option>
+                                    <option value = "2" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeInstalacao'] == '2') echo 'selected'; ?>>2</option>
+                                    <option value = "3" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeInstalacao'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value = "4" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeInstalacao'] == '4') echo 'selected'; ?>>4</option>
+                                    <option value = "5" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeInstalacao'] == '5') echo 'selected'; ?>>5</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4 form-groups">
+                                <label>Facilidade de operação</label>
+                                <select required class="form-control" name="facOp">
+                                    <option value  = "0" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeOperacao'] == '0') echo 'selected'; ?>>0</option>
+                                    <option value  = "1" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeOperacao'] == '1') echo 'selected'; ?>>1</option>
+                                    <option value = "2" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeOperacao'] == '2') echo 'selected'; ?>>2</option>
+                                    <option value = "3" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeOperacao'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value = "4" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeOperacao'] == '4') echo 'selected'; ?>>4</option>
+                                    <option value = "5" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeOperacao'] == '5') echo 'selected'; ?>>5</option>
+                                </select>
+                            </div>
+                            <br><br><br><br>
+                            <div class="col-md-4 form-groups">
+                                <label>Multiplas localidades</label>
+                                <select required class="form-control" name="mulLoc">
+                                    <option value  = "0" class="form-control text-center"<?php if ($this->dados[0]['MultiplasLocalidades'] == '0') echo 'selected'; ?>>0</option>
+                                    <option value  = "1" class="form-control text-center"<?php if ($this->dados[0]['MultiplasLocalidades'] == '1') echo 'selected'; ?>>1</option>
+                                    <option value = "2" class="form-control text-center"<?php if ($this->dados[0]['MultiplasLocalidades'] == '2') echo 'selected'; ?>>2</option>
+                                    <option value = "3" class="form-control text-center"<?php if ($this->dados[0]['MultiplasLocalidades'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value = "4" class="form-control text-center"<?php if ($this->dados[0]['MultiplasLocalidades'] == '4') echo 'selected'; ?>>4</option>
+                                    <option value = "5" class="form-control text-center"<?php if ($this->dados[0]['MultiplasLocalidades'] == '5') echo 'selected'; ?>>5</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4 form-groups">
+                                <label>Facilidade de mudanças</label>
+                                <select required class="form-control" name="facMud">
+                                    <option value  = "0" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeMudancas'] == '0') echo 'selected'; ?>>0</option>
+                                    <option value  = "1" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeMudancas'] == '1') echo 'selected'; ?>>1</option>
+                                    <option value = "2" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeMudancas'] == '2') echo 'selected'; ?>>2</option>
+                                    <option value = "3" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeMudancas'] == '3') echo 'selected'; ?>>3</option>
+                                    <option value = "4" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeMudancas'] == '4') echo 'selected'; ?>>4</option>
+                                    <option value = "5" class="form-control text-center"<?php if ($this->dados[0]['FacilidadeMudancas'] == '5') echo 'selected'; ?>>5</option>
+                                </select>
+                            </div>
+                            <input type = "hidden" name="id" value ="<?= $this->id ?>">
+                            <br><br><br><br>
+                            <div class="col-md-4">
+                                <div class="col-md-offset-0">
+                                    <button type="submit" class="btn btn-success btn-default">Atualizar</button>
+                                    <a href="<?= $this->url(array('controller' => 'itens-influencia', 'action' => 'index'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

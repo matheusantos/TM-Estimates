@@ -14,17 +14,21 @@ class RecursoController extends Zend_Controller_Action {
             $identity = $auth->getIdentity();
             $this->usuario = get_object_vars($identity);
         }
-
         $this->_helper->layout->setlayout("userlayout");
+        $this->view->assign("email", $this->usuario['Email']);
     }
 
     public function indexAction() {
-        $model = new Application_Model_Recursos();
+        $model = new Application_Model_ViewRecurso();
         $dados = $model->db_select('cliente_idCliente', $this->usuario['idCliente']);
         $this->view->assign("dados", $dados);
     }
 
-    public function novoAction() { }
+    public function novoAction() {
+        $model1 = new Application_Model_Projeto();
+        $dados1 = $model1->db_select('Cliente_idCliente', $this->usuario['idCliente']);
+        $this->view->assign("dados1", $dados1);
+    }
 
     public function salvarDadosAction() {
         $dados = $this->getAllParams();

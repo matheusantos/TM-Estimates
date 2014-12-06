@@ -1,49 +1,52 @@
 <?php
 
-class VendasController extends Zend_Controller_Action
-{
+class VendasController extends Zend_Controller_Action {
 
-    public function init()
-    {
-        /* Initialize action controller here */
+    private $usuario;
+    
+    public function init() {
+        if (!Zend_Auth::getInstance()->hasIdentity()) {
+            $this->_redirect('/identifica');
+        }
+
+        $auth = Zend_Auth::getInstance();
+        if ($auth->hasIdentity()) {
+            $identity = $auth->getIdentity();
+            $this->usuario = get_object_vars($identity);
+        }
+        $this->view->assign("email", $this->usuario['Email']);
     }
 
-    public function indexAction()
-    {
+    public function indexAction() {
         // action body
     }
 
-    public function pagamentoAction()
-    {
-        // action body
-    }
-
-    public function pagamentoDebitoAction()
-    {
-        // action body
+    public function processarAction() {
+        $this->redirect('vendas/pagamento');
     }
     
-    public function pagamentoBoletoAction()
-    {
+    public function pagamentoAction() {
+        
+    }
+
+    public function pagamentoDebitoAction() {
         // action body
     }
-    
-    public function pagamentoMasterAction()
-    {
+
+    public function pagamentoBoletoAction() {
         // action body
     }
-    
-    public function pagamentoHiperAction()
-    {
+
+    public function pagamentoMasterAction() {
         // action body
     }
-    
-    public function pagamentoAmericaAction()
-    {
+
+    public function pagamentoHiperAction() {
+        // action body
+    }
+
+    public function pagamentoAmericaAction() {
         // action body
     }
 
 }
-
-
-

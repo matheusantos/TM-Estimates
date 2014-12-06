@@ -1,16 +1,19 @@
 <div class="page-header">
-    <h3><span class="glyphicon glyphicon-th-list"></span> Nova Fase</h3>
+    <h3><span class="glyphicon glyphicon-th-list"></span> Editar Fase</h3>
 </div>
 <div class="row">
     <div class="row clearfix top-buffer">
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
+                <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Fase</strong></h3>
+                    </div>
                 <div class="panel-body">
                     <form role="form"  method="post" action="<?= $this->url(array('controller' => 'editar', 'action' => 'atualiza-fa'), null, true) ?>">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <!--<label>Descrição</label>-->
-                                <input type="text" class="form-control" id="exampleInputDesc" name="Desc" placeholder="Descrição" value="<?=$this->dados_cliente[0]['Descricao']?>">
+                                <input required type="text" class="form-control" id="exampleInputDesc" name="Desc" placeholder="Descrição" value="<?=$this->dados_cliente[0]['Descricao']?>">
                             </div>
                         </div>
                         <input type = "hidden" name="id" value ="<?= $this->id ?>">

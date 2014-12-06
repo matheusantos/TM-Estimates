@@ -4,8 +4,6 @@
 <div class="row">
     <div class="col-md-3">
         <a href="<?= $this->url(array('controller' => 'detalhar', 'action' => 'ndcusto'), null, true) ?>" class="btn btn btn-success" role="button">Novo</a>
-        <button type="button" class="btn btn-primary">Editar</button>
-        <button type="button" class="btn btn-danger">Excluir</button>
     </div>
     <div class="col-md-3">
         <form action="#" method="get">
@@ -24,7 +22,7 @@
         <table class="table table-list-search">
             <thead>
                 <tr>
-                    <th>Código</th>
+                    <th>#</th>
                     <th>Fase</th>
                     <th>Item</th>
                     <th>Desc. Custo</th>
@@ -33,14 +31,16 @@
                 </tr>
             </thead>
             <tbody>
-                     <?php foreach ($this->dados AS $key => $DetalharCusto): ?>
+                <?php foreach ($this->dados AS $key => $DetalharCusto): ?>
                     <tr>
                         <td><?= $DetalharCusto['idCustoFase'] ?></td>
                         <td><?= $DetalharCusto['descricaoFase'] ?></td>
                         <td><?= $DetalharCusto['idCustoFase'] ?></td>
                         <td><?= $DetalharCusto['descricaoCusto'] ?></td>
-                        <td><?= $DetalharCusto['ValorPrevisto'] ?></td>
-                        <td><?= $DetalharCusto['ValorEfetivo'] ?></td>
+                        <td>R$ <?= $DetalharCusto['ValorPrevisto'] ?></td>
+                        <td>R$ <?= $DetalharCusto['ValorEfetivo'] ?></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'detalhar-custo', 'idP'=>$DetalharCusto['idCustoFase']), null, true) ?>">Editar</a></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-dt-cu', 'idP'=>$DetalharCusto['idCustoFase']), null, true) ?>">Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

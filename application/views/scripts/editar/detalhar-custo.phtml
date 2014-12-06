@@ -1,0 +1,59 @@
+<div class="page-header">
+    <h3><span class="glyphicon glyphicon-th-list"></span> Detalhar Custo</h3>
+</div>
+<div class="row">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Custo</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'editar', 'action' => 'atualiza-dt-cu'), null, true) ?>">
+                            <div class="form-row col-md-12"> 
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Fase</label>
+                                        <!--<input type="number" class="form-control" id="InputFase" name="Fase" placeholder="Número">-->
+                                        <span class="form-control" name="idRecurso"><?= $this->dados_cliente[0]['fase_idFase'] ?></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Descrição do Custo</label>
+                                        <input required type="text" class="form-control" id="InputDescCusto" name="Desc" value="<?= $this->dados_cliente[0]['Descricao'] ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row col-md-12"> 
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Valor Previsto</label>
+                                        <input required class="form-control" id="InputValorPrev" name="ValorPrev" placeholder="0,00" value="<?= $this->dados_cliente[0]['ValorPrevisto'] ?>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="form-group">
+                                        <label>Valor Efetivo</label>;
+                                        <input required class="form-control" id="InputdtValorEf" name="ValorEf" placeholder="0,00" value="<?= $this->dados_cliente[0]['ValorEfetivo'] ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                            <input type = "hidden" name="id" value ="<?= $this->id ?>">
+                            <div class="form-row col-md-12"> 
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success btn-default">Atualizar</button>
+                                        <a href="<?= $this->url(array('controller' => 'Detalhar', 'action' => 'custos'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

@@ -1,56 +1,45 @@
 <br /><br />
-<div id="view-content">
-	<br>
-	<p><i><b><h2>Escolha seu pacote: </p></i></b></h2>
-	<br><br>
-    <img src="/TM-Estimates/public/img/pacbasic.jpg" alt="" height="120" width="100">        
-	<p><b><h4><a style="color:#00ff00">Pacote Básico:</a></h4></b>
-	<p><b>Descrição:</b> O pacote básico fornecerá acesso a um administrador,
-		podendo cadastrar até três projetos.
-	<p><b>Valor:</b>  R$ 60,00.
-	<p><b>Tempo de uso:</b> 30 dias.
-	<br><br>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column text-center">
+            <br>
+            <h2> <i><b>Escolha seu pacote: </b></i> </h2>
+            <br><br>
+            <img src="/TM-Estimates/public/img/pacbasic.jpg" alt="" height="120" width="100">        
+            <p><b><h4><a style="color:#00ff00">Pacote Básico:</a></h4></b>
+            <p><b>Descrição:</b> O pacote básico fornecerá acesso a um administrador,
+                podendo cadastrar até três projetos.
+            <p><b>Valor:</b>  R$ 60,00.
+            <p><b>Tempo de uso:</b> 30 dias.
+                <br><br>
 
-	<img src="/TM-Estimates/public/img/pacinter.jpg" alt="" height="120" width="100">
-	<p><b><h4><a style="color:#828282">Pacote Intermediário:</a></h4></b>
-	<p><b>Descrição:</b> O pacote intermediário fornecerá acesso a três administrador, podendo cadastrar até oito projetos.
-	<p><b>Valor:</b> R$ 110,00.
-	<p><b>Tempo de uso:</b> 30 dias.
-	<br><br>
+                <img src="/TM-Estimates/public/img/pacinter.jpg" alt="" height="120" width="100">
+            <p><b><h4><a style="color:#828282">Pacote Intermediário:</a></h4></b>
+            <p><b>Descrição:</b> O pacote intermediário fornecerá acesso a três administrador, podendo cadastrar até oito projetos.
+            <p><b>Valor:</b> R$ 110,00.
+            <p><b>Tempo de uso:</b> 30 dias.
+                <br><br>
 
-	<img src="/TM-Estimates/public/img/pacpremium.jpg" alt="" height="120" width="100">
-	<p><b><h4><a style="color:#ffd700">Pacote Premium:</a></h4></b>
-	<p><b>Descrição:</b> O pacote intermediário fornecerá acesso a cinco administrador, podendo cadastrar até doze projetos.
-	<p><b>Valor:</b> R$ 150,00.
-	<p><b>Tempo de uso:</b> 45 dias.
-	<br><br><br><br>
+                <img src="/TM-Estimates/public/img/pacpremium.jpg" alt="" height="120" width="100">
+            <p><b><h4><a style="color:#ffd700">Pacote Premium:</a></h4></b>
+            <p><b>Descrição:</b> O pacote intermediário fornecerá acesso a cinco administrador, podendo cadastrar até doze projetos.
+            <p><b>Valor:</b> R$ 150,00.
+            <p><b>Tempo de uso:</b> 45 dias.
+                <br><br><br><br>
 
-
-	<form>
-		<b>Qual pacote deseja contratar?</b>
-		<select name = "Pacotes">
-			<option value="#" selected>Pacote Básico
-			<option value="#" selected>Pacote Intermediario
-				<option value="#" selected>Pacote Premium
-				<br><br>
-
-		</select>
-
-	</form>
-	<br>
-	<div class="row">
-
-
-	&nbsp&nbsp&nbsp
-	
-	
-        <button type="submit" class="btn btn-success" onclick="setPag()"> Continuar </button>
-	<div class="col-md-offset-10">
-	<div class="col-md-2">	
-		<br>
+            <form role="form" method="post" action="<?= $this->url(array('controller' => 'vendas', 'action' => 'processar'), null, true) ?>">
+                <div class="form-row form-groups">
+                    <b>Qual pacote deseja contratar?</b>
+                    <select name = "Pacotes">
+                        <option value="#" selected>Pacote Básico
+                        <option value="#" selected>Pacote Intermediario
+                        <option value="#" selected>Pacote Premium
+                    </select>
+                </div>
+                <br/>
+                <button type="submit" class="btn btn-success" onclick="setPag()"> Continuar </button>
                 <button type="button" class="btn btn-danger" onclick="setIni()"> Cancelar </button>
-</div></div></div>
-
-	
-<br><br>
+            </form>
+        </div>
+    </div>
 </div>

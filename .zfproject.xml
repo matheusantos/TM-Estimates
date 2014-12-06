@@ -13,6 +13,9 @@
         <controllerFile controllerName="Administradores">
           <actionMethod actionName="index"/>
         </controllerFile>
+        <controllerFile controllerName="Colaboradores">
+          <actionMethod actionName="index"/>
+        </controllerFile>
         <controllerFile controllerName="Ambiente">
           <actionMethod actionName="index"/>
         </controllerFile>
@@ -68,7 +71,61 @@
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory enabled="false"/>
-      <modelsDirectory/>
+      <modelsDirectory>
+        <modelFile modelName="ClienteFuncaoTransacao"/>
+        <modelFile modelName="ClienteFuncaoDados"/>
+        <dbTableDirectory>
+          <dbTableFile dbTableName="Ambiente"/>
+          <dbTableFile dbTableName="Cliente"/>
+          <dbTableFile dbTableName="Clientefuncaodados"/>
+          <dbTableFile dbTableName="Clientepf"/>
+          <dbTableFile dbTableName="Clientepj"/>
+          <dbTableFile dbTableName="Colaboradores"/>
+          <dbTableFile dbTableName="Compra"/>
+          <dbTableFile dbTableName="Custofase"/>
+          <dbTableFile dbTableName="Equipe"/>
+          <dbTableFile dbTableName="Fase"/>
+          <dbTableFile dbTableName="Funcaodados"/>
+          <dbTableFile dbTableName="Funcaotransacao"/>
+          <dbTableFile dbTableName="Funcdados"/>
+          <dbTableFile dbTableName="Itensinfluencia"/>
+          <dbTableFile dbTableName="Pacote"/>
+          <dbTableFile dbTableName="Projeto"/>
+          <dbTableFile dbTableName="Recuperarsenha"/>
+          <dbTableFile dbTableName="Recursos"/>
+          <dbTableFile dbTableName="Cleinteequipe"/>
+          <dbTableFile dbTableName="ViewClienteDetalharCusto"/>
+          <dbTableFile dbTableName="ViewEstimativasCusto"/>
+          <dbTableFile dbTableName="EstimavasCusto"/>
+          <dbTableFile dbTableName="ViewEstimativasPrazo"/>
+          <dbTableFile dbTableName="ViewEstimativasEsforco"/>
+          <dbTableFile dbTableName="ViewEstimativasProdutividade"/>
+          <dbTableFile dbTableName="ViewRecurso"/>
+          <dbTableFile dbTableName="ViewAmbiente"/>
+          <dbTableFile dbTableName="EstimativasEsforco"/>
+          <dbTableFile dbTableName="EstimativasProdutividade"/>
+          <dbTableFile dbTableName="EstimativasPrazo"/>
+          <dbTableFile dbTableName="ViewPontosFuncao"/>
+          <dbTableFile dbTableName="PontosFuncao"/>
+          <dbTableFile dbTableName="ViewRelatorio"/>
+          <dbTableFile dbTableName="ViewItensInfluencia"/>
+          <dbTableFile dbTableName="ViewFuncaoTransacao"/>
+        </dbTableDirectory>
+        <modelFile modelName="ClienteEquipe"/>
+        <modelFile modelName="ViewClienteDetalharCusto"/>
+        <modelFile modelName="ViewEstimativasCusto"/>
+        <modelFile modelName="ViewEstimativasPrazo"/>
+        <modelFile modelName="ViewEstimativasEsforco"/>
+        <modelFile modelName="ViewEstimativasProdutividade"/>
+        <modelFile modelName="ViewRecurso"/>
+        <modelFile modelName="ViewAmbiente"/>
+        <modelFile modelName="ViewPontosFuncao"/>
+        <modelFile modelName="PontosFuncao"/>
+        <modelFile modelName="ViewRelatorio"/>
+        <modelFile modelName="Relatorio"/>
+        <modelFile modelName="ViewItensInfluencia"/>
+        <modelFile modelName="ViewFuncaoTransacao"/>
+      </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
       <viewsDirectory>
@@ -112,7 +169,6 @@
           <viewControllerScriptsDirectory forControllerName="Vendas">
             <viewScriptFile forActionName="pagamento"/>
           </viewControllerScriptsDirectory>
-<<<<<<< HEAD
           <viewControllerScriptsDirectory forControllerName="calendario">
             <viewScriptFile forActionName="janeiro"/>
           </viewControllerScriptsDirectory>
@@ -121,19 +177,24 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="vendas">
             <viewScriptFile forActionName="pagamentoDebito"/>
-=======
-          <viewControllerScriptsDirectory forControllerName="index">
-            <viewScriptFile forActionName="sobre"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="index">
-            <viewScriptFile forActionName="pacotes"/>
->>>>>>> origin/master
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="contagem">
             <viewScriptFile forActionName="detalhada"/>
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="contagem">
             <viewScriptFile forActionName="estimada"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="relatorio">
+            <viewScriptFile forActionName="enviar"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="novo">
+            <viewScriptFile forActionName="Colaboradores"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="novo">
+            <viewScriptFile forActionName="Colaboradores"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Colaboradores">
+            <viewScriptFile forActionName="novo"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

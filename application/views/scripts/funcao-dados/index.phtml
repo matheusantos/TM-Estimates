@@ -4,8 +4,6 @@
 <div class="row">
     <div class="col-md-3">
         <a href="<?= $this->url(array('controller' => 'funcao-dados', 'action' => 'novo'), null, true) ?>" class="btn btn btn-success" role="button">Novo</a>
-        <button type="button" class="btn btn-primary">Editar</button>
-        <button type="button" class="btn btn-danger">Excluir</button>
     </div>
     <div class="col-md-3">
         <form action="#" method="get">
@@ -25,46 +23,30 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Cod. do Projeto</th>
+                    <th>Projeto</th>
                     <th>Função</th>
                     <th>Descrição</th>
-                    <th>Tipos de registro</th>
-                    <th>Tipos de dados</th>
+                    <th>Qtd. Tipos de registro</th>
+                    <th>Qtd. Tipos de dados</th>
+                    <th>Ponto de função</th>
                     <th>Complexidade</th>
-                    <th>Pontos de função</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Sample</td>
-                    <td>Filter</td>
-                    <td>12-11-2011 11:11</td>
-                    <td>OK</td>
-                    <td>Sample</td>
-                    <td>Filter</td>
-                    <td>12-11-2011 11:11</td>
-                    <td>OK</td>
-                </tr>
-                <tr>
-                    <td>Try</td>
-                    <td>It</td>
-                    <td>11-20-2013 08:56</td>
-                    <td>It</td>
-                    <td>Sample</td>
-                    <td>Filter</td>
-                    <td>12-11-2011 11:11</td>
-                    <td>OK</td>
-                </tr>
-                <tr>
-                    <td>§</td>
-                    <td>$</td>
-                    <td>%</td>
-                    <td>&</td>
-                    <td>Sample</td>
-                    <td>Filter</td>
-                    <td>12-11-2011 11:11</td>
-                    <td>OK</td>
-                </tr>
+                <?php foreach ($this->dados AS $key => $funcdados): ?>
+                    <tr>
+                        <td><?= $funcdados['idFuncaoDados'] ?></td>
+                        <td><?= $funcdados['Titulo'] ?></td>
+                        <td><?= $funcdados['Funcao'] ?></td>
+                        <td><?= $funcdados['Descricao'] ?></td>
+                        <td><?= $funcdados['qtdTiposRegistro'] ?></td>
+                        <td><?= $funcdados['qtdTiposDados'] ?></td>
+                        <td><?= $funcdados['PF'] ?></td>
+                        <td><?php if($funcdados['Complexidade'] == 1) echo 'Baixa';if($funcdados['Complexidade'] == 2) echo 'Media';if($funcdados['Complexidade'] == 3) echo 'Alta' ?></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'funcdados', 'idP'=>$funcdados['idFuncaoDados']), null, true) ?>">Editar</a></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-fd', 'idP'=>$funcdados['idFuncaoDados']), null, true) ?>">Excluir</a></td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>   
     </div>

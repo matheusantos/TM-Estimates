@@ -10,143 +10,142 @@
 /*    --------------------------------------------------
     :: sidebar
     -------------------------------------------------- */
-    
+
 /* make sidebar nav vertical */ 
 @media (min-width: 768px){
-  .affix-content .container {
-    width: 700px;
-  }   
+    .affix-content .container {
+        width: 700px;
+    }   
 
-  html,body{
-    background-color: #f8f8f8;
-   
-    /*
-    height: 100%;
-    overflow: hidden;
-    */
-    height:auto;
-  }
+    html,body{
+        background-color: #f8f8f8;
+        /*
+        height: 100%;
+        overflow: hidden;
+        */
+        height:auto;
+    }
     .affix-content .container .page-header{
-    margin-top: 0;
-  }
-  .sidebar-nav{
+        margin-top: 0;
+    }
+    .sidebar-nav{
         position:fixed; 
         /*width:100%;*/
         width:inherit;
-  }
-  .affix-sidebar{
-    padding-right:0; 
-    font-size:small;
-    padding-left: 0;
-  }  
-  .affix-row, .affix-container, .affix-content{
-    height: 100%;
-    margin-left: 0;
-    margin-right: 0;    
-  } 
-  .affix-content{
-    background-color:white;
-    margin-bottom: 50px; /* devido ao footer fixo */
-    /*min-height: 100%;*/
-  } 
-  .sidebar-nav .navbar .navbar-collapse {
-    padding: 0;
-    max-height: none;
-  }
-  .sidebar-nav .navbar{
-    border-radius:0; 
-    margin-bottom:0; 
-    border:0;
-  }
-  .sidebar-nav .navbar ul {
-    float: none;
-    display: block;
-  }
-  .sidebar-nav .navbar li {
-    float: none;
-    display: block;
-  }
-  .sidebar-nav .navbar li a {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }  
-  
-  /* aqui é para o menu do calendario(feito por wadson)*/
- *{ 
-padding: 0;
-margin: 0;
+    }
+    .affix-sidebar{
+        padding-right:0; 
+        font-size:small;
+        padding-left: 0;
+    }  
+    .affix-row, .affix-container, .affix-content{
+        height: 100%;
+        margin-left: 0;
+        margin-right: 0;    
+    } 
+    .affix-content{
+        background-color:white;
+        margin-bottom: 50px; /* devido ao footer fixo */
+        /*min-height: 100%;*/
+    } 
+    .sidebar-nav .navbar .navbar-collapse {
+        padding: 0;
+        max-height: none;
+    }
+    .sidebar-nav .navbar{
+        border-radius:0; 
+        margin-bottom:0; 
+        border:0;
+    }
+    .sidebar-nav .navbar ul {
+        float: none;
+        display: block;
+    }
+    .sidebar-nav .navbar li {
+        float: none;
+        display: block;
+    }
+    .sidebar-nav .navbar li a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }  
 
-}
+    /* aqui é para o menu do calendario(feito por wadson)*/
+    *{ 
+        padding: 0;
+        margin: 0;
 
-ul li{
-list-style:none;
-}
+    }
+
+    ul li{
+        list-style:none;
+    }
 
 
-div.cAlign{
-margin:0 auto;
-display: block;
-width: 803px;
+    div.cAlign{
+        margin:0 auto;
+        display: block;
+        width: 803px;
 
-}
+    }
 
-div#menu{
+    div#menu{
 
-width: 803px;
-height: 38px;
-background-color: #c3c3c3;
-}
+        width: 803px;
+        height: 38px;
+        background-color: #c3c3c3;
+    }
 
-div#menu ul li{
+    div#menu ul li{
 
-display:inline-block;
-position:relative;
-padding:0;
-margin:0;
+        display:inline-block;
+        position:relative;
+        padding:0;
+        margin:0;
 
-}
+    }
 
-div#menu ul li a{
-display:block;
-padding: 9px 10px;
-margin: 0;
-font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-font-size: 14px;
-text-transform:capitalize;
-color: #fff;
+    div#menu ul li a{
+        display:block;
+        padding: 9px 10px;
+        margin: 0;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        text-transform:capitalize;
+        color: #fff;
 
-transition:200ms all linear;
--webkit-transition:200ms all linear;
--moz-transition:200ms all linear;
--o-transition:200ms all linear;
--ms-transition:200ms all linear;
--khtml-transition:200ms all linear;
+        transition:200ms all linear;
+        -webkit-transition:200ms all linear;
+        -moz-transition:200ms all linear;
+        -o-transition:200ms all linear;
+        -ms-transition:200ms all linear;
+        -khtml-transition:200ms all linear;
 
-}
-div#menu ul li a:hover{
-background-color: black;
-transition:200ms all linear;
--webkit-transition:200ms all linear;
--moz-transition:200ms all linear;
--o-transition:200ms all linear;
--ms-transition:200ms all linear;
--khtml-transition:200ms all linear;
-}
+    }
+    div#menu ul li a:hover{
+        background-color: black;
+        transition:200ms all linear;
+        -webkit-transition:200ms all linear;
+        -moz-transition:200ms all linear;
+        -o-transition:200ms all linear;
+        -ms-transition:200ms all linear;
+        -khtml-transition:200ms all linear;
+    }
 
-div#menu ul li ul{
-position:absolute;
-display:none;
-width:200px;
-background-color: #c3c3c3;
-}
+    div#menu ul li ul{
+        position:absolute;
+        display:none;
+        width:200px;
+        background-color: #c3c3c3;
+    }
 
-div#menu ul li ul li{
-float: left;
-width: 100%;
+    div#menu ul li ul li{
+        float: left;
+        width: 100%;
 
-}
+    }
 
-div#menu ul li:hover ul{
-display:block;
-}
+    div#menu ul li:hover ul{
+        display:block;
+    }
 }

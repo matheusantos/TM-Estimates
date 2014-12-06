@@ -1,0 +1,40 @@
+<div class="page-header">
+    <h3><span class="glyphicon glyphicon-th-list"></span> Editar Colaborador</h3>
+</div>
+<div class="row">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-11">
+            <div class="col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Colaborador</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="post" action="<?= $this->url(array('controller' => 'editar', 'action' => 'atualiza-co'), null, true) ?>">
+                            <div class="col-md-6">
+                                <div class="col-md-offset-0">
+                                    <label>Nome</label>
+                                    <input type="text" class="form-control" id="exampleInputNome" name="Nome" placeholder="Nome" value="<?=$this->dados[0]['Nome']?>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-md-offset-0">
+                                    <label for="exampleInputEmail1">Email</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail" name="Email" placeholder="Enter email" value="<?=$this->dados[0]['Email']?>">
+                                </div>
+                            </div>
+                            <input type = "hidden" name="id" value ="<?= $this->id ?>">
+                            <br><br><br><br>
+                            <div class="col-md-4">
+                                <div class="col-md-offset-0">
+                                    <button type="submit" class="btn btn-success btn-default">Atualizar</button>
+                                    <a href="<?= $this->url(array('controller' => 'colaboradores', 'action' => 'index'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

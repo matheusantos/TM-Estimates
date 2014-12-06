@@ -1,0 +1,30 @@
+<div class="page-header">
+    <h3><span class="glyphicon glyphicon-th-list"></span> Itens de influência</h3>
+</div>
+<div class="col-md-3">
+    <a href="<?= $this->url(array('controller' => 'itens-influencia', 'action' => 'novo'), null, true) ?>" class="btn btn btn-success" role="button">Novo</a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-list-search">
+            <thead>
+                <tr>
+                    <th>Projeto</th>
+                    <th>Item de Influência</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($this->dados AS $key => $value): ?>
+                    <tr>
+                        <td><?= $value['Titulo'] ?></td>
+
+                        <td><?= $value['idItensInfluencia'] ?></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'itens-influencia', 'idP' => $value['projeto_idProjeto']), null, true) ?>">Editar</a></td>
+                        <td><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'excluir-ii', 'idP' => $value['idItensInfluencia']), null, true) ?>">Excluir</a></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>   
+    </div>
+</div>

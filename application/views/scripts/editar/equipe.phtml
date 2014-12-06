@@ -14,31 +14,24 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Projeto</label>
-                                    <select class="form-control" name="Projeto">
-                                        <option value  = "" class="form-control"> </option>
-                                        <?php foreach ($this->dados1 as $key => $value) { ?>
-                                            <option value="<?= $value["idProjeto"] ?>" class="form-control"> <?= $value['Titulo'] ?> </option>
-                                        <?php } ?>
-                                    </select>
-                                    <!--<input type="" class="form-control" id="exampleInputProj" placeholder="Projeto">-->
+                                    <span class="form-control" name="idProjeto" value="<?= $this->dados_cliente[0]['Projeto_idProjeto'] ?>">
+                                        <?= $this->dados_cliente[0]['Projeto_idProjeto'] ?>
+                                    </span>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Recurso</label>
-                                    <select class="form-control" name="Recurso">
-                                        <option value  = "" class="form-control"> </option>
-                                        <?php foreach ($this->dados as $key => $value) { ?>
-                                            <option value="<?= $value["idRecursos"] ?>" class="form-control"> <?= $value['Descricao'] ?> </option>
-                                        <?php } ?>
-                                    </select>
+                                    <span class="form-control" name="idRecurso" value="<?= $this->dados_cliente[0]['Recursos_idRecursos'] ?>">
+                                        <?= $this->dados_cliente[0]['Recursos_idRecursos'] ?>
+                                    </span>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Quantidade de Recursos</label>
-                                    <input type="number" class="form-control" id="exampleInputQuant" name="QtdRec" placeholder="Quantidade" value="<?=$this->dados_cliente[0]['QtRecursos']?>">
+                                    <input required type="number" class="form-control" id="exampleInputQuant" name="QtdRec" placeholder="Quantidade" value="<?= $this->dados_cliente[0]['QtRecursos'] ?>">
                                 </div>
                             </div>
                             <br><br><br><br>

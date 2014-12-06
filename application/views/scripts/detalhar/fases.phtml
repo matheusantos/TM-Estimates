@@ -3,9 +3,6 @@
 </div>
 <div class="row">
     <div class="col-md-3">
-        <a href="<?= $this->url(array('controller' => 'detalhar', 'action' => 'ndfase'), null, true) ?>" class="btn btn btn-success" role="button">Novo</a>
-    </div>
-    <div class="col-md-3">
         <form action="#" method="get">
             <div class="input-group">
                 <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
@@ -22,7 +19,7 @@
         <table class="table table-list-search">
             <thead>
                 <tr>
-                    <th>Número</th>
+                    <th>#</th>
                     <th>Descrição</th>
                     <th>Percentual</th>
                     <th>Dt. início (Prevista)</th>
@@ -36,7 +33,7 @@
                     <tr>
                         <td><?= $DetalharFase['idFase'] ?></td>
                         <td><?= $DetalharFase['Descricao'] ?></td>
-                        <td><?= $DetalharFase['Percentual'] ?></td>
+                        <td><?= $DetalharFase['Percentual'] ?> %</td>
                         <td><?= $DetalharFase['datIniPrev'] ?></td>
                         <td><?= $DetalharFase['datFinPrev'] ?></td>
                         <td><?= $DetalharFase['datIniEfet'] ?></td>

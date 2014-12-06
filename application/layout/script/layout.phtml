@@ -46,18 +46,38 @@
                                     <li class=""><a href="<?= $this->url(array('controller' => 'index', 'action' => 'pacotes'), null, true) ?>">Pacotes</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav pull-right">
-                                    <li class="dropdown">
-                                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Acesso<strong class="caret"></strong></a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="<?= $this->url(array('controller' => 'login', 'action' => 'index'), null, true) ?>">Login</a>
-                                            </li>
-                                            <li>
-                                                <a href="<?= $this->url(array('controller' => 'cadastro-user', 'action' => 'index'), null, true) ?>">Cadastro</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class=""><a href="<?= $this->url(array('controller' => 'contato', 'action' => 'index'), null, true) ?>">Contado</a></li>
+                                    <?php if (is_null($this->email)) { ?>
+                                        <li class="dropdown">
+                                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Acesso<strong class="caret"></strong></a>
+
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a href="<?= $this->url(array('controller' => 'login', 'action' => 'index'), null, true) ?>">Login</a>
+                                                </li>
+                                                <li>
+                                                    <a href="<?= $this->url(array('controller' => 'cadastro-user', 'action' => 'index'), null, true) ?>">Cadastro</a>
+                                                </li>
+                                            </ul>
+
+                                        </li>
+                                    <?php } else { ?>
+                                        <li class="dropdown">
+                                            <a href="#" data-toggle="dropdown" class="dropdown-toggle"><?= $this->email ?><strong class="caret"></strong></a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a href="<?= $this->url(array('controller' => 'user', 'action' => 'index'), null, true) ?>">Painel</a>
+                                                </li>
+                                                <li>
+                                                    <a href="<?= $this->url(array('controller' => 'preferencias', 'action' => 'index'), null, true) ?>">Preferências</a>
+                                                </li>
+                                                <li>
+                                                    <a href="<?= $this->url(array('controller' => 'login', 'action' => 'logout'), null, true) ?>">Sair</a>
+                                                </li>
+                                            </ul>
+
+                                        </li>
+                                    <?php } ?>
+                                    <li class=""><a href="<?= $this->url(array('controller' => 'contato', 'action' => 'index'), null, true) ?>">Contato</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -91,6 +111,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="/TM-Estimates/public/js/bootstrap.min.js"></script>
         <script src="/TM-Estimates/public/js/jquery.maskedinput.min.js"></script>
+        <script src="/TM-Estimates/public/js/jquery.price_format.2.0.min.js"></script>
         <script type="text/javascript" src="/TM-Estimates/public/js/scripts.js"></script>
         <script type="text/javascript" src="/TM-Estimates/public/js/funcoes.js"></script> 
     </body> 

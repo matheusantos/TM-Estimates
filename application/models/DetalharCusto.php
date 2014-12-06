@@ -5,17 +5,17 @@ class Application_Model_DetalharCusto extends Zend_Db_Table_Abstract {
     protected $_name = "custofase";
     protected $_primary = "idCustoFase";
 
-    public function inserir(array $request) {
+    public function db_inserir(array $request) {
         $dados = array(
             'Descricao' => $request['Desc'],
             'ValorPrevisto' => $request['ValorPrev'],
             'ValorEfetivo' => $request['ValorEf'],
-            'fase_idFase' => "6"
+            'fase_idFase' => $request['Fase']
         );
         return $this->insert($dados);
     }
 
-    public function _select($where = null, $order = null, $limit = null) {
+    public function db_select($where = null, $order = null, $limit = null) {
         $select = $this->select()
                 ->from($this)
                 ->order($order)
@@ -25,6 +25,21 @@ class Application_Model_DetalharCusto extends Zend_Db_Table_Abstract {
             $select->where($where);
         }
         return $this->fetchAll($select)->toArray();
+    }
+    
+    public function db_update(array $request) {
+        $dados = array(
+            'Descricao' => $request['Desc'],
+            'ValorPrevisto' => $request['ValorPrev'],
+            'ValorEfetivo' => $request['ValorEf']
+        );
+        $where = $this->getAdapter()->quoteInto("idCustoFase = ?", $request['id']);
+        $this->update($dados, $where);
+    }
+    
+        public function db_delete($id) {
+        $where = $this->getAdapter()->quoteInto("idCustoFase = ?", $id);
+        $this->delete($where);
     }
 
 }

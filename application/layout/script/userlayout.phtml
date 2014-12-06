@@ -25,6 +25,7 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="/TM-Estimates/public/js/bootstrap.min.js"></script>
         <script src="/TM-Estimates/public/js/jquery.maskedinput.min.js"></script>
+        <script src="/TM-Estimates/public/js/jquery.price_format.2.0.min.js"></script>
         <script src="/TM-Estimates/public/js/scripts.js"></script>
 
     </head>
@@ -44,7 +45,21 @@
                                     <li class=""><a href="<?= $this->url(array('controller' => 'index', 'action' => 'pacotes'), null, true) ?>">Pacotes</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav pull-right">
-                                    <li class=""><a href="<?= $this->url(array('controller' => 'login', 'action' => 'logout'), null, true) ?>">Sair</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><?= $this->email ?><strong class="caret"></strong></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="<?= $this->url(array('controller' => 'user', 'action' => 'index'), null, true) ?>">Painel</a>
+                                            </li>
+                                            <li>
+                                                <a href="<?= $this->url(array('controller' => 'preferencias', 'action' => 'index'), null, true) ?>">Preferências</a>
+                                            </li>
+                                            <li>
+                                                <a href="<?= $this->url(array('controller' => 'login', 'action' => 'logout'), null, true) ?>">Sair</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class=""><a href="<?= $this->url(array('controller' => 'contato', 'action' => 'index'), null, true) ?>">Contato</a></li>
                                 </ul>
                                 <li>
                                     <div class="btn-group">
@@ -79,16 +94,15 @@
                                 <li class="active">
                                     <a href="#" data-toggle="collapse" data-target="#toggleDemo0" data-parent="#sidenav01" class="collapsed">
                                         <h4>
-                                            Control Panel
+                                            Painel de controle
                                             <br>
-                                            <small>Admins <span class="caret"></span></small>
+                                            <small>Colaboradores <span class="caret"></span></small>
                                         </h4>
                                     </a>
                                     <div class="collapse" id="toggleDemo0" style="height: 0px;">
                                         <ul class="nav nav-list">
-                                            <li><a href="<?= $this->url(array('controller' => 'administradores', 'action' => 'index'), null, true) ?>">Listar</a></li>
-                                            <li><a href="<?= $this->url(array('controller' => 'administradores', 'action' => 'novo'), null, true) ?>">Novo</a></li>
-                                            <li><a href="<?= $this->url(array('controller' => 'administradores', 'action' => 'gerenciar'), null, true) ?>">Gerenciar</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'colaboradores', 'action' => 'novo'), null, true) ?>">Novo</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'colaboradores', 'action' => 'index'), null, true) ?>">Listar</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -100,7 +114,6 @@
                                         <ul class="nav nav-list">
                                             <li><a href="<?= $this->url(array('controller' => 'projeto', 'action' => 'index'), null, true) ?>">Projeto</a></li>
                                             <li><a href="<?= $this->url(array('controller' => 'fase', 'action' => 'index'), null, true) ?>">Fase</a></li>
-                                            <li><a href="<?= $this->url(array('controller' => 'ambiente', 'action' => 'index'), null, true) ?>">Ambiente</a></li>
                                             <li><a href="<?= $this->url(array('controller' => 'recurso', 'action' => 'index'), null, true) ?>">Recurso</a></li>
                                             <li><a href="<?= $this->url(array('controller' => 'equipe', 'action' => 'index'), null, true) ?>">Equipe</a></li>
                                         </ul>
@@ -114,9 +127,7 @@
                                         <ul class="nav nav-list">
                                             <li><a href="<?= $this->url(array('controller' => 'FuncaoDados', 'action' => 'index'), null, true) ?>">Funções de Dados</a></li>
                                             <li><a href="<?= $this->url(array('controller' => 'FuncaoTransacao', 'action' => 'index'), null, true) ?>">Funções de Transação</a></li>
-                                            <li><a href="<?= $this->url(array('controller' => 'projeto', 'action' => 'index'), null, true) ?>">Itens de Influência</a></li>
-                                            <li><a href="<?= $this->url(array('controller' => 'projeto', 'action' => 'index'), null, true) ?>">Itens não-mensuráveis</a></li>
-                                            <li><a href="<?= $this->url(array('controller' => 'Contagem', 'action' => 'index'), null, true) ?>">Contagem</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'itens-influencia', 'action' => 'index'), null, true) ?>">Itens de Influência</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -131,10 +142,23 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="active"><a href="<?= $this->url(array('controller' => 'EstimarCusto', 'action' => 'index'), null, true) ?>"><span class="glyphicon glyphicon-usd"></span> Estimar Custos</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-book"></span> Relatório</a></li>
+                                <li class="active">
+                                    <a href="#" data-toggle="collapse" data-target="#toggleDemo4" data-parent="#sidenav01" class="collapsed">
+                                        <span class="glyphicon glyphicon-usd"></span> Estimar <span class="caret pull-right"></span>
+                                    </a>
+                                    <div class="collapse" id="toggleDemo4" style="height: 0px;">
+                                        <ul class="nav nav-list">
+                                            <li><a href="<?= $this->url(array('controller' => 'EstimarCusto', 'action' => 'index'), null, true) ?>"> Custos</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'estimar-esforco', 'action' => 'index'), null, true) ?>"> Esforço</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'estimar-prazo', 'action' => 'index'), null, true) ?>"> Prazo</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'estimar-produtividade', 'action' => 'index'), null, true) ?>"> Produtividade</a></li>
+                                            <li><a href="<?= $this->url(array('controller' => 'pontos-funcao', 'action' => 'index'), null, true) ?>"> Pontos de Função</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a href="<?= $this->url(array('controller' => 'relatorio', 'action' => 'index'), null, true) ?>"><span class="glyphicon glyphicon-book"></span> Relatório</a></li>
                                 <li><a href="<?= $this->url(array('controller' => 'calendario', 'action' => 'index'), null, true) ?>"><span class="glyphicon glyphicon-calendar"></span> Calendário</a></li>
-                                <li><a href="<?= $this->url(array('controller' => 'preferencias', 'action' => 'index'), null, true) ?>"><span class="glyphicon glyphicon-cog"></span> Preferências</a></li>
+                                <li><a href="<?= $this->url(array('controller' => 'editar', 'action' => 'editar-user'), null, true) ?>"><span class="glyphicon glyphicon-cog"></span> Preferências</a></li>
                             </ul>
                         </div><!--/.nav-collapse -->
                     </div>

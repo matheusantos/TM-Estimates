@@ -36,24 +36,12 @@ class CadastroUserController extends Zend_Controller_Action {
 
         if (!empty($email)) {
              $this->_redirect("cadastro-user/email-ja-cadastrado");
-            die;
         }
 
         $radio = $dados['radio_box'];
         if ($radio == "pf") {
-            $Nome = $_POST["nome"];
-            $Sobrenome = $_POST["sobrenome"];
-            $RG = $_POST["rg"];
-            $CPF = $_POST["cpf"];
-            $DatNasc = $_POST["datNasc"];
-            $Sexo = $_POST["sexo"];
-
             $model = new Application_Model_ClientePF();
         } else {
-            $CNPJ = $_POST["cnpj"];
-            $RazSoc = $_POST["razSocial"];
-            $NomeFant = $_POST["nomeFant"];
-
             $model = new Application_Model_ClientePJ();
         }
         $id = $cliente->inserir($dados);

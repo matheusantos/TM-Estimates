@@ -1,0 +1,166 @@
+<br /><br />
+<form role="form" name="cadastro" method="post" action="<?= $this->url(array('controller' => 'editar', 'action' => 'atualizar-pf'), null, true) ?>">
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <label><h1>Dados do Usuário</h1></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Dados pessoais</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-row">
+                            <div class="col-md-4 form-group">
+                                <label>Nome</label>
+                                <input  required type="text" class="form-control"  name="nome" placeholder="Nome" value="<?= $this->dadosPF[0]['Nome'] ?>">
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <label>Sobrenome</label>
+                                <input  required type="text" class="form-control" name="sobrenome" placeholder="Sobrenome" value="<?= $this->dadosPF[0]['Sobrenome'] ?>">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4 form-groups">
+                                <label>RG</label>
+                                <input  required class="form-control" name="rg" id="rg" value="<?= $this->dadosPF[0]['RG'] ?>">
+                            </div>
+                            <div class="col-md-4 form-groups">
+                                <label>CPF</label>
+                                <input  required class="form-control" name="cpf" id="CPF" value="<?= $this->dadosPF[0]['CPF'] ?>">
+                            </div>
+                            <div class="col-md-4 form-groups">
+                                <label>Data de nascimento</label>
+                                <input  required required type="" class="form-control" name="datNasc" id="date" value="<?= $this->dadosPF[0]['datNasc'] ?>">
+                            </div>
+                        </div>
+                        <br /><br /><br /><br /><br /><br /><br />
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <label>Telefone</label>
+                                <input  type="tel" class="form-control" id="tel" name="tel" value="<?= $this->dadosPF[0]['Telefone'] ?>">
+                            </div>
+                            <div class="col-md-4 form-groups">
+                                <label>Celular</label>
+                                <input  type="tel" class="form-control" id="cel" name="cel" value="<?= $this->dadosPF[0]['Celular'] ?>">
+                            </div>
+                            <div class="col-md-4 form-groups">
+                                <label>Sexo</label>
+                                <select  class="form-control" name="sexo">
+                                    <option required selected="" value="" >Selecione o Sexo</option>
+                                    <option value="M" <?php if ($this->dadosPF[0]['Sexo'] == 'M') echo 'selected';?>>Masculino</option>
+                                    <option value="F" <?php if ($this->dadosPF[0]['Sexo'] == 'F') echo 'selected'; else ''; ?>>Feminino</option>
+                                    <option value="O <?php if ($this->dadosPF[0]['Sexo'] == 'O') echo 'selected';else ''; ?>">Outros </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div> <!-- .panel-body -->
+                </div> <!-- .panel -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Endereço</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <label>CEP</label>
+                            <input  required type="text" class="form-control" name="cep" id="cep" value="<?= $this->cliente['Cep'] ?>">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Cidade</label>
+                            <input  required type="text" class="form-control" name="cidade" placeholder="Cidade" value="<?= $this->cliente['Cidade'] ?>">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Estado</label>
+<!--                            <span class="form-control input-xlarge uneditable-input"></span>-->
+                            <select  required name="estado" class="form-control">
+                                <option value="">Selecione o Estado (UF)</option>
+                                <option value="ac" <?php if ($this->cliente['UF'] == 'ac') echo 'selected';else ''; ?>>Acre</option>
+                                <option value="al" <?php if ($this->cliente['UF'] == 'al') echo 'selected';else ''; ?>>Alagoas</option>
+                                <option value="am" <?php if ($this->cliente['UF'] == 'am') echo 'selected';else ''; ?>>Amazonas</option>
+                                <option value="ap" <?php if ($this->cliente['UF'] == 'ap') echo 'selected';else ''; ?>>Amapá</option>
+                                <option value="ba" <?php if ($this->cliente['UF'] == 'ba') echo 'selected';else ''; ?>>Bahia</option>
+                                <option value="ce" <?php if ($this->cliente['UF'] == 'ce') echo 'selected';else ''; ?>>Ceará</option>
+                                <option value="df" <?php if ($this->cliente['UF'] == 'df') echo 'selected';else ''; ?>>Distrito Federal</option>
+                                <option value="es" <?php if ($this->cliente['UF'] == 'es') echo 'selected';else ''; ?>>Espírito Santo</option>
+                                <option value="go" <?php if ($this->cliente['UF'] == 'go') echo 'selected';else ''; ?>>Goiás</option>
+                                <option value="ma" <?php if ($this->cliente['UF'] == 'ma') echo 'selected';else ''; ?>>Maranhão</option>
+                                <option value="mt" <?php if ($this->cliente['UF'] == 'mt') echo 'selected';else ''; ?>>Mato Grosso</option>
+                                <option value="ms" <?php if ($this->cliente['UF'] == 'ms') echo 'selected';else ''; ?>>Mato Grosso do Sul</option>
+                                <option value="mg" <?php if ($this->cliente['UF'] == 'mg') echo 'selected';else ''; ?>>Minas Gerais</option>
+                                <option value="pa" <?php if ($this->cliente['UF'] == 'pa') echo 'selected';else ''; ?>>Pará</option>
+                                <option value="pb" <?php if ($this->cliente['UF'] == 'pb') echo 'selected';else ''; ?>>Paraíba</option>
+                                <option value="pr" <?php if ($this->cliente['UF'] == 'pr') echo 'selected';else ''; ?>>Paraná</option>
+                                <option value="pe" <?php if ($this->cliente['UF'] == 'pe') echo 'selected';else ''; ?>>Pernambuco</option>
+                                <option value="pi" <?php if ($this->cliente['UF'] == 'pi') echo 'selected';else ''; ?>>Piauí</option>
+                                <option value="rj" <?php if ($this->cliente['UF'] == 'rj') echo 'selected';else ''; ?>>Rio de Janeiro</option>
+                                <option value="rn" <?php if ($this->cliente['UF'] == 'rn') echo 'selected';else ''; ?>>Rio Grande do Norte</option>
+                                <option value="ro" <?php if ($this->cliente['UF'] == 'ro') echo 'selected';else ''; ?>>Rondônia</option>
+                                <option value="rs" <?php if ($this->cliente['UF'] == 'rs') echo 'selected';else ''; ?>>Rio Grande do Sul</option>
+                                <option value="rr <?php if ($this->cliente['UF'] == 'rr') echo 'selected';else ''; ?>">Roraima</option>
+                                <option value="sc" <?php if ($this->cliente['UF'] == 'sc') echo 'selected';else ''; ?>>Santa Catarina</option>
+                                <option value="se" <?php if ($this->cliente['UF'] == 'se') echo 'selected';else ''; ?>>Sergipe</option>
+                                <option value="sp" <?php if ($this->cliente['UF'] == 'sp') echo 'selected';else ''; ?>>São Paulo</option>
+                                <option value="to <?php if ($this->cliente['UF'] == 'to') echo 'selected';else ''; ?>">Tocantins</option> 
+                            </select>
+                        </div>
+                        <br/><br/><br/><br/>
+                        <div class="col-md-4">
+                            <label>Rua</label>
+                            <input  required type="text" class="form-control" name="rua" placeholder="Rua" value="<?= $this->cliente['Logradouro'] ?>">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label>Nº</label>
+                                <input  type="number" class="form-control" name="numero" placeholder="Nº" value="<?= $this->cliente['Numero'] ?>">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-offset-0">
+                                <label>Bairro</label>
+                                <input  required type="text" class="form-control" name="bairro" placeholder="Bairro" value="<?= $this->cliente['Bairro'] ?>">
+                            </div>
+                        </div>
+                        <br/><br/><br/><br/>
+                        <div class="col-md-12">
+                            <div class="col-md-offset-0">
+                                <label>Complemento</label>
+                                <input  type="text" class="form-control" name="complemento" placeholder="Complemento" value="<?= $this->cliente['Complemento'] ?>">
+                            </div>
+                        </div>
+                        <br/><br/><br/><br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type = "hidden" name="id" value ="<?= $this->cliente['idCliente'] ?>">
+
+    <div class="row clearfix top-buffer">
+        <div class="col-md-10">
+            <div class="col-md-offset-2">
+                <button type="submit" class="btn btn-success btn-default">Atualizar</button>
+                <a href="<?= $this->url(array('controller' => 'preferencias', 'action' => 'index'), null, true) ?>" class="btn btn-danger btn-default" role="button">Cancelar</a>
+            </div>
+        </div>
+    </div>
+
+</form>
+<br/><br/><br/>
+
+
+
